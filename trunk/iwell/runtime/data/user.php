@@ -1,1 +1,0 @@
-<?php {"pri":"id","0":"reg_username","1":"reg_password","2":"reg_email","3":"reg_time","4":"reg_ip"}

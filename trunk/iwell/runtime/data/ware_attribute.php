@@ -1,1 +1,0 @@
-<?php {"pri":"id","0":"wid","1":"t_pic","2":"b_pic","3":"desn"}

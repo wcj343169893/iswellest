@@ -1,1 +1,0 @@
-<?php {"pri":"id","0":"g_name","1":"g_num"}

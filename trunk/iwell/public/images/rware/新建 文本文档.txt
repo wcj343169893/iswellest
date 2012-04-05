@@ -1,9 +1,0 @@
-insert into zxy_rwares values(null,'三星I9003时尚大屏智能机 
-','3498','ad_right_4.jpg','2001')
-insert into zxy_rwares values(null,'三星（SAMSUNG）ST100数码相机 ','1398','ad_right_5.jpg','2002')
-insert into zxy_rwares values(null,'三星ES28数码相机','499','ad_right_6.jpg','2003')
-insert into zxy_rwares values(null,'富士（FUJIFILM）S2900HD 数码相机（黑色）长焦机王','1360','ad_right_1.jpg','2004')
-insert into zxy_rwares values(null,'夏普（SHARP）806T时尚手机 
-','2688','ad_right_2.jpg','2005')
-insert into zxy_rwares values(null,'华硕笔记本PRO8FEI46JC-SL 
-','5800','ad_right_3.jpg','2006')
