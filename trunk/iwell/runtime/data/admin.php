@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"username","1":"password","2":"allow_1","3":"allow_2","4":"post","5":"phone","6":"utime"}

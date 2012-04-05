@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"order_id","1":"order_time","2":"consignee","3":"dh","4":"phone","5":"address","6":"email","7":"postal","8":"remark","9":"price","10":"meetprice","11":"sendtime","12":"ok","13":"pay","14":"consignment","15":"city1","16":"city2","17":"city3","18":"retu"}
