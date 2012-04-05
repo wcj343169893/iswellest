@@ -1,0 +1,48 @@
+@charset "utf-8";
+a {color:#000;}
+
+/*频道导航*/
+p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid #ccc;background:#fcf6ff;}
+
+/*新闻左右分列*/
+.news_left {width:180px;overflow:hidden;float:left;}
+.news_right {width:770px;overflow:hidden;float:right;}
+
+/**/
+.news_left_menu {border:2px solid #ccc;}
+.news_left_tit {height:36px;line-height:36px;font-size:14px;font-weight:700;color:#fff;background:url(news/news.png) 0 0 no-repeat;border-bottom:2px solid #ccc;padding-left:64px;overflow:hidden;}
+.news_left_menu ul {padding-bottom:10px;margin:0 10px;}
+.news_left_menu li {height:30px;line-height:30px;border-bottom:1px dashed #ccc;padding-left:20px;background:url(news/news.png) 0 -38px no-repeat;}
+
+/**/
+.news_details {border:1px solid #65377d;}
+.news_right_tit {font-size:24px;text-align:center;padding:10px 0;font-family:'MicroSoft yaHei';}
+.news_content {padding:10px 50px;overflow:hidden;}
+
+/**/
+.news_lists_tit {height:36px;line-height:36px;background:url(news/news.png) 0 -70px no-repeat;padding:0 20px;border:1px solid #65377d;}
+.news_lists_tit select.fr {margin-top:8px;}
+.news_lists_details {border:1px solid #65377d;margin-top:10px;padding:10px;}
+.news_lists_details li {height:30px;line-height:30px;overflow:hidden;border-bottom:1px dashed #ccc;}
+.goods_mess_flip {width:100%;text-align:right;margin-top:10px;}
+.goods_mess_flip li {display:inline;}
+
+/*优势保障*/
+.index_odds{}
+.index_odds ul {width:1000px;text-align:center;}
+.index_odds li {width:216px;margin-right:32px;overflow:hidden;float:left;}
+.index_odds p.p_0 {border:2px solid #572471;margin-top:10px;height:58px;background:url(index/index_sprite.png) 0 -109px repeat-x;font-size:16px;font-family:'MicroSoft yaHei';line-height:24px;padding-top:6px;}
+
+
+/*公用*/
+.mt_5 {margin-top:5px;}
+.ml_10 {margin-left:10px;}
+.pro_name {height:2.6em;line-height:1.3em;overflow:hidden;}
+.f14 {font-size:14px;}
+.f32 {font-size:32px;}
+.c999 {color:#999;}
+.c110 {color:#1105b1;}
+.cb00 {color:#bb0000;}
+.c502 {color:#50216c;}
+.cffb {color:#ffbc00;}
+.yahei {font-family:'MicroSoft yaHei';}
