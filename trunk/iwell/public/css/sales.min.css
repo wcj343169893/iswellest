@@ -10025,3 +10025,7 @@ ul#scItemsSml li.item.extraLinsDots {
 #orderSuccessMiddle .fbLF1 h2 {
 	color: #333
 }
+.filler img{
+	width: 300px;
+height: 300px;
+}

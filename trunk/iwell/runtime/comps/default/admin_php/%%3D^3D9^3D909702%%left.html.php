@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-03 12:30:20
+<?php /* Smarty version 2.6.18, created on 2012-04-06 13:05:36
          compiled from index/left.html */ ?>
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -134,11 +134,6 @@ a:hover{color:#06C;font-family:Arial;font-size:14px;text-decoration:none;}
       <ul>
         <li><a href="" target="rightFrame">品牌列表</a></li>
         <li><a href="" target="rightFrame">添加品牌</a></li>
-      </ul>
-    </li>
-    <li> <a class="head">版本信息</a>
-      <ul>
-        <li><a href="http://Www.865171.cn" target="_blank">by Jessica(865171.cn)</a></li>
       </ul>
     </li>
   </ul>

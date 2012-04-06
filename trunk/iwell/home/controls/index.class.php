@@ -10,7 +10,9 @@
 					//最新产品
 					$newData=$s->limit(6)->where(array('w_type'=>'tj'))->select();
 					$this->assign('newData',$newData);
-					print_r($newData);
+					//快要过期产品
+					$endingsoondata=$s->limit(12)->order("sale_end asc")->select();
+					$this->assign('endingsoondata',$endingsoondata);
 					//手机配件
 					$pj=$s->limit(6)->where(array('w_type'=>'pj'))->select();
 					$this->assign('pj',$pj);

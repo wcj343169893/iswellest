@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-03 12:36:48
+<?php /* Smarty version 2.6.18, created on 2012-04-06 12:44:49
          compiled from ware/index.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -66,13 +66,14 @@ a img {
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">编号</span></div></td>
         <td width="30%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">商品名称</span></div></td>
-        <td width="14%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">价格</span></div></td>
-        <td width="16%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">库存</span></div></td>
+        <td width="4%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">价格</span></div></td>
+        <td width="4%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">库存</span></div></td>
         <td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">热销</span></div></td>
 	    <td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">精品</span></div></td>
 		<td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">新品</span></div></td>
+		<td width="13%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">上架时间</span></div></td>
+		<td width="13%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">下架时间</span></div></td>
 		<td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">上架</span></div></td>
-
         <td width="14%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
 	  <?php unset($this->_sections['ls']);
@@ -117,6 +118,10 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 /images/yes.gif"></div></td>
 		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><img src="<?php echo $this->_tpl_vars['res']; ?>
 /images/yes.gif"></div></td>
+		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['sale_begin']; ?>
+</div></td>
+		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['sale_end']; ?>
+</div></td>
 		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
 		<?php if ($this->_tpl_vars['data'][$this->_sections['ls']['index']]['is_up'] == 1): ?>
 		<img src="<?php echo $this->_tpl_vars['res']; ?>

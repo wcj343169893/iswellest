@@ -69,22 +69,6 @@
 <div class="clear"></div>
   <div id="featuredShop" class="poRel" style="*margin-bottom: 6px">
     <h2 class="salesTitle salesTitleEndSn">Featured <em class="redText">Shops</em></h2>
-    <div class="poAbs" id="shareOpt" style="top:15px;right:3px">
-      <div id="___plusone_0" style="height: 20px; width: 90px; display: inline-block; text-indent: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; "><iframe allowtransparency="true" frameborder="0" hspace="0" id="I1_1333032130425" marginheight="0" marginwidth="0" name="I1_1333032130425" scrolling="no" src="https://plusone.google.com/_/+1/fastbutton?url=http%3A%2F%2Ffab.com%2F&size=medium&count=true&hl=en-US&jsh=m%3B%2F_%2Fapps-static%2F_%2Fjs%2Fgapi%2F__features__%2Frt%3Dj%2Fver%3DMtNNjj9rrk0.zh_CN.%2Fsv%3D1%2Fam%3D!Ze6NnRS0VYCICGRMrA%2Fd%3D1#id=I1_1333032130425&parent=http%3A%2F%2Ffab.com&rpctoken=67720404&_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart" style="position:absolute;left:-10000px;top:-10000px;width:75px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" title="+1"></iframe></div>
-      <fb:like href="http://fab.com/" send="false" layout="button_count" width="50" show_faces="false" font="" class=" fb_edge_widget_with_comment fb_iframe_widget"><span><iframe id="f16379c294" name="f161c4599c" scrolling="no" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; overflow-x: hidden; overflow-y: hidden; height: 21px; width: 90px; " title="Like this content on Facebook." class="fb_ltr" src="http://www.facebook.com/plugins/like.php?api_key=105523866144321&channel_url=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%23cb%3Df3fa84898%26origin%3Dhttp%253A%252F%252Ffab.com%252Ff37d54d8c4%26relation%3Dparent.parent%26transport%3Dpostmessage&extended_social_context=false&href=http%3A%2F%2Ffab.com%2F&layout=button_count&locale=en_US&node_type=link&sdk=joey&send=false&show_faces=false&width=90"></iframe></span></fb:like>
-    </div>
-    <div id="originalImage" class="displayNone" style="left: 533px; ">
-                <a href="http://fab.com/weekly-shops/vintage" class="gimg" data-img-url="">
-                  <img src="./fab.com_files/4367-300x300-1332253914.png" alt="">
-                    <span class="imgInfoBottom imgInfoBottomShops">
-                      <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative">
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">Weekly Shop</em>
-                          <h3 class=""><span class="mainTitlePopUp">Vintage</span></h3>
-                        </span>
-                      </span>
-                    <span class="viewDet floatRight round20 fabGrad"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span></span>
-                </a>
-              </div>
     <div id="featuredShopSliderContent">
       <div class="imgSliderWrap">
         <div class="buttonBg floatLeft"><span id="nextButton" class="displayNone buttons floatLeft" style="display: none; "><span class="nextIcon fabShopSprite"></span></span></div>
@@ -148,13 +132,14 @@
   <div class="endingSoonWrap">
     <h2 class="salesTitle salesTitleEndSn ">Ending <em class="redText">Soon</em></h2>
     <ul class="endSoonWrap">
+    <{section loop=$endingsoondata name=esd}>
         <li class="imgList">
-          <a class="filler" href="http://fab.com/sale/4356/" alt="" title=""><img src="./fab.com_files/4356-300x300-1332190035.png" alt="" title=""></a>
+          <a class="filler" href="http://fab.com/sale/4356/" alt="" title=""><img src="<{$public}>/images/ware/<{$endingsoondata[esd].w_pic}>" alt="" title=""></a>
           <a class="dB" href="http://fab.com/sale/4356/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoBottom">
               <span class="floatLeft">
-                <h3>nuLOOM</h3>
-                <span class="imgDescription">One of a Kind Rugs</span>
+                <h3>  </h3>
+                <span class="imgDescription"><{$endingsoondata[esd].w_name}></span>
               </span>
               <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4356/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
             </span>
@@ -162,72 +147,13 @@
           <a class="dB" href="http://fab.com/sale/4356/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoTopHov hide">
               <h3 class="imgDesEndSn">
-                Sale Ends in 17 minutes
+                Sale Ends in <{$endingsoondata[esd].sale_end}> minutes
               </h3>
               <span class="fabShopSprite greyClockBig marginLeft5"></span>
             </span>
           </a>
         </li>
-        <li class="imgList">
-          <a class="filler" href="http://fab.com/sale/4411/" alt="" title=""><img src="./fab.com_files/4411-300x300-1332361754.png" alt="" title=""></a>
-          <a class="dB" href="http://fab.com/sale/4411/" alt="" title="" style="*cursor: pointer">
-            <span class="imgInfoBottom">
-              <span class="floatLeft">
-                <h3>Peel</h3>
-                <span class="imgDescription">Personalized TV Comes Home</span>
-              </span>
-              <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4411/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
-            </span>
-          </a>
-          <a class="dB" href="http://fab.com/sale/4411/" alt="" title="" style="*cursor: pointer">
-            <span class="imgInfoTopHov hide">
-              <h3 class="imgDesEndSn">
-                Sale Ends in 17 minutes
-              </h3>
-              <span class="fabShopSprite greyClockBig marginLeft5"></span>
-            </span>
-          </a>
-        </li>
-        <li class="imgList">
-          <a class="filler" href="http://fab.com/sale/4393/" alt="" title=""><img src="./fab.com_files/4393-300x300-1332255660.png" alt="" title=""></a>
-          <a class="dB" href="http://fab.com/sale/4393/" alt="" title="" style="*cursor: pointer">
-            <span class="imgInfoBottom">
-              <span class="floatLeft">
-                <h3>Pedrali Chairs</h3>
-                <span class="imgDescription">Sleek Seats For Inside and Out</span>
-              </span>
-              <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4393/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
-            </span>
-          </a>
-          <a class="dB" href="http://fab.com/sale/4393/" alt="" title="" style="*cursor: pointer">
-            <span class="imgInfoTopHov hide">
-              <h3 class="imgDesEndSn">
-                Sale Ends in 17 minutes
-              </h3>
-              <span class="fabShopSprite greyClockBig marginLeft5"></span>
-            </span>
-          </a>
-        </li>
-        <li class="imgList">
-          <a class="filler" href="http://fab.com/sale/4347/" alt="" title=""><img src="./fab.com_files/4347-300x300-1332365793.png" alt="" title=""></a>
-          <a class="dB" href="http://fab.com/sale/4347/" alt="" title="" style="*cursor: pointer">
-            <span class="imgInfoBottom">
-              <span class="floatLeft">
-                <h3>Misewell</h3>
-                <span class="imgDescription">Functional Wood &amp; Steel Furniture</span>
-              </span>
-              <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4347/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
-            </span>
-          </a>
-          <a class="dB" href="http://fab.com/sale/4347/" alt="" title="" style="*cursor: pointer">
-            <span class="imgInfoTopHov hide">
-              <h3 class="imgDesEndSn">
-                Sale Ends in 17 minutes
-              </h3>
-              <span class="fabShopSprite greyClockBig marginLeft5"></span>
-            </span>
-          </a>
-        </li>
+       <{/section}>
     </ul>
     <div class="clear"></div>
   </div>
