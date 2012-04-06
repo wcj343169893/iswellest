@@ -31,6 +31,8 @@
 					$link=$l->select();
 					$this->assign('link',$link);
 					$this->display();
+					//注册方法
+					$this->register_function("compareDate","compareDate");
 
 		}
 		//商品单品类
