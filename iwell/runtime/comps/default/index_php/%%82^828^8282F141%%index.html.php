@@ -1,5 +1,7 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 13:56:38
+<?php /* Smarty version 2.6.18, created on 2012-04-06 15:54:43
          compiled from index/index.html */ ?>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'compareDate', 'index/index.html', 150, false),)), $this); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -242,7 +244,7 @@ $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] ==
           <a class="dB" href="http://fab.com/sale/4356/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoTopHov hide">
               <h3 class="imgDesEndSn">
-                Sale Ends in <?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['sale_end']; ?>
+                Sale Ends in <?php echo ((is_array($_tmp=$this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
  minutes
               </h3>
               <span class="fabShopSprite greyClockBig marginLeft5"></span>
