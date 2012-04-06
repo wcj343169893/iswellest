@@ -19,15 +19,15 @@
 		function select1($name="cid", $value="0",$get){
 				$w=D('ware');
 					//如果用find的话  生成的是一位数组，用select 生成的则是二维数组，切记
-				$data1=$w->where(array('id'=>$get['id']))->find();
+//				$data1=$w->where(array('id'=>$get['id']))->find();
 			$data=$this->field('id,c_name,concat(c_path,"-",id) abspath')->order("abspath,id asc")->select();
 			$html='<select name="'.$name.'">';
 			$html.='<option value="0">根分类</option>';
 			foreach($data as $val){
-				if($data1['w_cat']==$val["c_name"])
-					$html.='<option selected value="'.$val['c_name'].'">';
+				if($value==$val["id"])
+					$html.='<option selected value="'.$val['id'].'">';
 				else
-					$html.='<option value="'.$val['c_name'].'">';
+					$html.='<option value="'.$val['id'].'">';
 
 				$num=count(explode("-", $val["abspath"]))-2;
 				$space=str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",$num);	
