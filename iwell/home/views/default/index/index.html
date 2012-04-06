@@ -107,7 +107,8 @@
           <a class="dB" href="http://fab.com/sale/4471/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoTop">
               <span class="floatLeft">
-                <h3>begin:<{$newData[nd].sale_begin}> end:<{$newData[nd].sale_end}></h3>
+                <h3>begin:<{$newData[nd].sale_begin|date_format:"%Y-%m-%d"}> end:<{$newData[nd].sale_end|date_format:"%Y-%m-%d"}>
+                </h3>
                 <span class="imgDescription"><{$newData[nd].w_name}></span>
               </span>
               <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4471/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
@@ -172,7 +173,7 @@
     <div class="clear"></div>
         <div class="fstDySale" style="padding-bottom:10px;">
 					<span class="salesDateTime" style="padding-bottom:10px;">
-						Thursday 03/29
+						<{$tr1}>
 						<span class="salesTagIcon fabShopSprite"></span>
 					</span>
 					<ul>
@@ -184,22 +185,23 @@
   									<span class="salesDateBox borderR9">
   										<span class="triIcon"></span>
   										<span class="salesWatchIcon fabShopSprite"></span>
-                      <span>starts 03/29 11am ET</span>
+                      					<span>starts <{$tr1}> 11am ET</span>
   									</span>
   									<ul id="upcmgContent" class="showHideToggleClass">
+  									<{section loop=$tr1Data name="td"}>
   											<li>
   												<a href="http://fab.com/sale/4481/" alt="">
-  													<span class="title">angela adams</span>
-  													<span class="des">Artisanal, Earth-Inspired Rugs</span>
+  													<span class="title"><{$tr1Data[td].w_name}></span>
+  													<span class="des"><{$tr1Data[td].w_cat}></span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4481/" class="filler" alt=""><img src="./fab.com_files/4481-300x300-1332769750.png" alt="" width="300" height="300" title=""></a>
+  													<a href="http://fab.com/sale/4481/" class="filler" alt=""><img src="<{$public}>/images/ware/<{$tr1Data[td].w_pic}>" alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
   														<span class="floatLeft">
-  															<h3>angela adams</h3>
+  															<h3><{$tr1Data[td].w_name}></h3>
   															<span class="imgDescription">
-  																Artisanal, Earth-Inspired Rugs
+  																<{$tr1Data[td].w_cat}>
   															</span>
   														</span>
   														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4481/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
@@ -212,6 +214,7 @@
   													</span>
   												</span>
   											</li>
+  											<{/section}>
   									</ul>
   								</li>
 								
@@ -262,7 +265,7 @@
 
         <div class="secDySale" style="padding-bottom:10px;">
 					<span class="salesDateTime" style="padding-bottom:10px;">
-						Friday 03/30
+						<{$tr2}>
 						<span class="salesTagIcon fabShopSprite"></span>
 					</span>
 					<ul>
@@ -274,23 +277,22 @@
   									<span class="salesDateBox borderR9">
   										<span class="triIcon"></span>
   										<span class="salesWatchIcon fabShopSprite"></span>
-                      <span>starts 03/30 11am ET</span>
+                     		 		<span>starts <{$tr2}> 11am ET</span>
   									</span>
   									<ul id="upcmgContent" class="showHideToggleClass">
+  										<{section loop=$tr2Data name=t2d}>
   											<li>
   												<a href="http://fab.com/sale/4544/" alt="">
-  													<span class="title">Moooi</span>
-  													<span class="des">Dutch Design Masterpieces</span>
+  													<span class="title"><{$tr2Data[t2d].w_name}></span>
+  													<span class="des"><{$tr2Data[t2d].w_cat}></span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4544/" class="filler" alt=""><img src="./fab.com_files/4544-300x300-1332960801.png" alt="" width="300" height="300" title=""></a>
+  													<a href="http://fab.com/sale/4544/" class="filler" alt=""><img src="<{$public}>/images/ware/<{$tr2Data[t2d].w_pic}>" alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
   														<span class="floatLeft">
-  															<h3>Moooi</h3>
-  															<span class="imgDescription">
-  																Dutch Design Masterpieces
-  															</span>
+  															<h3><{$tr2Data[t2d].w_name}></h3>
+  															<span class="imgDescription"><{$tr2Data[t2d].w_cat}></span>
   														</span>
   														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4544/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
@@ -302,6 +304,7 @@
   													</span>
   												</span>
   											</li>
+ 										<{/section}>
   									</ul>
   								</li>
 								
@@ -452,7 +455,7 @@
 
         <div class="trdDySale" style="padding-bottom:10px;">
 					<span class="salesDateTime" style="padding-bottom:10px;">
-						Saturday 03/31
+						<{$tr3}>
 						<span class="salesTagIcon fabShopSprite"></span>
 					</span>
 					<ul>
@@ -464,23 +467,22 @@
   									<span class="salesDateBox borderR9">
   										<span class="triIcon"></span>
   										<span class="salesWatchIcon fabShopSprite"></span>
-                      <span>starts 03/31 11am ET</span>
+                      					<span>starts <{$tr3}> 11am ET</span>
   									</span>
   									<ul id="upcmgContent" class="showHideToggleClass">
+  									<{section loop=$tr3Data name=t3d}>
   											<li>
   												<a href="http://fab.com/sale/4616/" alt="">
-  													<span class="title">sofiacashmere</span>
-  													<span class="des">Travel in Cashmere</span>
+  													<span class="title"><{$tr3Data[t3d].w_name}></span>
+  													<span class="des"><{$tr3Data[t3d].w_cat}></span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4616/" class="filler" alt=""><img src="./fab.com_files/4616-300x300-1332952871.png" alt="" width="300" height="300" title=""></a>
+  													<a href="http://fab.com/sale/4616/" class="filler" alt=""><img src="<{$public}>/images/ware/<{$tr3Data[t3d].w_pic}>" alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
   														<span class="floatLeft">
-  															<h3>sofiacashmere</h3>
-  															<span class="imgDescription">
-  																Travel in Cashmere
-  															</span>
+  															<h3><{$tr3Data[t3d].w_name}></h3>
+  															<span class="imgDescription"><{$tr3Data[t3d].w_cat}></span>
   														</span>
   														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4616/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
@@ -492,81 +494,7 @@
   													</span>
   												</span>
   											</li>
-  											<li>
-  												<a href="http://fab.com/sale/4640/" alt="">
-  													<span class="title">fail jewelry</span>
-  													<span class="des">Simply Handmade Accessories</span>
-  												</a>
-  												<span class="imgList transBrd transBrdHvr hide">
-  													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4640/" class="filler" alt=""><img src="./fab.com_files/4640-300x300-1332970110.png" alt="" width="300" height="300" title=""></a>
-  													<span class="imgInfoBottom">
-  														<span class="floatLeft">
-  															<h3>fail jewelry</h3>
-  															<span class="imgDescription">
-  																Simply Handmade Accessories
-  															</span>
-  														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4640/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-  													</span>
-  													<span class="imgInfoTopHov hide">
-  														<h3 class="imgDesEndSn">
-  															Sale Ends in 5 days
-  														</h3>
-  														<span class="fabShopSprite greyClockBig marginLeft5"></span>
-  													</span>
-  												</span>
-  											</li>
-  											<li>
-  												<a href="http://fab.com/sale/4556/" alt="">
-  													<span class="title">Domitalia</span>
-  													<span class="des">Innovative Outdoor Furniture</span>
-  												</a>
-  												<span class="imgList transBrd transBrdHvr hide">
-  													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4556/" class="filler" alt=""><img src="./fab.com_files/4556-300x300-1332853281.png" alt="" width="300" height="300" title=""></a>
-  													<span class="imgInfoBottom">
-  														<span class="floatLeft">
-  															<h3>Domitalia</h3>
-  															<span class="imgDescription">
-  																Innovative Outdoor Furniture
-  															</span>
-  														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4556/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-  													</span>
-  													<span class="imgInfoTopHov hide">
-  														<h3 class="imgDesEndSn">
-  															Sale Ends in 9 days
-  														</h3>
-  														<span class="fabShopSprite greyClockBig marginLeft5"></span>
-  													</span>
-  												</span>
-  											</li>
-  											<li>
-  												<a href="http://fab.com/sale/4563/" alt="">
-  													<span class="title">Uptown Soap Co.</span>
-  													<span class="des">Handcrafted Soaps and Creams</span>
-  												</a>
-  												<span class="imgList transBrd transBrdHvr hide">
-  													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4563/" class="filler" alt=""><img src="./fab.com_files/4563-300x300-1332787203.png" alt="" width="300" height="300" title=""></a>
-  													<span class="imgInfoBottom">
-  														<span class="floatLeft">
-  															<h3>Uptown Soap Co.</h3>
-  															<span class="imgDescription">
-  																Handcrafted Soaps and Creams
-  															</span>
-  														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4563/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-  													</span>
-  													<span class="imgInfoTopHov hide">
-  														<h3 class="imgDesEndSn">
-  															Sale Ends in 5 days
-  														</h3>
-  														<span class="fabShopSprite greyClockBig marginLeft5"></span>
-  													</span>
-  												</span>
-  											</li>
+ 										<{/section}>
   									</ul>
   								</li>
 								
