@@ -11,8 +11,25 @@
 					$newData=$s->limit(6)->where(array('w_type'=>'tj'))->select();
 					$this->assign('newData',$newData);
 					//快要过期产品
-					$endingsoondata=$s->limit(12)->order("sale_end asc")->select();
+					$endingsoondata=$s->limit(12)->order("sale_end asc")->where("sale_end<>''")->select();
 					$this->assign('endingsoondata',$endingsoondata);
+					//明天上线的产品
+//					echo "明天:".date("Y-m-d",strtotime("+1 day")). "<br>"; 
+					$tr1Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+1 day"))."%'")->order("sale_begin asc")->select();
+					$this->assign('tr1',date("l m/d",strtotime("+1 day")));
+					$this->assign('tr1Data',$tr1Data);
+//					print_r($tomorrowData);
+					//后天上线的产品
+					$tr2Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+2 day"))."%'")->order("sale_begin asc")->select();
+					$this->assign('tr2',date("l m/d",strtotime("+2 day")));
+					$this->assign('tr2Data',$tr2Data);
+					//大后天上线的产品
+					$tr3Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+3 day"))."%'")->order("sale_begin asc")->select();
+					$this->assign('tr3',date("l m/d",strtotime("+3 day")));
+					$this->assign('tr3Data',$tr3Data);
+					
+					
+					
 					//手机配件
 					$pj=$s->limit(6)->where(array('w_type'=>'pj'))->select();
 					$this->assign('pj',$pj);
@@ -31,9 +48,6 @@
 					$link=$l->select();
 					$this->assign('link',$link);
 					$this->display();
-					//注册方法
-					$this->register_function("compareDate","compareDate");
-
 		}
 		//商品单品类
 		function ware(){	
