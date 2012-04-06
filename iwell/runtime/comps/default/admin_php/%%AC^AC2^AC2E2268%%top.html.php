@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-03 12:30:19
+<?php /* Smarty version 2.6.18, created on 2012-04-06 13:24:13
          compiled from index/top.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -89,7 +89,7 @@ a img {
 /images/main_11.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="16%"><span class="STYLE5"></span></td>
-            <td width="75%"><div align="center"><span class="STYLE7">Never (<a href="http://Www.865171.cn" target="_blank">www.Xinyun</a>)</span></div></td>
+            <td width="75%"><div align="center"><span class="STYLE7" id="admin_time"></span></div></td>
             <td width="9%">&nbsp;</td>
           </tr>
         </table></td>

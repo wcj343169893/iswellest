@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>管理中心 - 修改商品 </title>
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="<{$res}>/css/general.css" rel="stylesheet" type="text/css" />
 <link href="<{$res}>/css/main.css" rel="stylesheet" type="text/css" />
-
+<script language="javascript" type="text/javascript" src="/public/DatePicker/WdatePicker.js"></script>
 </head>
 <body>
 <h1>
@@ -68,6 +68,16 @@
 					 <td class="label">积分:</td>
 					 <td> <input type='text' name='w_jf' maxlength="20" value='' size='27' /> <font color="red">*</font><br> 
 					 购买该商品时最多可以使用多少钱的积分
+					 </td>
+		</tr>
+		<tr>
+					 <td class="label">上架时间:</td>
+					 <td> <input type='text' name='sale_begin' maxlength="20" value='' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
+					 </td>
+		</tr>
+		<tr>
+					 <td class="label">下架时间:</td>
+					 <td> <input type='text' name='sale_end' maxlength="20" value='' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
 					 </td>
 		</tr>
 		<tr>

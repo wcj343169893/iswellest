@@ -60,13 +60,14 @@ a img {
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">编号</span></div></td>
         <td width="30%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">商品名称</span></div></td>
-        <td width="14%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">价格</span></div></td>
-        <td width="16%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">库存</span></div></td>
+        <td width="4%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">价格</span></div></td>
+        <td width="4%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">库存</span></div></td>
         <td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">热销</span></div></td>
 	    <td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">精品</span></div></td>
 		<td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">新品</span></div></td>
+		<td width="13%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">上架时间</span></div></td>
+		<td width="13%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">下架时间</span></div></td>
 		<td width="3%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">上架</span></div></td>
-
         <td width="14%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
 	  <{section loop=$data name='ls'}>
@@ -81,6 +82,8 @@ a img {
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><img src="<{$res}>/images/yes.gif"></div></td>
 		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><img src="<{$res}>/images/yes.gif"></div></td>
 		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><img src="<{$res}>/images/yes.gif"></div></td>
+		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><{$data[ls].sale_begin}></div></td>
+		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><{$data[ls].sale_end}></div></td>
 		<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
 		<{if $data[ls].is_up eq 1}>
 		<img src="<{$res}>/images/yes.gif">

@@ -4,7 +4,6 @@
 			return $_SERVER[REMOTE_ADDR];
 	}
 	function dsubstr($str,$length=null){
-//		return substr($str, 0,$length);
-echo "ok";
+		return substr($str, 0,$length);
 	}
 ?>
