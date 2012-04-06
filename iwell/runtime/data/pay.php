@@ -1,1 +1,0 @@
-<?php {"pri":"id","0":"p_name","1":"p_url","2":"p_pic","3":"is_bank"}

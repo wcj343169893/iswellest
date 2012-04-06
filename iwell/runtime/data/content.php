@@ -1,1 +1,0 @@
-<?php {"pri":"id","0":"title","1":"content","2":"ntime","3":"is_show"}

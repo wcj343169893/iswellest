@@ -1,1 +1,0 @@
-<?php {"pri":"id","0":"linkname","1":"linkurl"}
