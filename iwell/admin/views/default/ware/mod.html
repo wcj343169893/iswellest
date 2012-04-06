@@ -16,6 +16,12 @@
 </h1>
 <!--表格开始 -->
 <form action="<{$url}>/update" method='post' enctype="multipart/form-data">
+<input type="hidden" name="edit_time" value="" id="edit_time"/>
+<script language="javascript" type="text/javascript">
+	var edit_time=document.getElementById("edit_time");
+	var myDate = new Date();
+	edit_time.value=myDate.getTime();
+</script>
 <table width="100%" id="general-table">
 		<tr>
 				        <td class="label">商品名称:</td>
@@ -32,13 +38,6 @@
 						<td class="label">商品分类</td>
 						<td>
 							<{$select}>
-						<!--
-							<select name='w_cat'>
-							<{section loop=$cat name='ls'}>
-									<option value="<{$cat[ls].c_name}>" <{if $data.w_cat eq $cat[ls].c_name}>selected<{/if}>><{$cat[ls].c_name}></option>
-							<{/section}>
-							-->
-							</select>
 						</td>
 						 </td>
 		</tr>
@@ -46,7 +45,7 @@
 						<td class="label">商品品牌:</td>
 						<td> <select name='w_brand'>
 							<{section loop=$brand name='ls'}>
-									<option value="<{$brand[ls].b_name}>"<{if $data.w_brand eq $brand[ls].b_name}>selected<{/if}>><{$brand[ls].b_name}></option>
+									<option value="<{$brand[ls].id}>"<{if $data.w_brand eq $brand[ls].id}>selected<{/if}>><{$brand[ls].b_name}></option>
 							<{/section}>
 								</select>
 						<font color="red">*</font> </td>
@@ -66,18 +65,18 @@
 		</tr>
 		<tr>
 					 <td class="label">积分:</td>
-					 <td> <input type='text' name='w_jf' maxlength="20" value='' size='27' /> <font color="red">*</font><br> 
+					 <td> <input type='text' name='w_integral' maxlength="20" value='<{$data.w_integral}>' size='27' /> <font color="red">*</font><br> 
 					 购买该商品时最多可以使用多少钱的积分
 					 </td>
 		</tr>
 		<tr>
 					 <td class="label">上架时间:</td>
-					 <td> <input type='text' name='sale_begin' maxlength="20" value='' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
+					 <td> <input type='text' name='sale_begin' maxlength="20" value='<{$data.sale_begin}>' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
 					 </td>
 		</tr>
 		<tr>
 					 <td class="label">下架时间:</td>
-					 <td> <input type='text' name='sale_end' maxlength="20" value='' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
+					 <td> <input type='text' name='sale_end' maxlength="20" value='<{$data.sale_end}>' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
 					 </td>
 		</tr>
 		<tr>
