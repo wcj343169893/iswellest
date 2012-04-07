@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 22:34:26
+<?php /* Smarty version 2.6.18, created on 2012-04-07 13:21:38
          compiled from index/index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'date_format', 'index/index.html', 110, false),array('modifier', 'compareDate', 'index/index.html', 151, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'date_format', 'index/index.html', 110, false),array('modifier', 'compareDate', 'index/index.html', 120, false),)), $this); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -81,7 +81,7 @@ unset($_smarty_tpl_vars);
     <div class="fabBorderSpace"></div>
 <div class="clear"></div>
   <div id="featuredShop" class="poRel" style="*margin-bottom: 6px">
-    <h2 class="salesTitle salesTitleEndSn">Featured <em class="redText">Shops</em></h2>
+    <h2 class="salesTitle salesTitleEndSn"><em class="redText">推荐商品</em></h2>
     <div id="featuredShopSliderContent">
       <div class="imgSliderWrap">
         <div class="buttonBg floatLeft"><span id="nextButton" class="displayNone buttons floatLeft" style="display: none; "><span class="nextIcon fabShopSprite"></span></span></div>
@@ -121,9 +121,9 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 " alt="">
                     <span class="imgInfoBottom imgInfoBottomShopsMain">
                       <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative">
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle"><?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['w_name']; ?>
+                        <span class="floatLeft popTitleWrap"><em class="popShopTitle desc_111"><?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['w_name']; ?>
 </em>
-                          <h3 class=""><span class="mainTitlePopUp"><strong class="f14"><?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['w_price']; ?>
+                          <h3 class=""><span class="mainTitlePopUp"><strong class="f14">￥<?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['w_price']; ?>
 </strong></span></h3>
                         </span>
                       </span>
@@ -141,7 +141,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
   <div class="fabBorderSpace"></div>
 
   <div id="salesListPage">
-    <h1 class="salesTitle salesTitleEndSn "><em class="redText">New</em> Sales</h1>
+    <h1 class="salesTitle salesTitleEndSn "><em class="redText"></em>最新商品</h1>
     <ul class="salesWrap" style="width: 938px;">
     	<?php unset($this->_sections['nd']);
 $this->_sections['nd']['loop'] = is_array($_loop=$this->_tpl_vars['newData']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -168,9 +168,13 @@ $this->_sections['nd']['first']      = ($this->_sections['nd']['iteration'] == 1
 $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $this->_sections['nd']['total']);
 ?>
         <li class="imgList <?php if ($this->_sections['nd']['index']%2 == 1): ?>odd<?php else: ?>even<?php endif; ?> filler">
-          <a href="http://fab.com/sale/4471/" alt="" title=""><img src="<?php echo $this->_tpl_vars['public']; ?>
+          <a href="http://fab.com/sale/4471/" alt="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+" title="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+"><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/ware/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_pic']; ?>
-" alt="" title=""></a>
+" alt="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+" title="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+" style="width:460px;height: 460px;"/></a>
           <a class="dB" href="http://fab.com/sale/4471/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoTop">
               <span class="floatLeft">
@@ -178,7 +182,7 @@ $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $
  end:<?php echo ((is_array($_tmp=$this->_tpl_vars['newData'][$this->_sections['nd']['index']]['sale_end'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%Y-%m-%d") : smarty_modifier_date_format($_tmp, "%Y-%m-%d")); ?>
 
                 </h3>
-                <span class="imgDescription"><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+                <span class="imgDescription desc_345"><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
 </span>
               </span>
               <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4471/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
@@ -187,7 +191,7 @@ $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $
           <a class="dB" href="http://fab.com/sale/4471/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoBottomHov hide">
               <h3 class="imgDesEndSn">
-                <?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+                <?php echo ((is_array($_tmp=$this->_tpl_vars['newData'][$this->_sections['nd']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
  
               </h3>
               <span class="fabShopSprite greyClockBig marginLeft5"></span>
@@ -236,7 +240,7 @@ $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] ==
             <span class="imgInfoBottom">
               <span class="floatLeft">
                 <h3>  </h3>
-                <span class="imgDescription"><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['w_name']; ?>
+                <span class="imgDescription desc_226"><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['w_name']; ?>
 </span>
               </span>
               <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4356/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
@@ -245,8 +249,8 @@ $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] ==
           <a class="dB" href="http://fab.com/sale/4356/" alt="" title="" style="*cursor: pointer">
             <span class="imgInfoTopHov hide">
               <h3 class="imgDesEndSn">
-                Sale Ends in <?php echo ((is_array($_tmp=$this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
- minutes
+                <?php echo ((is_array($_tmp=$this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
+
               </h3>
               <span class="fabShopSprite greyClockBig marginLeft5"></span>
             </span>
@@ -262,7 +266,7 @@ $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] ==
     <h2 class="salesTitle salesTitleEndSn floatLeft"><em class="redText">Upcoming</em> Sales</h2>
     <span class="floatRight viewAllButton">
       <a class="" href="http://fab.com/upcoming-sales/">
-        View All
+        	更多
         <span class="buyNowBg round20 viewAllBg floatRight">
           <span class="fabShopSprite gtIcon imgInfoArrow"></span>
         </span>
@@ -325,7 +329,7 @@ $this->_sections['td']['last']       = ($this->_sections['td']['iteration'] == $
 /images/ware/<?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_pic']; ?>
 " alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
-  														<span class="floatLeft">
+  														<span class="floatLeft desc_236">
   															<h3><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_name']; ?>
 </h3>
   															<span class="imgDescription">
@@ -337,7 +341,8 @@ $this->_sections['td']['last']       = ($this->_sections['td']['iteration'] == $
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
-  															Sale Ends in 7 days
+  															<?php echo ((is_array($_tmp=$this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
+
   														</h3>
   														<span class="fabShopSprite greyClockBig marginLeft5"></span>
   													</span>
@@ -437,7 +442,7 @@ $this->_sections['t2d']['last']       = ($this->_sections['t2d']['iteration'] ==
 ?>
   											<li>
   												<a href="http://fab.com/sale/4544/" alt="">
-  													<span class="title"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
+  													<span class="title desc_246"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
 </span>
   													<span class="des"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_cat']; ?>
 </span>
@@ -448,7 +453,7 @@ $this->_sections['t2d']['last']       = ($this->_sections['t2d']['iteration'] ==
 /images/ware/<?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_pic']; ?>
 " alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
-  														<span class="floatLeft">
+  														<span class="floatLeft desc_236">
   															<h3><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
 </h3>
   															<span class="imgDescription"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_cat']; ?>
@@ -458,7 +463,8 @@ $this->_sections['t2d']['last']       = ($this->_sections['t2d']['iteration'] ==
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
-  															Sale Ends in 8 days
+  															<?php echo ((is_array($_tmp=$this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
+
   														</h3>
   														<span class="fabShopSprite greyClockBig marginLeft5"></span>
   													</span>
@@ -669,7 +675,7 @@ $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] ==
 /images/ware/<?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_pic']; ?>
 " alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
-  														<span class="floatLeft">
+  														<span class="floatLeft desc_236">
   															<h3><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_name']; ?>
 </h3>
   															<span class="imgDescription"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_cat']; ?>
@@ -679,7 +685,8 @@ $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] ==
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
-  															Sale Ends in 5 days
+  															<?php echo ((is_array($_tmp=$this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
+
   														</h3>
   														<span class="fabShopSprite greyClockBig marginLeft5"></span>
   													</span>
