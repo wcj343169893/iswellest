@@ -12,7 +12,7 @@
 <h1>
 <span class="action-span"><a href="<{$url}>/index">商品信息</a></span>
 <span class="action-span1"><a href="<{$app}>/index/info">管理中心</a> </span><span id="search_id" class="action-span1"> - 修改商品</span>
-<div style="clear:both"></div>
+<div style="clear:both;"></div>
 </h1>
 <!--表格开始 -->
 <form action="<{$url}>/update" method='post' enctype="multipart/form-data">
@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 						<td class="label">商品货号:</td>
-						<td> <input type='text' name='w_code' maxlength="20" value='<{$data.w_code}>' size='27' /> <font color="red">*</font> <br>
+						<td> <input type='text' name='w_code' maxlength="20" value='<{$data.w_code}>' size='27' /> <font color="red">*</font> <br/>
 							如果您不输入商品货号，系统将自动生成一个唯一的货号。
 						</td>
 					
@@ -39,7 +39,6 @@
 						<td>
 							<{$select}>
 						</td>
-						 </td>
 		</tr>
 		<tr>
 						<td class="label">商品品牌:</td>
@@ -47,7 +46,7 @@
 							<{section loop=$brand name='ls'}>
 									<option value="<{$brand[ls].id}>"<{if $data.w_brand eq $brand[ls].id}>selected<{/if}>><{$brand[ls].b_name}></option>
 							<{/section}>
-								</select>
+							</select>
 						<font color="red">*</font> </td>
 		</tr>
 		<tr>
@@ -65,7 +64,7 @@
 		</tr>
 		<tr>
 					 <td class="label">积分:</td>
-					 <td> <input type='text' name='w_integral' maxlength="20" value='<{$data.w_integral}>' size='27' /> <font color="red">*</font><br> 
+					 <td> <input type='text' name='w_integral' maxlength="20" value='<{$data.w_integral}>' size='27' /> <font color="red">*</font><br/> 
 					 购买该商品时最多可以使用多少钱的积分
 					 </td>
 		</tr>
@@ -98,3 +97,4 @@
 </form>
 <!--表格结束 -->
 </body>
+</html>
