@@ -39,3 +39,9 @@ function checkall(){
 		$("#checkall").attr("checked", iCheck);
 	});
 }
+//页面初始化加载
+$(document).ready(function(){
+	if($("#checkall").length>0){
+		checkall();
+	}
+});
