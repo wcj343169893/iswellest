@@ -21,7 +21,7 @@ h1,h2,h3,h4,h5,h6 {font-weight:normal;font-size:100%;}
 body {font-size:12px;font-family:simsun,arial,tahoma;line-height:1.5;}
 a {color:#005aa0;text-decoration:none;}
 a:hover {color:#f00;text-decoration:none;}
-.w960 {width:960px;overflow:hidden;margin:0 auto;}
+.w960 {width:968px;overflow:hidden;margin:0 auto;background: white url(../images/bg-mesh-2px-gap.png) repeat scroll;padding: 0px 6px;}
 .c666 {color:#666;}
 .cde5 {color:#de5d00;}
 .c040 {color:#040af8;}
@@ -112,18 +112,6 @@ a:hover {color:#f00;text-decoration:none;}
 #service dd {padding:4px 0 4px 24px;}
 #service dl a{color:#666;}
 #service dl a:hover {text-decoration:underline;}
-#footer {width:100%;height:195px;padding-top:6px;margin-top:10px;background:url(header/h_f_sprite.png) 0 -37px repeat-x;text-align:center;}
-#footer a:hover {text-decoration:underline;}
-#links {height:30px;width:100%;overflow:hidden;background:#53246f;color:#fff;line-height:30px;}
-#links dt,#links dd {display:inline;}
-#links dd a {color:#fff;padding:0 10px 0 5px;}
-.footer_nav {width:100%;overflow:hidden;color:#000;margin-top:10px;}
-.footer_nav li {display:inline;}
-.footer_nav a {padding:0 10px 0 5px;color:#000;}
-.footer_links {width:100%;overflow:hidden;color:#000;margin-top:10px;}
-.footer_links li {display:inline;margin:0 5px;}
-.footer_links li img {border:1px solid #dadada;}
-.footer_links li a:hover img {border-color:#f00;}
 
 
 
@@ -154,3 +142,4 @@ a:hover {color:#f00;text-decoration:none;}
 #index_hd .index_top{ padding-down:53px;}
 #nav_goods{ width:960px;}
  #links{ width:960px; margin:0 auto;}
+.frame_main{background: white;padding: 13px 15px;}

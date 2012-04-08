@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 21:41:12
+<?php /* Smarty version 2.6.18, created on 2012-04-08 22:26:54
          compiled from ware/add.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,6 +10,8 @@
 /css/general.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->_tpl_vars['res']; ?>
 /css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['res']; ?>
+/js/common.js"></script>
 <script language="javascript" type="text/javascript" src="/public/DatePicker/WdatePicker.js"></script>
 
 </head>
@@ -33,6 +35,14 @@
 	add_time.value=myDate.getTime();
 	edit_time.value=myDate.getTime();
 </script>
+<div>
+	<ul>
+		<li class="tab_2" id="mall_t_1" onmouseover="Tab(1, 2, 'mall', 'tab');">商品基本信息</li>
+		<li class="tab_1" id="mall_t_2" onmouseover="Tab(2, 2, 'mall', 'tab');">更多信息</li>
+	</ul>
+</div>
+<div>
+<div id="mall_c_1">
 <table width="100%" id="general-table">
 		<tr>
 				        <td class="label">商品名称:</td>
@@ -102,7 +112,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 		</tr>
 		<tr>
 					 <td class="label">积分:</td>
-					 <td> <input type='text' name='price' maxlength="20" value='' size='27' /> <font color="red">*</font><br> 
+					 <td> <input type='text' name='w_integral' maxlength="20" value='' size='27' /> <font color="red">*</font><br> 
 					 购买该商品时最多可以使用多少钱的积分
 					 </td>
 		</tr>
@@ -127,7 +137,9 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 						
 		</tr>
 </table>
-
+</div>
+<div id="mall_c_2" style="display: none; "></div>
+</div>
       <div class="button-div" style='margin-right:100px;margin-top:20px'>
         <input type="submit" value=" 确定 " />
         <input type="reset" value=" 重置 " />

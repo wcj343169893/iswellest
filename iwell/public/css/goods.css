@@ -6,10 +6,10 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 
 /*商品信息左右分列*/
 .goods_info_left {width:435px;overflow:hidden;float:left;}
-.goods_info_right {width:500px;overflow:hidden;float:right;}
+.goods_info_right {width:480px;overflow:hidden;float:right;}
 /*商品左右分类*/
-.goods_left {width:770px;overflow:hidden;float:left;}
-.goods_right {width:180px;overflow:hidden;float:right;}
+.goods_left {width:640px;overflow:hidden;float:left;}
+.goods_right {width:280px;overflow:hidden;float:right;}
 
 /*商品图*/
 #goods_img {width:350px;height:350px;padding:10px 0;float:left;overflow:hidden;border:1px solid #ccc;}
@@ -67,14 +67,16 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 /*销售排行*/
 .sell_ranking_tit {height:31px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods/goods.png) -161px -284px no-repeat #f2f2f2;font-weight:700;}
 #sell_ranking {border:1px solid #ccc;margin-top:2px;}
-#sell_tab_main {margin:10px 2px 0;border-bottom:1px solid #ccc;text-align:center;}
-#sell_tab_main li {display:inline-block;*display:inline;*zoom:1;*margin:0 2px;width:49px;height:23px;line-height:23px;border:1px solid #ccc;border-bottom:0 none;background:url(goods/goods.png) 0 -201px no-repeat;}
+#sell_tab_main {margin:10px 2px 0;border-bottom:1px solid #ccc;padding-left:20px;}
+#sell_tab_main li {display:inline-block;*display:inline;*zoom:1;*margin:0 2px;width:69px;height:23px;line-height:23px;border:1px solid #ccc;border-bottom:0 none;background:url(goods/goods.png) 0 -201px no-repeat;text-align: center;}
 #sell_tab_main li.active {background-position:0 -226px;font-weight:700;}
 #sell_tab_sub ol {margin:0 5px;}
 #sell_tab_sub li {padding-top:10px;zoom:1;}
 #sell_tab_sub li:after{content:' ';display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
 #sell_tab_sub li p.p_0 {float:left;width:70px;}
 #sell_tab_sub li p.p_0 strong.strong_0 {float:left;color:#f00;width:14px;}
+
+#sell_tab_sub a{color: #333;}
 
 /*最近浏览*/
 .recent_view_tit {height:31px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods/goods.png) -161px -251px no-repeat #f2f2f2;font-weight:700;}
@@ -100,7 +102,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 #recomm_fit_slide li p.p_0 {height:20px;line-height:20px;overflow:hidden;text-align:center;}
 
 /*商品相关信息*/
-#goods_info_main {height:31px;border:1px solid #ccc;margin-top:10px;position:relative;}
+#goods_info_main {height:31px;border-bottom:2px solid #ccc;margin-top:10px;position:relative;}
 #goods_info_main li {width:87px;height:31px;line-height:31px;float:left;background:url(goods/goods.png) 0 -1px no-repeat;text-align:center;margin-right:3px;position:relative;}
 #goods_info_main li.active {height:38px;line-height:38px;margin-top:-7px;background-position:0 -34px;}
 #goods_info_main li a {color:#000;}
@@ -131,10 +133,10 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .goods_mess_usr img {display:block;border:2px solid #ccc;margin:0 auto;}
 .goods_mess_usr a:hover img {border-color:#ffbc00;}
 .goods_mess_usr a.a_0 {color:#1105b1;text-decoration:underline;}
-.goods_mess_detail {width:668px;float:left;border:1px solid #ccc;}
+.goods_mess_detail {width:638px;float:left;border:1px solid #ccc;}
 .goods_mess_tit {height:23px;line-height:23px;border-bottom:1px solid #ccc;background:url(goods/goods.png) 0 -201px repeat-x;padding:0 20px;overflow:hidden;}
 .goods_mess_tit b.goods_stars {margin-top:2px;margin-left:10px;}
-.goods_mess_text {padding:10px 0;border-bottom:1px solid #ccc;width:100%;overflow:hidden;position:relative;}
+.goods_mess_text {padding:10px 0;border-bottom:1px solid #ccc;width:100%;overflow:hidden;position:relative;margin-top: 10px;}
 .goods_mess_text_left {float:left;width:520px;display:inline;margin-left:30px;}
 .goods_mess_text a.a_0 {display:block;border:1px solid #ccc;width:73px;height:25px;color:#fff;text-align:center;line-height:25px;background:url(goods/goods.png) 0 -291px repeat-x;bottom:10px;right:10px;position:absolute;}
 .goods_mess_reply {padding:10px 30px;}
@@ -156,3 +158,6 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .c502 {color:#50216c;}
 .cffb {color:#ffbc00;}
 .yahei {font-family:'MicroSoft yaHei';}
+#sell_tab_sub{
+	padding: 10px;
+}

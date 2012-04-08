@@ -1,5 +1,6 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 19:53:54
+<?php /* Smarty version 2.6.18, created on 2012-04-08 18:41:31
          compiled from public/foot.html */ ?>
+<div class="w960 height24"></div>
 <div id="footerWrapper">
   <div id="footer">
     <ul class="footerLinks floatLeft">

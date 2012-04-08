@@ -1,13 +1,14 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-07 13:21:38
+<?php /* Smarty version 2.6.18, created on 2012-04-08 18:40:24
          compiled from index/index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'date_format', 'index/index.html', 110, false),array('modifier', 'compareDate', 'index/index.html', 120, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'compareDate', 'index/index.html', 68, false),)), $this); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>iswellest</title>
+<title><?php echo $this->_tpl_vars['lan']['site_title']; ?>
+-首页</title>
 <script type="text/javascript" src="<?php echo $this->_tpl_vars['public']; ?>
 /js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo $this->_tpl_vars['public']; ?>
@@ -26,57 +27,6 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div id="fabWrapper" class="wrapperMesh">
-  <div id="madonnaflwDownWrap" class="poAbs">
-  <div id="madonnaflwDownInnerWrap" class="poRel">
-    <a class="madonnaCross" id="crossIconTPHP" href="javascript:void(0);"><span class="fabShopSprite greyCross greyCrossForTPage" style="top:19px;left:23px" alt="cross" title="Hide"></span><span class="hideTextM" style="color: #858585;font-size: 11px;left: 37px;position: absolute;top:1.58em;">Hide</span></a>
-    <div class="clear"></div>
-    <div class="madonnaWrap">
-      <div class="floatLeft" style="width: 252px;">
-        <a href="http://fab.com/madonna/" alt="" style="border: none;outline: none;"><img src="./fab.com_files/thumb_mdna.png" alt="" title=""></a>
-      </div>
-      <div class="floatRight" style="width: 655px;">
-        <a href="http://fab.com/madonna/" alt="" style="border: none;outline: none;"><img src="./fab.com_files/madonna_name.PNG" alt="" title=""></a>
-        <span class="font28 colorCCC dIB fontLtr " style="text-align: left;padding: 15px 0 0 0;">Special Opportunity <strong style="color: #fff;">for Fab Members Only!</strong></span>
-        <div style="border-bottom: thin dotted #666; margin: 12px 0px;"></div>
-        <div class="font18 colorCCC dIB fontLtr" style="padding-bottom: 10px;">Get Madonna's <span class="fontLtr" style="color: #ccc;">New Album, </span>MDNA for only  <strong style="color: #fff;font-size: 20px;">$7.99</strong><span class="fabShopSprite fabTagBig"></span><strong style="color: #fff;font-size: 20px;">fab&nbsp;&nbsp;</strong> <span style="text-decoration: line-through;">$14.99 retail price</span></div>
-        <ul style="display:inline-block;margin: 15px auto 10px;float: left">
-          <li class="floatLeft">
-            <a class="" href="http://fab.com/madonna/"><span class="flyDownMicButton" style="width: 190px;" align="center"><span class="flyDownMicButtonText" style="font-size: 15px;font-weight: bold;display: inline-block;margin-top: 1px;">Buy Now!</span></span></a>
-          </li>
-        </ul>
-        <ul style="width: 410px;float: right;" id="madonnaFavInfo">
-          <li class="floatLeft" style="float: left;margin-top: 21px;padding: 3px 0 3px 30px;width:85px;">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://fab.com/madonna/53pfhs/?fref=madonnatweet" data-text="#MADONNA&#39;s #MDNA for $7.99. 47% off $14.99 retail, only @Fab. Smile, you&#39;re designed to dance.">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </li>
-          <li class="floatLeft madonnaShareFB" style="float: left;margin-top: 21px;padding: 3px 0 3px 10px;width: 93px;">
-              <fb:like href="http://fab.com/sale/4520/product/101111?fref=fb-like" layout="button_count" show_faces="false" action="like" colorscheme="light" scrolling="no" frameborder="0" allowtransparency="true" width="450" class=" fb_edge_widget_with_comment fb_iframe_widget"><span><iframe id="f13fe0424c" name="f2cadb555c" scrolling="no" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; overflow-x: hidden; overflow-y: hidden; height: 21px; width: 450px; " title="Like this content on Facebook." class="fb_ltr" src="http://www.facebook.com/plugins/like.php?action=like&api_key=105523866144321&channel_url=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%23cb%3Dfb3a01ddc%26origin%3Dhttp%253A%252F%252Ffab.com%252Ff37d54d8c4%26relation%3Dparent.parent%26transport%3Dpostmessage&colorscheme=light&extended_social_context=false&href=http%3A%2F%2Ffab.com%2Fsale%2F4520%2Fproduct%2F101111%3Ffref%3Dfb-like&layout=button_count&locale=en_US&node_type=link&sdk=joey&show_faces=false&width=450"></iframe></span></fb:like>
-          </li>
-          <li class="floatLeft" style="float: right;margin-top: 14px;">
-            <div id="productFavCom" class="poRel floatLeft prodFavCommHolder" style="padding-right: 0"><div id="productFavCom" class="poRel floatLeft">
-    <div id="favProductLoader" class="poAbs" style="display:none;left:-9px;top:7px;"></div>
-    <div class="fabShopSprite favIcon floatLeft poRel" id="favIconOnProd">
-      <div id="wantToSayFav" class="round7">
-        <span class="likeText dB color999 fontFamG fontIt font12">Like this product?</span>
-        <span class="addToFavText dB">ADD TO FAVORITES</span>
-        <span class="fabShopSprite crossTipIcon dIB poAbs crossTipIconAlg"></span>
-      </div>
-    </div>
-  <span class="favCount floatLeft marginLeft5" style="color:#fff!important">98</span>
-</div>
-
-</div>
-          </li>
-          
-        </ul>
-      </div>
-      <div class="clear"></div>
-    </div>
-
-    
-  </div>
-   <div class="clear"></div>
-</div>
   <div id="contentWrapper">
     <div class="fabBorderSpace"></div>
 <div class="clear"></div>
@@ -167,28 +117,27 @@ $this->_sections['nd']['index_next'] = $this->_sections['nd']['index'] + $this->
 $this->_sections['nd']['first']      = ($this->_sections['nd']['iteration'] == 1);
 $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $this->_sections['nd']['total']);
 ?>
-        <li class="imgList <?php if ($this->_sections['nd']['index']%2 == 1): ?>odd<?php else: ?>even<?php endif; ?> filler">
-          <a href="http://fab.com/sale/4471/" alt="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
-" title="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
-"><img src="<?php echo $this->_tpl_vars['public']; ?>
+        <li class="imgList <?php if ($this->_sections['nd']['index']%2 == 1): ?>even<?php else: ?>odd<?php endif; ?> filler">
+          <a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['id']; ?>
+" title=""><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/ware/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_pic']; ?>
 " alt="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
-" title="<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
 " style="width:460px;height: 460px;"/></a>
-          <a class="dB" href="http://fab.com/sale/4471/" alt="" title="" style="*cursor: pointer">
+          <a class="dB" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['id']; ?>
+" title="" style="*cursor: pointer">
             <span class="imgInfoTop">
               <span class="floatLeft">
-                <h3>begin:<?php echo ((is_array($_tmp=$this->_tpl_vars['newData'][$this->_sections['nd']['index']]['sale_begin'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%Y-%m-%d") : smarty_modifier_date_format($_tmp, "%Y-%m-%d")); ?>
- end:<?php echo ((is_array($_tmp=$this->_tpl_vars['newData'][$this->_sections['nd']['index']]['sale_end'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%Y-%m-%d") : smarty_modifier_date_format($_tmp, "%Y-%m-%d")); ?>
-
-                </h3>
+                <h3><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['c_name']; ?>
+</h3>
                 <span class="imgDescription desc_345"><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
 </span>
               </span>
-              <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4471/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
+              <span class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['id']; ?>
+"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
             </span>
           </a>
-          <a class="dB" href="http://fab.com/sale/4471/" alt="" title="" style="*cursor: pointer">
+          <a class="dB" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['id']; ?>
+" title="" style="*cursor: pointer">
             <span class="imgInfoBottomHov hide">
               <h3 class="imgDesEndSn">
                 <?php echo ((is_array($_tmp=$this->_tpl_vars['newData'][$this->_sections['nd']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
@@ -206,7 +155,7 @@ $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $
   <div class="clear"></div>
 
   <div class="endingSoonWrap">
-    <h2 class="salesTitle salesTitleEndSn ">Ending <em class="redText">Soon</em></h2>
+    <h2 class="salesTitle salesTitleEndSn ">即将<em class="redText"> 下架</em></h2>
     <ul class="endSoonWrap">
     <?php unset($this->_sections['esd']);
 $this->_sections['esd']['loop'] = is_array($_loop=$this->_tpl_vars['endingsoondata']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -233,20 +182,25 @@ $this->_sections['esd']['first']      = ($this->_sections['esd']['iteration'] ==
 $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] == $this->_sections['esd']['total']);
 ?>
         <li class="imgList">
-          <a class="filler" href="http://fab.com/sale/4356/" alt="" title=""><img src="<?php echo $this->_tpl_vars['public']; ?>
+          <a class="filler" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['id']; ?>
+"  title=""><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/ware/<?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['w_pic']; ?>
-" alt="" title=""></a>
-          <a class="dB" href="http://fab.com/sale/4356/" alt="" title="" style="*cursor: pointer">
+" alt="" title=""/></a>
+          <a class="dB" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['id']; ?>
+" title="" style="*cursor: pointer">
             <span class="imgInfoBottom">
               <span class="floatLeft">
-                <h3>  </h3>
+                <h3><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['c_name']; ?>
+</h3>
                 <span class="imgDescription desc_226"><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['w_name']; ?>
 </span>
               </span>
-              <span class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4356/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
+              <span class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['id']; ?>
+"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
             </span>
           </a>
-          <a class="dB" href="http://fab.com/sale/4356/" alt="" title="" style="*cursor: pointer">
+          <a class="dB" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['id']; ?>
+" title="" style="*cursor: pointer">
             <span class="imgInfoTopHov hide">
               <h3 class="imgDesEndSn">
                 <?php echo ((is_array($_tmp=$this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
@@ -263,7 +217,7 @@ $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] ==
   <div class="fabBorderSpace"></div>
   <div class="clear"></div>
   <div class="upcommingWrap forIndex">
-    <h2 class="salesTitle salesTitleEndSn floatLeft"><em class="redText">Upcoming</em> Sales</h2>
+    <h2 class="salesTitle salesTitleEndSn floatLeft"><em class="redText">即将</em> 上架</h2>
     <span class="floatRight viewAllButton">
       <a class="" href="http://fab.com/upcoming-sales/">
         	更多
@@ -317,27 +271,28 @@ $this->_sections['td']['first']      = ($this->_sections['td']['iteration'] == 1
 $this->_sections['td']['last']       = ($this->_sections['td']['iteration'] == $this->_sections['td']['total']);
 ?>
   											<li>
-  												<a href="http://fab.com/sale/4481/" alt="">
-  													<span class="title"><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_name']; ?>
+  												<a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['id']; ?>
+">
+  													<span class="title"><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['c_name']; ?>
 </span>
-  													<span class="des"><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_cat']; ?>
+  													<span class="des"><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_name']; ?>
 </span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4481/" class="filler" alt=""><img src="<?php echo $this->_tpl_vars['public']; ?>
+  													<a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['id']; ?>
+" class="filler"><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/ware/<?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_pic']; ?>
-" alt="" width="300" height="300" title=""></a>
+" alt="" width="300" height="300" title="" /></a>
   													<span class="imgInfoBottom">
-  														<span class="floatLeft desc_236">
-  															<h3><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_name']; ?>
+  														<span class="floatLeft">
+  															<h3><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['c_name']; ?>
 </h3>
-  															<span class="imgDescription">
-  																<?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_cat']; ?>
-
-  															</span>
+  															<span class="imgDescription desc_236"><?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['w_name']; ?>
+</span>
   														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4481/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+  														<a class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr1Data'][$this->_sections['td']['index']]['id']; ?>
+"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
@@ -441,25 +396,28 @@ $this->_sections['t2d']['first']      = ($this->_sections['t2d']['iteration'] ==
 $this->_sections['t2d']['last']       = ($this->_sections['t2d']['iteration'] == $this->_sections['t2d']['total']);
 ?>
   											<li>
-  												<a href="http://fab.com/sale/4544/" alt="">
-  													<span class="title desc_246"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
+  												<a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['id']; ?>
+" alt="">
+  													<span class="title desc_246"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['c_name']; ?>
 </span>
-  													<span class="des"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_cat']; ?>
+  													<span class="des"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
 </span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4544/" class="filler" alt=""><img src="<?php echo $this->_tpl_vars['public']; ?>
+  													<a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['id']; ?>
+" class="filler" alt=""><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/ware/<?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_pic']; ?>
 " alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
-  														<span class="floatLeft desc_236">
-  															<h3><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
+  														<span class="floatLeft ">
+  															<h3><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['c_name']; ?>
 </h3>
-  															<span class="imgDescription"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_cat']; ?>
+  															<span class="imgDescription desc_236"><?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['w_name']; ?>
 </span>
   														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4544/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+  														<a class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr2Data'][$this->_sections['t2d']['index']]['id']; ?>
+"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
@@ -663,25 +621,28 @@ $this->_sections['t3d']['first']      = ($this->_sections['t3d']['iteration'] ==
 $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] == $this->_sections['t3d']['total']);
 ?>
   											<li>
-  												<a href="http://fab.com/sale/4616/" alt="">
-  													<span class="title"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_name']; ?>
+  												<a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['id']; ?>
+">
+  													<span class="title"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['c_name']; ?>
 </span>
-  													<span class="des"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_cat']; ?>
+  													<span class="des"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_name']; ?>
 </span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="http://fab.com/sale/4616/" class="filler" alt=""><img src="<?php echo $this->_tpl_vars['public']; ?>
+  													<a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['id']; ?>
+" class="filler" alt=""><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/ware/<?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_pic']; ?>
 " alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
-  														<span class="floatLeft desc_236">
-  															<h3><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_name']; ?>
+  														<span class="floatLeft">
+  															<h3><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['c_name']; ?>
 </h3>
-  															<span class="imgDescription"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_cat']; ?>
+  															<span class="imgDescription desc_236"><?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['w_name']; ?>
 </span>
   														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4616/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+  														<a class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['tr3Data'][$this->_sections['t3d']['index']]['id']; ?>
+"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
@@ -705,7 +666,7 @@ $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] ==
   <div class="fabBorderSpace"></div>
   <div class="clear"></div>
   <div class="getInspiredWrap">
-    <h2 class="salesTitle salesTitleEndSn floatLeft">Get <em class="redText">Inspired</em></h2>
+    <h2 class="salesTitle salesTitleEndSn floatLeft"> <em class="redText">创意</em></h2>
     <a href="javascript:void(0)" onclick="window.location.href =&#39;http://fab.com/inspiration/#!/all/filter/popular-week&#39;" class="positionRel floatRight">
       <span class="buyNowBg round20 viewAllBg floatRight">
         <span class="fabShopSprite gtIcon imgInfoArrow"></span>
@@ -830,13 +791,9 @@ $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] ==
     </ul>
     <div class="clear"></div>
   </div>
-<div class="height24"></div>
-
-
   </div>
   <div id="push"></div>
 </div>
-
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'public/foot.html', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

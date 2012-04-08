@@ -5,30 +5,32 @@
 					$p=D('content'); 
 					$l=D('link');
 					//特价商品
-					$data=$s->limit(6)->where(array('w_type'=>'tj'))->select();
+					$data=$s->limit(6)->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","id,c_name")->select();
 					$this->assign('data',$data);
 					//最新产品
-					$newData=$s->limit(6)->where(array('w_type'=>'tj'))->select();
+					$newData=$s->limit(6)->order("sale_begin asc")->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","id,c_name")->select();
+// 					$result=$s->unit_select("SELECT w.*,c.c_name FROM pro_ware w LEFT JOIN pro_cat c ON w.w_cat=c.id WHERE sale_begin <> '' AND  DATE_FORMAT(sale_begin,'%Y%m%d%h%i')>DATE_FORMAT(NOW(),'%Y%m%d%h%i') ORDER BY sale_begin ASC LIMIT 0,10;");
+					
+// 					$result1=$s->limit(6)->order("sale_begin asc")->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","c_name")->select();
+// 					print_r($s->joins("cat","w_cat","id","id,c_name")->select());
 					$this->assign('newData',$newData);
 					//快要过期产品
-					$endingsoondata=$s->limit(12)->order("sale_end asc")->where("sale_end<>''")->select();
+					$endingsoondata=$s->limit(12)->order("sale_end asc")->where("sale_end<>''")->joins("cat","w_cat","id","id,c_name")->select();
 					$this->assign('endingsoondata',$endingsoondata);
 					//明天上线的产品
 //					echo "明天:".date("Y-m-d",strtotime("+1 day")). "<br>"; 
-					$tr1Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+1 day"))."%'")->order("sale_begin asc")->select();
+					$tr1Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+1 day"))."%'")->order("sale_begin asc")->joins("cat","w_cat","id","id,c_name")->select();
 					$this->assign('tr1',date("l m/d",strtotime("+1 day")));
 					$this->assign('tr1Data',$tr1Data);
 //					print_r($tomorrowData);
 					//后天上线的产品
-					$tr2Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+2 day"))."%'")->order("sale_begin asc")->select();
+					$tr2Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+2 day"))."%'")->order("sale_begin asc")->joins("cat","w_cat","id","id,c_name")->select();
 					$this->assign('tr2',date("l m/d",strtotime("+2 day")));
 					$this->assign('tr2Data',$tr2Data);
 					//大后天上线的产品
-					$tr3Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+3 day"))."%'")->order("sale_begin asc")->select();
+					$tr3Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+3 day"))."%'")->order("sale_begin asc")->joins("cat","w_cat","id","id,c_name")->select();
 					$this->assign('tr3',date("l m/d",strtotime("+3 day")));
 					$this->assign('tr3Data',$tr3Data);
-					
-					
 					
 					//手机配件
 					$pj=$s->limit(6)->where(array('w_type'=>'pj'))->select();
