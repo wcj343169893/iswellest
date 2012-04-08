@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 19:53:43
+<?php /* Smarty version 2.6.18, created on 2012-04-08 21:59:58
          compiled from ware/index.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,42 +8,25 @@
 /css/general.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->_tpl_vars['res']; ?>
 /css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['res']; ?>
+/js/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['res']; ?>
+/js/common.js"></script>
 <title>无标题文档</title>
-<style type="text/css">
-<!--
-body {
-	margin-left: 3px;
-	margin-top: 0px;
-	margin-right: 3px;
-	margin-bottom: 0px;
-}
-.STYLE1 {
-	color: #e1e2e3;
-	font-size: 12px;
-}
-.STYLE6 {color: #000000; font-size: 12; }
-.STYLE10 {color: #000000; font-size: 12px; }
-.STYLE19 {
-	color: #344b50;
-	font-size: 12px;
-}
-.STYLE21 {
-	font-size: 12px;
-	color: #3b6375;
-}
-.STYLE22 {
-	font-size: 12px;
-	color: #295568;
-}
-a img {
-	border:none;
-}
--->
-</style>
 </head>
 <h1>
-<span class="action-span"><a href="<?php echo $this->_tpl_vars['url']; ?>
-/add">添加商品</a></span>
+<span class="action-span">
+	<a href="<?php echo $this->_tpl_vars['url']; ?>
+/add">删除商品</a>
+</span>
+<span class="action-span">
+	<a href="<?php echo $this->_tpl_vars['url']; ?>
+/add">推荐商品</a>
+</span>
+<span class="action-span">
+	<a href="<?php echo $this->_tpl_vars['url']; ?>
+/add">添加商品</a>
+</span>
 <span class="action-span1"><a href="<?php echo $this->_tpl_vars['app']; ?>
 /index/info">管理中心</a> </span><span id="search_id" class="action-span1"> - 商品列表 </span>
 <div style="clear:both"></div>
@@ -62,7 +45,7 @@ a img {
     <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
       <tr>
         <td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div align="center">
-          <input type="checkbox" name="checkbox" id="checkbox" />
+          <input type="checkbox" name="checkbox" id="checkall" />
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">编号</span></div></td>
         <td width="30%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">商品名称</span></div></td>
@@ -102,7 +85,8 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 ?>
       <tr>
         <td height="20" bgcolor="#FFFFFF"><div align="center">
-          <input type="checkbox" name="checkbox2" id="checkbox2" />
+          <input type="checkbox" name="<?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['id']; ?>
+" class="checks" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19"><?php echo $this->_tpl_vars['data'][$this->_sections['ls']['index']]['id']; ?>
 </span></div></td>

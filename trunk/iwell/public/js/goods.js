@@ -130,7 +130,7 @@ function goods_amount() {
 function sell_ranking() {
 	var sell_tab_main=$j("#sell_tab_main");
 	var sell_tab_sub=$j("#sell_tab_sub");
-	sell_tab_main.children("li").click(function(){
+	sell_tab_main.children("li").mouseover(function(){
 		var _eq=$j(this).index();
 		$j(this).addClass("active").siblings().removeClass("active");
 		sell_tab_sub.children("ol:eq("+_eq+")").show().siblings().hide();

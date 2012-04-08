@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 19:52:09
+<?php /* Smarty version 2.6.18, created on 2012-04-08 19:02:42
          compiled from index/left.html */ ?>
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>

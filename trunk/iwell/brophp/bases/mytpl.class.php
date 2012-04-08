@@ -48,6 +48,8 @@
 				$resource_name=$_GET["m"]."/".$resource_name.".".TPLPREFIX;
 			}
 			Debug::addmsg("使用模板 <b> $resource_name </b>");
+			//设置全局变量
+			$this->assign("lan", $GLOBALS ['lan']);
 			parent::display($resource_name, $cache_id, $compile_id);	
 		}
 		/* 

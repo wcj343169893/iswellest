@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-06 21:48:35
+<?php /* Smarty version 2.6.18, created on 2012-04-08 19:02:52
          compiled from ware/mod.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,7 +18,7 @@
 /index">商品信息</a></span>
 <span class="action-span1"><a href="<?php echo $this->_tpl_vars['app']; ?>
 /index/info">管理中心</a> </span><span id="search_id" class="action-span1"> - 修改商品</span>
-<div style="clear:both"></div>
+<div style="clear:both;"></div>
 </h1>
 <!--表格开始 -->
 <form action="<?php echo $this->_tpl_vars['url']; ?>
@@ -38,7 +38,7 @@
 		<tr>
 						<td class="label">商品货号:</td>
 						<td> <input type='text' name='w_code' maxlength="20" value='<?php echo $this->_tpl_vars['data']['w_code']; ?>
-' size='27' /> <font color="red">*</font> <br>
+' size='27' /> <font color="red">*</font> <br/>
 							如果您不输入商品货号，系统将自动生成一个唯一的货号。
 						</td>
 					
@@ -49,7 +49,6 @@
 							<?php echo $this->_tpl_vars['select']; ?>
 
 						</td>
-						 </td>
 		</tr>
 		<tr>
 						<td class="label">商品品牌:</td>
@@ -82,7 +81,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 "<?php if ($this->_tpl_vars['data']['w_brand'] == $this->_tpl_vars['brand'][$this->_sections['ls']['index']]['id']): ?>selected<?php endif; ?>><?php echo $this->_tpl_vars['brand'][$this->_sections['ls']['index']]['b_name']; ?>
 </option>
 							<?php endfor; endif; ?>
-								</select>
+							</select>
 						<font color="red">*</font> </td>
 		</tr>
 		<tr>
@@ -104,7 +103,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 		<tr>
 					 <td class="label">积分:</td>
 					 <td> <input type='text' name='w_integral' maxlength="20" value='<?php echo $this->_tpl_vars['data']['w_integral']; ?>
-' size='27' /> <font color="red">*</font><br> 
+' size='27' /> <font color="red">*</font><br/> 
 					 购买该商品时最多可以使用多少钱的积分
 					 </td>
 		</tr>
@@ -142,4 +141,5 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
       </div>
 </form>
 <!--表格结束 -->
-</body>
+</body>
+</html>

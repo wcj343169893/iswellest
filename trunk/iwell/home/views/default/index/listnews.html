@@ -3,16 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>心云</title>
+<title><{$lan.site_title}></title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/news.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
 </head>
-<{include file="public/head.html"}>
 <body>
-<div class="w960 mt_10">
+<{include file="public/head.html"}>
+<div class="w960">
 	<p class="channel_guide">当前位置：<a href="<{$app}>"><font color="red" size=2><b>首页</b></font></a> &gt; <a href="#">商城快报</a> &gt; <span>新闻标题</span></p>
-	<div class="w960 mt_10">
+	<div class="mt_10">
 		<div class="news_left">
 			<div class="news_left_menu">
 				<h2 class="news_left_tit">最新快报</h2>
@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<!--优势保障 start-->
-	<div class="w960 mt_10 index_odds">
+	<div class="mt_10 index_odds">
 		<ul>
 			<li>
 				<p><img src="<{$public}>/images/index/demo/odds_0.jpg" width="166" height="65" alt="" /></p>
@@ -68,6 +68,6 @@
 	</div>
 	<!--优势保障 end-->
 </div>
-</body>
 <{include file="public/foot.html"}>
+</body>
 </html>

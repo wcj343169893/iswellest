@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>心云</title>
+<title><{$lan.site_title}></title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/goods.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/reg.css" rel="stylesheet" type="text/css" />
@@ -19,9 +19,9 @@
 </head>
 <body>
 <{ include file='public/head.html'}>
-<div class="w960 mt_10">
+<div class="w960">
 	<p class="channel_guide">当前位置：<a href="<{$app}>/index/index">首页</a> &gt; <a href="#">电脑/办公</a> &gt; <a href="#"><{$data.w_cat}></a> &gt; <span><{$data.w_name}></span></p>
-	<div class="w960 mt_10">
+	<div class="mt_10 frame_main">
 		<!--产品图 start-->
 		<div class="goods_info_left">
 			<div class="clearFix">
@@ -78,7 +78,7 @@
 			<dl class="goods_gifts">
 				<dt>赠品：</dt>
 				<{section loop=$gift name='ls'}>
-				<dd><a href="#"><{$gift[ls].g_name}></a> <span class="cb00">X<{$gift[ls].g_num}></span></dd>
+				<dd><a href="javascript:void(0)"><{$gift[ls].g_name}></a> <span class="cb00">X<{$gift[ls].g_num}></span></dd>
 				<{/section }>
 			</dl>
 			<div class="goods_others">
@@ -133,8 +133,9 @@
 			</div>
 		</div>
 		<!--产品信息 end-->
+		<div class="clear"></div>
 	</div>
-	<div class="w960 mt_10">
+	<div class="mt_10 frame_main">
 		<div class="goods_left">
 			<!--商品相关信息 start-->
 			<ul id="goods_info_main">
@@ -267,7 +268,7 @@
 						<span class="fr">2010/04/05 13:30:00</span>
 					</div>
 					<div class="goods_mess_text">
-						<p class="goods_mess_text_left">
+						<p class="goods_mess_text_left">我是来打酱油的
 						</p>
 						<a href="#" class="a_0">回 复</a>
 					</div>
@@ -351,6 +352,7 @@
 			</div>
 			<!--最近浏览过页面 end-->
 		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 <{ include file='public/foot.html'}>

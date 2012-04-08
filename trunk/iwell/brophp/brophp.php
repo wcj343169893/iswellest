@@ -43,6 +43,11 @@
 	if (file_exists($myfunfile)){
 		require $myfunfile;
 	}
+	//加载语言
+	$lan_file=PROJECT_PATH."commons/lan/lan_chinese.php";
+	if (file_exists($lan_file)){
+		require $lan_file;
+	}
 	//包含全局的函数库文件，用户可以自己定义函数在这个文件中
 	$funfile=PROJECT_PATH."commons/functions.inc.php";
 	if(file_exists($funfile))
@@ -149,6 +154,10 @@
 		Debug::stop();
 		Debug::message();
 	}
+	//加载导航信息
+	//最新产品
+// 	$s=D('ware');
+// 	$result=$s->unit_select("SELECT w.*,c.c_name FROM pro_ware w LEFT JOIN pro_cat c ON w.w_cat=c.id WHERE sale_begin <> '' AND  DATE_FORMAT(sale_begin,'%Y%m%d%h%i')>DATE_FORMAT(NOW(),'%Y%m%d%h%i') ORDER BY sale_begin ASC LIMIT 0,10;");
+// 	$GLOBALS['newData']=$result;
 
-
-
+?>
