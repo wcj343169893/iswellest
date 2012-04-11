@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-08 20:52:09
+<?php /* Smarty version 2.6.18, created on 2012-04-09 10:15:54
          compiled from index/ware.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -234,26 +234,33 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 				<li><a href="javascript:void(0">售后服务</a></li>
 			</ul>
 			<div id="goods_info_sub">
-				<div class="goods_info_sub_tabs">
-					<img src="<?php echo $this->_tpl_vars['public']; ?>
-/images/iphone/1(125).jpg">
-					<img src="<?php echo $this->_tpl_vars['public']; ?>
-/images/iphone/2(94).jpg">
-					<img src="<?php echo $this->_tpl_vars['public']; ?>
-/images/iphone/4(78).jpg">
-				</div>
-				<div class="goods_info_sub_tabs none">
-					这里格式是后台编辑器生成的？
-					商品属性商品属性商品属性商品属性商品属性
-				</div>
-				<div class="goods_info_sub_tabs none">
-					这里格式是后台编辑器生成的？
-					包装清单包装清单包装清单包装清单包装清单包装清单
-				</div>
-				<div class="goods_info_sub_tabs none">
-					这里格式是后台编辑器生成的？
-					售后服务售后服务售后服务售后服务售后服务
-				</div>
+				<?php unset($this->_sections['i']);
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['inc']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>
+					<div class="goods_info_sub_tabs <?php if ($this->_sections['i']['index'] > 0): ?>none<?php endif; ?>"><?php echo $this->_tpl_vars['inc'][$this->_sections['i']['index']]['content']; ?>
+</div>
+				<?php endfor; endif; ?>
 			</div>
 			<!--商品相关信息 end-->
 			<!--商品评价 start-->
@@ -583,39 +590,31 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <script>
-
-
-
-lastScrollY=0;
-function heartBeat(){
-var diffY;
-if (document.documentElement && document.documentElement.scrollTop)
-diffY = document.documentElement.scrollTop;
-else if (document.body)
-diffY = document.body.scrollTop
-else
-{/*Netscape stuff*/}
-percent=.1*(diffY-lastScrollY);
-if(percent>0)percent=Math.ceil(percent);
-else percent=Math.floor(percent);
-document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
-lastScrollY=lastScrollY+percent;
-if(diffY == 0){document.getElementById("full").style.display = "none"}
-else{document.getElementById("full").style.display = "block"}
-}
-suspendcode="<div id=\"full\" class='full1' style='display:none; POSITION:absolute; left:95%; top:400px; z-index:100;'><a href='javascript:top()'  target='_self'><img src='../../../../public/images/top.gif'/></a></div>"
-document.write(suspendcode);
-window.setInterval("heartBeat()",1);
-function top(){
-	//	scrollTo(0,0)
-	document.body.scrollTop = 0 ;
-	document.documentElement.scrollTop = 0;
-}
-
-
-
-
+	lastScrollY=0;
+	function heartBeat(){
+	var diffY;
+	if (document.documentElement && document.documentElement.scrollTop)
+	diffY = document.documentElement.scrollTop;
+	else if (document.body)
+	diffY = document.body.scrollTop
+	else
+	{/*Netscape stuff*/}
+	percent=.1*(diffY-lastScrollY);
+	if(percent>0)percent=Math.ceil(percent);
+	else percent=Math.floor(percent);
+	document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
+	lastScrollY=lastScrollY+percent;
+	if(diffY == 0){document.getElementById("full").style.display = "none"}
+	else{document.getElementById("full").style.display = "block"}
+	}
+	suspendcode="<div id=\"full\" class='full1' style='display:none; POSITION:absolute; left:95%; top:400px; z-index:100;'><a href='javascript:top()'  target='_self'><img src='../../../../public/images/top.gif'/></a></div>"
+	document.write(suspendcode);
+	window.setInterval("heartBeat()",1);
+	function top(){
+		//	scrollTo(0,0)
+		document.body.scrollTop = 0 ;
+		document.documentElement.scrollTop = 0;
+	}
 </script>
 </body>
-
 </html>

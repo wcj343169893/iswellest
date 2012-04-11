@@ -69,6 +69,10 @@
 				//然后获得该商品的商品属性
 				$a=D('ware_attribute');
 				$attribute=$a->where(array('wid'=>$_GET['id']))->select();
+				//获取商品的介绍
+				$inc=D("ware_introduction");
+				$incData=$inc->limit(4)->where(array('wid'=>$_GET['id']))->select();
+				
 				//然后获得同品牌商品的信息,首先读取到这个商品的品牌，然后SELECT 商品表 w_cat 等于 DATA里的CAT
 				$brand=$s->where(array('w_brand'=>$data['w_brand']))->limit(10)->select();
 				$cat=$s->where(array('w_cat'=>$data['w_cat']))->limit(10)->select();
@@ -84,6 +88,7 @@
 				$this->assign('cat',$cat);
 				$this->assign('price',$price);
 				$this->assign('att',$attribute);
+				$this->assign('inc',$incData);
 				$this->assign('data',$data);
 				$this->display();
 		}

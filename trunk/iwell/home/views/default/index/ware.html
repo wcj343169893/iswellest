@@ -145,23 +145,9 @@
 				<li><a href="javascript:void(0">售后服务</a></li>
 			</ul>
 			<div id="goods_info_sub">
-				<div class="goods_info_sub_tabs">
-					<img src="<{$public}>/images/iphone/1(125).jpg">
-					<img src="<{$public}>/images/iphone/2(94).jpg">
-					<img src="<{$public}>/images/iphone/4(78).jpg">
-				</div>
-				<div class="goods_info_sub_tabs none">
-					这里格式是后台编辑器生成的？
-					商品属性商品属性商品属性商品属性商品属性
-				</div>
-				<div class="goods_info_sub_tabs none">
-					这里格式是后台编辑器生成的？
-					包装清单包装清单包装清单包装清单包装清单包装清单
-				</div>
-				<div class="goods_info_sub_tabs none">
-					这里格式是后台编辑器生成的？
-					售后服务售后服务售后服务售后服务售后服务
-				</div>
+				<{section loop=$inc name=i}>
+					<div class="goods_info_sub_tabs <{if $smarty.section.i.index>0}>none<{/if}>"><{$inc[i].content}></div>
+				<{/section}>
 			</div>
 			<!--商品相关信息 end-->
 			<!--商品评价 start-->
@@ -357,39 +343,31 @@
 </div>
 <{ include file='public/foot.html'}>
 <script>
-
-
-
-lastScrollY=0;
-function heartBeat(){
-var diffY;
-if (document.documentElement && document.documentElement.scrollTop)
-diffY = document.documentElement.scrollTop;
-else if (document.body)
-diffY = document.body.scrollTop
-else
-{/*Netscape stuff*/}
-percent=.1*(diffY-lastScrollY);
-if(percent>0)percent=Math.ceil(percent);
-else percent=Math.floor(percent);
-document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
-lastScrollY=lastScrollY+percent;
-if(diffY == 0){document.getElementById("full").style.display = "none"}
-else{document.getElementById("full").style.display = "block"}
-}
-suspendcode="<div id=\"full\" class='full1' style='display:none; POSITION:absolute; left:95%; top:400px; z-index:100;'><a href='javascript:top()'  target='_self'><img src='../../../../public/images/top.gif'/></a></div>"
-document.write(suspendcode);
-window.setInterval("heartBeat()",1);
-function top(){
-	//	scrollTo(0,0)
-	document.body.scrollTop = 0 ;
-	document.documentElement.scrollTop = 0;
-}
-
-
-
-
+	lastScrollY=0;
+	function heartBeat(){
+	var diffY;
+	if (document.documentElement && document.documentElement.scrollTop)
+	diffY = document.documentElement.scrollTop;
+	else if (document.body)
+	diffY = document.body.scrollTop
+	else
+	{/*Netscape stuff*/}
+	percent=.1*(diffY-lastScrollY);
+	if(percent>0)percent=Math.ceil(percent);
+	else percent=Math.floor(percent);
+	document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
+	lastScrollY=lastScrollY+percent;
+	if(diffY == 0){document.getElementById("full").style.display = "none"}
+	else{document.getElementById("full").style.display = "block"}
+	}
+	suspendcode="<div id=\"full\" class='full1' style='display:none; POSITION:absolute; left:95%; top:400px; z-index:100;'><a href='javascript:top()'  target='_self'><img src='../../../../public/images/top.gif'/></a></div>"
+	document.write(suspendcode);
+	window.setInterval("heartBeat()",1);
+	function top(){
+		//	scrollTo(0,0)
+		document.body.scrollTop = 0 ;
+		document.documentElement.scrollTop = 0;
+	}
 </script>
 </body>
-
 </html>
