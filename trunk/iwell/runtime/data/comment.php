@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"com_uid","1":"com_wid","2":"com_conntent","3":"com_time","4":"com_score"}
