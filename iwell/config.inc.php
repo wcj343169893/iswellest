@@ -4,8 +4,8 @@
 	//define("DSN", "mysql:host=localhost;dbname=brophp"); //如果使用PDO可以使用，不使用则默认连接MySQL
 	define("HOST", "localhost");			      //数据库主机
 	define("USER", "root");                               //数据库用户名
-// 	define("PASS", "123456");                                   //数据库密码
-	define("PASS", "");                                   //数据库密码
+	define("PASS", "123456");                                   //数据库密码
+// 	define("PASS", "");                                   //数据库密码
 	define("DBNAME","iwell_db");			      //数据库名
 	define("TABPREFIX", "pro_");                           //数据表前缀
 	define("CSTART", 0);                                  //缓存开关 1开启，0为关闭

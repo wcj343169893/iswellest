@@ -15,7 +15,7 @@ abstract class DB {
 	protected $msg = array (); // 提示消息数组
 	protected $tabName = ""; // 表名，自动获取
 	protected $fieldList = array (); // 表字段结构，自动获取
-	                              // SQL的初使化
+	                                 // SQL的初使化
 	protected $sql = array (
 			"field" => "",
 			"where" => "",
@@ -121,7 +121,7 @@ abstract class DB {
 		
 		$sql = "SELECT {$fields} FROM {$this->tabName}{$where}{$group}{$having}{$order}{$limit}";
 		$result = $this->query ( $sql, __METHOD__, $data );
-		//新增joins方法处理过程
+		// 新增joins方法处理过程
 		if ($joins != "") {
 			$j = D ( $joins [0] );
 			// 查询表的所有字段joins方法(关联表,被关联字段,关联字段,显示结果字段)
@@ -134,10 +134,10 @@ abstract class DB {
 			$jresult = $j->field ( $joins [3] )->where ( $where )->select ();
 			// 转换数组
 			$joinsResult = array ();
-			//把显示结果字段转换为数组
+			// 把显示结果字段转换为数组
 			$joinsFilds = explode ( ",", $joins [3] );
-			//把二维数组转换为一维数组
-// 			print_r($jresult);
+			// 把二维数组转换为一维数组
+			// print_r($jresult);
 			foreach ( $jresult as $key => $value ) {
 				$joinsResult [$value [$joinsFilds [0]]] = $value [$joinsFilds [1]];
 			}
@@ -169,11 +169,41 @@ abstract class DB {
 			$where = " where {$this->fieldList["pri"]}=?";
 			$data [] = $pri;
 		}
-		
+		$joins = $this->sql ["joins"];
 		$sql = "SELECT {$fields} FROM {$this->tabName}{$where} LIMIT 1";
 		
-		return $this->query ( $sql, __METHOD__, $data );
-	
+		$result = $this->query ( $sql, __METHOD__, $data );
+		
+		// 新增joins方法处理过程
+		if ($joins != "") {
+			$j = D ( $joins [0] );
+			// 查询表的所有字段joins方法(关联表,被关联字段,关联字段,显示结果字段)
+			// $jfilds = array ();
+			// foreach ( $result as $key => $value ) {
+			// $jfilds [] = $value [$joins [1]];
+			// }
+			// $jfilds = array_unique ( $jfilds );
+			
+			$where = $joins [2] . " = '" .$result[$joins [1]] . "'";
+			$jresult = $j->field ( $joins [3] )->where ( $where )->select ();
+			// // 转换数组
+			// $joinsResult = array ();
+			// //把显示结果字段转换为数组
+			$joinsFilds = explode ( ",", $joins [3] );
+			// //把二维数组转换为一维数组
+			// // print_r($jresult);
+			// foreach ( $jresult as $key => $value ) {
+			// $joinsResult [$value [$joinsFilds [0]]] = $value [$joinsFilds
+			// [1]];
+			// }
+			// // 加入到result中
+			if(!empty($jresult)){
+				$result [$joinsFilds [1]] = $jresult[0][$joinsFilds [1]];
+			}
+			return $result;
+		} else {
+			return $result;
+		}
 	}
 	// filter = 1 去除 " ' 和 HTML 实体， 0则不变
 	private function check($array, $filter) {
@@ -549,7 +579,7 @@ abstract class DB {
 	}
 	/**
 	 * 设置提示信息
-	 * 
+	 *
 	 * @param mixed $mess        	
 	 */
 	function setMsg($mess) {
@@ -564,7 +594,7 @@ abstract class DB {
 	}
 	/**
 	 * 获取提示信息
-	 * 
+	 *
 	 * @return string
 	 */
 	function getMsg() {

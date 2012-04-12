@@ -20,8 +20,7 @@
 <body>
 <{ include file='public/head.html'}>
 <div class="w960">
-	<p class="channel_guide">当前位置：<a href="<{$app}>/index/index">首页</a> &gt; <a href="#">电脑/办公</a> &gt; <a href="#"><{$data.w_cat}></a> &gt; <span><{$data.w_name}></span></p>
-	<div class="mt_10 frame_main">
+	<div class="mt_6 frame_main">
 		<!--产品图 start-->
 		<div class="goods_info_left">
 			<div class="clearFix">
@@ -31,7 +30,6 @@
 				<div id="goods_img_slide">
 					<p id="goods_img_up"><a href="javascript:void(0)">向上</a></p>
 					<!--
-						实际应用，大图与小图最好分开。demo中是使用的一张图。
 						小图片 50x50 直接写在 img的src
 						大图片 350x350 写在小图片的alt标签中
 					-->
@@ -71,9 +69,9 @@
 				<input type='hidden' id='w_id' name='w_id' value="<{$data.id}>">
 				<dt><a href="#"><strong class="f14"><{$data.w_name}></strong></a></dt>
 				<dd>商品编号：<{$data.id}></dd>
-				<dd>品　　牌：诺基亚</dd>
+				<dd>品　　牌：<{$data.c_name}></dd>
 				<dd>普 泰 价：<strong class="f14 cb00" >￥<span id='price'><{$data.w_price}></span></strong> <a href="#" class="c110">降价通知</a></dd>
-				<dd><span class="fl">商品评价：</span><b class="goods_stars goods_stars_5">goods_stars_5</b><a class="fl" href="#">(已有 0 人评价)</a></dd>
+				<dd><span class="fl">商品评价：</span><b class="goods_stars goods_stars_5">goods_stars_5</b><a class="fl" href="#goods_evaluation">(已有 <{$comment_count}>人评价)</a></dd>
 			</dl>
 			<dl class="goods_gifts">
 				<dt>赠品：</dt>
@@ -135,7 +133,7 @@
 		<!--产品信息 end-->
 		<div class="clear"></div>
 	</div>
-	<div class="mt_10 frame_main">
+	<div class="mt_6 frame_main">
 		<div class="goods_left">
 			<!--商品相关信息 start-->
 			<ul id="goods_info_main">
@@ -244,7 +242,7 @@
 				<div class="goods_mess_usr">
 					<a href="#"><img src="<{$public}>/images/user.jpg" width="50" height="50" alt="" /></a>
 					<a href="#" class="a_0">用户名</a>
-					<span class="mt_10 c999 block">购买日期</span>
+					<span class="mt_6 c999 block">购买日期</span>
 					<span class="c999">2011/03/17</span>
 				</div>
 				<div class="goods_mess_detail">
@@ -254,19 +252,16 @@
 						<span class="fr">2010/04/05 13:30:00</span>
 					</div>
 					<div class="goods_mess_text">
-						<p class="goods_mess_text_left">我是来打酱油的
-						</p>
+						<p class="goods_mess_text_left">&nbsp;</p>
 						<a href="#" class="a_0">回 复</a>
 					</div>
 					<div class="goods_mess_reply">
+					<{section loop=$comment name=c}>
 						<dl>
-							<dt>1.<a href="#">用户名</a> 回复说：</dt>
-							<dd></dd>
+							<dt><{$smarty.section.i.index+1}>.<a href="#"><{$comment[c].reg_username}></a> 回复说：</dt>
+							<dd><{$comment[c].com_conntent}></dd>
 						</dl>
-						<dl>
-							<dt>2.<a href="#">用户名</a> 回复说：</dt>
-							<dd></dd>
-						</dl>
+					<{/section}>
 					</div>
 				</div>
 			</div>
@@ -324,7 +319,7 @@
 			</div>
 			<!--销售排行 end-->
 			<!--最近浏览过页面 start-->
-			<div class="mt_10">
+			<div class="mt_6">
 				<h2 class="recent_view_tit">最近浏览过页面</h2>
 				<ul class="recent_view">
 				<{section loop=$lately name='ls'}>
