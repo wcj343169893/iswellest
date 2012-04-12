@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-09 10:15:54
+<?php /* Smarty version 2.6.18, created on 2012-04-12 21:22:12
          compiled from index/ware.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,11 +36,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div class="w960">
-	<p class="channel_guide">当前位置：<a href="<?php echo $this->_tpl_vars['app']; ?>
-/index/index">首页</a> &gt; <a href="#">电脑/办公</a> &gt; <a href="#"><?php echo $this->_tpl_vars['data']['w_cat']; ?>
-</a> &gt; <span><?php echo $this->_tpl_vars['data']['w_name']; ?>
-</span></p>
-	<div class="mt_10 frame_main">
+	<div class="mt_6 frame_main">
 		<!--产品图 start-->
 		<div class="goods_info_left">
 			<div class="clearFix">
@@ -52,7 +48,6 @@ unset($_smarty_tpl_vars);
 				<div id="goods_img_slide">
 					<p id="goods_img_up"><a href="javascript:void(0)">向上</a></p>
 					<!--
-						实际应用，大图与小图最好分开。demo中是使用的一张图。
 						小图片 50x50 直接写在 img的src
 						大图片 350x350 写在小图片的alt标签中
 					-->
@@ -127,10 +122,12 @@ $this->_sections['a']['last']       = ($this->_sections['a']['iteration'] == $th
 </strong></a></dt>
 				<dd>商品编号：<?php echo $this->_tpl_vars['data']['id']; ?>
 </dd>
-				<dd>品　　牌：诺基亚</dd>
+				<dd>品　　牌：<?php echo $this->_tpl_vars['data']['c_name']; ?>
+</dd>
 				<dd>普 泰 价：<strong class="f14 cb00" >￥<span id='price'><?php echo $this->_tpl_vars['data']['w_price']; ?>
 </span></strong> <a href="#" class="c110">降价通知</a></dd>
-				<dd><span class="fl">商品评价：</span><b class="goods_stars goods_stars_5">goods_stars_5</b><a class="fl" href="#">(已有 0 人评价)</a></dd>
+				<dd><span class="fl">商品评价：</span><b class="goods_stars goods_stars_5">goods_stars_5</b><a class="fl" href="#goods_evaluation">(已有 <?php echo $this->_tpl_vars['comment_count']; ?>
+人评价)</a></dd>
 			</dl>
 			<dl class="goods_gifts">
 				<dt>赠品：</dt>
@@ -224,7 +221,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 		<!--产品信息 end-->
 		<div class="clear"></div>
 	</div>
-	<div class="mt_10 frame_main">
+	<div class="mt_6 frame_main">
 		<div class="goods_left">
 			<!--商品相关信息 start-->
 			<ul id="goods_info_main">
@@ -360,7 +357,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 					<a href="#"><img src="<?php echo $this->_tpl_vars['public']; ?>
 /images/user.jpg" width="50" height="50" alt="" /></a>
 					<a href="#" class="a_0">用户名</a>
-					<span class="mt_10 c999 block">购买日期</span>
+					<span class="mt_6 c999 block">购买日期</span>
 					<span class="c999">2011/03/17</span>
 				</div>
 				<div class="goods_mess_detail">
@@ -370,19 +367,42 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 						<span class="fr">2010/04/05 13:30:00</span>
 					</div>
 					<div class="goods_mess_text">
-						<p class="goods_mess_text_left">我是来打酱油的
-						</p>
+						<p class="goods_mess_text_left">&nbsp;</p>
 						<a href="#" class="a_0">回 复</a>
 					</div>
 					<div class="goods_mess_reply">
+					<?php unset($this->_sections['c']);
+$this->_sections['c']['loop'] = is_array($_loop=$this->_tpl_vars['comment']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['c']['name'] = 'c';
+$this->_sections['c']['show'] = true;
+$this->_sections['c']['max'] = $this->_sections['c']['loop'];
+$this->_sections['c']['step'] = 1;
+$this->_sections['c']['start'] = $this->_sections['c']['step'] > 0 ? 0 : $this->_sections['c']['loop']-1;
+if ($this->_sections['c']['show']) {
+    $this->_sections['c']['total'] = $this->_sections['c']['loop'];
+    if ($this->_sections['c']['total'] == 0)
+        $this->_sections['c']['show'] = false;
+} else
+    $this->_sections['c']['total'] = 0;
+if ($this->_sections['c']['show']):
+
+            for ($this->_sections['c']['index'] = $this->_sections['c']['start'], $this->_sections['c']['iteration'] = 1;
+                 $this->_sections['c']['iteration'] <= $this->_sections['c']['total'];
+                 $this->_sections['c']['index'] += $this->_sections['c']['step'], $this->_sections['c']['iteration']++):
+$this->_sections['c']['rownum'] = $this->_sections['c']['iteration'];
+$this->_sections['c']['index_prev'] = $this->_sections['c']['index'] - $this->_sections['c']['step'];
+$this->_sections['c']['index_next'] = $this->_sections['c']['index'] + $this->_sections['c']['step'];
+$this->_sections['c']['first']      = ($this->_sections['c']['iteration'] == 1);
+$this->_sections['c']['last']       = ($this->_sections['c']['iteration'] == $this->_sections['c']['total']);
+?>
 						<dl>
-							<dt>1.<a href="#">用户名</a> 回复说：</dt>
-							<dd></dd>
+							<dt><?php echo $this->_sections['i']['index']+1; ?>
+.<a href="#"><?php echo $this->_tpl_vars['comment'][$this->_sections['c']['index']]['reg_username']; ?>
+</a> 回复说：</dt>
+							<dd><?php echo $this->_tpl_vars['comment'][$this->_sections['c']['index']]['com_conntent']; ?>
+</dd>
 						</dl>
-						<dl>
-							<dt>2.<a href="#">用户名</a> 回复说：</dt>
-							<dd></dd>
-						</dl>
+					<?php endfor; endif; ?>
 					</div>
 				</div>
 			</div>
@@ -536,7 +556,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 			</div>
 			<!--销售排行 end-->
 			<!--最近浏览过页面 start-->
-			<div class="mt_10">
+			<div class="mt_6">
 				<h2 class="recent_view_tit">最近浏览过页面</h2>
 				<ul class="recent_view">
 				<?php unset($this->_sections['ls']);

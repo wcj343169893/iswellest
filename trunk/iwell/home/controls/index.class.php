@@ -60,12 +60,13 @@
 			}else if(!in_array($_GET['id'],$_COOKIE['id'])){
 					setcookie("id[$count]",$_GET['id'],time()+3600*24*7);
 			}
+				$id=$_GET['id'];
 				$s=D('ware');
 				//查询出最近浏览过的商品
 				$lately=$s->where($_COOKIE['id'])->order('id desc')->limit(8)->select();
 				$this->assign('lately',$lately);
 				//首先获得该商品的商品信息
-				$data=$s->where(array('id'=>$_GET['id']))->find();
+				$data=$s->where(array('id'=>$_GET['id']))->joins("cat","w_cat","id","id,c_name")->find();
 				//然后获得该商品的商品属性
 				$a=D('ware_attribute');
 				$attribute=$a->where(array('wid'=>$_GET['id']))->select();
@@ -79,6 +80,11 @@
 				$d=$data['w_price'] - $data['w_price']*0.05 ;
 				$x=$data['w_price'] + $data['w_price']*0.05;
 				$price=$s->where(array('w_price<'=>"$x",'w_price>'=>"$d"))->limit(10)->select();
+				
+				//查询评价
+				$com=D("comment");
+				$comment=$com->where(array("com_wid"=>$id))->joins("user","com_uid","id","id,reg_username")->select();
+				print_r($comment);
 				//获取商品赠品信息
 				$g=D('gift');
 				$gift=$g->select();
@@ -90,6 +96,8 @@
 				$this->assign('att',$attribute);
 				$this->assign('inc',$incData);
 				$this->assign('data',$data);
+				$this->assign('comment',$comment);
+				$this->assign('comment_count',count($comment));
 				$this->display();
 		}
 

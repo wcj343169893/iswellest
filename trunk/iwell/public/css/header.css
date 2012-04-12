@@ -28,6 +28,7 @@ a:hover {color:#f00;text-decoration:none;}
 .cf00 {color:#f00;}
 .icon {display:block;text-indent:-999em;overflow:hidden;}
 .mt_10 {margin-top:10px;}
+.mt_6 {margin-top:6px;}
 .hands{cursor: pointer;}
 /*头部*/
 #header{}
@@ -143,3 +144,9 @@ a:hover {color:#f00;text-decoration:none;}
 #nav_goods{ width:960px;}
  #links{ width:960px; margin:0 auto;}
 .frame_main{background: white;padding: 13px 15px;}
+.frame_main a{
+	color: #333;
+}
+.frame_main a:HOVER{
+	color: #333;
+}
