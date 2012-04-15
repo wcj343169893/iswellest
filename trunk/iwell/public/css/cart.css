@@ -38,7 +38,7 @@ a.cart_button_0:hover,a.cart_button_1:hover {color:#ffbc00;}
 
 .cart_others_buy {border:1px solid #ccc;padding:10px;margin-top:10px;}
 .cart_others_buy ul {width:100%;overflow:hidden;}
-.cart_others_buy li {width:150px;float:left;padding:0 3px;text-align:center;height:265px;}
+.cart_others_buy li {width: 176px;float:left;padding:0 3px;text-align:center;height:265px;}
 .cart_others_buy li a.a_0 {display:block;margin:0 auto;width:91px;height:23px;text-align:center;line-height:23px;background:url(cart/cart.png) 0 -155px no-repeat;margin-top:5px;text-indent:1em;}
 .cart_others_buy li a.a_0:hover {background-position:-93px -155px;color:#bb0000;}
 
@@ -83,3 +83,6 @@ a.cart_button_0:hover,a.cart_button_1:hover {color:#ffbc00;}
 .c502 {color:#50216c;}
 .cffb {color:#ffbc00;}
 .yahei {font-family:'MicroSoft yaHei';}
+#goods_info .good_name_td{
+	padding-left: 10px;
+}

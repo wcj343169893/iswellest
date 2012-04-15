@@ -45,7 +45,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .goods_gifts dt {float:left;display:inline;margin-left:-40px;color:#bb0000;}
 .goods_gifts dd {width:100%;float:left;}
 .goods_gifts dd a {color:#1105b1;text-decoration:underline;}
-.goods_others {border:1px solid #000;padding:5px 10px;margin-top:5px;}
+.goods_others {border:1px solid #ccc;padding:5px 10px;margin-top:5px;}
 .goods_others dl {padding:5px;padding-left:90px;zoom:1;}
 .goods_others dl:after{content:' ';display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
 .goods_others dt {float:left;display:inline;margin-left:-90px;}
@@ -133,7 +133,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .goods_mess_usr img {display:block;border:2px solid #ccc;margin:0 auto;}
 .goods_mess_usr a:hover img {border-color:#ffbc00;}
 .goods_mess_usr a.a_0 {color:#1105b1;text-decoration:underline;}
-.goods_mess_detail {width:638px;float:left;border:1px solid #ccc;}
+.goods_mess_detail {width:538px;float:left;border:1px solid #ccc;}
 .goods_mess_tit {height:23px;line-height:23px;border-bottom:1px solid #ccc;background:url(goods/goods.png) 0 -201px repeat-x;padding:0 20px;overflow:hidden;}
 .goods_mess_tit b.goods_stars {margin-top:2px;margin-left:10px;}
 .goods_mess_text {padding:10px 0;border-bottom:1px solid #ccc;width:100%;overflow:hidden;position:relative;margin-top: 10px;}

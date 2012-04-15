@@ -7,16 +7,19 @@
 					//特价商品
 					$data=$s->limit(6)->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","id,c_name")->select();
 					$this->assign('data',$data);
+					//创意专区
+					$data_r=$s->limit(3)->where(array('w_type'=>'r'))->joins("cat","w_cat","id","id,c_name")->select();
+					$this->assign('datar',$data_r);
 					//最新产品
-					$newData=$s->limit(6)->order("sale_begin asc")->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","id,c_name")->select();
+// 					$newData=$s->limit(6)->order("sale_begin asc")->where(array('sale_end > '=>date("Y-m-d H:i:s")))->joins("cat","w_cat","id","id,c_name")->select();
 // 					$result=$s->unit_select("SELECT w.*,c.c_name FROM pro_ware w LEFT JOIN pro_cat c ON w.w_cat=c.id WHERE sale_begin <> '' AND  DATE_FORMAT(sale_begin,'%Y%m%d%h%i')>DATE_FORMAT(NOW(),'%Y%m%d%h%i') ORDER BY sale_begin ASC LIMIT 0,10;");
 					
 // 					$result1=$s->limit(6)->order("sale_begin asc")->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","c_name")->select();
 // 					print_r($s->joins("cat","w_cat","id","id,c_name")->select());
-					$this->assign('newData',$newData);
+// 					$this->assign('newData',$newData);
 					//快要过期产品
-					$endingsoondata=$s->limit(12)->order("sale_end asc")->where("sale_end<>''")->joins("cat","w_cat","id","id,c_name")->select();
-					$this->assign('endingsoondata',$endingsoondata);
+// 					$endingsoondata=$s->limit(12)->order("sale_end asc")->where(array('sale_end > '=>date("Y-m-d H:i:s")))->joins("cat","w_cat","id","id,c_name")->select();
+// 					$this->assign('endingsoondata',$endingsoondata);
 					//明天上线的产品
 //					echo "明天:".date("Y-m-d",strtotime("+1 day")). "<br>"; 
 					$tr1Data=$s->limit(10)->where("sale_begin like '".date("Y-m-d",strtotime("+1 day"))."%'")->order("sale_begin asc")->joins("cat","w_cat","id","id,c_name")->select();
@@ -32,20 +35,22 @@
 					$this->assign('tr3',date("l m/d",strtotime("+3 day")));
 					$this->assign('tr3Data',$tr3Data);
 					
+					
 					//手机配件
-					$pj=$s->limit(6)->where(array('w_type'=>'pj'))->select();
-					$this->assign('pj',$pj);
+// 					$pj=$s->limit(6)->where(array('w_type'=>'pj'))->select();
+// 					$this->assign('pj',$pj);
 					//右侧广告栏的信息
-					$r=$s->limit(6)->where(array('w_type'=>'r'))->select();
-					$this->assign('r',$r);
+// 					$r=$s->limit(6)->where(array('w_type'=>'r'))->select();
+// 					$this->assign('r',$r);
 					//分类
-					$c=D('cat');
-					//高老师写的联合查询便利数组，没太明白。。。
-					$cat=$c->where(array("pid"=>0))->r_select(array("cat", '', "pid", array("subcat", 'id desc', 15)));
-					$this->assign('cat',$cat);
+// 					$c=D('cat');
+// 					//高老师写的联合查询便利数组，没太明白。。。
+// 					$cat=$c->where(array("pid"=>0))->r_select(array("cat", '', "pid", array("subcat", 'id desc', 15)));
+// 					$this->assign('cat',$cat);
+// 					print_r($cat);
 					//右侧公告
-					$c=$p->limit(3)->order('id desc')->select();
-					$this->assign('c',$c);
+// 					$c=$p->limit(3)->order('id desc')->select();
+// 					$this->assign('c',$c);
 					//友情链接
 					$link=$l->select();
 					$this->assign('link',$link);
@@ -84,7 +89,6 @@
 				//查询评价
 				$com=D("comment");
 				$comment=$com->where(array("com_wid"=>$id))->joins("user","com_uid","id","id,reg_username")->select();
-				print_r($comment);
 				//获取商品赠品信息
 				$g=D('gift');
 				$gift=$g->select();

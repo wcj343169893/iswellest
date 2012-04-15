@@ -1,4 +1,3 @@
-/* $Id : common.js 4865 2007-01-31 14:04:10Z paulgao $ */
 
 /* *
  * 添加商品到购物车 
@@ -997,3 +996,13 @@ function cancel_div()
     i++;
   }
 }
+jQuery(document).ready(function() {
+	jQuery(".cat_parent").hover(
+			  function () {
+				  jQuery(this).children(".cat_child").removeClass("hide");
+			  },
+			  function () {
+				  jQuery(this).children(".cat_child").addClass("hide");
+			  }
+			);
+});

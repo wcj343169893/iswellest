@@ -1,5 +1,5 @@
 <?php
-		class car {	
+		class carAction extends Common {	
 				function mycar(){
 						$w=D('ware');
 						$data=$w->filed('id,w_name,w_price,w_pic')->limit(5)->select();

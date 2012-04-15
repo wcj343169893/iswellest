@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-12 21:22:12
+<?php /* Smarty version 2.6.18, created on 2012-04-14 11:30:41
          compiled from index/ware.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -35,8 +35,10 @@ $this->_smarty_include(array('smarty_include_tpl_file' => 'public/head.html', 's
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<div class="w960">
-	<div class="mt_6 frame_main">
+<div id="fabWrapper" class="wrapperMesh">
+<div id="contentWrapper">
+	<div class="fabBorderSpace"></div>
+	<div class="frame_main">
 		<!--产品图 start-->
 		<div class="goods_info_left">
 			<div class="clearFix">
@@ -405,6 +407,7 @@ $this->_sections['c']['last']       = ($this->_sections['c']['iteration'] == $th
 					<?php endfor; endif; ?>
 					</div>
 				</div>
+				<div class="clear"></div>
 			</div>
 			<!--商品留言 end-->
 			<ul class="goods_mess_flip">
@@ -604,6 +607,8 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 		<div class="clear"></div>
 	</div>
 </div>
+</div>
+				<div class="clear"></div>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'public/foot.html', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

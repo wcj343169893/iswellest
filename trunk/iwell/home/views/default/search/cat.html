@@ -3,15 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>心云</title>
+<title><{$lan.site_title}></title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/goods_list.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
 <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
 <script type="text/javascript" src="<{$public}>/js/goods_list.js"></script>
+<script type="text/javascript" src="<{$public}>/js/common.js"></script>
 </head>
-<{include file='public/head.html' }>
 <body>
-<div class="w960 mt_10">
+<{include file='public/head.html' }>
+<div id="fabWrapper" class="wrapperMesh">
+<div id="contentWrapper">
+  <div class="fabBorderSpace"></div>
+  <div class="frame_main">
 	<div class="goods_list_left"> 
 		<!--全部商品分类 start-->
 		<div id="all_sort">
@@ -42,17 +47,14 @@
 		</div>
 	</div>
 	<div class="goods_list_right"> 
-		<!--频道导航 start-->
-		<p class="channel_guide">当前位置：<a href="#">首页</a> &gt; <span>商品搜索：GSM手机</span></p>
-		<!--频道导航 end--> 
 		<!--搜索结果 start-->
-		<p class="search_result_info"><{$c_name}> 搜索结果（<{$num}>）</p>
+		<p class="search_result_info"><{$cat.c_name}> 搜索结果（<{$num}>）</p>
 		<!--搜索结果 start--> 
 		<!--商品排序 start-->
 		<ul class="goods_sort">
-			<li class="active"><a href="#">按上架时间排序↑</a></li>
-			<li><a href="#">按价格排序↓</a></li>
-			<li><a href="#">按更新时间排序↓</a></li>
+			<li class="<{if $order eq 'sale_begin'}>active<{/if}>"><a href="<{$app}>/search/cat/cid/<{$cid}>/p/<{$p}>/order/sale_begin/sort/<{if $order eq 'sale_begin'}><{if $sort eq 'desc'}>asc<{else}>desc<{/if}><{/if}>">按上架时间排序<{if $order eq 'sale_begin'}><{if $sort eq 'desc'}>↓<{else}>↑<{/if}><{/if}></a></li>
+			<li class="<{if $order eq 'w_price'}>active<{/if}>"><a href="<{$app}>/search/cat/cid/<{$cid}>/p/<{$p}>/order/w_price/sort/<{if $order eq 'w_price'}><{if $sort eq 'desc'}>asc<{else}>desc<{/if}><{/if}>">按价格排序<{if $order eq 'w_price'}><{if $sort eq 'desc'}>↓<{else}>↑<{/if}><{/if}></a></li>
+			<li class="<{if $order eq 'edit_time'}>active<{/if}>"><a href="<{$app}>/search/cat/cid/<{$cid}>/p/<{$p}>/order/edit_time/sort/<{if $order eq 'edit_time'}><{if $sort eq 'desc'}>asc<{else}>desc<{/if}><{/if}>">按更新时间排序<{if $order eq 'edit_time'}><{if $sort eq 'desc'}>↓<{else}>↑<{/if}><{/if}></a></li>
 		</ul>
 		<!--商品排序 end--> 
 		<!--商品列表 start-->
@@ -61,23 +63,28 @@
 		<{section loop=$data name='ls'}>
 			<li> <a href="单品.html"><img src="<{$public}>/images/ware/<{$data[ls].w_pic}>" width="100" height="100" alt="" /></a>
 			  <p class="pro_name"><a href="#"><{$data[ls].w_name}></a></p>
-				<p class="f14 cb00"><strong>心云价：￥<{$data[ls].w_price}>.00元</strong></p>
+				<p class="f14 cb00"><strong>价格：￥<{$data[ls].w_price}>.00元</strong></p>
 				<p class="mt_10"><a href="#" class="a_0">收藏</a><a href="单品.html" class="a_0">购买</a><a href="#" class="a_0">比较</a></p>
 			</li>
 		<{/section}>
 		</ul>
 		<ul class="goods_flip mt_10">
-			<li><a href="#">第一页</a></li>
-			<li><a href="#">上一页</a></li>
-			<li><a href="#">下一页</a></li>
-			<li><a href="#">最后一页</a></li>
-			<li>跳到<input type="text" id="goods_pages"/>页</li>
+			<li><a href="<{$app}>/search/cat/cid/<{$cid}>/p/1/order/<{$order}>/sort/<{$sort}>">第一页</a></li>
+			<{if $p gt 1}>
+				<li><a href="<{$app}>/search/cat/cid/<{$cid}>/p/<{$p-1}>/order/<{$order}>/sort/<{$sort}>">上一页</a></li>
+			<{/if}>
+			<{if $p lt $total_page}>
+				<li><a href="<{$app}>/search/cat/cid/<{$cid}>/p/<{$p+1}>/order/<{$order}>/sort/<{$sort}>">下一页</a></li>
+			<{/if}>
+			<li><a href="<{$app}>/search/cat/cid/<{$cid}>/p/<{$total_page}>/order/<{$order}>/sort/<{$sort}>">最后一页</a></li>
+			<li><label for="goods_pages">跳到 </label><input type="text" id="goods_pages"/>页 <input value="Go" size="2" type="button" maxlength="2"/></li>
 		</ul>
 		<!--商品列表 end--> 
 	</div>
-		<{include file='public/foot.html'}>
+	<div class="clear"></div>
+	</div>
 </div>
-
+</div>
+<{include file='public/foot.html'}>
 </body>
-
 </html>

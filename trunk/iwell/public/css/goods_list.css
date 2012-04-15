@@ -1,7 +1,7 @@
 @charset "utf-8";
 a {color:#000;}
 /*左右分列*/
-.goods_list_left {width:180px;overflow:hidden;float:left;}
+.goods_list_left {width:160px;overflow:hidden;float:left;}
 .goods_list_right {width:770px;overflow:hidden;float:right;}
 
 /*全部商品分类*/
@@ -41,7 +41,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .sort_details dd.active a {padding:2px 3px;background:#ddd;}
 
 /*商品排序*/
-.goods_sort {width:100%;overflow:hidden;margin-top:10px;height:38px;background:url(goods_list/goods_list.png) 0 -63px repeat-x;line-height:36px;}
+.goods_sort {width:768px;overflow:hidden;margin-top:10px;height:38px;background:url(goods_list/goods_list.png) 0 -63px repeat-x;line-height:36px;}
 .goods_sort li {float:left;text-align:center;padding-left:20px;border-right:1px solid #7a797c;height:34px;overflow:hidden;margin-top:3px;}
 .goods_sort li a {float:left;padding-right:20px;}
 .goods_sort li.active {height:38px;border:0 none;margin:0;background:url(goods_list/goods_list.png) 0 -153px no-repeat;line-height:38px;}
@@ -50,7 +50,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 /*商品列表*/
 #all_goods_list {width:100%;overflow:hidden;text-align:center;}
 #all_goods_list li {width:168px;padding:10px;float:left;border:2px solid #fff;margin-top:10px;height:190px;}
-#all_goods_list li.active {border-color:#ab93b8}
+#all_goods_list li.active {border-color: rgba(51, 51, 51, 0.199219) rgba(51, 51, 51, 0.203125);}
 #all_goods_list li a.a_0 {display:inline-block;*display:inline;*zoom:1;margin:0 3px;width:45px;height:23px;line-height:23px;text-align:center;background:url(goods_list/goods_list.png) -51px -103px no-repeat;}
 
 /*翻页*/
@@ -59,7 +59,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 #goods_pages {width:24px;}
 
 /*搜索*/
-.search_result_info {height:30px;line-height:30px;padding:0 10px;border:1px solid #ccc;margin-top:10px;color:#f00;background:#eee;}
+.search_result_info {height:30px;line-height:30px;padding:0 10px;border:1px solid #ccc;color:#f00;background:#eee;}
 .search_hot_sale {border:1px solid #ccc;margin-top:10px;}
 .search_hot_sale h2.h2_0 {height:30px;line-height:30px;text-align:center;color:#f00;background:#673B7F;font-weight:700;color:#fff;}
 

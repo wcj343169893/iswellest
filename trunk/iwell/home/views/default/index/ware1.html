@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title><{$data.w_name}>-<{$lan.site_title}></title>
+<link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
+<script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
+</head>
+<body>
+<{ include file='public/head.html'}>
+<div id="fabWrapper" class="wrapperMesh">
+	<div id="contentWrapper">
+	  <div class="fabBorderSpace"></div>
+	  <div class="tabbed_content">
+	  		<div class="f-left">
+	  			<img src="<{$public}>/images/ware/<{$data.w_pic}>" width="350" height="350" alt="" />
+	  		</div>
+	  		<div class="f-left w_10">&nbsp;</div>
+	  		<div class="f-left w_280">
+	  		</div>
+	  		<div class="f-right">
+	  			<h1><{$data.w_name}></h1>
+	  			<div><{$data.w_introduct}></div>
+	  		</div>
+	  		<div class="clear"></div>
+	  </div>
+	  <div class="f-left white-outlined">
+	  		<h2>商品简介</h2>
+	  		<ul id="goods_info_main">
+				<li class="active"><a href="javascript:void(0)">商品介绍</a></li>
+				<li><a href="javascript:void(0">商品属性</a></li>
+				<li><a href="javascript:void(0">包装清单</a></li>
+				<li><a href="javascript:void(0">售后服务</a></li>
+			</ul>
+	  		<div id="goods_info_sub">
+				<{section loop=$inc name=i}>
+					<div class="goods_info_sub_tabs <{if $smarty.section.i.index>0}>none<{/if}>"><{$inc[i].content}></div>
+				<{/section}>
+			</div>
+	  </div>
+	  <div class="f-left">
+	  
+	  </div>
+	</div>
+</div>
+<{ include file='public/foot.html'}>
+</body>
+</html>
