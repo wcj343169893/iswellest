@@ -43,20 +43,28 @@ function slide_show() {
 	;
 };
 jQuery(document).ready(function() {
-	jQuery("#fabUserName").bind("click", function() {
-		if (jQuery(this).next().css("display") == "none") {
-			jQuery(this).parent().addClass("selected");
-			jQuery(this).next().show();
-//			jQuery(document).bind("click", function() {
-//				if (jQuery("#fabUserName").next().css("display") == "block") {
-//					jQuery("#fabUserName").parent().removeClass("selected");
-//					jQuery("#fabUserName").next().hide();
-//				}
-//			});
-		}else{
-			jQuery(this).parent().removeClass("selected");
-			jQuery(this).next().hide();
-			jQuery(document).unbind("click");
-		}
-	});
+//	jQuery("#fabUserName").bind("click", function() {
+//		if (jQuery(this).next().css("display") == "none") {
+//			jQuery(this).parent().addClass("selected");
+//			jQuery(this).next().show();
+////			jQuery(document).bind("click", function() {
+////				if (jQuery("#fabUserName").next().css("display") == "block") {
+////					jQuery("#fabUserName").parent().removeClass("selected");
+////					jQuery("#fabUserName").next().hide();
+////				}
+////			});
+//		}else{
+//			jQuery(this).parent().removeClass("selected");
+//			jQuery(this).next().hide();
+//			jQuery(document).unbind("click");
+//		}
+//	});
+	jQuery(".cat_parent").hover(
+			  function () {
+				  jQuery(this).children(".cat_child").removeClass("hide");
+			  },
+			  function () {
+				  jQuery(this).children(".cat_child").addClass("hide");
+			  }
+			);
 });

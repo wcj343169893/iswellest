@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-08 18:41:31
+<?php /* Smarty version 2.6.18, created on 2012-04-14 11:33:05
          compiled from public/foot.html */ ?>
 <div class="w960 height24"></div>
 <div id="footerWrapper">

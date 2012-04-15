@@ -1,5 +1,5 @@
 <?php
-		class search {
+		class searchAction extends Common {
 				//按商品查询页
 				function ware(){
 						$w=D('ware');

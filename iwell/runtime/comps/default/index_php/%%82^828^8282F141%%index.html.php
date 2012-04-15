@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-08 18:40:24
+<?php /* Smarty version 2.6.18, created on 2012-04-15 21:01:05
          compiled from index/index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'compareDate', 'index/index.html', 68, false),)), $this); ?>
@@ -17,8 +17,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'compareDate
 /js/timeCountDown.js"></script>
 <link rel="stylesheet" href="<?php echo $this->_tpl_vars['public']; ?>
 /css/sales.min.css" media="all" type="text/css"/>
-<link rel="stylesheet" href="<?php echo $this->_tpl_vars['public']; ?>
-/css/index_fb.css" media="all" type="text/css"/>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['public']; ?>
+/js/common.js"></script>
 </head>
 <body>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -27,14 +27,14 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div id="fabWrapper" class="wrapperMesh">
-  <div id="contentWrapper">
-    <div class="fabBorderSpace"></div>
+<div id="contentWrapper">
+  <div class="fabBorderSpace"></div>
 <div class="clear"></div>
   <div id="featuredShop" class="poRel" style="*margin-bottom: 6px">
     <h2 class="salesTitle salesTitleEndSn"><em class="redText">推荐商品</em></h2>
     <div id="featuredShopSliderContent">
       <div class="imgSliderWrap">
-        <div class="buttonBg floatLeft"><span id="nextButton" class="displayNone buttons floatLeft" style="display: none; "><span class="nextIcon fabShopSprite"></span></span></div>
+        <div class="buttonBg floatLeft"><span id="nextButton" class="displayNone buttons floatLeft" style="display: inline; "><span class="nextIcon fabShopSprite"></span></span></div>
         <div id="featuredAlbumSlidesContainer">
           <!--<div id="shop_img_loader" class="poAbs" style="bottom: 87px;left:50%"></div>-->
           <ul id="foundImages" class="">
@@ -321,7 +321,7 @@ $this->_sections['td']['last']       = ($this->_sections['td']['iteration'] == $
                         </span>
                       </li>
                       <li class="noBorderBottom">
-                      <ul class="showHideToggleClass upcmgContentShow weekShopToggleContent hide">
+                      <ul class="showHideToggleClass upcmgContentShow weekShopToggleContent">
                             <li>
                               <a href="http://fab.com/sale/4577/" alt="">
                                 <span class="title">pEi Pod</span>
@@ -446,7 +446,7 @@ $this->_sections['t2d']['last']       = ($this->_sections['t2d']['iteration'] ==
                         </span>
                       </li>
                       <li class="noBorderBottom">
-                      <ul class="showHideToggleClass upcmgContentShow weekShopToggleContent hide">
+                      <ul class="showHideToggleClass upcmgContentShow weekShopToggleContent ">
                             <li>
                               <a href="http://fab.com/sale/4579/" alt="">
                                 <span class="title">Mercer Cutlery</span>
@@ -463,106 +463,6 @@ $this->_sections['t2d']['last']       = ($this->_sections['t2d']['iteration'] ==
                                     </span>
                                   </span>
                                   <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4579/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-                                </span>
-                                <span class="imgInfoTopHov hide">
-                                  <h3 class="imgDesEndSn">
-                                    Sale Ends in 8 days and 8 hours
-                                  </h3>
-                                  <span class="fabShopSprite greyClockBig marginLeft5"></span>
-                                </span>
-                              </span>
-                            </li>
-                            <li>
-                              <a href="http://fab.com/sale/4615/" alt="">
-                                <span class="title">The Redhead NYC</span>
-                                <span class="des"> Southern Snacks with a Twist </span>
-                              </a>
-                              <span class="imgList transBrd transBrdHvr hide">
-                                <span class="hoverArrow"></span>
-                                <a href="http://fab.com/sale/4615/" class="filler" alt=""><img src="./fab.com_files/4615-300x300-1332971238.png" alt="" width="300" height="300" title=""></a>
-                                <span class="imgInfoBottom">
-                                  <span class="floatLeft">
-                                    <h3>The Redhead NYC</h3>
-                                    <span class="imgDescription">
-                                       Southern Snacks with a Twist 
-                                    </span>
-                                  </span>
-                                  <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4615/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-                                </span>
-                                <span class="imgInfoTopHov hide">
-                                  <h3 class="imgDesEndSn">
-                                    Sale Ends in 8 days and 8 hours
-                                  </h3>
-                                  <span class="fabShopSprite greyClockBig marginLeft5"></span>
-                                </span>
-                              </span>
-                            </li>
-                            <li>
-                              <a href="http://fab.com/sale/4602/" alt="">
-                                <span class="title">Bananappeal</span>
-                                <span class="des">Ready to Eat Cakes in Jars</span>
-                              </a>
-                              <span class="imgList transBrd transBrdHvr hide">
-                                <span class="hoverArrow"></span>
-                                <a href="http://fab.com/sale/4602/" class="filler" alt=""><img src="./fab.com_files/4602-300x300-1332972376.png" alt="" width="300" height="300" title=""></a>
-                                <span class="imgInfoBottom">
-                                  <span class="floatLeft">
-                                    <h3>Bananappeal</h3>
-                                    <span class="imgDescription">
-                                      Ready to Eat Cakes in Jars
-                                    </span>
-                                  </span>
-                                  <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4602/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-                                </span>
-                                <span class="imgInfoTopHov hide">
-                                  <h3 class="imgDesEndSn">
-                                    Sale Ends in 8 days and 8 hours
-                                  </h3>
-                                  <span class="fabShopSprite greyClockBig marginLeft5"></span>
-                                </span>
-                              </span>
-                            </li>
-                            <li>
-                              <a href="http://fab.com/sale/4601/" alt="">
-                                <span class="title">Whole Spice</span>
-                                <span class="des">Fine Grinds to Seduce Your Senses </span>
-                              </a>
-                              <span class="imgList transBrd transBrdHvr hide">
-                                <span class="hoverArrow"></span>
-                                <a href="http://fab.com/sale/4601/" class="filler" alt=""><img src="./fab.com_files/4601-300x300-1332886051.png" alt="" width="300" height="300" title=""></a>
-                                <span class="imgInfoBottom">
-                                  <span class="floatLeft">
-                                    <h3>Whole Spice</h3>
-                                    <span class="imgDescription">
-                                      Fine Grinds to Seduce Your Senses 
-                                    </span>
-                                  </span>
-                                  <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4601/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
-                                </span>
-                                <span class="imgInfoTopHov hide">
-                                  <h3 class="imgDesEndSn">
-                                    Sale Ends in 8 days and 8 hours
-                                  </h3>
-                                  <span class="fabShopSprite greyClockBig marginLeft5"></span>
-                                </span>
-                              </span>
-                            </li>
-                            <li>
-                              <a href="http://fab.com/sale/4592/" alt="">
-                                <span class="title">Red Rooster Trading Co.</span>
-                                <span class="des">Gorgeous Rustic Grinders and Goods</span>
-                              </a>
-                              <span class="imgList transBrd transBrdHvr hide">
-                                <span class="hoverArrow"></span>
-                                <a href="http://fab.com/sale/4592/" class="filler" alt=""><img src="./fab.com_files/4592-300x300-1332964382.png" alt="" width="300" height="300" title=""></a>
-                                <span class="imgInfoBottom">
-                                  <span class="floatLeft">
-                                    <h3>Red Rooster Trading Co.</h3>
-                                    <span class="imgDescription">
-                                      Gorgeous Rustic Grinders and Goods
-                                    </span>
-                                  </span>
-                                  <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4592/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
                                 </span>
                                 <span class="imgInfoTopHov hide">
                                   <h3 class="imgDesEndSn">
@@ -667,31 +567,61 @@ $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] ==
   <div class="clear"></div>
   <div class="getInspiredWrap">
     <h2 class="salesTitle salesTitleEndSn floatLeft"> <em class="redText">创意</em></h2>
-    <a href="javascript:void(0)" onclick="window.location.href =&#39;http://fab.com/inspiration/#!/all/filter/popular-week&#39;" class="positionRel floatRight">
+    <a href="javascript:void(0)" onclick="window.location.href =;" class="positionRel floatRight">
       <span class="buyNowBg round20 viewAllBg floatRight">
         <span class="fabShopSprite gtIcon imgInfoArrow"></span>
       </span>
     </a>
     <div class="clear"></div>
     <ul>
+    <?php unset($this->_sections['dr']);
+$this->_sections['dr']['loop'] = is_array($_loop=$this->_tpl_vars['datar']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['dr']['name'] = 'dr';
+$this->_sections['dr']['show'] = true;
+$this->_sections['dr']['max'] = $this->_sections['dr']['loop'];
+$this->_sections['dr']['step'] = 1;
+$this->_sections['dr']['start'] = $this->_sections['dr']['step'] > 0 ? 0 : $this->_sections['dr']['loop']-1;
+if ($this->_sections['dr']['show']) {
+    $this->_sections['dr']['total'] = $this->_sections['dr']['loop'];
+    if ($this->_sections['dr']['total'] == 0)
+        $this->_sections['dr']['show'] = false;
+} else
+    $this->_sections['dr']['total'] = 0;
+if ($this->_sections['dr']['show']):
+
+            for ($this->_sections['dr']['index'] = $this->_sections['dr']['start'], $this->_sections['dr']['iteration'] = 1;
+                 $this->_sections['dr']['iteration'] <= $this->_sections['dr']['total'];
+                 $this->_sections['dr']['index'] += $this->_sections['dr']['step'], $this->_sections['dr']['iteration']++):
+$this->_sections['dr']['rownum'] = $this->_sections['dr']['iteration'];
+$this->_sections['dr']['index_prev'] = $this->_sections['dr']['index'] - $this->_sections['dr']['step'];
+$this->_sections['dr']['index_next'] = $this->_sections['dr']['index'] + $this->_sections['dr']['step'];
+$this->_sections['dr']['first']      = ($this->_sections['dr']['iteration'] == 1);
+$this->_sections['dr']['last']       = ($this->_sections['dr']['iteration'] == $this->_sections['dr']['total']);
+?>
         <li>
           <div class="insImgCont filler">
-            <a style="display: block;" href="http://fab.com/inspiration/weiner-dog-oil-vinegar-set">
-              <span style="height: 306px; width: 306px; background-image: url(&quot;http://static.fab.com/inspiration/87531-306x306-1.png&quot;);" class="insImg"></span>
+            <a style="display: block;" href="index.php/index/ware/id/<?php echo $this->_tpl_vars['datar'][$this->_sections['dr']['index']]['id']; ?>
+">
+              <span style="height: 306px; width: 306px; background-image: url(&quot;<?php echo $this->_tpl_vars['public']; ?>
+/images/ware/<?php echo $this->_tpl_vars['datar'][$this->_sections['dr']['index']]['w_pic']; ?>
+&quot;);" class="insImg"></span>
             </a>
           </div>
           <div class="imageInfoWrap">
-            <a href="http://fab.com/inspiration/weiner-dog-oil-vinegar-set" data-image-id="weiner-dog-oil-vinegar-set" class="fabShopSprite infoIconBG">
+            <a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['datar'][$this->_sections['dr']['index']]['id']; ?>
+" data-image-id="weiner-dog-oil-vinegar-set" class="fabShopSprite infoIconBG">
               <span class="fabShopSprite infoIcon"></span>
             </a>
             <span class="imageInfoContent round5"></span>
           </div>
           <p class="overflowHidden imgAuthInfo">
             <span class="floatLeft">
-							<span class="imgBy floatLeft"><a href="http://fab.com/adamwillis/">adamwillis</a></span>
+							<span class="imgBy floatLeft"><a href="http://fab.com/adamwillis/"><?php echo $this->_tpl_vars['datar'][$this->_sections['dr']['index']]['c_name']; ?>
+</a></span>
               <span class="upldTimeInfo">
                 <span class="upldTime fabShopSprite floatLeft"></span>
-                <span class="upldTimeCount floatLeft">about 24 hours ago</span>
+                <span class="upldTimeCount floatLeft"><?php echo ((is_array($_tmp=$this->_tpl_vars['datar'][$this->_sections['dr']['index']]['sale_end'])) ? $this->_run_mod_handler('compareDate', true, $_tmp) : compareDate($_tmp)); ?>
+</span>
               </span>
               <span class="fabSeprator fabShopSprite"></span>
 
@@ -712,87 +642,11 @@ $this->_sections['t3d']['last']       = ($this->_sections['t3d']['iteration'] ==
             </span>
           </p>
         </li>
-        <li>
-          <div class="insImgCont filler">
-            <a style="display: block;" href="http://fab.com/inspiration/pearl">
-              <span style="height: 306px; width: 306px; background-image: url(&quot;http://static.fab.com/inspiration/86691-306x306-1.png&quot;);" class="insImg"></span>
-            </a>
-          </div>
-          <div class="imageInfoWrap">
-            <a href="http://fab.com/inspiration/pearl" data-image-id="pearl" class="fabShopSprite infoIconBG">
-              <span class="fabShopSprite infoIcon"></span>
-            </a>
-            <span class="imageInfoContent round5"></span>
-          </div>
-          <p class="overflowHidden imgAuthInfo">
-            <span class="floatLeft">
-							<span class="imgBy floatLeft"><a href="http://fab.com/reisbm11/">reisbm11</a></span>
-              <span class="upldTimeInfo">
-                <span class="upldTime fabShopSprite floatLeft"></span>
-                <span class="upldTimeCount floatLeft">2 days ago</span>
-              </span>
-              <span class="fabSeprator fabShopSprite"></span>
-
-              <span class="imgFabCount">
-                  <a href="http://fab.com/inspiration/86691/fab" rel="fabInspImg" title="FAB this photo" class="showLoginBox">
-                    <span class="imgFab fabShopSprite"></span>
-                  </a>
-                <span class="fabIcon">115</span>
-              </span>
-              <span class="imgCountDetails">
-                <a title="Comment on this photo" href="http://fab.com/inspiration/pearl">
-                  <span class="imgCount fabShopSprite"></span>
-                </a>
-                <span>
-                  <fb:comments-count href="http://fab.com/inspiration/pearl" class="fb_comments_count_zero"><span class="fb_comments_count" style="vertical-align: top !important;"></span></fb:comments-count>
-              </span>
-            </span>
-            </span>
-          </p>
-        </li>
-        <li>
-          <div class="insImgCont filler">
-            <a style="display: block;" href="http://fab.com/inspiration/stone">
-              <span style="height: 306px; width: 306px; background-image: url(&quot;http://static.fab.com/inspiration/86693-306x306-1.png&quot;);" class="insImg"></span>
-            </a>
-          </div>
-          <div class="imageInfoWrap">
-            <a href="http://fab.com/inspiration/stone" data-image-id="stone" class="fabShopSprite infoIconBG">
-              <span class="fabShopSprite infoIcon"></span>
-            </a>
-            <span class="imageInfoContent round5"></span>
-          </div>
-          <p class="overflowHidden imgAuthInfo">
-            <span class="floatLeft">
-							<span class="imgBy floatLeft"><a href="http://fab.com/sniggitysnags/">sniggitysnags</a></span>
-              <span class="upldTimeInfo">
-                <span class="upldTime fabShopSprite floatLeft"></span>
-                <span class="upldTimeCount floatLeft">2 days ago</span>
-              </span>
-              <span class="fabSeprator fabShopSprite"></span>
-
-              <span class="imgFabCount">
-                  <a href="http://fab.com/inspiration/86693/fab" rel="fabInspImg" title="FAB this photo" class="showLoginBox">
-                    <span class="imgFab fabShopSprite"></span>
-                  </a>
-                <span class="fabIcon">97</span>
-              </span>
-              <span class="imgCountDetails">
-                <a title="Comment on this photo" href="http://fab.com/inspiration/stone">
-                  <span class="imgCount fabShopSprite"></span>
-                </a>
-                <span>
-                  <fb:comments-count href="http://fab.com/inspiration/stone" class="fb_comments_count_zero"><span class="fb_comments_count" style="vertical-align: top !important;"></span></fb:comments-count>
-              </span>
-            </span>
-            </span>
-          </p>
-        </li>
+        <?php endfor; endif; ?>
     </ul>
     <div class="clear"></div>
   </div>
   </div>
-  <div id="push"></div>
 </div>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'public/foot.html', 'smarty_include_vars' => array()));
