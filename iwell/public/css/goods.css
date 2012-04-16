@@ -65,7 +65,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 #goods_add_favo {background-position:0 -154px;margin-left:10px;}
 
 /*销售排行*/
-.sell_ranking_tit {height:31px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods/goods.png) -161px -284px no-repeat #f2f2f2;font-weight:700;}
+.sell_ranking_tit {height:21px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods/goods.png) -161px -284px no-repeat #f2f2f2;font-weight:700;}
 #sell_ranking {border:1px solid #ccc;margin-top:2px;}
 #sell_tab_main {margin:10px 2px 0;border-bottom:1px solid #ccc;padding-left:20px;}
 #sell_tab_main li {display:inline-block;*display:inline;*zoom:1;*margin:0 2px;width:69px;height:23px;line-height:23px;border:1px solid #ccc;border-bottom:0 none;background:url(goods/goods.png) 0 -201px no-repeat;text-align: center;}
@@ -79,7 +79,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 #sell_tab_sub a{color: #333;}
 
 /*最近浏览*/
-.recent_view_tit {height:31px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods/goods.png) -161px -251px no-repeat #f2f2f2;font-weight:700;}
+.recent_view_tit {height:21px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods/goods.png) -161px -251px no-repeat #f2f2f2;font-weight:700;}
 .recent_view {border:1px solid #ccc;margin-top:2px;}
 .recent_view li {padding:10px 5px 0;zoom:1;}
 .recent_view li img {float:left;margin-left:14px;}
