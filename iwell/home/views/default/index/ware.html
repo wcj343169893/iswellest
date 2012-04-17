@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title><{$lan.site_title}></title>
+<title><{$data.w_name}>--<{$lan.site_title}></title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/goods.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/reg.css" rel="stylesheet" type="text/css" />
@@ -152,130 +152,28 @@
 			<!--商品相关信息 end-->
 			<!--商品评价 start-->
 			<div id="goods_evaluation">
-				<ul class="goods_eva_info">
-					<li><a href="#">全部评价（222）</a></li>
-					<li><a href="#">好评（220）</a></li>
-					<li><a href="#">中评（1）</a></li>
-					<li><a href="#">差评（1）</a></li>
-				</ul>
-				<!--
-					宽度显示
-					ul id="goods_eva_details" 下的
-					li class="li_1"
-					中的<i></i>标签中写 0.00-1.00
-				-->
-				<ul id="goods_eva_details">
-					<li class="li_0">
-						<strong class="block f32">97%</strong>
-						<span>好评度</span>
-					</li>
-					<li class="li_1">
-						<p class="p_0"><span class="fl">好评</span><b class="icon"><i>0.97</i></b><span class="fl">97%</span></p>
-						<p class="p_0"><span class="fl">中评</span><b class="icon"><i>0.02</i></b><span class="fl">2%</span></p>
-						<p class="p_0"><span class="fl">差评</span><b class="icon"><i>0.01</i></b><span class="fl">1%</span></p>
-					</li>
-					<li class="li_2">
-						<span class="block cf00">前5位发表评论的用户即可获得1元优惠卷。</span>
-						<a href="#">查看优惠卷规则</a>
-					</li>
-					<li class="li_3">
-						<span class="block">我曾在心云买过此商品</span>
-						<a href="javascript:comment()">我要评价</a>
-<div class="logins login_quick" id="unLogin" style="display:none;position:absolute; z-index:999999999;top:0;background:#FFFFFF;">
-     <div class="logins_name"><span><img src="<{$public}>/images/logins_close.png" width="13" height="13"   onclick="unLoginClears(this)"/></span></div>
-     <ul id="user_login_type">
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = 'iswellest'; // required: replace example with your forum shortname
+				var disqus_developer = 1;
+				var disqus_title = 'iswellest';
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 
-			</ul>
-			<div id="user_login_type_list">
-				<div class="user_login_form">
-					<form id="formlogins"  action="javascript:loginAjax()" method="post" onsubmit="submitComment(this)" name="commentForm" id="commentForm">
-					<table align="center">
-						<tr>
-							<td>用户名:<input type='text' name='username' class='input_0'></td>
-							</tr>
-							 <tr><td>密	码: <input type='password' name='password' class='input_0'><td></tr>
-							 <tr><td><input type='submit' value="登陆" id="user_reg_submit" style="border:0"></td><td><a href="<{$app}>/user/res">注册</a></td></tr>
-					</table>
-					<input id="comment" type="hidden" name="comment" value="1" />
-					</form>
-				</div>
-  </div> 
-</div>
-						<script>
-									function unLoginClears(thisis)
-									{
-											document.getElementById("unLogin").style.display = "none";
-											document.body.removeChild(document.getElementById("comment_div"));
-									}
-									function getScrollTop()
-									{
-										var scrollTop=0;
-										if(document.documentElement&&document.documentElement.scrollTop)
-										{
-											scrollTop=document.documentElement.scrollTop;
-										}
-										else if(document.body)
-										{
-											scrollTop=document.body.scrollTop;
-										}
-										return scrollTop;
-									}
-									function comment(){
-											var bodys = document.createElement("DIV");
-											bodys.style.position = "absolute";
-											bodys.style.zIndex = "999999998";
-											bodys.id = "comment_div";
-											bodys.style.top = "0";
-											bodys.style.width = (document.body.offsetWidth) + "px";
-											bodys.style.height = (document.body.offsetHeight) + "px";
-											document.body.appendChild(bodys);
-											var d=document.getElementById('unLogin');
-											d.style.display = "block";
-											d.style.top= (parseFloat(getScrollTop())+150)+"px";
-											d.style.left = parseInt((parseInt(document.body.offsetWidth)-450)/2) + "px";
-									}	
-						</script>
-					</li>
-				</ul>
+					var s = document.createElement('script'); s.async = true;
+						s.type = 'text/javascript';
+						s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			
 			</div>
-			<!--商品评价 end-->
-			<!--商品留言 start-->
-			<div class="goods_message">
-				<div class="goods_mess_usr">
-					<a href="#"><img src="<{$public}>/images/user.jpg" width="50" height="50" alt="" /></a>
-					<a href="#" class="a_0">用户名</a>
-					<span class="mt_6 c999 block">购买日期</span>
-					<span class="c999">2011/03/17</span>
-				</div>
-				<div class="goods_mess_detail">
-					<div class="goods_mess_tit">
-						<span class="fl">姐姐说生日礼物，你值得拥有</span>
-						<b class="goods_stars goods_stars_5">goods_stars_5</b>
-						<span class="fr">2010/04/05 13:30:00</span>
-					</div>
-					<div class="goods_mess_text">
-						<p class="goods_mess_text_left">&nbsp;</p>
-						<a href="#" class="a_0">回 复</a>
-					</div>
-					<div class="goods_mess_reply">
-					<{section loop=$comment name=c}>
-						<dl>
-							<dt><{$smarty.section.i.index+1}>.<a href="#"><{$comment[c].reg_username}></a> 回复说：</dt>
-							<dd><{$comment[c].com_conntent}></dd>
-						</dl>
-					<{/section}>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<!--商品留言 end-->
-			<ul class="goods_mess_flip">
-				<li>共 12 页</li>
-				<li><a href="#">第一页</a></li>
-				<li><a href="#">上一页</a></li>
-				<li><a href="#">下一页</a></li>
-				<li><a href="#">最末页</a></li>
-			</ul>
+				
 		</div>
 		<div class="goods_right">
 			<!--销售排行 start-->
