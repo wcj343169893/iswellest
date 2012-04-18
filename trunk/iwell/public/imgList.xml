@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='GB2312'?>
+<imgList>
+	<pic>
+		<list path="/public/images/ware/20120406194011_109.jpg" smallpath="/public/uploads/01.png"
+			smallinfo="可爱卡通图标下载">http://2.com/index.php/index/ware/id/1</list>
+		<list path="/public/images/ware/20120406194553_637.jpg" smallpath="/public/uploads/08.png"
+			smallinfo="易拉罐饮料图标">http://2.com/index.php/index/ware/id/2</list>
+		<list path="/public/images/ware/20120406194827_708.jpg" smallpath="/public/uploads/01.png"
+			smallinfo="windows8图标下载">http://2.com/index.php/index/ware/id/3</list>
+		<list path="/public/images/ware/20120406194903_980.jpg" smallpath="/public/uploads/03.png"
+			smallinfo="鼠标设计桌面图标">http://2.com/index.php/index/ware/id/4</list>
+		<list path="/public/images/ware/20120406200448_954.jpg" smallpath="/public/uploads/06.png"
+			smallinfo="iphone4手机图标">http://2.com/index.php/index/ware/id/5</list>
+		<list path="/public/images/ware/20120406200634_883.jpg" smallpath="/public/uploads/07.png"
+			smallinfo="油漆软件桌面图标">http://2.com/index.php/index/ware/id/6</list>
+	</pic>
+	<rollTime fade_in="10">4</rollTime>
+	<text font="Arial" size="12" bold="true" color="0xffffff"></text>
+</imgList>
