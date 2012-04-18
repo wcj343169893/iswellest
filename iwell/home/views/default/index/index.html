@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title><{$lan.site_title}>-首页</title>
 <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
+<script type="text/javascript" src="<{$public}>/js/swfobject.js"></script>
 <script type="text/javascript" src="<{$public}>/js/index.js"></script>
 <script type="text/javascript" src="<{$public}>/js/timeCountDown.js"></script>
 <link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
@@ -18,31 +19,14 @@
   <div id="featuredShop" class="poRel" style="*margin-bottom: 6px">
     <h2 class="salesTitle salesTitleEndSn"><em class="redText">推荐商品</em></h2>
     <div id="featuredShopSliderContent">
-      <div class="imgSliderWrap">
-        <div class="buttonBg floatLeft"><span id="nextButton" class="displayNone buttons floatLeft" style="display: inline; "><span class="nextIcon fabShopSprite"></span></span></div>
-        <div id="featuredAlbumSlidesContainer">
-          <!--<div id="shop_img_loader" class="poAbs" style="bottom: 87px;left:50%"></div>-->
-          <ul id="foundImages" class="">
-          		<{section loop=$data name='ls'}>
-              <li class="alignCenter foundImagesSlide poRel">
-                <a href="<{$url}>/ware/id/<{$data[ls].id}>" class="gimg" data-img-url="">
-                  <img src="<{$public}>/images/ware/<{$data[ls].w_pic}>" alt="">
-                    <span class="imgInfoBottom imgInfoBottomShopsMain">
-                      <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative">
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle desc_111"><{$data[ls].w_name}></em>
-                          <h3 class=""><span class="mainTitlePopUp"><strong class="f14">￥<{$data[ls].w_price}></strong></span></h3>
-                        </span>
-                      </span>
-                    </span>
-                </a>
-              </li>
-              <{/section}>
-          </ul>
-        </div>
-        <div class="buttonBg floatRight"><span id="prvButton" class="displayNone buttons floatRight" style="display: inline; "><span class="prvIcon fabShopSprite"></span></span></div>
-      </div>
-      <div class="clear"></div>
     </div>
+    <script type="text/javascript">				    
+	var so = new SWFObject("public/swf/iswell.swf", "sotester", "938", "200", "0", "#FFFFFF");	
+	so.addParam("FlashVars", "xmlUrl=public/imgList.xml");			    
+	so.addParam("quality", "High");			    
+	so.addParam("wmode", "Opaque");			    
+	so.write("featuredShopSliderContent");				
+	</script>
   </div>
   <div class="fabBorderSpace"></div>
 
