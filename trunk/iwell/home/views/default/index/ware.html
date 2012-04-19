@@ -105,7 +105,7 @@
 					<dt>商品总价：</dt>
 					<dd><strong class="f14 cb00">￥<span id='sumprice'><{$data.w_price}></span></strong></dd>
 				</dl>
-				<p class="clearFix"><a href="javascript:show()" id="goods_add_cart" >加入购物车</a><a href="#" id="goods_add_favo">收藏此商品</a></p>
+				<p class="clearFix"><a href="javascript:show()" id="goods_add_cart" >&nbsp;</a></p>
 				<!-- 购物车用 -->
 				<input type="hidden" name="goods_id" value="<{$data.id}>" />
 				<input type="hidden" name="Images_url" value="<{$data.w_pic}>" />
@@ -139,10 +139,10 @@
 		<div class="goods_left">
 			<!--商品相关信息 start-->
 			<ul id="goods_info_main">
-				<li class="active"><a href="javascript:void(0)">商品介绍</a></li>
-				<li><a href="javascript:void(0">商品属性</a></li>
-				<li><a href="javascript:void(0">包装清单</a></li>
-				<li><a href="javascript:void(0">售后服务</a></li>
+				<li class="active">商品介绍<span></span></li>
+				<li>商品属性<span></span></li>
+				<li>包装清单<span></span></li>
+				<li>售后服务<span></span></li>
 			</ul>
 			<div id="goods_info_sub">
 				<{section loop=$inc name=i}>
