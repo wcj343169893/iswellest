@@ -35,7 +35,9 @@
 					$this->assign('tr3',date("l m/d",strtotime("+3 day")));
 					$this->assign('tr3Data',$tr3Data);
 					
-					
+					$goods=D("goods");
+					$goodsList=$goods->limit(10)->select();
+					$this->assign('goodsList',$goodsList);
 					//手机配件
 // 					$pj=$s->limit(6)->where(array('w_type'=>'pj'))->select();
 // 					$this->assign('pj',$pj);
