@@ -60,14 +60,6 @@
 		<!--产品图 end-->
 		<!--产品信息 start-->
 		<div class="goods_info_right">
-			<!--
-				商品评价
-				goods_stars_1 = 1星
-				goods_stars_2 = 2星
-				goods_stars_3 = 3星
-				goods_stars_4 = 4星
-				goods_stars_5 = 5星
-			-->
 			<dl class="goods_info">
 				<input type='hidden' id='w_id' name='w_id' value="<{$data.id}>">
 				<dt><a href="#"><strong class="f14"><{$data.w_name}></strong></a></dt>
@@ -82,10 +74,6 @@
 				<{/section }>
 			</dl>
 			<div class="goods_others">
-				<!--
-					点击产品图，切换文字以及颜色
-					产品颜色文字，以及色值，写入dd下的img的alt标签，格式为：文字|色值
-				-->
 				<dl id="goods_color">
 					<dt>
 						<span class="block">选择颜色：</span>
@@ -169,7 +157,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$brand[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$brand[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$brand[ls].id}>"><{$brand[ls].w_name}></a></p>
-							<p>商品介绍商品介绍商品介绍</p><p><strong class="f14 cf00">￥<{$brand[ls].w_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$brand[ls].w_price}>.00</strong></p>
 						</li>
 						<{/section}>
 					</ol>
@@ -179,7 +167,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$cat[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$cat[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$cat[ls].id}>"><{$cat[ls].w_name}></a></p>
-							<p>商品介绍商品介绍商品介绍</p><p><strong class="f14 cf00">￥<{$cat[ls].w_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$cat[ls].w_price}>.00</strong></p>
 						</li>
 						<{/section}>
 
@@ -190,7 +178,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$price[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$price[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$price[ls].id}>"><{$price[ls].w_name}></a></p>
-							<p>商品介绍商品介绍商品介绍</p><p><strong class="f14 cf00">￥<{$price[ls].w_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$price[ls].w_price}>.00</strong></p>
 						</li>
 						<{/section}>
 					</ol>
@@ -205,7 +193,7 @@
 					<li>
 						<p class="p_0"><a href="<{$url}>/ware/id/<{$lately[ls].id}>"><img width="50" height="50" alt="" src="<{$public}>/images/ware/<{$lately[ls].w_pic}>"/></a></p>
 						<p><a href="<{$url}>/ware/id/<{$lately[ls].id}>"><{$lately[ls].w_name}></a></p>
-						<p>商品介绍商品介绍商品介绍</p><p><strong class="f14 cf00">￥<{$lately[ls].w_price}>.00</strong></p>
+						<p><strong class="f14 cf00">￥<{$lately[ls].w_price}>.00</strong></p>
 					</li>
 				<{/section}>
 				</ul>
