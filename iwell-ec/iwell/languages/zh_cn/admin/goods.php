@@ -185,6 +185,7 @@ $_LANG['label_suppliers']          = '选择供货商：';
 $_LANG['suppliers_no']             = '不指定供货商属于本店商品';
 $_LANG['suppliers_move_to']        = '转移到供货商';
 $_LANG['lab_to_shopex']         = '转移到网店';
+$_LANG['lab_sale_time']         = '上架/下架时间';
 
 /*------------------------------------------------------ */
 //-- 关联商品
