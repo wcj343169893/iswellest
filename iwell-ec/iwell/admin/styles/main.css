@@ -186,29 +186,30 @@ h1 .action-span1 {
   padding: 1px;
 }
 #tabbar-div {
-  background: #80BDCB;
   padding-left: 10px;
-  height: 22px;
+  height: 26px;
   padding-top: 1px;
+	background: #80BDCB url("../images/tab_bg.gif");
+	border-left:1px #cd520a solid; 
 }
 
 #tabbar-div p {
   margin: 2px 0 0 0;
 }
-
+/**选中选项卡**/
 .tab-front {
   background: #BBDDE5;
-  line-height: 20px;
+  line-height: 24px;
   font-weight: bold;
   padding: 4px 15px 4px 18px;
   border-right: 2px solid #278296;
   cursor: hand;
   cursor: pointer;
 }
-
+/**普通tab选项卡**/
 .tab-back {
   color: #FFF;
-  line-height: 20px;
+  line-height: 24px;
   padding: 4px 15px 4px 18px;
   border-right: 1px solid #FFF;
   cursor: hand;
