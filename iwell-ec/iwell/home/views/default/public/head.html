@@ -13,11 +13,11 @@
               <div class="col1 floatLeft">
                 <h2 style="padding-bottom:18px;">最新产品</h2>
                 <ul id="newSalesList">
-        			<{section loop=$newData name=nd}>
+        			<{section loop=$head_newData name=nd}>
                     <li>
                       <a href="index.php/index/ware/id/<{$newData[nd].id}>">
-                        <h5><{$newData[nd].c_name}> </h5>
-                        <h6><{$newData[nd].w_name}></h6>
+                        <h5><{$newData[nd].cat_name}> </h5>
+                        <h6><{$newData[nd].goods_name}></h6>
                       </a>
                     </li>
                    <{/section}>
@@ -26,11 +26,11 @@
               <div class="col2 floatLeft">
                 <h2 style="padding-bottom:18px;">即将下架</h2>
                 <ul id="upCSalesList">
-                	<{section loop=$endingsoondata name=esd}>
+                	<{section loop=$head_endingsoondata name=esd}>
                       <li>
                         <a href="index.php/index/ware/id/<{$endingsoondata[esd].id}>">
-                          <h5><{$endingsoondata[esd].c_name}></h5>
-                          <h6><{$endingsoondata[esd].w_name}></h6>
+                          <h5><{$endingsoondata[esd].cat_name}></h5>
+                          <h6><{$endingsoondata[esd].goods_name}></h6>
                         </a>
                       </li>
                      <{/section}>
@@ -51,12 +51,12 @@
                     	<{section loop=$category name=cat }>
                         <li class="cat_parent">
                           <a href="<{$url}>">
-                            <{$category[cat].c_name}>
+                            <{$category[cat].cat_name}>
                             <em style="text-align: right;font-size: 12px;font-style: normal;color: #ccc;float: right"><{$category[cat].subcat|@count}></em>
                           </a>
                           <ul class="hide cat_child">
                          	<{section loop=$category[cat].subcat name='a'}>
-	                          	<li><a href="<{$app}>/search/cat/cid/<{$category[cat].subcat[a].id}>"><{$category[cat].subcat[a].c_name}></a></li>
+	                          	<li><a href="<{$app}>/search/cat/cid/<{$category[cat].subcat[a].id}>"><{$category[cat].subcat[a].cat_name}></a></li>
 							<{/section}>
                           </ul>
                         </li>
