@@ -39,7 +39,10 @@
 			$this->assign("url", rtrim($GLOBALS["url"], "/"));
 			$this->assign("public", rtrim($GLOBALS["public"], "/"));
 			$this->assign("res", rtrim($GLOBALS["res"], "/"));
-		
+			//加载商店设置
+			$this->assign("shopConfig", $GLOBALS["shop_config"]);
+			Debug::addmsg("加载商店设置 <b>/brophp/bases/mytpl.class.php</b>");
+			
 			if(is_null($resource_name)){
 				$resource_name="{$_GET["m"]}/{$_GET["a"]}.".TPLPREFIX;
 			}else if(strstr($resource_name,"/")){
@@ -48,8 +51,6 @@
 				$resource_name=$_GET["m"]."/".$resource_name.".".TPLPREFIX;
 			}
 			Debug::addmsg("使用模板 <b> $resource_name </b>");
-			//设置全局变量
-			$this->assign("lan", $GLOBALS ['lan']);
 			parent::display($resource_name, $cache_id, $compile_id);	
 		}
 		/* 

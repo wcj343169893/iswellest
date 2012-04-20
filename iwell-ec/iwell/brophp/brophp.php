@@ -1,16 +1,4 @@
 <?php	
-/*********************************************************************************
- * brophp.com 框架入口文件，所有脚本都是从这个文件开始执行，主要是一些全局设置。 *
- * *******************************************************************************
- * 许可声明：专为《细说PHP》读者及LAMP兄弟连学员提供的“学习型”超轻量级php框架。*
- * *******************************************************************************
- * 版权所有 (C) 2011-2013 北京易第优教育咨询有限公司，并保留所有权利。           *
- * 网站地址: http://www.lampbrother.net (LAMP兄弟连)                             *
- * *******************************************************************************
- * $Author: 高洛峰 (skygao@lampbrother.net) $                                    *
- * $Date: 2011-07-18 10:00:00 $                                                  * 
- * ******************************************************************************/
-	
 	header("Content-Type:text/html;charset=utf-8");  //设置系统的输出字符为utf-8
 	date_default_timezone_set("PRC");    		 //设置时区（中国）
 
@@ -43,11 +31,12 @@
 	if (file_exists($myfunfile)){
 		require $myfunfile;
 	}
-	//加载语言
-	$lan_file=PROJECT_PATH."commons/lan/lan_chinese.php";
-	if (file_exists($lan_file)){
-		require $lan_file;
+	//加载商城设置
+	$shop_config=PROJECT_PATH."temp/static_caches/shop_config.php";
+	if (file_exists($shop_config)){
+		require $shop_config;
 	}
+	$GLOBALS["shop_config"]=$data;
 	//包含全局的函数库文件，用户可以自己定义函数在这个文件中
 	$funfile=PROJECT_PATH."commons/functions.inc.php";
 	if(file_exists($funfile))
