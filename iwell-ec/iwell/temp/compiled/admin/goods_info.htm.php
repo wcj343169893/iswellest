@@ -176,7 +176,18 @@ if ($this->_foreach['volume_price_tab']['total'] > 0):
           <tr id="promote_4">
             <td class="label" id="promote_5"><?php echo $this->_var['lang']['lab_promote_date']; ?></td>
             <td id="promote_6">
-              <input name="promote_start_date" type="text" id="promote_start_date" size="12" value='<?php echo $this->_var['goods']['promote_start_date']; ?>' readonly="readonly" /><input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('promote_start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="<?php echo $this->_var['lang']['btn_select']; ?>" class="button"/> - <input name="promote_end_date" type="text" id="promote_end_date" size="12" value='<?php echo $this->_var['goods']['promote_end_date']; ?>' readonly="readonly" /><input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('promote_end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="<?php echo $this->_var['lang']['btn_select']; ?>" class="button"/>
+              <input name="promote_start_date" type="text" id="promote_start_date" size="12" value='<?php echo $this->_var['goods']['promote_start_date']; ?>' readonly="readonly" />
+              <input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('promote_start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="<?php echo $this->_var['lang']['btn_select']; ?>" class="button"/> - 
+              <input name="promote_end_date" type="text" id="promote_end_date" size="12" value='<?php echo $this->_var['goods']['promote_end_date']; ?>' readonly="readonly" /><input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('promote_end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="<?php echo $this->_var['lang']['btn_select']; ?>" class="button"/>
+            </td>
+          </tr>
+          <tr>
+          	<td class="label"><?php echo $this->_var['lang']['lab_sale_time']; ?></td>
+          	<td>
+          		<input name="sale_begin_time" type="text" id="sale_begin_time" size="20" value='<?php echo $this->_var['goods']['sale_begin_time']; ?>' readonly="readonly" />
+              	<input name="btn_sbt" type="button" id="btn_sbt" onclick="return showCalendar('sale_begin_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_sbt');" value="<?php echo $this->_var['lang']['btn_select']; ?>" class="button"/> - 
+          		<input name="sale_end_time" type="text" id="sale_end_time" size="20" value='<?php echo $this->_var['goods']['sale_end_time']; ?>' readonly="readonly" />
+              	<input name="btn_set" type="button" id="btn_set" onclick="return showCalendar('sale_end_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_set');" value="<?php echo $this->_var['lang']['btn_select']; ?>" class="button"/>
             </td>
           </tr>
           <tr>
