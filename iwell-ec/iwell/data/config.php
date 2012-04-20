@@ -30,6 +30,6 @@ define('AUTH_KEY', 'accpocke');
 
 define('OLD_AUTH_KEY', 'this is a key');
 
-define('API_TIME', '2012-04-20 01:40:05');
+define('API_TIME', '2012-04-20 07:31:32');
 
 ?>
