@@ -14,7 +14,7 @@
 					$newData=$s->limit(6)->order("sale_begin asc")->where(array('sale_end > '=>date("Y-m-d H:i:s")))->joins("cat","w_cat","id","id,c_name")->select();
 // 					$result=$s->unit_select("SELECT w.*,c.c_name FROM pro_ware w LEFT JOIN pro_cat c ON w.w_cat=c.id WHERE sale_begin <> '' AND  DATE_FORMAT(sale_begin,'%Y%m%d%h%i')>DATE_FORMAT(NOW(),'%Y%m%d%h%i') ORDER BY sale_begin ASC LIMIT 0,10;");
 					
-					$result1=$s->limit(6)->order("sale_begin asc")->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","c_name")->select();
+					$result1=$s->limit(6)->order("sale_begin asc")->where(array('w_type'=>'tj'))->joins("cat","w_cat","id","id,c_name")->select();
 // 					print_r($s->joins("cat","w_cat","id","id,c_name")->select());
 					$this->assign('newData',$newData);
 					//快要过期产品
