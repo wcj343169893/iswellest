@@ -1,0 +1,1 @@
+<?php {"pri":"img_id","0":"goods_id","1":"img_url","2":"img_desc","3":"thumb_url","4":"img_original"}

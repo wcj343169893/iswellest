@@ -1,0 +1,1 @@
+<?php exit;?>a:3:{s:8:"template";a:1:{i:0;s:94:"C:/Documents and Settings/andy/Zend/workspaces/DefaultWorkspace/iwell/themes/default/goods.dwt";}s:7:"expires";i:1334889534;s:8:"maketime";i:1334885934;}

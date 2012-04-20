@@ -1,0 +1,73 @@
+@charset "utf-8";
+a {color:#000;}
+/*左右分列*/
+.goods_list_left {width:160px;overflow:hidden;float:left;}
+.goods_list_right {width:770px;overflow:hidden;float:right;}
+
+/*全部商品分类*/
+#all_sort {border:2px solid #ccc;padding-bottom:1px;}
+#all_sort h2.h2_0 {height:36px;line-height:36px;text-align:center;color:#fff;font-size:14px;font-weight:700;background:#673b7f;}
+#all_sort dl {padding:1px;padding-bottom:0;zoom:1;}
+#all_sort dl:after{content:' ';display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
+#all_sort dt {height:27px;line-height:27px;overflow:hidden;background:url(goods_list/goods_list.png) 0 0 repeat-x;padding:0 10px;font-weight:700;}
+#all_sort dt a {color:#552470;float:left;}
+#all_sort dt a:hover {color:#fff;}
+#all_sort dt b.icon {float:right;width:9px;height:27px;background:url(goods_list/goods_list.png) -113px -103px no-repeat;cursor:pointer;}
+#all_sort dd {float:left;width:50%;text-indent:1em;padding:3px 0;display:none;}
+#all_sort dl.active {}
+#all_sort dl.active dd {display:block;}
+#all_sort dl.active dt b.icon {background-position:-124px -103px}
+
+/*销售排行*/
+.sell_ranking_tit {margin-top:10px;height:31px;line-height:31px;border:1px solid #ccc;padding-left:50px;background:url(goods_list/goods_list.png) -135px -103px no-repeat #f2f2f2;font-weight:700;}
+#sell_ranking {border:1px solid #ccc;margin-top:2px;}
+#sell_tab_main {margin:10px 2px 0;border-bottom:1px solid #ccc;text-align:center;}
+#sell_tab_main li {display:inline-block;*display:inline;*zoom:1;*margin:0 2px;width:49px;height:23px;line-height:23px;border:1px solid #ccc;border-bottom:0 none;background:url(goods_list/goods_list.png) 0 -103px no-repeat;}
+#sell_tab_main li.active {background-position:0 -128px;font-weight:700;}
+#sell_tab_sub ol {margin:0 5px;}
+#sell_tab_sub li {padding-top:10px;zoom:1;}
+#sell_tab_sub li:after{content:' ';display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
+#sell_tab_sub li p.p_0 {float:left;width:70px;}
+#sell_tab_sub li p.p_0 strong.strong_0 {float:left;color:#f00;width:14px;}
+
+/*频道导航*/
+p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid #ccc;background:#fcf6ff;}
+
+/*详细分类*/
+.sort_details {border:1px solid #ccc;padding:5px 0 5px 20px;margin-top:10px;}
+.sort_details dl {padding:3px 0;}
+.sort_details dt {font-weight:700;display:inline;}
+.sort_details dd {display:inline;}
+.sort_details dd.active a {padding:2px 3px;background:#ddd;}
+
+/*商品排序*/
+.goods_sort {width:768px;overflow:hidden;margin-top:10px;height:38px;background:url(goods_list/goods_list.png) 0 -63px repeat-x;line-height:36px;}
+.goods_sort li {float:left;text-align:center;padding-left:20px;border-right:1px solid #7a797c;height:34px;overflow:hidden;margin-top:3px;}
+.goods_sort li a {float:left;padding-right:20px;}
+.goods_sort li.active {height:38px;border:0 none;margin:0;background:url(goods_list/goods_list.png) 0 -153px no-repeat;line-height:38px;}
+.goods_sort li.active a {background:url(goods_list/goods_list.png) right -153px no-repeat;color:#fff;}
+
+/*商品列表*/
+#all_goods_list {width:100%;overflow:hidden;text-align:center;}
+#all_goods_list li {width:168px;padding:10px;float:left;border:2px solid #fff;margin-top:10px;height:190px;}
+#all_goods_list li.active {border-color: rgba(51, 51, 51, 0.199219) rgba(51, 51, 51, 0.203125);}
+#all_goods_list li a.a_0 {display:inline-block;*display:inline;*zoom:1;margin:0 3px;width:45px;height:23px;line-height:23px;text-align:center;background:url(goods_list/goods_list.png) -51px -103px no-repeat;}
+
+/*翻页*/
+.goods_flip {width:100%;overflow:hidden;margin-top:10px;text-align:right;}
+.goods_flip li {display:inline-block;*display:inline;*zoom:1;margin:0 3px;}
+#goods_pages {width:24px;}
+
+/*搜索*/
+.search_result_info {height:30px;line-height:30px;padding:0 10px;border:1px solid #ccc;color:#f00;background:#eee;}
+.search_hot_sale {border:1px solid #ccc;margin-top:10px;}
+.search_hot_sale h2.h2_0 {height:30px;line-height:30px;text-align:center;color:#f00;background:#673B7F;font-weight:700;color:#fff;}
+
+/*公用*/
+.mt_5 {margin-top:5px;}
+.ml_10 {margin-left:10px;}
+.pro_name {height:2.6em;line-height:1.3em;overflow:hidden;}
+.f14 {font-size:14px;}
+.cb00 {color:#bb0000;}
+.c502 {color:#50216c;}
+.yahei {font-family:'MicroSoft yaHei';}

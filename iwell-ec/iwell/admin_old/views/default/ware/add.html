@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>管理中心 - 添加商品 </title>
+<meta name="robots" content="noindex, nofollow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<{$res}>/css/general.css" rel="stylesheet" type="text/css" />
+<link href="<{$res}>/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<{$res}>/js/common.js"></script>
+<script language="javascript" type="text/javascript" src="/public/DatePicker/WdatePicker.js"></script>
+
+</head>
+<body>
+<h1>
+<span class="action-span"><a href="<{$url}>/index">商品信息</a></span>
+<span class="action-span1"><a href="<{$app}>/index/info">管理中心</a> </span><span id="search_id" class="action-span1"> - 添加商品</span>
+<div style="clear:both"></div>
+</h1>
+<!--表格开始 -->
+<form action="<{$url}>/insert" method='post' enctype="multipart/form-data">
+<input type="hidden" name="add_time" value="" id="add_time"/>
+<input type="hidden" name="edit_time" value="" id="edit_time"/>
+<script language="javascript" type="text/javascript">
+	var add_time=document.getElementById("add_time");
+	var edit_time=document.getElementById("edit_time");
+	var myDate = new Date();
+	add_time.value=myDate.getTime();
+	edit_time.value=myDate.getTime();
+</script>
+<div>
+	<ul>
+		<li class="tab_2" id="mall_t_1" onmouseover="Tab(1, 2, 'mall', 'tab');">商品基本信息</li>
+		<li class="tab_1" id="mall_t_2" onmouseover="Tab(2, 2, 'mall', 'tab');">更多信息</li>
+	</ul>
+</div>
+<div>
+<div id="mall_c_1">
+<table width="100%" id="general-table">
+		<tr>
+				        <td class="label">商品名称:</td>
+						<td> <input type='text' name='w_name' maxlength="50" value='' size='27' /> <font color="red">*</font> </td>
+		</tr>
+		<tr>
+						<td class="label">商品货号:</td>
+						<td> <input type='text' name='w_code' maxlength="20" value='' size='27' /> <font color="red">*</font> <br>
+							如果您不输入商品货号，系统将自动生成一个唯一的货号。
+						</td>
+					
+		</tr>
+				<tr>
+						<td class="label">商品分类</td>
+						<td>
+							<{$select}>
+						</td>
+						 </td>
+		</tr>
+		<tr>
+						<td class="label">商品品牌:</td>
+						<td> <select name='w_brand'>
+							<{section loop=$brand name='ls'}>
+									<option value="<{$brand[ls].id}>"><{$brand[ls].b_name}></option>
+							<{/section}>
+									</select>
+						<font color="red">*</font> </td>
+		</tr>
+		<tr>
+					 <td class="label">进货价格:</td>
+					 <td> <input type='text' name='w_buyprice' maxlength="20" value='' size='27' /> <font color="red">*</font> </td>
+
+		</tr>
+		<tr>
+					 <td class="label">售价:</td>
+					 <td> <input type='text' name='w_price' maxlength="20" value='' size='27' /> <font color="red">*</font> </td>
+		</tr>
+				<tr>
+					 <td class="label">商品数量:</td>
+					 <td> <input type='text' name='w_num' maxlength="20" value='' size='27' /> <font color="red">*</font> </td>
+		</tr>
+		<tr>
+					 <td class="label">积分:</td>
+					 <td> <input type='text' name='w_integral' maxlength="20" value='' size='27' /> <font color="red">*</font><br> 
+					 购买该商品时最多可以使用多少钱的积分
+					 </td>
+		</tr>
+			<tr>
+					 <td class="label">上架时间:</td>
+					 <td> <input type='text' name='sale_begin' maxlength="20" value='' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
+					 </td>
+		</tr>
+		<tr>
+					 <td class="label">下架时间:</td>
+					 <td> <input type='text' name='sale_end' maxlength="20" value='' size='27' onClick="WdatePicker()"/> <font color="red">*</font>
+					 </td>
+		</tr>
+		<tr>
+					 <td class="label">上传商品图片:</td>
+					 <td> <input type='file' name='w_pic' maxlength="50" value='' size='27' /> <font color="red">*</font><br> 
+					 </td>
+		</tr>
+						<tr>
+						<td class="label"></td>
+						<td><input type='checkbox' name='small' checked="true">自动生成缩略图</td>
+						
+		</tr>
+</table>
+</div>
+<div id="mall_c_2" style="display: none; "></div>
+</div>
+      <div class="button-div" style='margin-right:100px;margin-top:20px'>
+        <input type="submit" value=" 确定 " />
+        <input type="reset" value=" 重置 " />
+      </div>
+</form>
+<!--表格结束 -->
+</body>
