@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-19 14:50:09
+<?php /* Smarty version 2.6.18, created on 2012-04-20 13:52:39
          compiled from index/index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'compareDate', 'index/index.html', 50, false),)), $this); ?>
@@ -7,7 +7,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'compareDate
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title><?php echo $this->_tpl_vars['lan']['site_title']; ?>
+<title><?php echo $this->_tpl_vars['shopConfig']['shop_name']; ?>
 -首页</title>
 <script type="text/javascript" src="<?php echo $this->_tpl_vars['public']; ?>
 /js/jquery.js"></script>

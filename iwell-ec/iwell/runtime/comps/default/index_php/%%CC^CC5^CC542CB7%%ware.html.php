@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-20 10:05:18
+<?php /* Smarty version 2.6.18, created on 2012-04-20 12:52:24
          compiled from index/ware.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title><?php echo $this->_tpl_vars['data']['goods_name']; ?>
---<?php echo $this->_tpl_vars['lan']['site_title']; ?>
+ - <?php echo $this->_tpl_vars['shopConfig']['shop_name']; ?>
 </title>
 <link href="<?php echo $this->_tpl_vars['public']; ?>
 /css/header.css" rel="stylesheet" type="text/css" />
@@ -214,7 +214,7 @@ $this->_sections['ls']['last']       = ($this->_sections['ls']['iteration'] == $
 						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 				})();
 			</script>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<noscript>Please enable JavaScript</noscript>
 			</div>
 				
 		</div>

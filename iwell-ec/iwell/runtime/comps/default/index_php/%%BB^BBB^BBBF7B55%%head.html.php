@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-17 13:05:08
+<?php /* Smarty version 2.6.18, created on 2012-04-20 15:33:33
          compiled from public/head.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'count', 'public/head.html', 55, false),)), $this); ?>
@@ -19,7 +19,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'count', 'pu
                 <h2 style="padding-bottom:18px;">最新产品</h2>
                 <ul id="newSalesList">
         			<?php unset($this->_sections['nd']);
-$this->_sections['nd']['loop'] = is_array($_loop=$this->_tpl_vars['newData']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['nd']['loop'] = is_array($_loop=$this->_tpl_vars['head_newData']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['nd']['name'] = 'nd';
 $this->_sections['nd']['show'] = true;
 $this->_sections['nd']['max'] = $this->_sections['nd']['loop'];
@@ -45,9 +45,9 @@ $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $
                     <li>
                       <a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['id']; ?>
 ">
-                        <h5><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['c_name']; ?>
+                        <h5><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['cat_name']; ?>
  </h5>
-                        <h6><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['w_name']; ?>
+                        <h6><?php echo $this->_tpl_vars['newData'][$this->_sections['nd']['index']]['goods_name']; ?>
 </h6>
                       </a>
                     </li>
@@ -58,7 +58,7 @@ $this->_sections['nd']['last']       = ($this->_sections['nd']['iteration'] == $
                 <h2 style="padding-bottom:18px;">即将下架</h2>
                 <ul id="upCSalesList">
                 	<?php unset($this->_sections['esd']);
-$this->_sections['esd']['loop'] = is_array($_loop=$this->_tpl_vars['endingsoondata']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['esd']['loop'] = is_array($_loop=$this->_tpl_vars['head_endingsoondata']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['esd']['name'] = 'esd';
 $this->_sections['esd']['show'] = true;
 $this->_sections['esd']['max'] = $this->_sections['esd']['loop'];
@@ -84,9 +84,9 @@ $this->_sections['esd']['last']       = ($this->_sections['esd']['iteration'] ==
                       <li>
                         <a href="index.php/index/ware/id/<?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['id']; ?>
 ">
-                          <h5><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['c_name']; ?>
+                          <h5><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['cat_name']; ?>
 </h5>
-                          <h6><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['w_name']; ?>
+                          <h6><?php echo $this->_tpl_vars['endingsoondata'][$this->_sections['esd']['index']]['goods_name']; ?>
 </h6>
                         </a>
                       </li>
@@ -132,7 +132,7 @@ $this->_sections['cat']['last']       = ($this->_sections['cat']['iteration'] ==
                         <li class="cat_parent">
                           <a href="<?php echo $this->_tpl_vars['url']; ?>
 ">
-                            <?php echo $this->_tpl_vars['category'][$this->_sections['cat']['index']]['c_name']; ?>
+                            <?php echo $this->_tpl_vars['category'][$this->_sections['cat']['index']]['cat_name']; ?>
 
                             <em style="text-align: right;font-size: 12px;font-style: normal;color: #ccc;float: right"><?php echo count($this->_tpl_vars['category'][$this->_sections['cat']['index']]['subcat']); ?>
 </em>
@@ -164,7 +164,7 @@ $this->_sections['a']['last']       = ($this->_sections['a']['iteration'] == $th
 ?>
 	                          	<li><a href="<?php echo $this->_tpl_vars['app']; ?>
 /search/cat/cid/<?php echo $this->_tpl_vars['category'][$this->_sections['cat']['index']]['subcat'][$this->_sections['a']['index']]['id']; ?>
-"><?php echo $this->_tpl_vars['category'][$this->_sections['cat']['index']]['subcat'][$this->_sections['a']['index']]['c_name']; ?>
+"><?php echo $this->_tpl_vars['category'][$this->_sections['cat']['index']]['subcat'][$this->_sections['a']['index']]['cat_name']; ?>
 </a></li>
 							<?php endfor; endif; ?>
                           </ul>
