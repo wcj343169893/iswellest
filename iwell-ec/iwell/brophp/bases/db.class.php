@@ -122,7 +122,7 @@ abstract class DB {
 		$sql = "SELECT {$fields} FROM {$this->tabName}{$where}{$group}{$having}{$order}{$limit}";
 		$result = $this->query ( $sql, __METHOD__, $data );
 		// 新增joins方法处理过程
-		if ($joins != "") {
+		if ($joins != "" && !empty($result)) {
 			$j = D ( $joins [0] );
 			// 查询表的所有字段joins方法(关联表,被关联字段,关联字段,显示结果字段)
 			$jfilds = array ();
@@ -137,7 +137,7 @@ abstract class DB {
 			// 把显示结果字段转换为数组
 			$joinsFilds = explode ( ",", $joins [3] );
 			// 把二维数组转换为一维数组
-			// print_r($jresult);
+// 			print_r($jresult);
 			foreach ( $jresult as $key => $value ) {
 				$joinsResult [$value [$joinsFilds [0]]] = $value [$joinsFilds [1]];
 			}
