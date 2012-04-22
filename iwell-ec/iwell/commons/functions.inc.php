@@ -14,11 +14,12 @@ function dsubstr($str, $length = null) {
  */
 function compareDate($begin) {
 	if (! empty ( $begin )) {
-		$nowDate = date ( "Y-m-d H:i" );
-		$startdate = strtotime ( $begin );
-		$enddate = strtotime ( $nowDate );
+		$nowDate = date ("y-m-d H:i:s");
+// 		$startdate = strtotime ( $begin );
+		$startdate =  $begin;
+		$enddate =local_strtotime($nowDate);
+// 		strtotime($time)
 		$count = $startdate - $enddate;
-		$str = "";
 		$str = "离下架还有" . round ( ($count) / 60 ) . "秒";
 		if ($count > 60) {
 			$str = "离下架还有" . round ( ($count) / 60 ) . "分钟";
