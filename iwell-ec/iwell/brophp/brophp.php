@@ -8,6 +8,7 @@
 	define("APP_REAL_PATH", dirname(dirname(__FILE__))."\\");//项目的根目录
 	define("PROJECT_PATH", dirname(BROPHP_PATH).'/');  //项目的根路径，也就是框架所在的目录
 	define("TMPPATH", str_replace(array(".", "/"), "_", ltrim($_SERVER["SCRIPT_NAME"], '/'))."/");
+	define('IN_ECS', true);
 	//包含系统配置文件
 	$config=PROJECT_PATH."config.inc.php";
 	if(file_exists($config)){
@@ -36,6 +37,8 @@
 	if (file_exists($shop_config)){
 		require $shop_config;
 	}
+	//设置时区
+	$GLOBALS['_CFG']['timezone']=8;
 	$GLOBALS["shop_config"]=$data;
 	//包含全局的函数库文件，用户可以自己定义函数在这个文件中
 	$funfile=PROJECT_PATH."commons/functions.inc.php";
@@ -54,6 +57,8 @@
 	//设置include包含文件所在的所有目录	
 	set_include_path($include_path);
 
+	//引入处理类
+	require(PROJECT_PATH.'includes/lib_time.php');
 	//自动加载类 	
 	function __autoload($className){
 		if($className=="memcache"){        //如果是系统的Memcache类则不包含
