@@ -41,16 +41,7 @@
 			</div>
 			<div class="goods_share">
 				<!-- 分享 -->
-			    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
-			        <a class="bds_qzone"></a>
-			        <a class="bds_tsina"></a>
-			        <a class="bds_renren"></a>
-			        <a class="bds_tieba"></a>
-			        <a class="bds_tqq"></a>
-			        <a class="bds_douban"></a>
-			        <span class="bds_more">更多</span>
-					<a class="shareCount"></a>
-			    </div>
+			    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_qzone"></a><a class="bds_tsina"></a><a class="bds_renren"></a><a class="bds_tieba"></a><a class="bds_tqq"></a><a class="bds_douban"></a><span class="bds_more">更多</span><a class="shareCount"></a></div>
 			</div>
 		</div>
 		<!--产品图 end-->
@@ -89,7 +80,7 @@
 					<dt>商品总价：</dt>
 					<dd><strong class="f14 cb00">￥<span id='sumprice'><{$data.w_price}></span></strong></dd>
 				</dl>
-				<p class="clearFix"><a href="javascript:show()" id="goods_add_cart" >&nbsp;</a></p>
+				<p class="clearFix"><a href="javascript:show()" id="goods_buy" >&nbsp;</a><a href="javascript:show()" id="goods_add_cart" >&nbsp;</a></p>
 				<!-- 购物车用 -->
 				<input type="hidden" name="goods_id" value="<{$data.id}>" />
 				<input type="hidden" name="Images_url" value="<{$data.w_pic}>" />
@@ -194,7 +185,7 @@
 	</div>
 </div>
 </div>
-				<div class="clear"></div>
+<div class="clear"></div>
 <{ include file='public/foot.html'}>
 <script>
 	lastScrollY=0;

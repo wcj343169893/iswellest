@@ -16,18 +16,110 @@
 <div id="contentWrapper">
   <div class="fabBorderSpace"></div>
 <div class="clear"></div>
-  <div id="featuredShop" class="poRel" style="*margin-bottom: 6px">
-    <h2 class="salesTitle salesTitleEndSn"><em class="redText">推荐商品</em></h2>
-    <div id="featuredShopSliderContent">
-    </div>
-    <script type="text/javascript">				    
-	var so = new SWFObject("public/swf/iswell.swf", "sotester", "938", "200", "0", "#FFFFFF");	
-	so.addParam("FlashVars", "xmlUrl=public/imgList.xml");			    
-	so.addParam("quality", "High");			    
-	so.addParam("wmode", "Opaque");			    
-	so.write("featuredShopSliderContent");				
-	</script>
-  </div>
+ <div id="featuredShop" class="poRel" style="*margin-bottom: 6px"> 
+    <h2 class="salesTitle salesTitleEndSn">Featured <em class="redText">Shops</em></h2> 
+    <div class="poAbs" id="shareOpt" style="top:15px;right:3px"> 
+      <g:plusone size="medium" count="true" href="http://fab.com/" callback="gPlusCallback"></g:plusone> 
+      <fb:like href="http://fab.com/" send="false" layout="button_count" width="50" show_faces="false" font=""></fb:like> 
+    </div> 
+    <div id="originalImage" class="displayNone"></div> 
+    <div id="results"></div>
+    <div id="featuredShopSliderContent"> 
+      <div class="imgSliderWrap"> 
+        <div class="buttonBg floatLeft"><span id="nextButton" class="buttons floatLeft"><span class="nextIcon fabShopSprite"></span></span></div> 
+        <div id="featuredAlbumSlidesContainer"> 
+          <ul id="foundImages"> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/sale/5197" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/121985-222x222-1334850707-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
+                      <span class="floatLeft popUpShopTitle" style="top: 2px;position: relative"> 
+                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">Pop-up Shop</em> 
+                          <h3 class=""><span class="mainTitlePopUp">1</span></h3> 
+                        </span> 
+                      </span> 
+                    </span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/shops/29" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/113962-222x222-1334258500-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>2</h3></span></span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/shops/52" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/53036-222x222-1325264594-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>3</h3></span></span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/weekly-shops/foodie" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/sale/homepage/5251-300x300-1334699992.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
+                      <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative"> 
+                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">4</em> 
+                          <h3 class=""><span class="mainTitlePopUp"></span></h3> 
+                        </span> 
+                      </span> 
+                    </span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/shops/44" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/115380-222x222-1334245943-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>5</h3></span></span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/sale/5197" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/121985-222x222-1334850707-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
+                      <span class="floatLeft popUpShopTitle" style="top: 2px;position: relative"> 
+                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">6</em> 
+                          <h3 class=""><span class="mainTitlePopUp">Mother's Day</span></h3> 
+                        </span> 
+                      </span> 
+                    </span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/shops/29" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/113962-222x222-1334258500-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>7</h3></span></span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/shops/52" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/53036-222x222-1325264594-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>8</h3></span></span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/weekly-shops/foodie" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/sale/homepage/5251-300x300-1334699992.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
+                      <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative"> 
+                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">9</em> 
+                          <h3 class=""><span class="mainTitlePopUp">Foodie</span></h3> 
+                        </span> 
+                      </span> 
+                    </span> 
+                </a> 
+              </li> 
+              <li class="alignCenter foundImagesSlide poRel"> 
+                <a href="/shops/44" class="gimg" data-img-url=""> 
+                  <img src="//s3.amazonaws.com/static.fab.com/product/115380-222x222-1334245943-primary.png" alt=""/> 
+                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>10</h3></span></span> 
+                </a> 
+              </li> 
+          </ul> 
+        </div> 
+        <div class="buttonBg floatRight"><span id="prvButton" class="buttons floatRight"><span class="prvIcon fabShopSprite"></span></span></div> 
+      </div> 
+      <div class="clear"></div> 
+    </div> 
+  </div> 
   <div class="fabBorderSpace"></div>
   <div id="salesListPage">
     <h1 class="salesTitle salesTitleEndSn "><em class="redText"></em>最新商品</h1>
@@ -389,5 +481,15 @@
   </div>
 </div>
 <{include file='public/foot.html' }>
+<script type="text/javascript" src="<{$public}>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<{$public}>/js/easySlider1.7.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	$("#featuredAlbumSlidesContainer").easySlider({
+		auto: true,
+		continuous: false 
+	});
+});
+</script>
 </body>
 </html>
