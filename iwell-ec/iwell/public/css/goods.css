@@ -63,7 +63,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 #goods_add_cart:hover,#goods_add_favo:hover {color:#ffbc00;}
 #goods_add_cart {background-position:0 -154px;}
 #goods_add_favo {background-position:0 -107px;margin-left:10px;}
-
+#goods_buy{background: url("goods/goods.png") no-repeat 0px -340px;float: left;width:139px;height:40px;margin-right: 5px;}
 /*销售排行*/
 .sell_ranking_tit {height:21px;line-height:31px;border:1px solid #E8E8E8;padding-left:50px;background:url(goods/goods.png) -161px -284px no-repeat #fff;font-weight:700;color: #1B232A;font-size: 14px;}
 #sell_ranking {border:1px solid #E8E8E8;margin-top:2px;}
