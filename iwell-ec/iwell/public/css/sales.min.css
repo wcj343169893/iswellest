@@ -444,13 +444,13 @@ body.operaBrowser {
 }
 
 .fabGrad,.redButtonGrad,.redButtonGradNew {
-	background-color: #dd0017;
-	background: -moz-linear-gradient(100% 100% 90deg, #b50025, #f40017);
-	background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#f40017),
-		to(#b50025) );
-	background-image: -o-linear-gradient(#b50025, #f40017);
-	color: #fff;
-	margin: 0 1px 1px 0
+/* 	background-color: #dd0017; */
+/* 	background: -moz-linear-gradient(100% 100% 90deg, #b50025, #f40017); */
+/* 	background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#f40017), */
+/* 		to(#b50025) ); */
+/* 	background-image: -o-linear-gradient(#b50025, #f40017); */
+/* 	color: #fff; */
+/* 	margin: 0 1px 1px 0 */
 }
 
 .fabGrad:active,.redButtonGrad:active,#buttonGradient:active {
@@ -1371,7 +1371,8 @@ input,textarea,.shwPgEntrTg #add_new_tag,.def_select {
 	color: #999;
 	font-size: 24px;
 	padding: 8px 21px 8px;
-	border-bottom: 2px solid #000\9
+	border-bottom: 2px solid #000\9
+
 }
 
 #signupContainer table td {
@@ -5239,9 +5240,13 @@ html,body {
 
 .salesWrap .imgInfoTop .fabGrad,.imgInfoBottom .fabGrad,.popUpShopWrap .imgInfoTop .fabGrad
 	{
-	width: 26px;
+	width: 40px;
 	height: 26px;
-	margin: 6px 7px 0 0
+	margin: 6px 7px 0 0;
+	background: url("../images/buy-btn-01.png") no-repeat;
+}
+.salesWrap .imgInfoTop .fabGrad:HOVER,.imgInfoBottom .fabGrad:HOVER ,.popUpShopWrap .imgInfoTop .fabGrad:HOVER{
+	background-position: 0px -100px;
 }
 
 .salesWrap .imgInfoTop .imgInfoArrow,.imgInfoBottom .imgInfoArrow,.popUpShopWrap .imgInfoTop .imgInfoTop
