@@ -19,96 +19,19 @@
  <div id="featuredShop" class="poRel" style="*margin-bottom: 6px"> 
     <h2 class="salesTitle salesTitleEndSn">Featured <em class="redText">Shops</em></h2> 
     <div id="originalImage" class="displayNone"></div> 
-    <div id="results"></div>
     <div id="featuredShopSliderContent"> 
       <div class="imgSliderWrap"> 
         <div class="buttonBg floatLeft"><span id="nextButton" class="buttons floatLeft"><span class="nextIcon fabShopSprite"></span></span></div> 
         <div id="featuredAlbumSlidesContainer"> 
           <ul id="foundImages"> 
+          <{section loop=$hotData name=hd}>
               <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/sale/5197" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/121985-222x222-1334850707-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
-                      <span class="floatLeft popUpShopTitle" style="top: 2px;position: relative"> 
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">Pop-up Shop</em> 
-                          <h3 class=""><span class="mainTitlePopUp">1</span></h3> 
-                        </span> 
-                      </span> 
-                    </span> 
+                <a href="index.php/index/ware/id/<{$hotData[hd].goods_id}>" class="gimg" data-img-url=""> 
+                  <img src="<{$hotData[hd].goods_img}>" alt="<{$hotData[hd].goods_name}>"/> 
+                  <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3><{$hotData[hd].goods_name}></h3></span></span>
                 </a> 
               </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/shops/29" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/113962-222x222-1334258500-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>2</h3></span></span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/shops/52" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/53036-222x222-1325264594-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>3</h3></span></span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/weekly-shops/foodie" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/sale/homepage/5251-300x300-1334699992.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
-                      <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative"> 
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">4</em> 
-                          <h3 class=""><span class="mainTitlePopUp"></span></h3> 
-                        </span> 
-                      </span> 
-                    </span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/shops/44" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/115380-222x222-1334245943-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>5</h3></span></span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/sale/5197" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/121985-222x222-1334850707-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
-                      <span class="floatLeft popUpShopTitle" style="top: 2px;position: relative"> 
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">6</em> 
-                          <h3 class=""><span class="mainTitlePopUp">Mother's Day</span></h3> 
-                        </span> 
-                      </span> 
-                    </span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/shops/29" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/113962-222x222-1334258500-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>7</h3></span></span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/shops/52" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/53036-222x222-1325264594-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>8</h3></span></span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/weekly-shops/foodie" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/sale/homepage/5251-300x300-1334699992.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"> 
-                      <span class="floatLeft popUpShopTitle poRel" style="top: 2px;position: relative"> 
-                        <span class="floatLeft popTitleWrap"><em class="popShopTitle">9</em> 
-                          <h3 class=""><span class="mainTitlePopUp">Foodie</span></h3> 
-                        </span> 
-                      </span> 
-                    </span> 
-                </a> 
-              </li> 
-              <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="/shops/44" class="gimg" data-img-url=""> 
-                  <img src="//s3.amazonaws.com/static.fab.com/product/115380-222x222-1334245943-primary.png" alt=""/> 
-                    <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3>10</h3></span></span> 
-                </a> 
-              </li> 
+             <{/section}>
           </ul> 
         </div> 
         <div class="buttonBg floatRight"><span id="prvButton" class="buttons floatRight"><span class="prvIcon fabShopSprite"></span></span></div> 
