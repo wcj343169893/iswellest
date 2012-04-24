@@ -34,7 +34,7 @@
 		// default configuration properties
 		var defaults = {			
 			prevId: 		'nextButton',
-			prevText: 		'Previous',
+			prevText: 		'Prev',
 			nextId: 		'prvButton',	
 			nextText: 		'Next',
 			controlsShow:	true,
@@ -54,7 +54,8 @@
 			continuous:		false, 
 			numeric: 		false,
 			numericId: 		'controls',
-			showCount:		5
+			showCount:		5,
+			isMagnifier:	true
 			
 		}; 
 		
@@ -95,6 +96,43 @@
 				html += options.controlsAfter;						
 				$(obj).after(html);										
 			};
+			if(options.isMagnifier){
+				//增加放大镜效果
+				//新增放大div  magnifier
+				var magnifier_id="originalImage";
+				var magnifier_div='<a href="/shops/23" class="gimg" data-img-url=""><img src="" alt=""><span class="imgInfoBottom imgInfoBottomShops"><span class="floatLeft"><h3></h3></span><span class="viewDet floatRight round20 fabGrad">&nbsp;</span></span></a>';
+				
+				$("#"+magnifier_id).append(magnifier_div);	
+				$("li", obj).each(function(index,domEle){
+					$(domEle).bind("mouseover",
+						  function () {
+							  $("#"+magnifier_id).css({
+								  	"left":$(domEle).offset().left-238
+							  });
+							  $("img","#"+magnifier_id).attr("src",$("img",domEle).attr("src"));
+							  $("h3","#"+magnifier_id).html($("h3",domEle).html());
+							  $("a.gimg","#"+magnifier_id).attr("href", $("a.gimg",domEle).attr("href"));
+							  $(obj).css({
+								  "opacity":"0.6",	
+								  "filter":"Alpha(opacity=60)"
+							  });
+							  $("#"+magnifier_id).removeClass("displayNone");
+						  }
+						);
+				});
+				var st="";
+				$("#originalImage").bind("mouseout",function() {
+					//设置1秒后关闭
+					clearTimeout(st);
+					st=setTimeout(function(){
+					$("#"+magnifier_id).addClass("displayNone");
+					$(obj).css({
+						  "opacity":"1",
+						  "filter":"Alpha(opacity=100)"
+					  });
+					},1000);
+				});
+			}
 			
 			if(options.numeric){									
 				for(var i=0;i<s;i++){						
