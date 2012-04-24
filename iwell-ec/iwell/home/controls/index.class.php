@@ -3,6 +3,9 @@ class Index {
 	function index() {
 		$goods = D ( "goods" );
 		$d=strtotime("0 day");
+		//热销
+		$hotData=$goods->limit(15)->order ( "sale_begin_time asc" )->where(array ('sale_end_time > ' => $d ,'is_hot'=>1))->joins ( "category", "cat_id", "cat_id", "cat_id,cat_name" )->select();
+		$this->assign ( 'hotData', $hotData );
 		//最新商品
 		$newData=$goods->limit(10)->order ( "sale_begin_time asc" )->where(array ('sale_end_time > ' => $d ))->joins ( "category", "cat_id", "cat_id", "cat_id,cat_name" )->select();
 		$this->assign ( 'newData', $newData );
