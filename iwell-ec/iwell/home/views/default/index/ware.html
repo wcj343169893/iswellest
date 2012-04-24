@@ -8,8 +8,10 @@
 <link href="<{$public}>/css/goods.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/reg.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/comment.css" rel="stylesheet" type="text/css" />
+<link href="<{$public}>/css/zoom.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
-<script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
+<script type="text/javascript" src="<{$public}>/js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="<{$public}>/js/jquery.imagezoom.min.js"></script>
 <script type="text/javascript" src="<{$public}>/js/goods.js"></script>
 <script type="text/javascript" src="<{$public}>/js/operate_Cart.js"></script>
 <script type="text/javascript" src="<{$public}>/js/operate_Cookie.js"></script>
@@ -26,14 +28,14 @@
 		<!--产品图 start-->
 		<div class="goods_info_left">
 			<div class="clearFix">
-				<div id="goods_img">
-					<a href="#"><img src="/<{$data.goods_img}>" width="350" height="350" alt="" /></a>
+				<div id="goods_img" class="zoom">
+					<a href="javascript:void(0)"><img src="/<{$data.goods_img}>" alt="" rel="/<{$data.original_img}>" class="jqzoom" /></a>
 				</div>
 				<div id="goods_img_slide">
 					<p id="goods_img_up"><a href="javascript:void(0)">向上</a></p>
 					<ul>
 					<{section loop=$gallerys name='g'}>
-						<li class="active"><a href="javascript:void(0)"><img src="/<{$gallerys[g].thumb_url}>" width="50" height="50" alt="/<{$gallerys[g].img_url}>" /></a></li>
+						<li class="active"><a href="javascript:void(0)"><img src="/<{$gallerys[g].thumb_url}>" width="50" height="50" alt="/<{$gallerys[g].img_url}>" rel="/<{$gallerys[g].img_original}>"/></a></li>
 						<{/section}>
 					</ul>
 					<p id="goods_img_down"><a href="javascript:void(0)">向上</a></p>
@@ -232,6 +234,14 @@
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
 	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	 $(".jqzoom").imagezoom({
+		 	xzoom: 360,
+			yzoom: 360
+			});
+});
 </script>
 </body>
 </html>
