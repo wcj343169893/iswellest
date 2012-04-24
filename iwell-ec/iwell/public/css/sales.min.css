@@ -7799,6 +7799,9 @@ a.viewDet .gtIcon,span.viewDet .gtIcon {
 	*position: relative;
 	*z-index: 9999
 }
+#featuredAlbumSlidesContainer:HOVER {
+	opacity:0.6;	filter:Alpha(opacity=60);	
+}
 
 #featuredAlbumSlidesContainer ul li {
 	float: left;
