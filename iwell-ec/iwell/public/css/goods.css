@@ -12,7 +12,7 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .goods_right {width:280px;overflow:hidden;float:right;}
 
 /*商品图*/
-#goods_img {width:350px;height:350px;padding:10px 0;float:left;overflow:hidden;border:1px solid #E8E8E8;}
+#goods_img {width:350px;height:350px;float:left;overflow:hidden;border:1px solid #E8E8E8;}
 #goods_img img {display:block;width:350px;height:350px;}
 #goods_img_slide {width:52px;overflow:hidden;float:right;height:372px;}
 #goods_img_slide ul {width:52px;height:350px;overflow:hidden;}
