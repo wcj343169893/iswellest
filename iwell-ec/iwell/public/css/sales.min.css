@@ -1371,7 +1371,7 @@ input,textarea,.shwPgEntrTg #add_new_tag,.def_select {
 	color: #999;
 	font-size: 24px;
 	padding: 8px 21px 8px;
-	border-bottom: 2px solid #000\9
+	border-bottom: 2px solid #000;
 
 }
 
@@ -1393,7 +1393,7 @@ input,textarea,.shwPgEntrTg #add_new_tag,.def_select {
 	-moz-box-shadow: 0 5px 10px #000;
 	-webkit-box-shadow: 0 5px 10px #000;
 	box-shadow: 0 5px 10px #000;
-	border-bottom: 2px solid #151515\9;
+	border-bottom: 2px solid #151515;
 	width: 100%;
 	position: absolute;
 	display: none
@@ -1624,7 +1624,7 @@ form.newUserSignUp .signupSubmit {
 	padding: 15px 20px;
 	height: 20px;
 	background: url(../images/slant-stripe-grey.png?v=3) repeat-x top
-		lefttransparent
+		left transparent
 }
 
 #iRandomMsg span a.inactiveLink:hover {
@@ -1636,7 +1636,7 @@ form.newUserSignUp .signupSubmit {
 .newErrBar {
 	padding: 15px 20px;
 	background: url(../images/slant-stripe-grey-big.png?v=3) repeat-x
-		topleft transparent
+		top left transparent
 }
 
 .fabBorderSpace {
@@ -2920,7 +2920,7 @@ select.select_v1 {
 	left: 50%;
 	position: absolute;
 	background-color: rgba(33, 33, 33, 0.95);
-	background-color: #333\0/;
+	background-color: #333;
 	*background-color: #333
 }
 
@@ -4265,7 +4265,7 @@ select.select_v1 {
 	left: 50%;
 	position: absolute;
 	background-color: rgba(33, 33, 33, 0.95);
-	background-color: #333\0/;
+	background-color: #333;
 	*background-color: #333
 }
 
@@ -7799,9 +7799,9 @@ a.viewDet .gtIcon,span.viewDet .gtIcon {
 	*position: relative;
 	*z-index: 9999
 }
-#featuredAlbumSlidesContainer:HOVER {
-	opacity:0.6;	filter:Alpha(opacity=60);	
-}
+/* #featuredShopSliderContent:HOVER #featuredAlbumSlidesContainer{ */
+/* 	opacity:0.6;	filter:Alpha(opacity=60);	 */
+/* } */
 
 #featuredAlbumSlidesContainer ul li {
 	float: left;
@@ -7890,7 +7890,7 @@ ul.thumb li {
 	height: 30px;
 	margin-right: 3px;
 	vertical-align: middle;
-	width: 82%
+	width: 72%
 }
 
 #originalImage .imgInfoBottom.imgInfoBottomShops span.viewDet {
