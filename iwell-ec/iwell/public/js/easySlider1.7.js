@@ -100,14 +100,14 @@
 				//增加放大镜效果
 				//新增放大div  magnifier
 				var magnifier_id="originalImage";
-				var magnifier_div='<a href="/shops/23" class="gimg" data-img-url=""><img src="" alt=""><span class="imgInfoBottom imgInfoBottomShops"><span class="floatLeft"><h3></h3></span><span class="viewDet floatRight round20 fabGrad">&nbsp;</span></span></a>';
+				var magnifier_div='<a href="/shops/23" class="gimg" data-img-url=""><img src="" alt=""><span class="imgInfoBottom imgInfoBottomShops"><span class="floatLeft"><h3></h3></span><span class="viewDet floatRight round20 fabGrad"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span></span></a>';
 				
 				$("#"+magnifier_id).append(magnifier_div);	
 				$("li", obj).each(function(index,domEle){
 					$(domEle).bind("mouseover",
 						  function () {
 							  $("#"+magnifier_id).css({
-								  	"left":$(domEle).offset().left-238
+								  	"left":$(domEle).offset().left-250
 							  });
 							  $("img","#"+magnifier_id).attr("src",$("img",domEle).attr("src"));
 							  $("h3","#"+magnifier_id).html($("h3",domEle).html());
@@ -130,7 +130,7 @@
 						  "opacity":"1",
 						  "filter":"Alpha(opacity=100)"
 					  });
-					},1000);
+					},3000);
 				});
 			}
 			

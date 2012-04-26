@@ -444,13 +444,13 @@ body.operaBrowser {
 }
 
 .fabGrad,.redButtonGrad,.redButtonGradNew {
-/* 	background-color: #dd0017; */
-/* 	background: -moz-linear-gradient(100% 100% 90deg, #b50025, #f40017); */
-/* 	background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#f40017), */
-/* 		to(#b50025) ); */
-/* 	background-image: -o-linear-gradient(#b50025, #f40017); */
-/* 	color: #fff; */
-/* 	margin: 0 1px 1px 0 */
+	background-color: #dd0017;
+	background: -moz-linear-gradient(100% 100% 90deg, #b50025, #f40017);
+	background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#f40017),
+		to(#b50025) );
+	background-image: -o-linear-gradient(#b50025, #f40017);
+	color: #fff;
+	margin: 0 1px 1px 0
 }
 
 .fabGrad:active,.redButtonGrad:active,#buttonGradient:active {
@@ -5235,18 +5235,18 @@ html,body {
 
 .salesWrap .imgInfoTop .floatLeft,.popUpShopWrap .imgInfoTop .floatLeft
 	{
-	width: 80%
+	width: 87%
 }
 
 .salesWrap .imgInfoTop .fabGrad,.imgInfoBottom .fabGrad,.popUpShopWrap .imgInfoTop .fabGrad
 	{
-	width: 40px;
-	height: 26px;
-	margin: 6px 7px 0 0;
-	background: url("../images/buy-btn-01.png") no-repeat;
+width: 26px;
+height: 26px;
+margin: 6px 7px 0 0;
+/* 	background: url("../images/buy-btn-01.png") no-repeat; */
 }
 .salesWrap .imgInfoTop .fabGrad:HOVER,.imgInfoBottom .fabGrad:HOVER ,.popUpShopWrap .imgInfoTop .fabGrad:HOVER{
-	background-position: 0px -100px;
+/* 	background-position: 0px -100px; */
 }
 
 .salesWrap .imgInfoTop .imgInfoArrow,.imgInfoBottom .imgInfoArrow,.popUpShopWrap .imgInfoTop .imgInfoTop
@@ -7797,11 +7797,8 @@ a.viewDet .gtIcon,span.viewDet .gtIcon {
 	float: left;
 	*overflow: hidden;
 	*position: relative;
-	*z-index: 9999
+	*z-index: 87
 }
-/* #featuredShopSliderContent:HOVER #featuredAlbumSlidesContainer{ */
-/* 	opacity:0.6;	filter:Alpha(opacity=60);	 */
-/* } */
 
 #featuredAlbumSlidesContainer ul li {
 	float: left;
@@ -7851,10 +7848,11 @@ ul.thumb li {
 }
 
 #originalImage {
+	background:red;
 	left: 33px;
 	position: absolute;
 	top: 18px;
-	z-index: 88;
+	z-index: 9999;
 	border-color: rgba(51, 51, 51, 0.2) rgba(51, 51, 51, 0.204);
 	border-style: solid;
 	border-width: 7px;
@@ -7890,7 +7888,7 @@ ul.thumb li {
 	height: 30px;
 	margin-right: 3px;
 	vertical-align: middle;
-	width: 72%
+	width: 82%
 }
 
 #originalImage .imgInfoBottom.imgInfoBottomShops span.viewDet {
