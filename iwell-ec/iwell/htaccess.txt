@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   #RewriteRule    ^$ app/webroot/    [L]
+   #RewriteRule    (.*) index.php/$1 [L]
+   #RewriteRule ^$goods/(id-([0-9]+).html)$ /index.php/index/ware/id/$1 [L]
+   #商品详细
+   #RewriteRule ^goods-([0-9]+)(.*)\.html$ /index.php?m=index&a=ware&id=$1 [QSA,L]
+   RewriteRule ^goods-([0-9]+)(.*)\.html$ /index.php/index/ware/id/$1 [QSA,L]
+   #购物车
+   RewriteRule ^cart$ /index.php/car/mycar [L]
+</IfModule>
