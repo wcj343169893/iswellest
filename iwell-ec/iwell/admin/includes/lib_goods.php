@@ -545,22 +545,24 @@ function delete_goods($goods_id)
  */
 function generate_goods_sn($goods_id)
 {
-    $goods_sn = $GLOBALS['_CFG']['sn_prefix'] . str_repeat('0', 6 - strlen($goods_id)) . $goods_id;
+//     $goods_sn = $GLOBALS['_CFG']['sn_prefix'] . str_repeat('0', 6 - strlen($goods_id)) . $goods_id;
 
-    $sql = "SELECT goods_sn FROM " . $GLOBALS['ecs']->table('goods') .
-            " WHERE goods_sn LIKE '" . mysql_like_quote($goods_sn) . "%' AND goods_id <> '$goods_id' " .
-            " ORDER BY LENGTH(goods_sn) DESC";
-    $sn_list = $GLOBALS['db']->getCol($sql);
-    if (in_array($goods_sn, $sn_list))
-    {
-        $max = pow(10, strlen($sn_list[0]) - strlen($goods_sn) + 1) - 1;
-        $new_sn = $goods_sn . mt_rand(0, $max);
-        while (in_array($new_sn, $sn_list))
-        {
-            $new_sn = $goods_sn . mt_rand(0, $max);
-        }
-        $goods_sn = $new_sn;
-    }
+//     $sql = "SELECT goods_sn FROM " . $GLOBALS['ecs']->table('goods') .
+//             " WHERE goods_sn LIKE '" . mysql_like_quote($goods_sn) . "%' AND goods_id <> '$goods_id' " .
+//             " ORDER BY LENGTH(goods_sn) DESC";
+//     $sn_list = $GLOBALS['db']->getCol($sql);
+//     if (in_array($goods_sn, $sn_list))
+//     {
+//         $max = pow(10, strlen($sn_list[0]) - strlen($goods_sn) + 1) - 1;
+//         $new_sn = $goods_sn . mt_rand(0, $max);
+//         while (in_array($new_sn, $sn_list))
+//         {
+//             $new_sn = $goods_sn . mt_rand(0, $max);
+//         }
+//         $goods_sn = $new_sn;
+//     }
+		$catgory_id = empty($_POST['cat_id']) ? '00' : intval($_POST['cat_id']);
+        $goods_sn =$GLOBALS['_CFG']['sn_prefix'] .$catgory_id.local_gettime().$goods_id.mt_rand(100, 999);
 
     return $goods_sn;
 }

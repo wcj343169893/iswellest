@@ -53,6 +53,14 @@ function getURL($type, $id) {
 			case 2 : //
 				break;
 		}
+	} else {
+		switch ($type) {
+			case 1 : // 产品
+				$results = "index.php/index/ware/id/" . $id;
+				break;
+			case 2 : //
+				break;
+		}
 	}
 	return $results;
 }

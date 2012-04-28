@@ -54,7 +54,8 @@
 				<dt><a href=""><strong class="f14"><{$data.goods_name}></strong></a></dt>
 				<dd>商品编号：<{$data.goods_sn}></dd>
 				<dd>品　　牌：<{$data.c_name}></dd>
-				<dd>价	    格：<strong class="f14 cb00" >￥<span id='price'><{$data.market_price}></span></strong> <a href="#" class="c110">降价通知</a></dd>
+				<dd>市场价格：<strong class="f14 cb00" >￥<del><{$data.market_price}></del></strong></dd>
+				<dd>本店价格：<strong class="f14 cb00" >￥<span id='price'><{$data.shop_price}></span></strong></dd>
 			</dl>
 			<dl class="goods_gifts">
 				<dt>赠品：</dt>
@@ -80,7 +81,7 @@
 				</dl>
 				<dl>
 					<dt>商品总价：</dt>
-					<dd><strong class="f14 cb00">￥<span id='sumprice'><{$data.w_price}></span></strong></dd>
+					<dd><strong class="f14 cb00">￥<span id='sumprice'><{$data.shop_price}></span></strong></dd>
 				</dl>
 				<p class="clearFix"><a href="javascript:show()" id="goods_buy" >&nbsp;</a><a href="javascript:show()" id="goods_add_cart" >&nbsp;</a></p>
 				<!-- 购物车用 -->
@@ -140,7 +141,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$brand[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$brand[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$brand[ls].id}>"><{$brand[ls].w_name}></a></p>
-							<p><strong class="f14 cf00">￥<{$brand[ls].w_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$brand[ls].shop_price}>.00</strong></p>
 						</li>
 						<{/section}>
 					</ol>
@@ -150,7 +151,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$cat[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$cat[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$cat[ls].id}>"><{$cat[ls].w_name}></a></p>
-							<p><strong class="f14 cf00">￥<{$cat[ls].w_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$cat[ls].shop_price}>.00</strong></p>
 						</li>
 						<{/section}>
 
@@ -161,7 +162,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$price[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$price[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$price[ls].id}>"><{$price[ls].w_name}></a></p>
-							<p><strong class="f14 cf00">￥<{$price[ls].w_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$price[ls].shop_price}>.00</strong></p>
 						</li>
 						<{/section}>
 					</ol>
@@ -176,7 +177,7 @@
 					<li>
 						<p class="p_0"><a href="<{$url}>/ware/id/<{$lately[ls].id}>"><img width="50" height="50" alt="" src="<{$public}>/images/ware/<{$lately[ls].w_pic}>"/></a></p>
 						<p><a href="<{$url}>/ware/id/<{$lately[ls].id}>"><{$lately[ls].w_name}></a></p>
-						<p><strong class="f14 cf00">￥<{$lately[ls].w_price}>.00</strong></p>
+						<p><strong class="f14 cf00">￥<{$lately[ls].shop_price}>.00</strong></p>
 					</li>
 				<{/section}>
 				</ul>
