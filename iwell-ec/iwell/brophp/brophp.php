@@ -27,11 +27,6 @@
 		ini_set('error_log', PROJECT_PATH.'runtime/error_log'); //指定错误日志文件
 
 	}
-	//包含框架中的函数库文件
-	$myfunfile= BROPHP_PATH.'commons/functions.inc.php';
-	if (file_exists($myfunfile)){
-		require $myfunfile;
-	}
 	//加载商城设置
 	$shop_config=PROJECT_PATH."temp/static_caches/shop_config.php";
 	if (file_exists($shop_config)){
@@ -40,6 +35,11 @@
 	//设置时区
 	$GLOBALS['_CFG']['timezone']=8;
 	$GLOBALS["shop_config"]=$data;
+	//包含框架中的函数库文件
+	$myfunfile= BROPHP_PATH.'commons/functions.inc.php';
+	if (file_exists($myfunfile)){
+		require $myfunfile;
+	}
 	//包含全局的函数库文件，用户可以自己定义函数在这个文件中
 	$funfile=PROJECT_PATH."commons/functions.inc.php";
 	if(file_exists($funfile))
