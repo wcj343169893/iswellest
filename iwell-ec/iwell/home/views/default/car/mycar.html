@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>购物车-<{$lan.site_title}></title>
+<title>购物车-<{$shopConfig.shop_name}></title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/cart.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
@@ -21,11 +21,8 @@ window.onload = function() {
  }; 
 //取得购物车信息
 function getCartInfo(){
-	
 	var str="";
-	
 	var amount=0;
-	
 	var _div = document.getElementById("goods_info");
 	
 	//从Cookie中取出商品信息列表,并将其转化为数组
@@ -39,7 +36,7 @@ function getCartInfo(){
 		for(i=0;i<arr.length;i++)
 		{
 				//alert(arr);
-				str+='<tr><td>'+arr[i][0]+'</td><td align="left" class="good_name_td"><a href="#"><img src="<{$public}>/images/ware/'+arr[i][3]+'" width="50" height="50" alt=""/></a> <a href="#" class="c110">'+arr[i][1]+'</a></td><td>￥<strong class="cf00">'+arr[i][2]+'</strong></td><td><div class="cart_goods_amount"><a class="cart_amount_reduce" href="javascript:void(0)">减少</a><input type="text" value="'+arr[i][4]+'" maxlength="3" class="cart_amount"><a class="cart_amount_plus" href="javascript:void(0)">增加</a></div></td><td><input type="button" value="加入收藏夹" class="button_0" /><input type="button" value="删除" class="button_0" onclick="common.reMoveOne('+arr[i][0]+');"/></td></tr>';
+				str+='<tr><td>'+arr[i][0]+'</td><td align="left" class="good_name_td"><a href="#"><img src="'+arr[i][3]+'" width="50" height="50" alt=""/></a> <a href="#" class="c110">'+arr[i][1]+'</a></td><td>￥<strong class="cf00">'+arr[i][2]+'</strong></td><td><div class="cart_goods_amount"><a class="cart_amount_reduce" href="javascript:void(0)">减少</a><input type="text" value="'+arr[i][4]+'" maxlength="3" class="cart_amount"><a class="cart_amount_plus" href="javascript:void(0)">增加</a></div></td><td><input type="button" value="加入收藏夹" class="button_0" /><input type="button" value="删除" class="button_0" onclick="common.reMoveOne('+arr[i][0]+');"/></td></tr>';
 			
 			//计算商品总额
 			amount+=arr[i][2]*arr[i][4];
@@ -103,10 +100,10 @@ function getCartInfo(){
 			<ul>
 			<{section loop=$data name=ls}>
 				<li>
-					<a href="#"><img src="<{$public}>/images/ware/<{$data[ls].w_pic}>" width="150" height="150" alt="" class="block" /></a>
-					<p class="mt_5 pro_name"><a href="#"><{$data[ls].w_name}></a></p>
-					<p class="cf00">价格：<strong class="f14">￥<{$data[ls].w_price}>.00</strong></p>
-					<p><a href="我的购物车.html" class="a_0">加入购物车</a></p>
+					<a href="<{1|getURL:$data[ls].goods_id}>"><img src="<{$data[ls].goods_thumb}>" width="150" height="150" alt="" class="block" /></a>
+					<p class="mt_5 pro_name"><a href="<{1|getURL:$data[ls].goods_id}>"><{$data[ls].goods_name}></a></p>
+					<p class="cf00">价格：<strong class="f14">￥<{$data[ls].market_price}>.00</strong></p>
+					<p><a href="#" class="a_0">加入购物车</a></p>
 					<p><a href="#" class="a_0">加入收藏夹</a></p>
 				</li>
 				<{/section}>

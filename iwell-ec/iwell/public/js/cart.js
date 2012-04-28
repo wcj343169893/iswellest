@@ -1,43 +1,43 @@
 
-$j(function(){
+$(function(){
 	//正则表达式集合
 	reGular=
 	{
 		pInt:/^[1-9]\d*$/            //正整数
 	};
 	//产品数量 
-	if ($j(".cart_goods_amount").length>0){
+	if ($(".cart_goods_amount").length>0){
 		 cart_goods_amount();
 	};
 	
 	//结算信息 配送地址 
-	if ($j(".cart_address_show").length>0){
+	if ($(".cart_address_show").length>0){
 		 cart_address_show();
 	};
 	
 	//结算信息 发票 
-	if ($j("#cart_invoice_show").length>0){
+	if ($("#cart_invoice_show").length>0){
 		 cart_invoice_show();
 	};
 	
 	//结算信息 运输 
-	if ($j("#cart_payment_show").length>0){
+	if ($("#cart_payment_show").length>0){
 		 cart_payment_show();
 	};
 	
 	//结算信息 卡 
-	if ($j("#cart_info_money").length>0){
+	if ($("#cart_info_money").length>0){
 		 cart_info_money();
 	};
 });
 
 //单品页 产品数量
 function cart_goods_amount(){
-	var cart_amount=$j(".cart_amount");
-	var cart_amount_reduce=$j(".cart_amount_reduce");
-	var cart_amount_plus=$j(".cart_amount_plus");
+	var cart_amount=$(".cart_amount");
+	var cart_amount_reduce=$(".cart_amount_reduce");
+	var cart_amount_plus=$(".cart_amount_plus");
 	cart_amount.blur(function(){
-		var _this=$j(this);
+		var _this=$(this);
 		var amount=parseInt(_this.val());
 		if (!reGular.pInt.test(amount)) {
 			alert ("商品数量，请输入正整数！");
@@ -45,7 +45,7 @@ function cart_goods_amount(){
 		}
 	});
 	cart_amount_reduce.click(function(){
-		var _this=$j(this);
+		var _this=$(this);
 		var cart_amount=_this.parent("div.cart_goods_amount").find("input.cart_amount");
 		var amount=parseInt(cart_amount.val());
 		if (isNaN(amount)){
@@ -60,7 +60,7 @@ function cart_goods_amount(){
 		};
 	});
 	cart_amount_plus.click(function(){
-		var _this=$j(this);
+		var _this=$(this);
 		var cart_amount=_this.parent("div.cart_goods_amount").find("input.cart_amount");
 		var amount=parseInt(cart_amount.val());
 		if (isNaN(amount)){
@@ -72,11 +72,11 @@ function cart_goods_amount(){
 
 //结算信息 发票 
 function cart_invoice_show(){
-	var cart_invoice_show=$j("#cart_invoice_show");
-	var cart_invoice_edit=$j("#cart_invoice_edit");
-	var cart_invoice_info=$j("#cart_invoice_info");
-	var cart_invoice_submit=$j("#cart_invoice_submit");
-	var cart_invoice_close=$j("#cart_invoice_close");
+	var cart_invoice_show=$("#cart_invoice_show");
+	var cart_invoice_edit=$("#cart_invoice_edit");
+	var cart_invoice_info=$("#cart_invoice_info");
+	var cart_invoice_submit=$("#cart_invoice_submit");
+	var cart_invoice_close=$("#cart_invoice_close");
 	cart_invoice_show.click(function(){
 		if (cart_invoice_edit.is(":visible")) {
 			cart_invoice_edit.hide();
@@ -99,8 +99,8 @@ function cart_invoice_show(){
 
 //结算信息 卡 
 function cart_info_money() {
-	var show_cart_info_money=$j("#show_cart_info_money");
-	var cart_info_money=$j("#cart_info_money");
+	var show_cart_info_money=$("#show_cart_info_money");
+	var cart_info_money=$("#cart_info_money");
 	show_cart_info_money.click(function(){
 		if (cart_info_money.is(":visible")) {
 			show_cart_info_money.find("em").html("+");
@@ -115,11 +115,11 @@ function cart_info_money() {
 
 //结算信息 运输 
 function cart_payment_show(){
-	var cart_payment_show=$j("#cart_payment_show");
-	var cart_payment_edit=$j("#cart_payment_edit");
-	var cart_payment_info=$j("#cart_payment_info");
-	var cart_payment_submit=$j("#cart_payment_submit");
-	var cart_payment_close=$j("#cart_payment_close");
+	var cart_payment_show=$("#cart_payment_show");
+	var cart_payment_edit=$("#cart_payment_edit");
+	var cart_payment_info=$("#cart_payment_info");
+	var cart_payment_submit=$("#cart_payment_submit");
+	var cart_payment_close=$("#cart_payment_close");
 	cart_payment_show.click(function(){
 		if (cart_payment_edit.is(":visible")) {
 			cart_payment_edit.hide();
@@ -142,11 +142,11 @@ function cart_payment_show(){
 
 //结算信息 配送地址 
 function cart_address_show(){
-	var cart_address_show=$j(".cart_address_show");
-	var cart_address_edit=$j("#cart_address_edit");
-	var cart_address_info=$j("#cart_address_info");
-	var cart_address_submit=$j("#cart_address_submit");
-	var cart_address_close=$j("#cart_address_close");
+	var cart_address_show=$(".cart_address_show");
+	var cart_address_edit=$("#cart_address_edit");
+	var cart_address_info=$("#cart_address_info");
+	var cart_address_submit=$("#cart_address_submit");
+	var cart_address_close=$("#cart_address_close");
 	cart_address_show.click(function(){
 		if (cart_address_edit.is(":visible")) {
 			cart_address_edit.hide();
@@ -160,9 +160,9 @@ function cart_address_show(){
 	cart_address_submit.click(function(){
 		//首先判断表单有没有空的，如果有的话 弹出来，没有的话在执行ELSE区间
 		var bz=true;
-		var $city1=$j('#city1').val();
-		var $city2=$j('#city2').val();
-		var $city3=$j('#city3').val();
+		var $city1=$('#city1').val();
+		var $city2=$('#city2').val();
+		var $city3=$('#city3').val();
 		cart_address_edit.find(":text").each(function(){				
 				if($.trim($(this).val()) == "" || $city1=="" || $city2=="" || $city3==""){
 					bz=false;
@@ -172,18 +172,18 @@ function cart_address_show(){
 		if(bz){
 						cart_address_edit.hide();
 						//姓名信息
-						var $consignee=$j('#consignee').val();
+						var $consignee=$('#consignee').val();
 						//手机信息
-						var $tel=$j('#phone').val();
+						var $tel=$('#phone').val();
 						//地址信息
-						var $add=$j('#address').val();
-						var $province=$j('#city1').val();
-						var $city=$j('#city2').val();
-						var $district=$j('#city3').val();
+						var $add=$('#address').val();
+						var $province=$('#city1').val();
+						var $city=$('#city2').val();
+						var $district=$('#city3').val();
 						var $address=$province +' ' +$city+' ' +' ' +$district+' ' +' ' +$add;
-						$j('#tdname').text($consignee);
-						$j('#tdphone').text($tel);
-						$j('#tdaddress').text($address);
+						$('#tdname').text($consignee);
+						$('#tdphone').text($tel);
+						$('#tdaddress').text($address);
 						cart_address_info.show();
 		}else{
 							alert('请将信息输入完整');

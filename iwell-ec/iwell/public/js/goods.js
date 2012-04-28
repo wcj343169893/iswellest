@@ -179,3 +179,17 @@ function goods_eva_details() {
 		_this.css("width",_width);
 	});
 };
+function show(){
+	//商品ID
+	var goods_id = document.getElementsByName("goods_id")[0].value;
+	//商品图片
+	var goods_img=document.getElementsByName("Images_url")[0].value;
+	//商品名称
+	var goods_name = document.getElementsByName("goods_name")[0].value;
+	//商品价格
+	var market_price = document.getElementsByName("market_price")[0].value;
+	//商品数目
+	var goods_quantity = document.getElementById("goods_amount").value;	
+	//将数组myCart存入cookie
+	common.intoCart(goods_id,goods_name,market_price,goods_img,goods_quantity);		
+}

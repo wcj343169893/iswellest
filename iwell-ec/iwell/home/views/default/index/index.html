@@ -6,7 +6,6 @@
 <title><{$shopConfig.shop_name}>-首页</title>
 <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
 <script type="text/javascript" src="<{$public}>/js/swfobject.js"></script>
-<script type="text/javascript" src="<{$public}>/js/index.js"></script>
 <script type="text/javascript" src="<{$public}>/js/timeCountDown.js"></script>
 <link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
 </head>
@@ -26,7 +25,7 @@
           <ul id="foundImages"> 
           <{section loop=$hotData name=hd}>
               <li class="alignCenter foundImagesSlide poRel"> 
-                <a href="index.php/index/ware/id/<{$hotData[hd].goods_id}>" class="gimg" data-img-url=""> 
+                <a href="<{1|getURL:$hotData[hd].goods_id}>" class="gimg" data-img-url=""> 
                   <img src="<{$hotData[hd].goods_img}>" alt="<{$hotData[hd].goods_name}>"/> 
                   <span class="imgInfoBottom imgInfoBottomShopsMain"><span class="floatLeft"><h3><{$hotData[hd].goods_name}></h3></span></span>
                 </a> 
@@ -45,17 +44,17 @@
     <ul class="salesWrap" style="width: 938px;">
     	<{section loop=$newData name=nd}>
         <li class="imgList <{if $smarty.section.nd.index%2 eq 1}>even<{else}>odd<{/if}> filler">
-          <a href="index.php/index/ware/id/<{$newData[nd].goods_id}>" title=""><img src="<{$newData[nd].goods_img}>" alt="<{$newData[nd].goods_name}>" style="width:460px;height: 460px;"/></a>
-          <a class="dB" href="index.php/index/ware/id/<{$newData[nd].goods_id}>" title="" style="*cursor: pointer">
+          <a href="<{1|getURL:$newData[nd].goods_id}>" title=""><img src="<{$newData[nd].goods_img}>" alt="<{$newData[nd].goods_name}>" style="width:460px;height: 460px;"/></a>
+          <a class="dB" href="<{1|getURL:$newData[nd].goods_id}>" title="" style="*cursor: pointer">
             <span class="imgInfoTop">
               <span class="floatLeft">
                 <h3><{$newData[nd].cat_name}></h3>
                 <span class="imgDescription desc_345"><{$newData[nd].goods_name}></span>
               </span>
-              <span class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<{$newData[nd].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
+              <span class="viewDet floatRight round20 fabGrad" href="<{1|getURL:$newData[nd].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
             </span>
           </a>
-          <a class="dB" href="index.php/index/ware/id/<{$newData[nd].goods_id}>" title="" style="*cursor: pointer">
+          <a class="dB" href="<{1|getURL:$newData[nd].goods_id}>" title="" style="*cursor: pointer">
             <span class="imgInfoBottomHov hide">
               <h3 class="imgDesEndSn">
                 <{$newData[nd].sale_end_time|compareDate}> 
@@ -76,17 +75,17 @@
     <ul class="endSoonWrap">
     <{section loop=$endingsoondata name=esd}>
         <li class="imgList">
-          <a class="filler" href="index.php/index/ware/id/<{$endingsoondata[esd].goods_id}>"  title=""><img src="/<{$endingsoondata[esd].goods_img}>" alt="" title=""/></a>
-          <a class="dB" href="index.php/index/ware/id/<{$endingsoondata[esd].goods_id}>" title="" style="*cursor: pointer">
+          <a class="filler" href="<{1|getURL:$endingsoondata[esd].goods_id}>"  title=""><img src="/<{$endingsoondata[esd].goods_img}>" alt="" title=""/></a>
+          <a class="dB" href="<{1|getURL:$endingsoondata[esd].goods_id}>" title="" style="*cursor: pointer">
             <span class="imgInfoBottom">
               <span class="floatLeft">
                 <h3><{$endingsoondata[esd].cat_name}></h3>
                 <span class="imgDescription desc_226"><{$endingsoondata[esd].goods_name}></span>
               </span>
-              <span class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<{$endingsoondata[esd].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
+              <span class="viewDet floatRight round20 fabGrad" href="<{1|getURL:$endingsoondata[esd].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
             </span>
           </a>
-          <a class="dB" href="index.php/index/ware/id/<{$endingsoondata[esd].goods_id}>" title="" style="*cursor: pointer">
+          <a class="dB" href="<{1|getURL:$endingsoondata[esd].goods_id}>" title="" style="*cursor: pointer">
             <span class="imgInfoTopHov hide">
               <h3 class="imgDesEndSn">
                 <{$endingsoondata[esd].sale_end_time|compareDate}>
@@ -124,19 +123,19 @@
   									<ul id="upcmgContent" class="showHideToggleClass">
   									<{section loop=$tr1Data name="td"}>
   											<li>
-  												<a href="index.php/index/ware/id/<{$tr1Data[td].goods_id}>">
+  												<a href="<{1|getURL:$tr1Data[td].goods_id}>">
   													<span class="title"><{$tr1Data[td].cat_name}></span>
   													<span class="des"><{$tr1Data[td].goods_name}></span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="index.php/index/ware/id/<{$tr1Data[td].goods_id}>" class="filler"><img src="/<{$tr1Data[td].goods_img}>" alt="" width="300" height="300" title="" /></a>
+  													<a href="<{1|getURL:$tr1Data[td].goods_id}>" class="filler"><img src="/<{$tr1Data[td].goods_img}>" alt="" width="300" height="300" title="" /></a>
   													<span class="imgInfoBottom">
   														<span class="floatLeft">
   															<h3><{$tr1Data[td].cat_name}></h3>
   															<span class="imgDescription desc_236"><{$tr1Data[td].goods_name}></span>
   														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<{$tr1Data[td].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+  														<a class="viewDet floatRight round20 fabGrad" href="<{1|getURL:$tr1Data[td].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
@@ -166,13 +165,13 @@
                       <li class="noBorderBottom">
                       <ul class="showHideToggleClass upcmgContentShow weekShopToggleContent">
                             <li>
-                              <a href="http://fab.com/sale/4577/" alt="">
+                              <a href="" alt="">
                                 <span class="title">pEi Pod</span>
                                 <span class="des">Mod and Comfy Pet Enclosures</span>
                               </a>
                               <span class="imgList transBrd transBrdHvr hide">
                                 <span class="hoverArrow"></span>
-                                <a href="http://fab.com/sale/4577/" class="filler" alt=""><img src="./fab.com_files/4577-300x300-1332825285.png" alt="" width="300" height="300" title=""></a>
+                                <a href="" class="filler" alt=""><img src="./fab.com_files/4577-300x300-1332825285.png" alt="" width="300" height="300" title=""></a>
                                 <span class="imgInfoBottom">
                                   <span class="floatLeft">
                                     <h3>pEi Pod</h3>
@@ -180,7 +179,7 @@
                                       Mod and Comfy Pet Enclosures
                                     </span>
                                   </span>
-                                  <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4577/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+                                  <a class="viewDet floatRight round20 fabGrad" href=""><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
                                 </span>
                                 <span class="imgInfoTopHov hide">
                                   <h3 class="imgDesEndSn">
@@ -214,19 +213,19 @@
   									<ul id="upcmgContent" class="showHideToggleClass">
   										<{section loop=$tr2Data name=t2d}>
   											<li>
-  												<a href="index.php/index/ware/id/<{$tr2Data[t2d].goods_id}>" alt="">
+  												<a href="<{1|getURL:$tr2Data[t2d].goods_id}>" alt="">
   													<span class="title desc_246"><{$tr2Data[t2d].cat_name}></span>
   													<span class="des"><{$tr2Data[t2d].goods_name}></span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="index.php/index/ware/id/<{$tr2Data[t2d].goods_id}>" class="filler" alt=""><img src="/<{$tr2Data[t2d].goods_img}>" alt="" width="300" height="300" title=""></a>
+  													<a href="<{1|getURL:$tr2Data[t2d].goods_id}>" class="filler" alt=""><img src="/<{$tr2Data[t2d].goods_img}>" alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
   														<span class="floatLeft ">
   															<h3><{$tr2Data[t2d].cat_name}></h3>
   															<span class="imgDescription desc_236"><{$tr2Data[t2d].goods_name}></span>
   														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<{$tr2Data[t2d].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+  														<a class="viewDet floatRight round20 fabGrad" href="<{1|getURL:$tr2Data[t2d].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
@@ -256,13 +255,13 @@
                       <li class="noBorderBottom">
                       <ul class="showHideToggleClass upcmgContentShow weekShopToggleContent ">
                             <li>
-                              <a href="http://fab.com/sale/4579/" alt="">
+                              <a href="" alt="">
                                 <span class="title">Mercer Cutlery</span>
                                 <span class="des">Sleek Professional Blades and Sets</span>
                               </a>
                               <span class="imgList transBrd transBrdHvr hide">
                                 <span class="hoverArrow"></span>
-                                <a href="http://fab.com/sale/4579/" class="filler" alt=""><img src="./fab.com_files/4579-300x300-1332963137.png" alt="" width="300" height="300" title=""></a>
+                                <a href="" class="filler" alt=""><img src="./fab.com_files/4579-300x300-1332963137.png" alt="" width="300" height="300" title=""></a>
                                 <span class="imgInfoBottom">
                                   <span class="floatLeft">
                                     <h3>Mercer Cutlery</h3>
@@ -270,7 +269,7 @@
                                       Sleek Professional Blades and Sets
                                     </span>
                                   </span>
-                                  <a class="viewDet floatRight round20 fabGrad" href="http://fab.com/sale/4579/"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+                                  <a class="viewDet floatRight round20 fabGrad" href=""><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
                                 </span>
                                 <span class="imgInfoTopHov hide">
                                   <h3 class="imgDesEndSn">
@@ -304,19 +303,19 @@
   									<ul id="upcmgContent" class="showHideToggleClass">
   									<{section loop=$tr3Data name=t3d}>
   											<li>
-  												<a href="index.php/index/ware/id/<{$tr3Data[t3d].goods_id}>">
+  												<a href="<{1|getURL:$tr3Data[t3d].goods_id}>">
   													<span class="title"><{$tr3Data[t3d].cat_name}></span>
   													<span class="des"><{$tr3Data[t3d].goods_name}></span>
   												</a>
   												<span class="imgList transBrd transBrdHvr hide">
   													<span class="hoverArrow"></span>
-  													<a href="index.php/index/ware/id/<{$tr3Data[t3d].goods_id}>" class="filler" alt=""><img src="/<{$tr3Data[t3d].goods_img}>" alt="" width="300" height="300" title=""></a>
+  													<a href="<{1|getURL:$tr3Data[t3d].goods_id}>" class="filler" alt=""><img src="/<{$tr3Data[t3d].goods_img}>" alt="" width="300" height="300" title=""></a>
   													<span class="imgInfoBottom">
   														<span class="floatLeft">
   															<h3><{$tr3Data[t3d].cat_name}></h3>
   															<span class="imgDescription desc_236"><{$tr3Data[t3d].goods_name}></span>
   														</span>
-  														<a class="viewDet floatRight round20 fabGrad" href="index.php/index/ware/id/<{$tr3Data[t3d].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
+  														<a class="viewDet floatRight round20 fabGrad" href="<{1|getURL:$tr3Data[t3d].goods_id}>"><span class="fabShopSprite gtIcon imgInfoArrow"></span></a>
   													</span>
   													<span class="imgInfoTopHov hide">
   														<h3 class="imgDesEndSn">
@@ -350,19 +349,19 @@
     <{section loop=$datar name=dr}>
         <li>
           <div class="insImgCont filler">
-            <a style="display: block;" href="index.php/index/ware/id/<{$datar[dr].goods_id}>">
+            <a style="display: block;" href="<{1|getURL:$datar[dr].goods_id}>">
               <span style="height: 306px; width: 306px; background-image: url(&quot;/<{$datar[dr].goods_img}>&quot;);" class="insImg"></span>
             </a>
           </div>
           <div class="imageInfoWrap">
-            <a href="index.php/index/ware/id/<{$datar[dr].goods_id}>" data-image-id="weiner-dog-oil-vinegar-set" class="fabShopSprite infoIconBG">
+            <a href="<{1|getURL:$datar[dr].goods_id}>" data-image-id="weiner-dog-oil-vinegar-set" class="fabShopSprite infoIconBG">
               <span class="fabShopSprite infoIcon"></span>
             </a>
             <span class="imageInfoContent round5"><span class="fabShopSprite gtIcon imgInfoArrow"></span></span>
           </div>
           <p class="overflowHidden imgAuthInfo">
             <span class="floatLeft">
-							<span class="imgBy floatLeft"><a href="index.php/index/ware/id/<{$datar[dr].goods_id}>"><{$datar[dr].cat_name}></a></span>
+							<span class="imgBy floatLeft"><a href="<{1|getURL:$datar[dr].goods_id}>"><{$datar[dr].cat_name}></a></span>
               <span class="upldTimeInfo">
                 <span class="upldTime fabShopSprite floatLeft"></span>
                 <span class="upldTimeCount floatLeft"><{$datar[dr].sale_end_time|compareDate}></span>
@@ -370,17 +369,17 @@
               <span class="fabSeprator fabShopSprite"></span>
 
               <span class="imgFabCount">
-                  <a href="http://fab.com/inspiration/87531/fab" rel="fabInspImg" title="FAB this photo" class="showLoginBox">
+                  <a href="" rel="fabInspImg" title="FAB this photo" class="showLoginBox">
                     <span class="imgFab fabShopSprite"></span>
                   </a>
                 <span class="fabIcon">462</span>
               </span>
               <span class="imgCountDetails">
-                <a title="Comment on this photo" href="http://fab.com/inspiration/weiner-dog-oil-vinegar-set">
+                <a title="Comment on this photo" href="">
                   <span class="imgCount fabShopSprite"></span>
                 </a>
                 <span>
-                  <fb:comments-count href="http://fab.com/inspiration/weiner-dog-oil-vinegar-set" class="fb_comments_count_zero"><span class="fb_comments_count" style="vertical-align: top !important;"></span></fb:comments-count>
+                  <fb:comments-count href="" class="fb_comments_count_zero"><span class="fb_comments_count" style="vertical-align: top !important;"></span></fb:comments-count>
               </span>
             </span>
             </span>

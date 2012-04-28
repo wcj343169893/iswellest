@@ -54,7 +54,7 @@
 				<dt><a href="#"><strong class="f14"><{$data.goods_name}></strong></a></dt>
 				<dd>商品编号：<{$data.goods_sn}></dd>
 				<dd>品　　牌：<{$data.c_name}></dd>
-				<dd>普 泰 价：<strong class="f14 cb00" >￥<span id='price'><{$data.market_price}></span></strong> <a href="#" class="c110">降价通知</a></dd>
+				<dd>价	   格：<strong class="f14 cb00" >￥<span id='price'><{$data.market_price}></span></strong> <a href="#" class="c110">降价通知</a></dd>
 			</dl>
 			<dl class="goods_gifts">
 				<dt>赠品：</dt>
@@ -68,7 +68,7 @@
 						<span class="block">选择颜色：</span>
 						<span class="block">已选择：“<span id="goods_color_info" style="color:#ff00ea;">粉色</span>”</span>
 					</dt>
-					<dd class="active"><a href="javascript:void(0)"><img src="<{$public}>/images/ware/<{$data.w_pic}>" width="50" height="50" alt="粉色|#ff00ea" /></a></dd>
+<!-- 					<dd class="active"><a href="javascript:void(0)"><img src="<{$public}>/images/ware/<{$data.w_pic}>" width="50" height="50" alt="粉色|#ff00ea" /></a></dd> -->
 					<!--
 					<dd><a href="javascript:void(0)"><img src="images/goods/1.jpg" width="50" height="50" alt="黑色|#000000" /></a></dd>
 					-->
@@ -84,10 +84,10 @@
 				</dl>
 				<p class="clearFix"><a href="javascript:show()" id="goods_buy" >&nbsp;</a><a href="javascript:show()" id="goods_add_cart" >&nbsp;</a></p>
 				<!-- 购物车用 -->
-				<input type="hidden" name="goods_id" value="<{$data.id}>" />
-				<input type="hidden" name="Images_url" value="<{$data.w_pic}>" />
-				<input type="hidden" name="goods_name" value="<{$data.w_name}>" />
-				<input type="hidden" name="market_price" value="<{$data.w_price}>" />
+				<input type="hidden" name="goods_id" value="<{$data.goods_id}>" />
+				<input type="hidden" name="Images_url" value="<{$data.original_img}>" />
+				<input type="hidden" name="goods_name" value="<{$data.goods_name}>" />
+				<input type="hidden" name="market_price" value="<{$data.market_price}>" />
 			</div>
 		</div>
 		<!--产品信息 end-->
@@ -189,47 +189,7 @@
 </div>
 <div class="clear"></div>
 <{ include file='public/foot.html'}>
-<script>
-	lastScrollY=0;
-	function heartBeat(){
-	var diffY;
-	if (document.documentElement && document.documentElement.scrollTop)
-	diffY = document.documentElement.scrollTop;
-	else if (document.body)
-	diffY = document.body.scrollTop
-	else
-	{/*Netscape stuff*/}
-	percent=.1*(diffY-lastScrollY);
-	if(percent>0)percent=Math.ceil(percent);
-	else percent=Math.floor(percent);
-	document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
-	lastScrollY=lastScrollY+percent;
-	if(diffY == 0){document.getElementById("full").style.display = "none"}
-	else{document.getElementById("full").style.display = "block"}
-	}
-	suspendcode="<div id=\"full\" class='full1' style='display:none; POSITION:absolute; left:95%; top:400px; z-index:100;'><a href='javascript:top()'  target='_self'><img src='../../../../public/images/top.gif'/></a></div>"
-	document.write(suspendcode);
-	window.setInterval("heartBeat()",1);
-	function top(){
-		//	scrollTo(0,0)
-		document.body.scrollTop = 0 ;
-		document.documentElement.scrollTop = 0;
-	}
-	function show(){
-		//商品ID
-		var goods_id = document.getElementsByName("goods_id")[0].value;
-		//商品图片
-		var goods_img=document.getElementsByName("Images_url")[0].value;
-		//商品名称
-		var goods_name = document.getElementsByName("goods_name")[0].value;
-		//商品价格
-		var market_price = document.getElementsByName("market_price")[0].value;
-		//商品数目
-		var goods_quantity = document.getElementById("goods_amount").value;	
-		//将数组myCart存入cookie
-		common.intoCart(goods_id,goods_name,market_price,goods_img,goods_quantity);		
-}
-</script>
+<script type="text/javascript" src="<{$public}>/js/totop.js"></script>
 <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">

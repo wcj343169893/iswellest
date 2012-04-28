@@ -1,6 +1,6 @@
 //首页幻灯slide_show
-$j(function() {
-	if ($j("#slide_show").length > 0) {
+$(function() {
+	if ($("#slide_show").length > 0) {
 		slide_show();
 	}
 	;
@@ -9,17 +9,17 @@ $j(function() {
 // 首页幻灯slide_show
 function slide_show() {
 	slide_show_flag = true;
-	var slide_main = $j("#slide_main");
-	var slide_sub = $j("#slide_sub");
+	var slide_main = $("#slide_main");
+	var slide_sub = $("#slide_sub");
 	slide_show_auto();
 	/* 鼠标滑过数字 */
 	slide_sub.children("li").mouseover(function() {
 		slide_show_flag = false;
 		slide_main.children("li:animated").stop(false, true);
-		slide_show_start($j(this).index());
+		slide_show_start($(this).index());
 	});
 	/* 鼠标移出 */
-	$j("#slide_show").mouseleave(function() {
+	$("#slide_show").mouseleave(function() {
 		slide_show_flag = true;
 	});
 	/* 自动 */

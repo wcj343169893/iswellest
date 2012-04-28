@@ -333,7 +333,7 @@ function getCount(){
 
 //show DIV
 function showDIV() {
-	window.location='/index.php/car/mycar';
+	window.location='/cart';
 
 }
 
