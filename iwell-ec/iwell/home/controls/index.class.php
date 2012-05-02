@@ -137,11 +137,13 @@ class Index {
 			setcookie ( "id[$count]", $_GET ['id'], time () + 3600 * 24 * 7 );
 		}
 		// $id=$_GET['id'];
-		// $s=D('ware');
+// 		$s=D('ware');
+		$goods=D("goods");
 		// //查询出最近浏览过的商品
-		// $lately=$s->where($_COOKIE['id'])->order('id
-		// desc')->limit(8)->select();
-		// $this->assign('lately',$lately);
+// 		$lately=$s->where($_COOKIE['id'])->order('id
+// 		desc')->limit(8)->select();
+		$lately=$goods->where($_COOKIE['id'])->limit(8)->select();
+		$this->assign('lately',$lately);
 		// //首先获得该商品的商品信息
 		// $data=$s->where(array('id'=>$_GET['id']))->joins("cat","w_cat","id","id,c_name")->find();
 		// //然后获得该商品的商品属性
@@ -169,7 +171,6 @@ class Index {
 		// $this->assign('brand',$brand);
 		// $this->assign('cat',$cat);
 		// $this->assign('price',$price);
-		// $this->assign('att',$attribute);
 		// $this->assign('inc',$incData);
 		// $this->assign('data',$data);
 		// $this->assign('comment',$comment);
@@ -179,16 +180,20 @@ class Index {
 		$goods_id = $_GET ['id'];
 		// 产品信息
 		$goods = D ( 'goods' );
+// 		$goods_intro = D ( 'goods_intro' );
+		$gg = D ( "goods_gallery" );
+		
 		$data = $goods->where ( array (
 				'goods_id' => $goods_id 
 		) )->find ();
 		// 产品相册
-		$gg = D ( "goods_gallery" );
 		$gallerys = $gg->where ( array (
 				"goods_id" => $goods_id 
 		) )->select ();
-		
+		//产品简介
+// 		print_r($data);
 		$this->assign ( 'gallerys', $gallerys );
+// 		$this->assign('att',$attribute);
 		$this->assign ( 'data', $data );
 		$this->display ();
 	}

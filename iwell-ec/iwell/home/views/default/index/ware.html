@@ -99,13 +99,9 @@
 			<!--商品相关信息 start-->
 			<ul id="goods_info_main">
 				<li class="active">商品介绍<span></span></li>
-				<li>商品属性<span></span></li>
-				<li>包装清单<span></span></li>
-				<li>售后服务<span></span></li>
 			</ul>
 			<div id="goods_info_sub">
-				<div class="goods_info_sub_tabs"><{$data.goods_desc}></div>
-				<div class="goods_info_sub_tabs none"><{$inc[i].content}></div>
+				<div class="goods_info_sub_tabs content"><{$data.goods_desc}></div>
 			</div>
 			<!--商品相关信息 end-->
 			<!--商品评价 start-->
@@ -141,7 +137,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$brand[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$brand[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$brand[ls].id}>"><{$brand[ls].w_name}></a></p>
-							<p><strong class="f14 cf00">￥<{$brand[ls].shop_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$brand[ls].shop_price}></strong></p>
 						</li>
 						<{/section}>
 					</ol>
@@ -151,7 +147,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$cat[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$cat[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$cat[ls].id}>"><{$cat[ls].w_name}></a></p>
-							<p><strong class="f14 cf00">￥<{$cat[ls].shop_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$cat[ls].shop_price}></strong></p>
 						</li>
 						<{/section}>
 
@@ -162,7 +158,7 @@
 						<li>
 							<p class="p_0"><strong class="strong_0"><{$smarty.section.ls.iteration}></strong> <a href="<{$url}>/ware/id/<{$price[ls].id}>"><img width="50" height="50" class="fl" alt="" src="<{$public}>/images/ware/<{$price[ls].w_pic}>"/></a></p>
 							<p> <a href="<{$url}>/ware/id/<{$price[ls].id}>"><{$price[ls].w_name}></a></p>
-							<p><strong class="f14 cf00">￥<{$price[ls].shop_price}>.00</strong></p>
+							<p><strong class="f14 cf00">￥<{$price[ls].shop_price}></strong></p>
 						</li>
 						<{/section}>
 					</ol>
@@ -171,13 +167,13 @@
 			<!--销售排行 end-->
 			<!--最近浏览过页面 start-->
 			<div class="mt_6">
-				<h2 class="recent_view_tit">最近浏览过页面</h2>
+				<h2 class="recent_view_tit">最近浏览过商品</h2>
 				<ul class="recent_view">
 				<{section loop=$lately name='ls'}>
 					<li>
-						<p class="p_0"><a href="<{$url}>/ware/id/<{$lately[ls].id}>"><img width="50" height="50" alt="" src="<{$public}>/images/ware/<{$lately[ls].w_pic}>"/></a></p>
-						<p><a href="<{$url}>/ware/id/<{$lately[ls].id}>"><{$lately[ls].w_name}></a></p>
-						<p><strong class="f14 cf00">￥<{$lately[ls].shop_price}>.00</strong></p>
+						<p class="p_0"><a href="<{1|getURL:$lately[ls].goods_id}>"><img width="50" height="50" alt="" src="/<{$lately[ls].goods_img}>"/></a></p>
+						<p><a href="<{1|getURL:$lately[ls].goods_id}>"><{$lately[ls].goods_name}></a></p>
+						<p><strong class="f14 cf00">￥<{$lately[ls].shop_price}></strong></p>
 					</li>
 				<{/section}>
 				</ul>

@@ -66,8 +66,8 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 #goods_add_favo {background-position:0 -107px;margin-left:10px;}
 #goods_buy{background: url("goods/goods.png") no-repeat 0px -340px;float: left;width:139px;height:40px;margin-right: 5px;}
 /*销售排行*/
-.sell_ranking_tit {height:21px;line-height:31px;border:1px solid #E8E8E8;padding-left:50px;background:url(goods/goods.png) -161px -284px no-repeat #fff;font-weight:700;color: #1B232A;font-size: 14px;}
-#sell_ranking {border:1px solid #E8E8E8;margin-top:2px;}
+.sell_ranking_tit {height:21px;line-height:31px;border:1px solid #E8E8E8;padding-left:50px;background:url(goods/goods.png) -161px -284px no-repeat #fff;font-weight:700;color: #1B232A;font-size: 14px;border-bottom: none;}
+#sell_ranking {border:1px solid #E8E8E8;}
 #sell_tab_main {margin:10px 2px 0;border-bottom:1px solid #E8E8E8;padding-left:20px;}
 #sell_tab_main li {display:inline-block;*display:inline;*zoom:1;*margin:0 2px;width:69px;height:23px;line-height:23px;border:1px solid #E8E8E8;border-bottom:0 none;background:url(goods/goods.png) 0 -201px no-repeat;text-align: center;}
 #sell_tab_main li.active {background-position:0 -226px;font-weight:700;}
@@ -81,11 +81,11 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 
 /*最近浏览*/
 .recent_view_tit {height:21px;line-height:31px;border:1px solid #E8E8E8;padding-left:50px;background:url(goods/goods.png) -161px -251px no-repeat #fff;font-weight:700;color: #1B232A;font-size: 14px;}
-.recent_view {border:1px solid #E8E8E8;margin-top:2px;}
+.recent_view {border:1px solid #E8E8E8;border-top: none;padding-bottom: 8px;}
 .recent_view li {padding:10px 5px 0;zoom:1;}
-.recent_view li img {float:left;margin-left:14px;}
+.recent_view li img {float:left;margin-left:14px;border: 1px solid #ccc;padding:2px;}
 .recent_view li:after{content:' ';display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
-.recent_view li p.p_0 {float:left;width:70px;}
+.recent_view li p.p_0 {float:left;width:78px;}
 .recent_view li p.p_0 strong.strong_0 {float:left;color:#f00;width:14px;}
 
 /*推荐配件*/
@@ -204,4 +204,10 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .yahei {font-family:'MicroSoft yaHei';}
 #sell_tab_sub{
 	padding: 10px;
+}
+.content{
+	padding: 10px 20px;
+	line-height: 20px;
+}
+.content p{
 }
