@@ -15,9 +15,6 @@
 <script type="text/javascript" src="<{$public}>/js/goods.js"></script>
 <script type="text/javascript" src="<{$public}>/js/operate_Cart.js"></script>
 <script type="text/javascript" src="<{$public}>/js/operate_Cookie.js"></script>
-<style>
-.input_0 {background:none;border:1px solid #ccc;height:20px;line-height:20px;width:160px;}
-</style>
 </head>
 <body>
 <{ include file='public/head.html'}>
@@ -53,31 +50,19 @@
 				<input type='hidden' id='w_id' name='w_id' value="<{$data.id}>">
 				<dt><a href=""><strong class="f14"><{$data.goods_name}></strong></a></dt>
 				<dd>商品编号：<{$data.goods_sn}></dd>
-				<dd>品　　牌：<{$data.c_name}></dd>
 				<dd>市场价格：<strong class="f14 cb00" >￥<del><{$data.market_price}></del></strong></dd>
 				<dd>本店价格：<strong class="f14 cb00" >￥<span id='price'><{$data.shop_price}></span></strong></dd>
 			</dl>
-			<dl class="goods_gifts">
-				<dt>赠品：</dt>
-				<{section loop=$gift name='ls'}>
-				<dd><a href="javascript:void(0)"><{$gift[ls].g_name}></a> <span class="cb00">X<{$gift[ls].g_num}></span></dd>
-				<{/section }>
-			</dl>
-			<div class="goods_others">
-				<dl id="goods_color">
-					<dt>
-						<span class="block">选择颜色：</span>
-						<span class="block">已选择：“<span id="goods_color_info" style="color:#ff00ea;">粉色</span>”</span>
-					</dt>
-<!-- 					<dd class="active"><a href="javascript:void(0)"><img src="<{$public}>/images/ware/<{$data.w_pic}>" width="50" height="50" alt="粉色|#ff00ea" /></a></dd> -->
-					<!--
-					<dd><a href="javascript:void(0)"><img src="images/goods/1.jpg" width="50" height="50" alt="黑色|#000000" /></a></dd>
-					-->
+			<div class="goods_desc">
+				<dl>
+					<dt>简介：</dt>
+					<dd><{$data.goods_brief}></dd>
 				</dl>
+			</div>
+			<div class="goods_others">
 				<dl>
 					<dt>我 要 买：</dt>
 					<dd><a href="javascript:void(0)" id="goods_amount_reduce">减少</a><input type="text" id="goods_amount" maxlength="3" value="1" name='goods_quantity' /><a href="javascript:void(0)" id="goods_amount_plus">增加</a></dd>
-					<dd>库存：<span>有货</span>/<span class="cf00">缺货</span>/<span class="cffb">预定</span></dd>
 				</dl>
 				<dl>
 					<dt>商品总价：</dt>

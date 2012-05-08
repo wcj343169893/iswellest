@@ -50,7 +50,8 @@ function getURL($type, $id) {
 			case 1 : // 产品 源地址：index.php/index/ware/id/$id
 				$results = "goods-" . $id . $suffix;
 				break;
-			case 2 : //
+			case 2 : // 结账
+				$results = "order/orderinfo" . $suffix;
 				break;
 		}
 	} else {
@@ -59,6 +60,7 @@ function getURL($type, $id) {
 				$results = "index.php/index/ware/id/" . $id;
 				break;
 			case 2 : //
+				$results = "/index.php/order/orderinfo";
 				break;
 		}
 	}

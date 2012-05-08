@@ -6,6 +6,7 @@
 <title>普泰</title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/cart.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
 <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
 <script type="text/javascript" src="<{$public}>/js/cart.js"></script>
 <script type="text/javascript" src="<{$public}>/js/operate_Cart.js"></script>
@@ -67,12 +68,13 @@ function getCartInfo(){
 }
 </script>
 </head>
-
 <body>
+<{include file='public/head.html' }>
+<div id="fabWrapper" class="wrapperMesh">
+<div id="contentWrapper">
 <form action="<{$app}>/pay/index" id='form' method='post'>
-<div class="w960 mt_10">
-	<p class="channel_guide">当前位置：<a href="<{$app}>/index/index">首页</a> &gt; <a href="#">用户中心</a> &gt; <span>我的购物车</span></p>
-	<div class="w960 mt_10 shop_cart_nav">
+<div class="frame_main">
+	<div class="shop_cart_nav">
 		<!--
 			当前栏目 a class='active'
 		-->
@@ -83,7 +85,8 @@ function getCartInfo(){
 		</ul>
 	</div>
 	<!--收货人信息 start-->
-	<div class="w960 mt_10">
+	<div class=" mt_10">
+		<div class="clear"></div>
 		<h2 class="cart_veri_info_tit"><strong>收货人信息</strong></h2>
 		<div class="cart_veri_info_list none" id="cart_address_edit">
 			<h3><strong class="f14">收货人信息</strong> <a href="#" class="c110" id="cart_address_close">[关闭]</a></h3>
@@ -191,7 +194,7 @@ function getCartInfo(){
 	</div>
 	<!--收货人信息 end-->
 	<!--支付及配送方式 start-->
-	<div class="w960 mt_10">
+	<div class=" mt_10">
 		<h2 class="cart_veri_info_tit"><strong>支付及配送方式</strong> <a href="javascript:void(0)" class="c110" id="cart_payment_show">修改</a></h2>
 		<div class="cart_veri_info_list none" id="cart_payment_edit">
 			<h3><strong class="f14">支付及配送方式</strong>  <a href="javascript:void(0)" id="cart_payment_close" class="c110">[关闭]</a></h3>
@@ -287,7 +290,7 @@ function getCartInfo(){
 	</div>
 	<!--支付及配送方式 end-->
 	<!--发票信息 start-->
-	<div class="w960 mt_10">
+	<div class=" mt_10">
 		<h2 class="cart_veri_info_tit"><strong>发票信息</strong> <a href="javascript:void(0)" class="c110" id="cart_invoice_show">修改</a></h2>
 		<div id="cart_invoice_edit" class="cart_veri_info_list none">
 			<h3><strong class="f14">发票信息</strong>  <a href="javascript:void(0)" id="cart_invoice_close" class="c110">[关闭]</a></h3>
@@ -326,7 +329,7 @@ function getCartInfo(){
 	</div>
 	<!--发票信息 end-->
 	<!--订单备注 start-->
-	<div class="w960 mt_10">
+	<div class=" mt_10">
 		<h2 class="cart_veri_info_tit"><strong>订单备注</strong></h2>
 		<div class="cart_veri_info_list">
 			<table class="w_100">
@@ -340,9 +343,9 @@ function getCartInfo(){
 	</div>
 	<!--订单备注 end-->
 	<!--商品信息 start-->
-	<div class="w960 mt_10">
+	<div class=" mt_10">
 		<h2 class="cart_veri_info_tit"><strong>商品信息</strong> </h2>
-		<div class="w960 mt_10">
+		<div class=" mt_10">
 			<table class="cart_veri_info_table_0">
 				<thead>
 					<tr>
@@ -360,7 +363,7 @@ function getCartInfo(){
 	</div>
 	<!--商品信息 end-->
 	<!--结算信息 start-->
-	<div class="w960 mt_10">
+	<div class=" mt_10">
 		<h2 class="cart_veri_info_tit"><strong>结算信息</strong></h2>
 		<div class="cart_veri_info_list">
 			<p>商品金额：332960.00元 + 运费：0.00元 - 优惠券：0.00元 - 礼品卡：0.00元 - 余额：0.00元</p>
@@ -419,10 +422,14 @@ function getCartInfo(){
 				<p class="mt_10 clearFix"><span class="fr">共使用了<span class="cf00">500元</span>余额、<span class="cf00">1</span>张优惠卷、<span class="cf00">1</span>联心卡，总共可以优惠<span class="cf00">300.00</span>元</span></p>
 			</div>
 			<p class="mt_10 clearFix"><input type="submit" value="确 定" class="fr"/></p>
-			</form>
+			
 		</div>
 	</div>
 	<!--结算信息 end-->
 </div>
+</form>
+</div>
+</div>
+<{ include file='public/foot.html'}>
 </body>
 </html>

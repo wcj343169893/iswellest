@@ -189,6 +189,9 @@ p.channel_guide {height:24px;line-height:24px;padding-left:20px;border:1px solid
 .goods_mess_flip {width:100%;text-align:right;margin-top:10px;}
 .goods_mess_flip li {display:inline;}
 
+.goods_desc{border: 1px solid #E8E8E8;padding: 5px 10px;padding-left: 60px;zoom: 1;line-height: 2;height: 183px;}
+.goods_desc dt {float: left;display: inline;margin-left: -40px;}
+.goods_desc dd {float: left;margin-left: 10px;}
 
 /*公用*/
 .mt_5 {margin-top:5px;}
