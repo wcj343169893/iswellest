@@ -8,4 +8,6 @@
    RewriteRule ^goods-([0-9]+)(.*)\.html$ /index.php/index/ware/id/$1 [QSA,L]
    #π∫ŒÔ≥µ
    RewriteRule ^cart$ /index.php/car/mycar [L]
+   #Ω·’À
+   RewriteRule ^order/orderinfo\.html$ /index.php/order/orderinfo [L]
 </IfModule>
