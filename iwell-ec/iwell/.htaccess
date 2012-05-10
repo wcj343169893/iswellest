@@ -10,4 +10,7 @@
    RewriteRule ^cart$ /index.php/car/mycar [L]
    #Ω·’À
    RewriteRule ^order/orderinfo\.html$ /index.php/order/orderinfo [L]
+   #∑÷¿‡
+   RewriteRule ^category/list-([0-9]+)(.*)\.html$ /index.php/search/cat/cid/$1 [L]
+
 </IfModule>
