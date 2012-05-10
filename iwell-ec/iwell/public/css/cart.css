@@ -43,13 +43,13 @@ a.cart_button_0:hover,a.cart_button_1:hover {color:#ffbc00;}
 .cart_others_buy li a.a_0:hover {background-position:-93px -155px;color:#bb0000;}
 
 /*核对信息*/
-.cart_veri_info_tit {height:30px;line-height:30px;background:#ebd0fb url(cart/cart.png) -387px 0 no-repeat;padding-left:20px;border:1px solid #ccc;}
+.cart_veri_info_tit {height:30px;line-height:35px;background:#000 url(cart/cart.png) -385px 0 no-repeat;padding-left:20px;border:1px solid #ccc;}
 .cart_veri_info_list {padding:10px 20px;border:1px solid #ccc;margin-top:10px;}
 .cart_veri_info_list td {padding:5px 2px; white-space:nowrap}
 .w_100 {width:100%;}
 .cart_veri_info_list td textarea {font-size:12px;overflow:auto;}
 .cart_veri_info_table_0 {width:100%;border:1px solid #ccc;}
-.cart_veri_info_table_0 th,.cart_veri_info_table_0 td {height:34px;border:1px solid #ccc;background:#eaeaea;text-align:center;}
+.cart_veri_info_table_0 th,.cart_veri_info_table_0 td {height:34px;border:1px solid #ccc;background:#eaeaea;text-align:center;line-height: 34px;}
 .cart_veri_info_table_0 td {background:none;}
 .cart_veri_info_list input {vertical-align:middle;margin-top:-2px;margin-bottom:1px;}
 

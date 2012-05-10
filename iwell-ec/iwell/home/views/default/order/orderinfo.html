@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>普泰</title>
+<title>下单</title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/cart.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
@@ -73,19 +73,18 @@ function getCartInfo(){
 <div id="fabWrapper" class="wrapperMesh">
 <div id="contentWrapper">
 <form action="<{$app}>/pay/index" id='form' method='post'>
-<div class="frame_main">
-	<div class="shop_cart_nav">
-		<!--
-			当前栏目 a class='active'
-		-->
-		<ul>
-			<li class="li_0"><a href="#">我的购物车</a></li>
-			<li class="li_1"><a href="#" class="active">填写核对信息单</a></li>
-			<li class="li_2"><a href="#">成功提交订单</a></li>
-		</ul>
-	</div>
+<div class="fabBorderSpace"></div>
+<div class="frame_main shop_cart_nav">
+	<ul>
+		<li class="li_0"><a href="javascript:void(0)">我的购物车</a></li>
+		<li class="li_1"><a href="javascript:void(0)" class="active">填写核对信息单</a></li>
+		<li class="li_2"><a href="javascript:void(0)">成功提交订单</a></li>
+	</ul>
+	<div class="clear"></div>
+</div>
+<div class="frame_main mt_10">
 	<!--收货人信息 start-->
-	<div class=" mt_10">
+	<div>
 		<div class="clear"></div>
 		<h2 class="cart_veri_info_tit"><strong>收货人信息</strong></h2>
 		<div class="cart_veri_info_list none" id="cart_address_edit">

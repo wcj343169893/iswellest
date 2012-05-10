@@ -42,28 +42,47 @@ function compareDate($begin) {
  * 构造url
  */
 function getURL($type, $id) {
+	include 'url.php';
+	$app = "index.php";
 	$results = "";
 	$suffix = ".html";
-	// 判断是否使用url重定向
+	$url_arr = $urls [$type];
 	if ($GLOBALS ["shop_config"] ["rewrite"] > 0) {
-		switch ($type) {
-			case 1 : // 产品 源地址：index.php/index/ware/id/$id
-				$results = "goods-" . $id . $suffix;
-				break;
-			case 2 : // 结账
-				$results = "order/orderinfo" . $suffix;
-				break;
-		}
+		$url = $url_arr ["short"];
 	} else {
-		switch ($type) {
-			case 1 : // 产品
-				$results = "index.php/index/ware/id/" . $id;
-				break;
-			case 2 : //
-				$results = "/index.php/order/orderinfo";
-				break;
-		}
+		$url = $url_arr ["longger"];
 	}
+// 	return $url;
+	$results = str_replace ( "{1}", $id, $url );
+	$results = str_replace ( "{2}", $suffix, $results );
+	$results = str_replace ( "{3}", $app, $results );
+	
+	// // 判断是否使用url重定向
+	// if ($GLOBALS ["shop_config"] ["rewrite"] > 0) {
+	// switch ($type) {
+	// case 1 : // 产品 源地址：index.php/index/ware/id/$id
+	// $results = "goods-" . $id . $suffix;
+	// break;
+	// case 2 : // 结账
+	// $results = "order/orderinfo" . $suffix;
+	// break;
+	// case 3 : // 分类列表
+	// $results = "category/list-" . $id . $suffix;
+	// break;
+	// }
+	// } else {
+	// switch ($type) {
+	// case 1 : // 产品
+	// $results = $app . "/index/ware/id/" . $id;
+	// break;
+	// case 2 : //
+	// $results = $app . "/order/orderinfo";
+	// break;
+	// case 3 :
+	// $results = $app . "/search/cat/cid/" . $id;
+	// break;
+	// }
+	// }
 	return $results;
 }
 ?>

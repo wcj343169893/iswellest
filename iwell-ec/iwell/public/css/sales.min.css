@@ -4836,10 +4836,10 @@ select.select_v1 {
 }
 
 .shopFirstMenu {
-	min-height: 285px;
+	min-height: 85px;
 	padding-bottom: 20px;
 	padding-top: 15px;
-	width: 377px
+	width: 417px
 }
 
 #colorOption {
