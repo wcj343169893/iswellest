@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!-- saved from url=(0061)http://fab.com/node-connection/?v=22&conntype=live-feed-count -->
+<html xmlns:fb="//www.facebook.com/2008/fbml" class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="http://lp.fab.com/live-feed-count?_=1336878646271"></script><script src="http://lp.fab.com/live-feed-count?_=1336878616269"></script><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+    <script>window.name = '7a587b96b0ccdb7c26e81c573149f022';</script>
+    <script type="text/javascript" src="./Fab.com   daily design for everyone_files/jsapi"></script>
+    <script type="text/javascript">google.load("jquery", "1.4.2");</script><script src="./Fab.com   daily design for everyone_files/jquery.min(1).js" type="text/javascript"></script>
+    <script type="text/javascript" charset="UTF-8">
+      var WINDOWTITLE = top.document.title;
+      //using long polling instead of socket IO
+      var LP = {
+        longPollUrl : 'http://lp.fab.com/live-feed-count',
+        longPollStartListener:"",
+        maxRetryInterval : 5*60*1000, // 5 minute
+        firstRetryInterval : 30*1000, //30 second
+        connFailureCount : 0
+      };
+      LP.startLongPoll = function(config){
+        if(arguments.length===0){
+          LP.connFailureCount = 0;
+        }else{
+          LP.connFailureCount++;
+        }
+        if (parseInt(top.$.cookie("lfc") || 0, 10) < 100) {
+          // get current time
+          var currentTime = new Date();
+          // clear last long poll timeout listener
+          if (LP.longPollStartListener != "") {
+            clearTimeout(LP.longPollStartListener);
+          }
+          // store current long poll timeout listener
+          LP.longPollStartListener = setTimeout(function(){
+            LP.startLongPoll({
+              afterFailure : true
+            });
+          }, (config && config.afterFailure) ? Math.min(LP.firstRetryInterval*(Math.pow(2,LP.connFailureCount)), LP.maxRetryInterval) : LP.firstRetryInterval);
+          // start long poll
+          $.ajax({
+            cache: false,
+            dataType: "script",
+            timeout: 60000,
+            url: LP.longPollUrl
+          });
+        }
+      };
+      //start polling for new feeds after 2 seconds
+      $(document).ready(function(){
+        setTimeout(function(){LP.startLongPoll();}, 2000);
+      });
+
+      var fpc = function(live_feed, feed_time){
+        //get the data and add to MVC
+        //console.log('got data :: ' + live_feed);
+        if("live-feed-count" == "live-feed"){
+          //TODO remove try catch
+          try{
+            // if feed is an array and in correct form
+            if (live_feed.length > 0 && live_feed[0][0].id) {
+              // calculate the unread count
+              if (feed_time != parseInt(top.$.cookie("lfct") || 0, 10)) {
+                var counter = parseInt(top.$.cookie("lfc") || 0, 10) + parseInt(live_feed.length || 1, 10);
+                //expire the coockie in 4 hours
+                var expTime = new Date();
+                expTime.setTime(expTime.getTime() + (4*60*60*1000));
+                top.$.cookie("lfc", counter, {expires: expTime, path: '/' });
+                top.$.cookie("lfct", feed_time, {expires: expTime, path: '/' });
+              } else {
+                var counter = parseInt(top.$.cookie("lfc") || 0, 10);
+              }
+              // process each feed
+              for (var i=0; i<live_feed.length; i++) {
+                var feed = top.feedStore.get(live_feed[i][0].id);
+                if(feed){
+                  live_feed[i][0].updated = true;
+                  top.feedStore.remove(feed);
+                }else{
+                  var unrenderedFeeds = top.feedStore.filter(function(feedItem){
+                    return !feedItem.get('rendered');
+                  });
+                  if(unrenderedFeeds.length > 20){
+                    top.feedStore.remove(unrenderedFeeds[0]);
+                  }
+                }
+                top.feedStore.add(live_feed[i]);
+              }
+            }
+          }catch(err){
+            //
+          }
+          //if long poll recieves data before getting timed out, clear timeout for next poll and start a poll after delay of few milliseconds
+          if (LP.longPollStartListener != "") {
+            clearTimeout(LP.longPollStartListener);
+          }
+        }else{
+          if (live_feed.c) {
+          // read vairables
+            var $liveFeedsNotification = top.$("li#livefeedNav").find(".liveFeedsNotificationNew");
+            if (feed_time != parseInt(top.$.cookie("lfct") || 0, 10)) {
+            // reset cookie
+              var counter = parseInt(top.$.cookie("lfc") || 0, 10) + parseInt(live_feed.c || 1, 10);
+              //expire the coockie in 4 hours
+              var expTime = new Date();
+              expTime.setTime(expTime.getTime() + (4*60*60*1000));
+              top.$.cookie("lfc", counter, {expires: expTime, path: '/'});
+              top.$.cookie("lfct", feed_time, {expires: expTime, path: '/' });
+            } else {
+              var counter = parseInt(top.$.cookie("lfc") || 0, 10);
+            }
+            // show counter
+            if(counter > 0){
+              if (counter < 100){
+                $liveFeedsNotification.html(counter);
+                top.document.title = "(" + counter + ") " + WINDOWTITLE;
+              }else{
+                $liveFeedsNotification.html('99+');
+                top.document.title = "(99+) " + WINDOWTITLE;
+              }
+              $liveFeedsNotification.show();
+            }
+          }
+        }
+        //start polling again
+        LP.longPollStartListener = setTimeout(function(){LP.startLongPoll();}, 10);
+      };
+    </script>
+  </head>
+  <body contenteditable="false" marginwidth="0" marginheight="0"><script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/32/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrf2","beacon-1.newrelic.com","db2c31c189",457665,"egxeQEteCVhQRkpOAVtMXF1PVDpSUFEBSktXDFRRZlIKWltRBk0NVg0=",0,16,new Date().getTime()])</script>
+<script type="text/javascript" async="" src="./Fab.com   daily design for everyone_files/rum.js"></script><script id="nreum-send-beacon" type="text/x-nreum-data"></script></body></html>
