@@ -6,7 +6,7 @@
 <title>购物车-<{$shopConfig.shop_name}></title>
 <link href="<{$public}>/css/header.css" rel="stylesheet" type="text/css" />
 <link href="<{$public}>/css/cart.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="<{$public}>/css/sales.min.css" media="all" type="text/css"/>
+<link rel="stylesheet" href="<{$public}>/css/sales.min.css" type="text/css"/>
 <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
 <script type="text/javascript" src="<{$public}>/js/cart.js"></script>
 <script type="text/javascript" src="<{$public}>/js/operate_Cart.js"></script>
@@ -48,7 +48,7 @@ function getCartInfo(){
 	}
 	
 	//重置总金额
-	document.getElementById("amount").innerText = amount;
+	document.getElementById("amount").innerText = amount.toFixed(2);
 	document.getElementById("sum").innerHTML= s;
 	$('#goods_info').append(str);
 }
@@ -59,18 +59,18 @@ function getCartInfo(){
 <div id="fabWrapper" class="wrapperMesh">
 <div id="contentWrapper">
 	<div class="fabBorderSpace"></div>
-	<div class="frame_main shop_cart_nav">
-		<!--
-			当前栏目 a class='active'
-		-->
-		<ul>
-			<li class="li_0"><a  class="active">我的购物车</a></li>
-			<li class="li_1"><a >填写核对信息单</a></li>
-			<li class="li_2"><a >成功提交订单</a></li>
-		</ul>
-		<p class="fr">您目前可以享受购物满 <strong class="cf00">499</strong> 元 免运费的优惠</p>
-		<div class="clear"></div>
-	</div>
+<!-- 	<div class="frame_main shop_cart_nav"> -->
+<!-- 		<!-- -->
+<!-- 			当前栏目 a class='active' -->
+<!-- 		--> 
+<!-- 		<ul> -->
+<!-- 			<li class="li_0"><a  class="active">我的购物车</a></li> -->
+<!-- 			<li class="li_1"><a >填写核对信息单</a></li> -->
+<!-- 			<li class="li_2"><a >成功提交订单</a></li> -->
+<!-- 		</ul> -->
+<!-- 		<p class="fr">您目前可以享受购物满 <strong class="cf00">499</strong> 元 免运费的优惠</p> -->
+<!-- 		<div class="clear"></div> -->
+<!-- 	</div> -->
 	<!--购物车列表 start-->
 	<div class="mt_6 frame_main">
 		<table class="shop_cart_table_0">
@@ -102,7 +102,7 @@ function getCartInfo(){
 				<li>
 					<a href="<{1|getURL:$data[ls].goods_id}>"><img src="<{$data[ls].goods_thumb}>" width="150" height="150" alt="" class="block" /></a>
 					<p class="mt_5 pro_name"><a href="<{1|getURL:$data[ls].goods_id}>"><{$data[ls].goods_name}></a></p>
-					<p class="cf00">价格：<strong class="f14">￥<{$data[ls].market_price}>.00</strong></p>
+					<p class="cf00">价格：<strong class="f14">￥<{$data[ls].market_price}></strong></p>
 					<p><a href="#" class="a_0">加入购物车</a></p>
 					<p><a href="#" class="a_0">加入收藏夹</a></p>
 				</li>

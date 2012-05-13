@@ -2,22 +2,22 @@
   <div id="fabHeader" >
   <ul id="leftNavToggle" class="floatLeft">
     <li class="mainFabIcon headerhover">
-      <a id="homeImage" href="/sale/" class="textHide"><span class="fabShopSprite homeIcon"></span></a>
+      <a id="homeImage" href="/" class="textHide"><span class="fabShopSprite homeIcon"></span></a>
     </li>
       <li>
         <ul id="checkoutBreadCrumb">
-          <li class="activeBar">
+          <li class="<{if $step eq 1}>activeBar<{else}>passiveBar<{/if}>">
               <span class="coCircle">1</span>我的购物车
           </li>
-          <li class="passiveBar">
-            <span class="fabShopSprite activeArrow floatLeft"></span>
-            <span class="floatLeft"><span class="coCircle">2</span>付款方式</span>
+          <li class="<{if $step eq 2}>activeBar<{else}>passiveBar<{/if}>">
+            <span class="fabShopSprite <{if $step eq 1}>activeArrow<{else}>passiveArrow<{/if}> floatLeft"></span>
+            <span class="floatLeft"><span class="coCircle">2</span>下订单</span>
           </li>
-          <li class="passiveBar">
-            <span class="fabShopSprite passiveArrow floatLeft"></span>
-            <span class="floatLeft"><span class="coCircle">3</span>下订单</span>
+          <li class="<{if $step eq 3}>activeBar<{else}>passiveBar<{/if}>">
+            <span class="fabShopSprite <{if $step eq 2}>activeArrow<{else}>passiveArrow<{/if}> floatLeft"></span>
+            <span class="floatLeft"><span class="coCircle">3</span>付款方式</span>
           </li>
-          <li class="fabShopSprite passiveArrow" style="padding: 0"></li>
+          <li class="fabShopSprite <{if $step eq 3}>activeArrow<{else}>passiveArrow<{/if}>" style="padding: 0"></li>
         </ul>
       </li>
   </ul>

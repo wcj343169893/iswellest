@@ -1,6 +1,7 @@
 <?php
 	class Order {
 			function orderinfo(){
-					$this->display();
+				$this->assign("step","2");
+				$this->display();
 			}
 	}

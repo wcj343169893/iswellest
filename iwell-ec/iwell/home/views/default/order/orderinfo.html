@@ -41,7 +41,7 @@ function getCartInfo(){
 				//将商品的ID与商品组合成一个字符串
 				att=arr[i][0]+'&'+arr[i][4]+'|';
 				//alert(arr);
-				str+='<tr><td><a href="#" class="c110">'+arr[i][1]+'</a></td><td><strong class="f14 cf00">￥'+arr[i][2]+'.00</strong></td><td>'+arr[i][4]+'</td><td><strong class="f14 cf00">￥'+arr[i][2]*arr[i][4]+'.00</strong></td></tr>';
+				str+='<tr><td><a href="#" class="c110">'+arr[i][1]+'</a></td><td><strong class="f14 cf00">￥'+arr[i][2]+'</strong></td><td>'+arr[i][4]+'</td><td><strong class="f14 cf00">￥'+arr[i][2]*arr[i][4]+'</strong></td></tr>';
 			//计算商品总额
 			amount+=arr[i][2]*arr[i][4];
 			 s+=arr[i][4]++;
@@ -52,7 +52,7 @@ function getCartInfo(){
 	}
 	
 	//重置总金额
-	document.getElementById("amount").innerText = amount;
+	document.getElementById("amount").innerText = amount.toFixed(2);
 	$('#goods_info').append(str);
 	var dv = document.getElementById("cart_address_info");
 	var file = document.createElement("input");
@@ -69,19 +69,19 @@ function getCartInfo(){
 </script>
 </head>
 <body>
-<{include file='public/head.html' }>
+<{include file='public/head2.html' }>
 <div id="fabWrapper" class="wrapperMesh">
 <div id="contentWrapper">
 <form action="<{$app}>/pay/index" id='form' method='post'>
 <div class="fabBorderSpace"></div>
-<div class="frame_main shop_cart_nav">
-	<ul>
-		<li class="li_0"><a href="javascript:void(0)">我的购物车</a></li>
-		<li class="li_1"><a href="javascript:void(0)" class="active">填写核对信息单</a></li>
-		<li class="li_2"><a href="javascript:void(0)">成功提交订单</a></li>
-	</ul>
-	<div class="clear"></div>
-</div>
+<!-- <div class="frame_main shop_cart_nav"> -->
+<!-- 	<ul> -->
+<!-- 		<li class="li_0"><a href="javascript:void(0)">我的购物车</a></li> -->
+<!-- 		<li class="li_1"><a href="javascript:void(0)" class="active">填写核对信息单</a></li> -->
+<!-- 		<li class="li_2"><a href="javascript:void(0)">成功提交订单</a></li> -->
+<!-- 	</ul> -->
+<!-- 	<div class="clear"></div> -->
+<!-- </div> -->
 <div class="frame_main mt_10">
 	<!--收货人信息 start-->
 	<div>
@@ -349,7 +349,7 @@ function getCartInfo(){
 				<thead>
 					<tr>
 						<th>商品名称</th>
-						<th>普泰价</th>
+						<th>单价</th>
 						<th>购买数量</th>
 						<th>小计</th>
 					</tr>
@@ -368,7 +368,7 @@ function getCartInfo(){
 			<p>商品金额：332960.00元 + 运费：0.00元 - 优惠券：0.00元 - 礼品卡：0.00元 - 余额：0.00元</p>
 			<p class="mt_10 clearFix">
 				<a href="javascript:void(0)" class="c110 fl" id="show_cart_info_money">（<em>+</em>）使用余额、优惠卷、礼品卡来抵消部分金额</a>
-				<span class="fr f14">应付总额：<strong class="cf00" >￥<span id='amount'></span>.00</strong></span>
+				<span class="fr f14">应付总额：<strong class="cf00" >￥<span id='amount'></span></strong></span>
 			</p>
 			<div id="cart_info_money" class="none">
 				<p class="mt_10">　使用余额：<input type="text" /> <span class="c999">您目前账户余额为：<span class="cf00">￥123.00</span></span></p>
