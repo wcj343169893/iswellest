@@ -184,7 +184,7 @@ reMoveOne:function(goods_id){
 		cookie.Set("cartList",tempStr); 
 		
 		//更新购物车
-		getCartInfo();
+		//getCartInfo();
 		document.location.reload();
 		
 				
