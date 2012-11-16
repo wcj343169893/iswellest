@@ -17,12 +17,10 @@ $cakeDescription ="一号店";
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://www.choujone.com'); ?> 公共部分:app\View\Layouts\default.ctp</h1>
+			<h1><a href="/" class="a_2">主页</a></h1>
 		</div>
 		<div id="content">
-
 			<?php echo $this->Session->flash(); ?>
-			模板内容
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
@@ -34,7 +32,6 @@ $cakeDescription ="一号店";
 			?>
 		</div>
 	</div>
-	调试信息
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

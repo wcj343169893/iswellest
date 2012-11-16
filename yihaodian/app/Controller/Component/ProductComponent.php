@@ -17,6 +17,7 @@ class ProductComponent extends Component {
 	 * Product模型，用来查询数据
 	 */
 	public $Product;
+	public $Category;
 	public function __construct(ComponentCollection $collection, $settings = array()) {
 		parent::__construct ( $collection, $settings );
 		// 初始化 类Product
@@ -24,6 +25,22 @@ class ProductComponent extends Component {
 				'class' => "Product",
 				'alias' => "Product" 
 		) );
+		$this->Category = ClassRegistry::init ( array (
+				'class' => "Category",
+				'alias' => "Category" 
+		) );
+	}
+	public function findCategroy($pid = 0) {
+		$data = $this->Category->find ( "all", array (
+				"conditions" => array (
+						'Category.parent_id' => $pid 
+				),
+				"limit" => 10,
+				"order" => array (
+						"Category.id" => "desc" 
+				) 
+		) );
+		return $data;
 	}
 	/**
 	 * 查询最新10条
@@ -53,45 +70,57 @@ class ProductComponent extends Component {
 	 */
 	public function findByPage($page = 1, $pageSize = 10, $options = array()) {
 		// 查询总条数
-		$count = $this->Product->find ( "count", array (
+		$count = $this->Product->find ( "count", array_merge ( array (
 				"conditions" => array (
 						'Product.pub_flg' => 1 
 				) 
-		) );
+		), $options ) );
 		$totalPage = ceil ( $count / $pageSize );
 		if ($page > $totalPage) {
 			$page = $totalPage;
 		}
+		$data_out = array ();
 		if ($count > 0) {
-			$data = $this->Product->find ( "all", array (
+			$data = $this->Product->find ( "all", array_merge ( array (
 					"conditions" => array (
 							'Product.pub_flg' => 1 
 					),
-					"limit" => 10,
+					"limit" => $pageSize,
 					"page" => $page,
 					"order" => array (
 							"Product.product_cd" => "DESC" 
 					),
-					"fields" => array () 
-			) );
+					"fields" => array (
+							"Product.product_cd",
+							"Product.product_name",
+							"Productphoto.url" 
+					) 
+			), $options ) );
 		}
-		$data = array (
+		$data_out = array (
 				"count" => $count,
 				"totalPage" => $totalPage,
-				"newPage" => $page,
+				"nowPage" => $page,
 				"data" => $data 
 		);
-		return $data;
+		return $data_out;
 	}
 	/**
 	 * 查询详细
 	 */
 	public function findById($id) {
+		$data = array ();
 		if ($id > 0) {
 			$data = $this->Product->find ( "first", array (
 					"conditions" => array (
 							'Product.pub_flg' => 1,
 							'Product.product_cd' => $id 
+					),
+					"fields" => array (
+							"Product.product_cd",
+							"Product.product_name",
+							"Productphoto.url" ,
+							"Productdesc.body" ,
 					) 
 			) );
 		}

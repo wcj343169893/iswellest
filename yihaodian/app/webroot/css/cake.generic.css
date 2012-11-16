@@ -305,7 +305,6 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
-	display: block;
 	font-size: 110%;
 	margin-bottom:3px;
 }
@@ -1064,4 +1063,25 @@ pre {
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#555555', endColorstr='#222222', GradientType=0);
   filter: progid:dximagetransform.microsoft.gradient(enabled=false);
 }
-
+li{
+	list-style: none;
+	width: 300px;
+	float: left;
+	height: 100px;
+}
+.a_2{color: #fff;}
+.a_2:HOVER{color: #fff;}
+.clear{
+	clear: both;
+}
+.t_head{
+	background: #ccc;
+	padding: 10px 20px 8px 30px;
+	margin: 10px;
+	border-radius: 8px;
+}
+.search{
+	width:auto;
+	padding:0;
+margin: 5px 10px;
+}
