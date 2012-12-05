@@ -73,10 +73,9 @@ class ToppageController extends AppController {
 	function admin_edit() {
 		$this->layout = 'admin';
 		
-		if (empty ( $this->data ['Toppage'] ['mode'] )) {
+// 		if (empty ( $this->data ['Toppage'] ['mode'] )) {
 			$this->__loadToppageContent ();
-		}
-		
+// 		}
 		$this->__loadToppageData ();
 		
 		$this->set ( 'pageSettingType', $this->name );
@@ -95,7 +94,6 @@ class ToppageController extends AppController {
 			$this->admin_edit ();
 			return;
 		}
-		
 		// カテゴリ商品を順番で保存
 		$categoryProducts = $this->data ['Toppage'] ['category_product'];
 		unset ( $this->data ['Toppage'] ['category_product'] );

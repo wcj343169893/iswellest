@@ -98,6 +98,8 @@ class Toppage extends AppModel {
     function afterSave($created) {
         parent::afterSave($created);
         clearCache('element_cache_toppage_cached_keywords','views', '');
+        clearCache('toppage_loadToppageContent_data','custom', '');
+        clearCache('toppage_loadToppageData_category_product','custom', '');
     }
 }
 ?>
