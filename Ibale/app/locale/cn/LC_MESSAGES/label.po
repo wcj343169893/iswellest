@@ -1,0 +1,18 @@
+
+msgid "label.pleaseSelect"
+msgstr "--请选择--"
+
+msgid "label.selectALL"
+msgstr "--全部--"
+
+msgid "label.giftTop"
+msgstr "送礼频道首页"
+
+msgid "label.toppage"
+msgstr "首页"
+
+msgid "label.Banner"
+msgstr "广告位"
+
+msgid "label.other"
+msgstr "其他"

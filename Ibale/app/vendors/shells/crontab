@@ -1,0 +1,2 @@
+0 * * * * /usr/local/php-5.2.8/bin/php /storage/html/wstest/cake/console/cake.php load_group_buy_purchase_person_count  -app /storage/html/wstest/app/ 
+0 1 * * * /usr/local/php-5.2.8/bin/php /storage/html/wstest/cake/console/cake.php load_oms_data -app /storage/html/wstest/app/ 

@@ -1,0 +1,97 @@
+<?php
+/**
+ * ファイル名：page_property.php
+ * 概要：ページプロパティのモジュール
+ * 
+ * 作成者：shilei
+ * 作成日時：2012/01/12
+ */
+class __PageProperty extends AppModel {
+    var $name = 'PageProperty';
+    var $useTable = 'page_property';
+    var $hasMany = array(
+                        'ChildPageProperty' => array(
+                                            'className' => 'PageProperty',
+                                            'foreignKey' => 'parent_id'
+                ),
+    );
+    
+    var $validate = array(
+        'header_name' => array(
+                array('rule' => array('maxLength', 50)),
+                array('rule' => array('notEmpty'), 'message' => 'error.required'),
+        ),
+        'header_url' => array(
+                array('rule' => array('maxLength', 255)),
+                array('rule' => array('notEmpty'), 'message' => 'error.required'),
+                //array('rule' => array('url'), 'required' => true),
+        ),
+        'order_number' => array(
+                //array('rule' => array('notEmpty'), 'message' => 'error.required'),
+                array('rule' => array('numeric')),
+                array('rule' => array('range', 0, 1000)),
+        ),
+    );
+
+    function saveHeader($data, $userId) {
+        unset($data['PageProperty']['id']);
+        $updateDatas = array();
+        foreach($data['PageProperty'] as $key => $value) {
+            $updateData = array();
+            $updateData['type']            = PAGE_PROPERTY_HEADER;
+            $updateData['property_name']   = $key;
+            $updateData['property_value']  = $value;
+            $updateData['parent_id']       = '0';
+            $updateData['create_user']     = $userId;
+            $updateData['create_datetime'] = 'NOW()';
+            $updateData['update_user']     = $userId;
+            $updateData['update_datetime'] = 'NOW()';
+            $updateDatas[] = $updateData;
+        }
+
+        $this->begin();
+        $this->create();
+        $this->save($updateDatas[0], false);
+        $nextId = $this->getLastInsertID();
+        unset($updateDatas[0]);
+        foreach($updateDatas as $key => $value) {
+            $value['parent_id'] = $nextId;
+            $updateDatas[$key] = $value;
+        }
+
+        $this->saveAll($updateDatas, array('validate'=>false));
+        $this->commit();
+    }
+
+    /**
+     * データはタイプより取得
+     * @param unknown_type $type
+     */
+    function getPagePropertyList($type) {
+        $ret = array();
+        $conditions = array(
+                        'conditions'    => array(
+                                            'parent_id ='   => ACTIVE_FLG_FALSE,
+                                            'type ='        => $type,
+                                            'del_flg ='     => ACTIVE_FLG_FALSE,
+                        ),
+                        'recursive'     => 1,
+        );
+        $recs = $this->find('all', $conditions);
+        if (empty($recs)) {
+            return $ret;
+        }
+        foreach($recs as $key => $value) {
+            $headerId = $value['PageProperty']['id'];
+            $ret[$headerId][$value['PageProperty']['property_name'].'_id'] = $headerId;
+            $ret[$headerId][$value['PageProperty']['property_name']] = $value['PageProperty']['property_value'];
+            foreach($value['ChildPageProperty'] as $k => $v) {
+                $ret[$headerId][$v['property_name'].'_id'] = $v['id'];
+                $ret[$headerId][$v['property_name']] = $v['property_value'];
+            }
+        }
+        usort($ret, "cmpOrderNumber");
+        return $ret;
+    }
+}
+?>

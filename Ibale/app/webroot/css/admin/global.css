@@ -1,0 +1,266 @@
+@charset "utf-8";
+/*
+=========================================
+	@name : Alan
+	@date : 2011-12-26 setup
+==========================================
+*/
+html {
+    overflow-y: scroll;
+}
+/** 清除内外边距 **/
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,buttom,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+}
+/** 重置表格元素 **/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/** 重置图片元素 **/
+fieldset,img {
+    border: 0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style: normal;
+    font-weight: normal;
+}
+/** 重置列表元素 **/
+ol,ul {
+    list-style: none;
+}
+
+caption,th {
+    text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before,q:after {
+    content: '';
+}
+
+abbr,acronym {
+    border: 0;
+}
+
+/** 重置外部容器浮动 **/
+.clearfix:before,.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+    height: 1px;
+    font-size: 1px;
+    line-height: 1px;
+    overflow: hidden;
+}
+
+a:link,a:visited {
+    color: #575757;
+    text-decoration: none;
+}
+
+a:active,a:hover {
+    color: #575757;
+    text-decoration: underline;
+}
+
+/** 公共部分 **/
+.input_30 {
+    width: 30px;
+}
+
+.input_50 {
+    width: 50px;
+}
+
+.input_70 {
+    width: 70px;
+}
+
+.input_80 {
+    width: 83px;
+}
+
+.input_100 {
+    width: 100px;
+}
+
+.input_130 {
+    width: 130px;
+}
+
+.input_175 {
+    width: 174px;
+}
+
+.input_200 {
+    width: 200px;
+}
+
+.input_300 {
+    width: 300px;
+}
+
+.input_400 {
+    width: 400px;
+}
+
+.gray {
+    color: #999;
+}
+
+.f_11 {
+    font-size: 11px;
+}
+
+.f_12 {
+    font-size: 12px;
+}
+
+.f {
+    text-decoration: line-through;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.p_10_d {
+    padding: 0 0 10px 0;
+}
+
+.p_30_d {
+    padding: 0 0 30px 0;
+}
+
+.p_40_t {
+    padding: 40px 0 0 0;
+}
+
+.p_55_l {
+    padding: 0 0 10px 55px;
+}
+
+.p_70_l {
+    padding: 0 0 10px 70px;
+}
+
+.l_20 {
+    line-height: 20px;
+}
+
+.w_10 {
+    width: 10px;
+}
+
+body {
+    background: #fff;
+    font: 12px Verdana, Arial, Helvetica, 宋体;
+    color: #575757;
+}
+
+/* Login */
+.loginBody {
+    background: #E0F9FE;
+}
+
+.login {
+    margin: 80px auto;
+    width: 715px;
+    height: 345px;
+    background-image: url(/image/admin/login_bg.png);
+}
+
+.login .loginInput {
+    width: 55%;
+    float: right;
+    margin: 40px 0 0 0;
+    height: 300px;
+}
+
+.loginForm {
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 50px;
+    position: relative;
+}
+
+.loginForm p {
+    height: 40px;
+}
+
+.loginForm label {
+    width: 50px;
+    display: block;
+    float: left;
+    line-height: 30px;
+}
+
+.loginForm h3 {
+    font-size: 14px;
+    color: #87361f;
+    margin-bottom: 30px;
+    margin-left: 0px !important;
+    padding: 0px;
+}
+
+.loginForm .input {
+    height: 25px;
+    border: 1px #cdcdcd solid;
+    line-height: 25px;
+    padding-left: 5px;
+    font-size: 12px;
+    background: #fff;
+}
+
+.loginForm .error {
+    background-color: #B00;
+    width: 185px;
+    color: #fff;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 10px; /*display:none;*/
+}
+
+.loginForm .btnWidth {
+    padding: 0 15px;
+}
+
+p.message,p.error-message, label.error-message, label.message {
+    clear:both;
+    font-size: 12px;
+    font-weight: bold;
+    color:red;
+    width:270px;
+    float:none;
+    overflow:auto;
+}
+.center {
+    text-align:center;
+}
+.p_40_t {
+    padding: 40px 0 0;
+}
+.cursor_hand {
+    cursor:pointer;
+}
+div.search {
+    margin-bottom:5px;
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+/*
+=========================================
+	@name : Alan
+	@date : 2011-12-27 setup
+==========================================
+*/
+body { font: 12px Verdana, Arial, Helvetica, 宋体;}
+
+/* ------to header------ */
+.headerBody { background: #DFF8FF url(../image/header_bg.png) repeat-x;}
+.headWrapper {}
+.headWrapper .logo { float: left; margin: 10px 0 0 20px; display: inline;}
+.headWrapper .person { float: right; margin: 30px 40px 0 0; display: inline; }
+
+/* ------to drag------ */
+.dragBody { background: #ccc;}
+
+/* ------to menu------ */
+#menuList { padding: 0 0 0 15px;  width:148px; height:28px; line-height:28px; background:#68BBE5; cursor:pointer; border-bottom:1px solid #fff; font-weight: bold; color: #fff;}
+#child1,#child2,#child3,#child4,#child5 { width:163px; background:#eee;}
+#child1 ul li,#child2 ul li,#child3 ul li,#child4 ul li,#child5 ul li{ padding: 0 0 0 15px; border-bottom:1px solid #fff; line-height:200%;}
+#child1 ul li a,#child2 ul li a,#child3 ul li a,#child4 ul li a,#child5 ul li a { color:#666;}

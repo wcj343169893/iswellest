@@ -1,0 +1,13 @@
+div.search {
+    padding-top:5px;
+}
+.display-inline, .inline {
+    display:inline;
+}
+.display-none {
+    display:none;
+}
+.mainWrapper #AdminEditCompForm div p {
+    float: left;
+    width: 60px;
+}

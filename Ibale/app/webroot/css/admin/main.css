@@ -1,0 +1,429 @@
+@charset "utf-8";
+/*
+=========================================
+	@name : Alan
+	@date : 2011-12-27 setup
+==========================================
+*/
+.mainWrapper {
+    padding: 20px;
+}
+
+.mainWrapper .btn {
+    margin: 0 0 15px 0;
+    padding: 10px 20px;
+    background: #f3f3f3;
+    text-align: center;
+}
+
+.mainWrapper h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3A687C;
+    padding: 0 0 10px 5px;
+    margin: 0 0 15px 0;
+    border-bottom: 2px solid #7AABC0;
+}
+
+.mainWrapper h2 a {
+    color: #5A8D1E;
+    padding: 0 0 0 20px;
+}
+
+.mainWrapper h3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 0 10px 5px;
+}
+
+.mainWrapper h3 span {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.mainWrapper h3 p {
+    width: 60px;
+    float: left;
+}
+
+.mainWrapper h4 {
+    color: #333;
+}
+
+.mainWrapper h4 span {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+/* 表格 */
+.mainWrapper table {
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+
+.mainWrapper table tr th {
+    background: #e1e1e1;
+    font-weight: bold;
+    padding: 0px 0px 0px 10px;
+    height: 29px;
+    line-height: 29px;
+    border-bottom: 2px solid #666;
+    color: #333;
+}
+
+.mainWrapper table tr td a {
+    color: #5A8D1E;
+    text-decoration: underline;
+}
+
+.mainWrapper table tr td {
+    background: #f6f6f6;
+    padding: 0px 0px 0px 10px;
+    height: 29px;
+    line-height: 29px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mainWrapper table tr td img {
+    vertical-align: middle;
+}
+/**
+.mainWrapper table tr td span {
+    display: block;
+    float: left;
+    width: 120px;
+}
+*/
+.mainWrapper table tr.odd td {
+    background: #fbfbfb;
+}
+
+.mainWrapper table tr:hover td {
+    background: #ffffe8;
+}
+.mainWrapper table th.action {
+    text-align:center;
+}
+.mainWrapper table td.action {
+    text-align:right;
+}
+.mainWrapper table .action {
+    text-align: right;
+    padding: 0 20px 0 10px;
+}
+
+.mainWrapper table tr .action a {
+    margin: 0 0 0 10px;
+    text-decoration: none;
+}
+
+.mainWrapper table tr:hover .action a:hover {
+    color: #575757;
+    text-decoration: underline;
+}
+
+.mainWrapper table tr a.del {
+    color: #a00;
+}
+
+.mainWrapper table .action2 {
+    text-align: left;
+    padding: 0 20px 0 0;
+}
+
+.mainWrapper table tr .action2 a {
+    margin: 0 0 0 10px;
+    text-decoration: none;
+    color: #5A8D1E;
+}
+
+.mainWrapper table tr:hover .action2 a:hover {
+    color: 575757;
+    text-decoration: underline;
+}
+
+.mainWrapper table tr .action2 .disabled {
+    color: #ccc;
+    cursor: default;
+}
+
+.mainWrapper table tr .action2 a.disabled:hover {
+    color: #ccc;
+    cursor: default;
+    text-decoration: none;
+}
+
+.mainWrapper table tr .action2 a.del {
+    color: #a00;
+}
+
+.mainWrapper table td.title {
+    padding: 0 0 0 20px;
+    width: 150px;
+    border-right: 3px solid #7AABC0;
+    background: #E6EEF2;
+    font-weight: bold;
+    color: #3A687C;
+}
+
+.mainWrapper table tr td.noneBorder {
+    border-bottom: none;
+}
+
+.mainWrapper table tr td.first-cell {
+    padding: 0 0 0 25px;
+}
+
+.mainWrapper table tr td.even {
+    background: #fdfcf6;
+}
+/* 表格--关联商品编辑 */
+.mainWrapper .noneTable table {
+    border: none;
+}
+
+.mainWrapper .noneTable table tr:hover td {
+    background: none;
+}
+
+.mainWrapper .noneTable tr td {
+    border: none;
+}
+
+.mainWrapper .noneTable .center {
+    text-align: center;
+}
+
+/* 分页 */
+.mainWrapper .page {
+    margin: 5px 0 0 0;
+    padding: 10px 3px 3px 3px;
+    text-align: right;
+    background: #f6f6f6;
+    height: 25px;
+    border-top: 1px solid #666;
+}
+
+.mainWrapper .page b {
+    margin: 0 10px 0 0;
+}
+
+.mainWrapper .page a {
+    margin: 2px;
+    padding: 2px 5px;
+    color: #8b8b8b;
+    text-decoration: none;
+    border: 1px solid #cacaca;
+    background: #fff;
+}
+
+.mainWrapper .page a:hover {
+    border: 1px solid #3A6085;
+    color: #666;
+}
+
+.mainWrapper .page a:active {
+    border: 1px solid #999;
+    color: #666;
+}
+
+.mainWrapper .page .current {
+    margin: 2px;
+    padding: 2px 5px;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #3A6085;
+    background: #6993BC;
+}
+
+.mainWrapper .page .disabled {
+    margin: 2px;
+    padding: 2px 5px;
+    border: 1px solid #ddd;
+    color: #cecece;
+}
+
+.mainWrapper .page .btnDel {
+    float: left;
+    padding: 0 0 0 7px;
+    line-height: 20px;
+}
+
+/* ------文章内容配置------ */
+.mainWrapper .mainContent {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: #fbfbfb;
+}
+
+.mainWrapper .mainContent p {
+    line-height: 30px;
+}
+
+.mainWrapper .mainContent p span {
+    font-weight: bold;
+}
+
+.mainWrapper .mainContent .editWrapper {
+    border: 1px solid #ddd;
+    background: #fff;
+    margin: 0 0 15px 0;
+}
+
+/* ------页面内容配置------ */
+.mainWrapper .topContent {
+    margin: 0 0 15px 0;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: #f3f3f3;
+}
+
+.mainWrapper .topContent h4 {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 0 10px 0;
+}
+
+.mainWrapper .topContent .del {
+    color: #a00;
+    font-weight: normal;
+    padding: 0 0 0 10px;
+}
+
+.mainWrapper .topContent a.del {
+    color: #a00;
+    font-weight: normal;
+    padding: 0 0 0 10px;
+}
+
+.mainWrapper .topContent .add {
+    color: #5A8D1E;
+    padding: 0 0 0 5px;
+}
+
+.mainWrapper .topContent a.add {
+    color: #5A8D1E;
+    padding: 0 0 0 5px;
+}
+
+.mainWrapper .topContent .pageDown {
+    font-weight: normal;
+    padding: 0 0 0 10px;
+}
+
+.mainWrapper .topContent a.pageDown {
+    color: #000;
+    font-weight: normal;
+    padding: 0 0 0 10px;
+}
+
+.mainWrapper .topContent .ad {
+    float: left;
+    padding: 10px 20px;
+    border: 1px solid #d5d5d5;
+    width: 220px;
+    background: #fbfbfb;
+    margin: 0 15px 15px 0;
+    overflow: auto;
+}
+
+.mainWrapper .topContent .ad .title {
+    font-weight: bold;
+    border-bottom: 1px solid #d5d5d5;
+    margin: 0 0 5px 0;
+}
+
+.mainWrapper .topContent .ad p {
+    line-height: 26px;
+}
+
+.mainWrapper .topContent .ad .img {
+    text-align: right;
+    padding: 5px 0;
+}
+
+.mainWrapper .topContent .column {
+    padding: 10px 20px;
+    border: 1px solid #d5d5d5;
+    background: #fbfbfb;
+    overflow: hidden;
+}
+
+.mainWrapper .topContent .column p {
+    line-height: 26px;
+    clear: both;
+}
+
+.mainWrapper .topContent .column .line {
+    border-bottom: 1px dotted #666;
+    padding: 0 0 10px 0;
+    margin: 0 0 15px 0;
+}
+
+.mainWrapper .topContent .leftContent {
+    overflow: auto;
+    padding: 0 10px 0 0;
+}
+
+.mainWrapper .topContent .leftContent .leftAd {
+    margin: 0 0 10px 0;
+    height: 430px;
+    overflow: auto;
+}
+
+.mainWrapper .topContent .leftContent .border_top {
+    border-top: 1px dotted #666;
+    height: 1px;
+    margin: 0 0 10px 0;
+}
+
+.mainWrapper .topContent .productId {
+    float: left;
+    padding: 10px 20px;
+    border: 1px solid #d5d5d5;
+    width: 205px;
+    height: 210px;
+    background: #fff;
+    margin: 0 15px 15px 0;
+    overflow: hidden;
+}
+
+.mainWrapper .topContent .leftContent .productImg {
+    text-align: left;
+    padding: 5px 0;
+}
+
+.mainWrapper .topContent .rightContent {
+    float: right;
+    width: 260px;
+    padding: 0 10px;
+    border-left: 1px dotted #666;
+}
+
+.mainWrapper .topContent .brand {
+    padding: 10px 20px;
+    border: 1px solid #d5d5d5;
+    background: #fbfbfb;
+    margin: 0 0 15px 0;
+    overflow: hidden;
+}
+
+.mainWrapper .topContent ul.scrollList li {
+    float: left;
+    padding: 0 30px 0 0;
+}
+
+.mainWrapper .btnWidth {
+    padding: 0 15px;
+}
+.display .btn {
+    margin: 0;
+    padding: 10px 0 0;
+    text-align: right;
+}
+.btnWidth {
+    padding: 0 15px;
+}

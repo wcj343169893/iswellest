@@ -1,0 +1,47 @@
+@charset "utf-8";
+/*
+=========================================
+	@name : Alan
+	@date : 2012-03-29 setup
+==========================================
+*/
+
+html { overflow-y: scroll;}
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, buttom, input, textarea,  p, blockquote, th, td { margin: 0; padding: 0; }
+table { border-collapse: collapse; border-spacing: 0;}
+fieldset,img { border: 0;}
+address,caption,cite,code,dfn,em,strong,th,var { font-style: normal; font-weight: normal;}
+ol,ul { list-style: none;}
+caption,th { text-align: left;}
+h1,h2,h3,h4,h5,h6 { font-size: 100%;font-weight: normal;}
+q:before,q:after { content:'';}
+abbr,acronym { border: 0;}
+
+.clearfix:before, .clearfix:after {content: ""; display: table;}
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;}
+.clear {clear:both; height:1px; font-size:1px; line-height:1px; overflow:hidden;}
+a:link,a:visited {color:#575757; text-decoration:none;}
+a:active,a:hover {color:#575757; text-decoration:underline;} 
+
+
+body { background: #fff; font: 12px Verdana, Arial, Helvetica, 宋体; color: #585858;}
+#wrapper { margin: 0 auto; width: 800px;}
+.header { height: 71px; background: url(/image/front/top_bg.png) no-repeat;}
+.header .logo { padding: 5px 0 0 20px;}
+.main { padding: 30px;}
+.main p { padding: 5px 0; line-height: 20px;}
+.main p em { color: #20768C; font-weight: bold;}
+.main p img { padding: 40px 0;}
+.main a:link,.main a:visited {color:#FF6533; text-decoration:underline;}
+.main a:active,.main a:hover {color:#FF6533; text-decoration:none;} 
+.center { margin: 0 auto; text-align: center;}
+.f_14 { font-size: 14px; color: #333;}
+.f_14_b { font-size: 14px; font-weight: bold; color: #333;}
+.gray { color: #999;}
+.copyRight { background: #F5F5F5; border-top: 1px solid #fff; color: #888;}
+.copyRight a { color: #888;}
+.copyRight .content { margin: 0 auto; padding: 10px 0; text-align: center; position: relative;}
+.copyRight .content p { padding: 5px 0;}
+
+

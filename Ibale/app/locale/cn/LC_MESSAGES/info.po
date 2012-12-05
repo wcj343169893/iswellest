@@ -1,0 +1,75 @@
+msgid  "info.siteNameCN"
+msgstr "爱芭乐"
+
+msgid  "info.dataSyncSuccess"
+msgstr "DB数据同步更新完成！"
+
+msgid  "info.pleaseSelectForDelete"
+msgstr "请选择需要删除的项目!"
+
+msgid   "info.confirmDelete"
+msgstr  "确定要删除该信息么！"
+
+msgid   "info.noPoroductForChange"
+msgstr  "没有商品可以转移！"
+
+msgid   "info.hasProductDenyDelete"
+msgstr  "已经设定了商品不能删除！"
+
+msgid   "info.AdminLogin"
+msgstr  "管理者登录。"
+
+msgid   "info.AdminLogout"
+msgstr  "管理者登出。"
+
+msgid   "info.recodeNotFound"
+msgstr  "没有找到符合条件的记录！"
+
+msgid   "info.noOrder"
+msgstr  "您目前没有订单！"
+
+msgid   "info.noAddress"
+msgstr  "您目前没有收货地址！"
+
+msgid   "info.noPoint"
+msgstr  "您目前没有获得积分！"
+
+msgid   "info.addToBagSuccess"
+msgstr  "商品已经成功加入购物车！"
+
+msgid   "info.deleteBookmarkSuccess"
+msgstr  "商品已经成功从我的收藏中删除！"
+
+msgid   "info.memberEditSuccess"
+msgstr  "您已经成功更新了个人信息！"
+
+msgid  "info.bagIsEmpty"
+msgstr  "您的购物车内没有商品信息！"
+
+msgid  "info.sendMailToTASuccess"
+msgstr  "已经将邮件成功发送给您的朋友【%s】！"
+
+msgid  "info.updateSuccess"
+msgstr  "更新成功！"
+
+msgid  "info.changeGiftTypeSuccess"
+msgstr  "转移商品成功！"
+
+msgid  "info.memberPhotoUploadSuccess"
+msgstr  "图片上传成功！"
+
+msgid  "info.alipayExpiredTime"
+msgstr  "14天"
+
+msgid  "info.enquiryAddSuccess"
+msgstr  "咨询已经提交，请耐心等待审核！"
+
+msgid  "info.returnMailSendSuccess"
+msgstr  "退换货申请已经提交，请耐心等待审核！"
+
+msgid  "info.groupBuySoldOut"
+msgstr "购买人数达到上限"
+
+msgid  "info.stockNumEnough"
+msgstr "%s个以上"
+

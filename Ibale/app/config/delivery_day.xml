@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding="utf-8"?>
+<deliveryDays>
+    <productType value="no_limit">
+        <hasStock>
+            <deliveryDay saleStatus="normal"           value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="stock_only"       value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="will_end_selling" value="通常预定１～3天内发货（本商品一旦库存为零，即终止销售）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="等待入货" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </hasStock>
+        <noStock>
+            <deliveryDay saleStatus="normal"           value="通常预定%1$s～%2$s天内发货" />
+            <deliveryDay saleStatus="stock_only"       value="缺货中" />
+            <deliveryDay saleStatus="will_end_selling" value="缺货中（本商品一旦库存为零，即终止销售）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="等待入货" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </noStock>
+    </productType>
+    <productType value="jit">
+        <hasStock>
+            <deliveryDay saleStatus="normal"           value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="stock_only"       value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="will_end_selling" value="通常预定１～3天内发货（本商品一旦库存为零，即终止销售）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="等待入货" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </hasStock>
+        <noStock>
+            <deliveryDay saleStatus="normal"           value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="stock_only"       value="缺货中" />
+            <deliveryDay saleStatus="will_end_selling" value="缺货中（本商品一旦库存为零，即终止销售）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="等待入货" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </noStock>
+    </productType>
+    <productType value="stock_only">
+        <hasStock>
+            <deliveryDay saleStatus="normal"           value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="stock_only"       value="通常预定１～3天内发货" />
+            <deliveryDay saleStatus="will_end_selling" value="通常预定１～3天内发货（本商品一旦库存为零，即终止销售）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="等待入货" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </hasStock>
+        <noStock>
+            <deliveryDay saleStatus="normal"           value="缺货中" />
+            <deliveryDay saleStatus="stock_only"       value="缺货中" />
+            <deliveryDay saleStatus="will_end_selling" value="缺货中（本商品一旦库存为零，即终止销售）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="等待入货" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </noStock>
+    </productType>
+    <productType value="stock_only">
+        <hasStock>
+            <deliveryDay saleStatus="normal"           value="预定在%1$s日发货（预约商品）" />
+            <deliveryDay saleStatus="stock_only"       value="预定在%1$s日发货（预约商品）" />
+            <deliveryDay saleStatus="will_end_selling" value="预定在%1$s日发货（预约商品）" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="该商品现在不接受预约" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </hasStock>
+        <noStock>
+            <deliveryDay saleStatus="normal"           value="该商品现在不接受预约" />
+            <deliveryDay saleStatus="stock_only"       value="该商品现在不接受预约" />
+            <deliveryDay saleStatus="will_end_selling" value="该商品现在不接受预约" />
+            <deliveryDay saleStatus="end_selling"      value="本商城现阶段没有引进该商品" />
+            <deliveryDay saleStatus="wait_arrival"     value="该商品现在不接受预约" />
+            <deliveryDay saleStatus="stop_selling"     value="停止销售" />
+        </noStock>
+    </productType>
+</deliveryDays>

@@ -1,0 +1,35 @@
+msgid  "mail.subjectForPasswordReset"
+msgstr "%1$s提醒：您的密码取回请求已收到"
+
+msgid  "mail.subjectForChooseGiftToReceiver"
+msgstr "%1$s提醒：%2$s想送你一个礼物，请你来%1$s挑选礼物"
+
+msgid  "mail.subjectForChoosedGiftToReceiver"
+msgstr "%1$s提醒：您已选择好想要的礼物，请等待%2$s完成支付"
+
+msgid  "mail.subjectForChoosedGiftToPayer"
+msgstr "%1$s提醒：%2$s已选择好想要的礼物，可以支付了！"
+
+msgid  "mail.subjectForCreateOrderToPayerAlipay"
+msgstr "%1$s购物提醒：订单%2$s已收到，请尽快付款!"
+
+msgid  "mail.subjectForCreateOrderToPayerCod"
+msgstr "%1$s购物提醒：订单%2$s已收到，正在处理中"
+
+msgid  "mail.subjectForCreateOrderToPayerKao"
+msgstr "%1$s购物提醒：%2$s想要一个\"%3$s\"作礼物，你能满足TA吗?"
+
+msgid  "mail.subjectForCreateOrderToPayerOther"
+msgstr "%1$s购物提醒：%2$s在爱芭乐选购了一些心仪的商品，你能帮TA买单吗?"
+
+msgid  "mail.subjectForReturnProductToPayer"
+msgstr "%1$s购物提醒：订单%2$s退货申请已收到，正在处理中"
+
+msgid  "mail.subjectForCancelOrderToPayer"
+msgstr "%1$s购物提醒：订单%2$s因超过支付期限已取消"
+
+msgid  "mail.subjectForMemberRegister"
+msgstr "感谢您注册%1$s"
+
+msgid  "mail.subjectForOrderCancel"
+msgstr "%1$s购物提醒：订单%2$s已经成功取消"

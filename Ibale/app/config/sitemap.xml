@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding="utf-8"?>
+<siteMap>
+    <admin>
+        <menuGroup path="product" name="商品管理">
+            <menu path="product_list" name="商品列表" url="/admin/product/">
+                <action controller="Product" action="admin_index" />
+                <action controller="Product" action="admin_search" />
+                <action controller="Product" action="admin_edit" />
+                <action controller="Product" action="admin_edit_comp" />
+                <action controller="Product" action="admin_edit_relation_product" />
+                <action controller="Product" action="admin_update_relation_product" />
+            </menu>
+            <menu path="estimation" name="用户评论" url="/admin/estimation/">
+                <action controller="Estimation" action="admin_index"/>
+                <action controller="Estimation" action="admin_search"/>
+                <action controller="Estimation" action="admin_commit_reply"/>
+                <action controller="Estimation" action="admin_change_status"/>
+                <action controller="Estimation" action="admin_change_selected_status"/>
+                <action controller="Estimation" action="admin_del"/>
+            </menu>
+            <menu path="enquiry" name="用户咨询" url="/admin/enquiry/">
+                <action controller="Enquiry" action="admin_index"/>
+                <action controller="Enquiry" action="admin_search"/>
+                <action controller="Enquiry" action="admin_commit_reply"/>
+                <action controller="Enquiry" action="admin_change_status"/>
+                <action controller="Enquiry" action="admin_change_selected_status"/>
+            </menu>
+        </menuGroup>
+        <menuGroup path="page_setting" name="页面内容配置">
+            <menu path="toppage" name="首页" url="/admin/toppage/edit">
+                <action controller="Toppage" action="admin_edit"/>
+                <action controller="Toppage" action="admin_edit_comp"/>
+            </menu>
+            <menu path="category_top" name="频道管理" url="/admin/category_top/">
+                <action controller="CategoryTop" action="admin_index"/>
+                <action controller="CategoryTop" action="admin_add"/>
+                <action controller="CategoryTop" action="admin_edit"/>
+                <action controller="CategoryTop" action="admin_edit_comp"/>
+                <action controller="CategoryTop" action="admin_delete"/>
+            </menu>
+            <menu path="gift_top" name="送礼频道首页" url="/admin/gift_top/edit">
+                <action controller="GiftTop" action="admin_edit"/>
+                <action controller="GiftTop" action="admin_edit_comp"/>
+            </menu>
+            <menu path="banner" name="广告位管理" url="/admin/banner/edit">
+                <action controller="Banner" action="admin_edit"/>
+                <action controller="Banner" action="admin_edit_comp"/>
+            </menu>
+        </menuGroup>
+        <menuGroup path="article" name="文章管理">
+            <menu path="articl_list" name="文章列表" url="/admin/article/">
+                <action controller="Article" action="admin_index"/>
+                <action controller="Article" action="admin_edit"/>
+                <action controller="Article" action="admin_edit_comp"/>
+                <action controller="Article" action="admin_delete"/>
+            </menu>
+            <menu path="article_category_list" name="文章分类" url="/admin/article_category/">
+                <action controller="ArticleCategory" action="admin_index"/>
+                <action controller="ArticleCategory" action="admin_add_category1"/>
+                <action controller="ArticleCategory" action="admin_add_category2"/>
+                <action controller="ArticleCategory" action="admin_delete"/>
+                <action controller="ArticleCategory" action="admin_change_article_category"/>
+            </menu>
+        </menuGroup>
+        <menuGroup path="group_buy" name="团购管理">
+            <menu path="group_buy_list" name="团购活动列表" url="/admin/group_buy/">
+                <action controller="GroupBuy" action="admin_index"/>
+                <action controller="GroupBuy" action="admin_edit"/>
+                <action controller="GroupBuy" action="admin_edit_comp"/>
+                <action controller="GroupBuy" action="admin_delete"/>
+            </menu>
+        </menuGroup>
+        <menuGroup path="system_setting" name="系统配置">
+            <menu path="gift_type" name="送礼分类" url="/admin/gift_type/">
+                <action controller="GiftType" action="admin_index"/>
+                <action controller="GiftType" action="admin_add"/>
+                <action controller="GiftType" action="admin_delete"/>
+                <action controller="GiftType" action="admin_change_gift_type"/>
+            </menu>
+            <menu path="friend_link_list" name="友情链接" url="/admin/page_friendlink/">
+                <action controller="PageFriendlink" action="admin_index"/>
+                <action controller="PageFriendlink" action="admin_add"/>
+                <action controller="PageFriendlink" action="admin_delete"/>
+                <action controller="PageFriendlink" action="admin_delete_selected"/>
+            </menu>
+            <menu path="page_property" name="顶部&amp;底部导航" url="/admin/page_property/">
+                <action controller="PageProperty" action="admin_index"/>
+                <action controller="PageProperty" action="admin_add"/>
+                <action controller="PageProperty" action="admin_delete"/>
+            </menu>
+            <menu path="admin_list" name="管理员列表" url="/admin/admin/index/">
+                <action controller="Admin" action="admin_index"/>
+                <action controller="Admin" action="admin_edit"/>
+                <action controller="Admin" action="admin_edit_comp"/>
+                <action controller="Admin" action="admin_delete"/>
+            </menu>
+            <menu path="operator_log" name="操作日志" url="/admin/operator_log/">
+                <action controller="OperatorLog" action="admin_index"/>
+            </menu>
+            <menu path="data_sync" name="DB数据同步" url="/admin/data_sync/">
+                <action controller="DataSync" action="admin_index"/>
+                <action controller="DataSync" action="admin_execute"/>
+            </menu>
+        </menuGroup>
+    </admin>
+</siteMap>
+
