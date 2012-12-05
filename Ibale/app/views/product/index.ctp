@@ -45,6 +45,18 @@
         	<?php $this->set('categoryList', $categoryList);?>
         	<?php echo $this->element('category/tree_category');?>
         </div>
+        <h3 class="itemTitle it_1 m_10">搜索过该商品的用户还看过</h3>
+        <div class="listProduct clearfix">
+        </div>
+        <h3 class="itemTitle it_2 m_10">一周销量排行</h3>
+        <div class="listProduct clearfix">
+        </div>
+        <h3 class="itemTitle it_3 m_10">搜索记录</h3>
+        <div class="listProduct clearfix">
+        </div>
+        <h3 class="itemTitle it_4 m_10">浏览记录</h3>
+        <div class="listProduct clearfix">
+        </div>
         <?php if (!empty($bannerList)):?>
             <?php foreach($bannerList['focus_pic'] as $key => $value):?>
             <div class="leftAd">
@@ -55,7 +67,20 @@
     </div>
     <div class="mainRight">
 <?php if (empty($this->params['named']['brand_id'])):?>
-		<div>热卖推荐</div>
+		<div class="list_hot">
+			<span class="list_hot_ico">热卖推荐</span>
+			<ul class="list_hot_products">
+				<li>
+					<img alt="" src="">
+					<div class="pro_desc">
+						<p class="pro_title">标题标题标题标题标题标题标题标题标题标题</p>
+						<p class="pro_price">今日特价:￥12</p>
+						<p><a href="javascript:;" class="ico_buy_now">立即抢购</a></p>
+					</div>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
 		<div>一般分类列表</div>
         <?php $brandIdKeys = array_keys($brandIds);?>
         <?php if(!empty($brandIds) && count($brandIds) == 1 && !empty($brandIdKeys[0]) && !empty($brandList[$brandIdKeys[0]]['BrandPhoto'][0]['url'])):?>
