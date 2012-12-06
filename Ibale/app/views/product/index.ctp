@@ -4,21 +4,21 @@
 <?php echo $appForm->hidden('Search.sort_sale', array('id'=>'sort_sale'));?>
 <!-- main -->
 <?php if (!empty($this->params['named']['brand_id'])):?>
-<div class="mainCenter clearfix">
-    <?php $brandId = $this->params['named']['brand_id'];?>
-    <h2 class="crumbList">
-        <a href="<?php echo HTTP_HOME_PAGE_URL;?>">全部结果</a> &gt; <?php echo $brandList[$brandId]['Brand']['brand_name'];?>
-    </h2>
-    <div class="brandTxt clearfix">
-        <p class="txtleft"><?php echo $brandList[$brandId]['Brand']['brand_name'];?></p>
-        <p class="txtRight"><?php echo $brandList[$brandId]['Brand']['brand_description'];?></p>
-    </div>
-    <?php if (!empty($brandList[$brandId]['BrandPhoto'][0]['url'])):?>
-    <h3>
-        <img src="<?php echo OMS_API_PHOTO_ROOT_URL.$brandList[$brandId]['BrandPhoto'][0]['url'];?>" width="1000" height="auto"/>
-    </h3>
-    <?php endif;?>
-</div>
+	<div class="mainCenter clearfix">
+	    <?php $brandId = $this->params['named']['brand_id'];?>
+	    <h2 class="crumbList">
+	        <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/category1_id:0">全部结果</a> &gt; <?php echo $brandList[$brandId]['Brand']['brand_name'];?>
+	    </h2>
+	    <div class="brandTxt clearfix">
+	        <p class="txtleft"><?php echo $brandList[$brandId]['Brand']['brand_name'];?></p>
+	        <p class="txtRight"><?php echo $brandList[$brandId]['Brand']['brand_description'];?></p>
+	    </div>
+	    <?php if (!empty($brandList[$brandId]['BrandPhoto'][0]['url'])):?>
+	    <h3>
+	        <img src="<?php echo OMS_API_PHOTO_ROOT_URL.$brandList[$brandId]['BrandPhoto'][0]['url'];?>" width="1000" height="auto"/>
+	    </h3>
+	    <?php endif;?>
+	</div>
 <?php else:?>
 <div class="mainCenter clearfix">
 	<div class="crumb">
@@ -69,16 +69,20 @@
 <?php if (empty($this->params['named']['brand_id'])):?>
 		<div class="list_hot">
 			<span class="list_hot_ico">热卖推荐</span>
+			<?php if(!empty($recommend_product)):?>
 			<ul class="list_hot_products">
+				<?php foreach($recommend_product as $k=>$v):?>
 				<li>
-					<img alt="" src="">
+					<img alt="<?php echo $v["product_name"]?>" src="<?php echo $v["photo_url"]?>">
 					<div class="pro_desc">
-						<p class="pro_title">标题标题标题标题标题标题标题标题标题标题</p>
-						<p class="pro_price">今日特价:￥12</p>
-						<p><a href="javascript:;" class="ico_buy_now">立即抢购</a></p>
+						<p class="pro_title"><?php echo $v["product_name"]?></p>
+						<p class="pro_price">今日特价:￥<?php echo $v["price_for_normal"]?><span class="del">￥<?php echo $v["retail_price"]?></span></p>
+						<p><a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?>" class="ico_buy_now">立即抢购</a></p>
 					</div>
 				</li>
+				<?php endforeach;?>
 			</ul>
+			<?php endif;?>
 			<div class="clear"></div>
 		</div>
 		<div>一般分类列表</div>
@@ -91,30 +95,46 @@
         <?php endif;?>
         <!-- 相关分类 -->
         <div class="txtList clearfix">
-            <p class="txtTitle">品牌：</p>
-            <p class="txtContent">
-            <?php $index = 0;?>
-            <?php $displayBrands = array();?>
-            <?php foreach($brandIds as $key => $value):?>
-                <?php if (in_array($key, $displayBrands)):?>
-                    <?php continue;?>
-                <?php endif;?>
-                <?php $displayBrands[] = $key;?>
-                <span class="display-inline" style="width:135px;">| <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/brand_id:<?php echo $key;?>" title="<?php echo $brandList[$key]['Brand']['brand_name'];?>"><?php echo $text->truncate($brandList[$key]['Brand']['brand_name'], 10, array('ending'=>'...'));?></a>&nbsp;<?php echo !empty($value)?"(".count($value).")":'';?></span>
-                <?php $index++;?>
-                <?php if ($index == 8):?>
-            </p>
-            <p id="hiddenBrand" class="txtContentall" style="display:none;padding-left:90px;">
-                <?php endif;?>
-            <?php endforeach;?>
-            <?php /**if ($index > 0):?> | <?php endif;*/?>
+            <p class="txtTitle">品牌：<span class="txtList_all">全部</span></p>
+            <p class="txtContent" id="list_brand">
+	            <?php $index = 0;?>
+	            <?php $displayBrands = array();?>
+	            <?php foreach($brandIds as $key => $value):?>
+	                <?php if (in_array($key, $displayBrands)):?>
+	                    <?php continue;?>
+	                <?php endif;?>
+	                <?php $displayBrands[] = $key;?>
+	                <span class="display-inline m_l_20"><a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/brand_id:<?php echo $key;?>" title="<?php echo $brandList[$key]['Brand']['brand_name'];?>"><?php echo $text->truncate($brandList[$key]['Brand']['brand_name'], 10, array('ending'=>'...'));?></a></span>
+	                <?php $index++;?>
+	            <?php endforeach;?>
             </p>
         <?php if ($index >= 8):?>
-            <span id="showMoreBrandBtn" class="txtMore" onclick="javaScript:showMoreBrand();"><a href="javaScript:void(0);"></a></span>
+        	<div class="clear"></div>
+        	<script type="text/javascript">
+            	var list_brand = $("#list_brand");
+                var list_brand_height=list_brand.height();
+                var sfh=0;
+                if(list_brand_height>40){
+                    document.write("<div class='showMoreBrandBtn'></div>");
+                    $("<a href='javascript:;' onclick='sofh()' class='more'>&nbsp;</a>").appendTo(".showMoreBrandBtn");sofh();
+                 }
+                        	function sofh(){
+                        		if(sfh){
+                        			$("#list_brand").animate({ height: list_brand_height,}, 500 );
+                        			$(".showMoreBrandBtn>a").addClass("more_up");
+                        			sfh=0;
+                        		}else{
+                        			$("#list_brand").animate({ height: "40px",}, 500 );
+                        			$(".showMoreBrandBtn>a").removeClass("more_up");
+                        			sfh=1;
+                        		}
+                        	}
+            </script>
         <?php endif;?>
         </div>
+        <!-- 
         <div class="txtList2 clearfix">
-            <p class="txtTitle">相关分类：</p>
+            <p class="txtTitle">相关分类：<span class="txtList_all">全部</span></p>
             <p class="txtContent">
         <?php if(!empty($categoryIds)):?>
             <?php $index = 0;?>
@@ -127,7 +147,7 @@
                             <?php continue;?>
                         <?php endif;?>
                         <?php $category2Ids[] = $k2;?>
-                        <span class="display-inline" style="width:135px;">| <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/category1_id:<?php echo $key;?>/category2_id:<?php echo $k2;?>"><?php echo $text->truncate($v2, 10, array('ending'=>'...'));?></a></span>
+                        <span class="display-inline" style="width:135px;"><a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/category1_id:<?php echo $key;?>/category2_id:<?php echo $k2;?>"><?php echo $text->truncate($v2, 10, array('ending'=>'...'));?></a></span>
                         <?php $index++;?>
                         <?php if ($index == 8):?>
                     </p>
@@ -161,7 +181,7 @@
             <span id="showMoreCategoryBtn" class="txtMore" onclick="javaScript:showMoreCategory();"><a href="javaScript:void(0);"></a> </span>
         <?php endif;?>
         </div>
-        <div class="clear"></div>
+        <div class="clear"></div> -->
         <!-- 相关分类 end -->
 <?php endif;?>
         <!-- 产品分页 -->
@@ -169,21 +189,24 @@
         <?php /** echo $this->element('common/pagination', array('model'=>'Product'));**/ ?>
         <!---------->
         <div class="modOrder">
-            <p>
-                <?php echo $appForm->select('Product.sort_key', $msts[PRODUCT_SORT_KEY], null, array('id'=>'ProductSortKey', 'empty'=>false, 'onchange'=>"javaScript:changeSortOrder(this.value);"));?>
+            <p style="width:660px;">
+                <?php if (empty($this->params['named']['sort_key'])):?><a href="javascript:void(0);" class="o_select">默认<span class="ico_12">&nbsp;</span></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('0');return false;">默认<span class="ico_12">&nbsp;</span></a><?php endif;?> 
+                <?php if ($this->params['named']['sort_key'] == '1'):?><a href="javascript:void(0);" class="o_select">销量<span class="ico_12">&nbsp;</span></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('1');return false;">销量<span class="ico_12">&nbsp;</span></a><?php endif;?> 
+                <?php if ($this->params['named']['sort_key'] == '2'):?><a href="javascript:void(0);" class="o_select">最新<span class="ico_12">&nbsp;</span></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('2');return false;">最新<span class="ico_12">&nbsp;</span></a><?php endif;?> 
+                <?php if ($this->params['named']['sort_key'] == '4'):?>
+	                <a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('3');return false;" class="o_select">价格<span class="ico_13">&nbsp;</span></a>
+                <?php elseif ($this->params['named']['sort_key'] == '3'):?>
+	                <a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('4');return false;" class="o_select">价格<span class="ico_12">&nbsp;</span></a>
+                <?php else:?>
+                	<a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('4');return false;">价格<span class="ico_14">&nbsp;</span></a>
+                <?php endif;?> 
+                <span class="modOrder_search_price">
+	              	<?php echo $appForm->text('Product.min_price', array('id'=>'minPrice', 'class'=>'input', 'size'=>'8','title'=>"按价格区间筛选"));?> - <?php echo $appForm->text('Product.max_price', array('id'=>'maxPrice', 'class'=>'input', 'size'=>'8','title'=>"按价格区间筛选"));?>
+	                <button type="button" class="btnImg btnOk" onclick="javaScript:searchProductByPrice();"></button>
+                </span>
             </p>
-            <p style="width:220px;">
-                <?php if ($this->params['named']['sort_key'] == '1'):?><a href="javascript:void(0);">销量<img src="/image/front/arrow_down.gif"></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('1');return false;">销量<img src="/image/front/arrow_down_dis.gif"></a><?php endif;?> 
-                <?php if ($this->params['named']['sort_key'] == '2'):?><a href="javascript:void(0);">最新<img src="/image/front/arrow_down.gif"></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('2');return false;">最新<img src="/image/front/arrow_down_dis.gif"></a><?php endif;?> 
-                <?php if ($this->params['named']['sort_key'] == '3' ):?><a href="javascript:void(0);">价格<img src="/image/front/arrow_down.gif"></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('3');return false;">价格<img src="/image/front/arrow_down_dis.gif"></a><?php endif;?> 
-                <?php if ($this->params['named']['sort_key'] == '4'):?><a href="javascript:void(0);">价格<img src="/image/front/arrow_up.gif"></a><?php else:?><a href="javaScript:void(0);" onclick="javaScript:changeSortOrder('4');return false;">价格<img src="/image/front/arrow_up_dis.gif"></a><?php endif;?> 
-            </p>
-            <p class="pageSkip">
-                <button type="button" class="btnImg btnOk" onclick="javaScript:searchProductByPrice();"></button>
-            </p>
-            <p class="pageSkip">
-                价格&nbsp;<?php echo $appForm->text('Product.min_price', array('id'=>'minPrice', 'class'=>'input', 'size'=>'8'));?> - <?php echo $appForm->text('Product.max_price', array('id'=>'maxPrice', 'class'=>'input', 'size'=>'8'));?>
-            </p>
+            <?php $this->set('pageSection', 2);$this->set('onlyButton', 1);?>
+        	<?php echo $this->element('common/pagination', array('model'=>'Product')); ?>
         </div>
         <ul class="itemLisit clearfix">
     <?php if(!empty($dataList)):?>
@@ -196,7 +219,6 @@
     <?php endif;?>
         </ul>
         <div class="clear"></div>
-        <?php $this->set('pageSection', 2);?>
         <?php echo $this->element('common/pagination', array('model'=>'Product')); ?>
 <?php if(empty($dataList)):?>
     <div style="width:788px;height:300px;">

@@ -1,0 +1,1158 @@
+2012-12-05 23:12:48 Debug: FILE:app\app_model.php LINE:220
+ OMSのAPI（http://sandbox.darctech.co.jp/oms/api/getstockinfo）へ送信：
+2012-12-05 23:12:48 Debug: FILE:app\app_model.php LINE:221
+ {"seq":5231248,"system":"front","sender":"127.0.0.1","params":{"product_cd":[14963]}}
+2012-12-05 23:12:51 Debug: FILE:app\app_model.php LINE:223
+ OMSからのデータ：
+2012-12-05 23:12:51 Debug: FILE:app\app_model.php LINE:224
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Page not found at /oms/api/getstockinfo\</title>
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background:#eee; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; margin-bottom:.4em; }
+    h1 span { font-size:60%; color:#666; font-weight:normal; }
+    table { border:none; border-collapse: collapse; width:100%; }
+    td, th { vertical-align:top; padding:2px 3px; }
+    th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    #info { background:#f6f6f6; }
+    #info ol { margin: 0.5em 4em; }
+    #info ol li { font-family: monospace; }
+    #summary { background: #ffc; }
+    #explanation { background:#eee; border-bottom: 0px none; }
+  </style>
+</head>
+<body>
+  <div id="summary">
+    <h1>Page not found <span>(404)</span></h1>
+    <table class="meta">
+      <tr>
+        <th>Request Method:</th>
+        <td>POST</td>
+      </tr>
+      <tr>
+        <th>Request URL:</th>
+      <td>http://sandbox.darctech.co.jp/oms/api/getstockinfo%5C</td>
+      </tr>
+    </table>
+  </div>
+  <div id="info">
+    
+      <p>
+      Using the URLconf defined in <code>lbx.urls</code>,
+      Django tried these URL patterns, in this order:
+      </p>
+      <ol>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcustomerpoints/
+                [name='api.getcustomerpoints']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcouponstatus/
+                [name='api.getcouponstatus']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getstockinfo/
+                [name='api.getstockinfo']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getorderlist/
+                [name='api.getorderlist']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getorderdetail/
+                [name='api.getorderdetail']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^generateorderno/
+                [name='api.generateorderno']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^calcorder/
+                [name='api.calcorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^addorder/
+                [name='api.addorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^calcmodifyorder/
+                [name='api.calcmodifyorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^modifyorder/
+                [name='api.modifyorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^cancelorder/
+                [name='api.cancelorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^updatepayment/
+                [name='api.updatepayment']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^setshipstop/
+                [name='api.setshipstop']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^generatecustomerid/
+                [name='api.generatecustomerid']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcustomerinfo/
+                [name='api.getcustomerinfo']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^savecustomerinfo/
+                [name='api.savecustomerinfo']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^authcustomer/
+                [name='api.authcustomer']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^verifyemailandphone/
+                [name='api.verifyemailandphone']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^verifymail/
+                [name='api.verifymail']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^verifynickname/
+                [name='api.verifynickname']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^shippingresult/
+                [name='api.shippingresult']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getshippingresultdetail/
+                [name='api.getshippingresultdetail']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getorderlogisticsinfo/
+                [name='api.getorderlogisticsinfo']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^savelogisticsinfo/
+                [name='api.savelogisticsinfo']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getlogisticsinfo/
+                [name='api.getlogisticsinfo']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getlgstinfobyvalicdandjsessionid/
+                [name='api.getlgstinfobyvalicdandjsessionid']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^addstock/
+                [name='api.addstock']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^setstock/
+                [name='api.setstock']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getproduct/
+                [name='api.getproduct']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getproductdesc/
+                [name='api.getproductdesc']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getproductphoto/
+                [name='api.getproductphoto']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcategory/
+                [name='api.getcategory']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcategoryproductrel/
+                [name='api.getcategoryproductrel']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcompany/
+                [name='api.getcompany']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getsalerule/
+                [name='api.getsalerule']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getsaleproduct/
+                [name='api.getsaleproduct']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getprice/
+                [name='api.getprice']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getmanufacturer/
+                [name='api.getmanufactuer']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getbrand/
+                [name='api.getbrand']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getbrandimage/
+                [name='api.getbrandimage']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getcarrier/
+                [name='api.getcarrier']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getdeliveryleadtime/
+                [name='api.getdeliveryleadtime']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getgenre/
+                [name='api.getgenre']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^getsubscriptionstatus/
+                [name='api.getsubscriptionstatus']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/getorderdetail/
+                [name='api.oms.getorderdetail']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/calcorder/
+                [name='api.oms.calcorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/addorder/
+                [name='api.oms.addorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/calcmodifyorder/
+                [name='api.oms.calcmodifyorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/modifyorder/
+                [name='api.oms.modifyorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/setordermisc/
+                [name='api.oms.setordermisc']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/addrepayment/
+                [name='api.oms.addrepayment']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/cancelrepayment/
+                [name='api.oms.cancelrepayment']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/rejectorder/
+                [name='api.oms.rejectorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/cancelrejectorder/
+                [name='api.oms.cancelrejectorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^api/
+                
+            
+                ^oms/repayment/
+                [name='api.oms.repayment']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                omsapi.js
+                [name='js.omsapi']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^filter/User/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^filter/(?P&lt;target_model&gt;[^/]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^search/product_by_cd/$
+                [name='func.search.product']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^dojotest/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/menu/$
+                [name='oms.menu']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^login/$
+                [name='oms.login']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^menu/$
+                [name='oms.menu']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^logout/$
+                [name='oms.logout']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^changepassword/$
+                [name='oms.changepassword']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/category/$
+                [name='oms.view.category']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/delivery_leadtime/$
+                [name='oms.view.deliveryleadtime']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/customer/$
+                [name='oms.view.customer']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/product/$
+                [name='oms.view.product']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/productfind/$
+                [name='oms.view.productfind']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/salerule/$
+                [name='oms.view.salerule']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/coupon/$
+                [name='oms.view.coupon']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/company/$
+                [name='oms.view.company']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/carrier/$
+                [name='oms.view.carrier']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/brand/$
+                [name='oms.view.brand']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/manufacturer/$
+                [name='oms.view.manufacturer']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/genre/$
+                [name='oms.view.genre']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/price/$
+                [name='oms.view.priceapproval']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/priceclaim/$
+                [name='oms.view.priceclaim']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/inventory/$
+                [name='oms.view.inventory']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/order/$
+                [name='oms.view.order']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/customerrankrule/$
+                [name='oms.view.customerrankrule']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/pricemanagement/$
+                [name='oms.view.pricemanagement']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/productreservation/$
+                [name='oms.view.productreservation']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/systemvalue/$
+                [name='oms.view.systemvalue']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/addorder/$
+                [name='oms.view.addorder']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^view/addrepayment/$
+                [name='oms.view.addrepayment']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^search/product/$
+                [name='oms.search.product']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^search/category/$
+                [name='oms.search.category']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^search/brand/$
+                [name='oms.search.brand']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/
+                
+            
+                ^search/manufacturer/$
+                [name='oms.search.manufacturer']
+            
+          </li>
+        
+          <li>
+            
+                ^oms/admin/
+                
+            
+          </li>
+        
+          <li>
+            
+                ^$
+                
+            
+          </li>
+        
+      </ol>
+      <p>The current URL, <code>oms/api/getstockinfo\</code>, didn't match any of these.</p>
+    
+  </div>
+
+  <div id="explanation">
+    <p>
+      You're seeing this error because you have <code>DEBUG = True</code> in
+      your Django settings file. Change that to <code>False</code>, and Django
+      will display a standard 404 page.
+    </p>
+  </div>
+</body>
+</html>
+

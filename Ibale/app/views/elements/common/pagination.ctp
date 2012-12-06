@@ -15,6 +15,13 @@ $pageSection = !empty($pageSection)?$pageSection:1;
 			<?php echo $paginator->next('下一页',array('tag'=>'span', 'class'=>'disabled', 'escape' => false));?>
 			<?php echo $paginator->last('尾页', array('tag'=>'span', 'class'=>'disabled', 'escape'=>false));?>
 		</div>
+<?php elseif($this->layout == 'front'&&!empty($onlyButton) && !empty($paging['count']) && (!empty($paging['prevPage']) || !empty($paging['nextPage']))):?>
+		<div class="tool_page">
+              <?php echo $paginator->counter(array('format' => '<span><a href="javascript:;">%page%</a>/%pages%</span>'));?>
+              <?php echo $paginator->prev('',array('escape' => false,'class'=>"prev"));?>
+              <?php echo $paginator->next('',array('escape' => false));?>
+		</div>
+<?php $this->set("onlyButton",0);?>
 <?php elseif($this->layout == 'front' && !empty($paging['count']) && (!empty($paging['prevPage']) || !empty($paging['nextPage']))):?>
         <div class="page pageStyle">
             <p>

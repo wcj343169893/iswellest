@@ -419,35 +419,36 @@
 .mainLeft .it_3{background-position: 0px -120px;}
 .mainLeft .it_4{background-position: 0px -160px;}
 .list_hot{border: 1px solid #E4E4E4;width:980px;padding-bottom: 10px;}
-.list_hot .list_hot_ico{margin-top: -5px;width:40px;height: 110px;background: url("/image/front/zwlist_category.png") no-repeat -162px -210px; display: block;text-indent: -999em;margin-left: 10px;float: left;}
+.list_hot .list_hot_ico{margin-top: -5px;width:43px;height: 110px;background: url("/image/front/zwlist_category.png") no-repeat -162px -210px; display: block;text-indent: -999em;margin-left: 10px;float: left;}
 .list_hot .list_hot_products{}
-.list_hot .list_hot_products .pro_desc{float: left;width: 108px;}
-.list_hot .list_hot_products li{float: left;width: 250px;height: 120px;margin: 10px 20px;}
+.list_hot .list_hot_products .pro_desc{float: left;width: 158px;}
+.list_hot .list_hot_products li{float: left;width: 300px;height: 120px;margin: 10px 2px;}
 .list_hot .list_hot_products li img{width: 120px;height: 120px;float: left;border: 1px solid #D4E9F9;margin: 0 10px;}
 .list_hot .list_hot_products li p{line-height: 18px;margin-top: 5px;}
-.list_hot .list_hot_products li p.pro_title{margin-top: 20px;height:36px;overflow: hidden;}
+.list_hot .list_hot_products li p.pro_title{margin-top: 10px;height:36px;overflow: hidden;}
 .list_hot .list_hot_products li p.pro_price{font-weight: bold;color: #249EB3;}
+.list_hot .list_hot_products li p.pro_price .del{font-weight: normal;color: #444;margin-left: 8px;text-decoration: line-through;}
 .list_hot .list_hot_products li a.ico_buy_now{background: url("/image/front/zwlist_category.png") no-repeat 0px -210px;width: 65px;height: 25px;display: block;text-indent: -999em;}
 .crumb { margin: 5px 0 0 0; padding: 0 0 0 15px;  height:18px; line-height: 18px; position: relative;}
 .crumb span { position: absolute; top: 2px; right: 10px;}
 .crumb span b { padding: 0 10px; color: #f63;}
 .txtList { margin: 15px 0 0 0; padding: 10px 20px; border: 1px solid #D4E9F9; background: #fff;}
 .txtList2 { margin: 0 0 10px 0; padding: 10px 20px; border: 1px solid #D4E9F9; border-top: none; background: #fff; clear: both;}
-.txtList .txtTitle,.txtList2 .txtTitle { float: left; width: 90px; height: 30px; font-size: 14px; font-weight: bold; color: #F98983;}
-.txtList .txtContent,.txtList2 .txtContent, .txtList .txtContentall,.txtList2 .txtContentall { float: left; width: 840px; line-height: 20px;}
+.txtList .txtTitle,.txtList2 .txtTitle { float: left; width: 90px; height: 30px; font-size: 12px;text-align: right;}
+.txtList .txtContent,.txtList2 .txtContent, .txtList .txtContentall,.txtList2 .txtContentall { float: left; width: 820px; line-height: 20px;}
 .txtList .txtContent a,.txtList2 .txtContent a, .txtList .txtContentall a,.txtList2 .txtContentall a { display: inline-block;}
 .txtList .txtMore,.txtList2 .txtMore { float: right; display: block; width: 63px; height: 23px; background: url(/image/front/bg.png) -821px -168px no-repeat;}
 .txtList .txtMoredown,.txtList2 .txtMoredown { float: right; display: block; width: 63px; height: 23px; background: url(/image/front/bg.png) -781px -99px no-repeat;}
 .txtList .txtMore a,.txtList2 .txtMore a { display: block; width: 63px; height: 23px;}
 .modTop { width: 790px; height: 3px; background: url(/image/front/bg.png) 0 -348px no-repeat; overflow: hidden;}
-.modOrder { padding: 5px 0 0 10px; height: 31px; background: url(/image/front/order_bg.png) repeat-x; border-left: 1px solid #D4E9F9; border-right: 1px solid #D4E9F9;}
+.modOrder { height: 31px; background: #CFEEF0;border-top: 1px solid #8FC9D2;margin-top: 10px;}
 .modOrder p { float: left; height: 23px; line-height: 18px; margin: 0 5px 0 0;}
 .modOrder b { margin: 0 10px 0 0; height: 30px;}
-.modOrder a { display: inline-block; height: 19px; margin: 1px 2px; padding: 0 5px; color: #666; text-decoration: none; border: 1px solid #D4E9F9; background: #fff;}
-.modOrder a:hover { border: 1px solid #3A6085; color: #666; text-decoration: none; }
-.modOrder a:active { border: 1px solid #999; color: #666; }
+.modOrder a { display: inline-block; height: 19px; color: #666; text-decoration: none;}
+.modOrder a:hover {}
+.modOrder a:active {}
 .modOrder .pageSkip { float: right;}
-.modOrder .btnOk { width: 62px; height: 20px; background: url(/image/front/bg.png) -711px -264px no-repeat; margin: 2px 10px 0 0;}
+.modOrder .btnOk { width: 60px;height: 22px;background: url(/image/front/zwlist_category.png) 0px -270px no-repeat;margin: 2px 10px 0 2px;}
 .itemLisit { padding: 10px; width: 958px; background: #fff; border: 1px solid #D4E9F9; border-top: none;}
 .itemLisit li { float: left; padding: 0 10px; margin: 0 0 15px 0; width: 170px; position: relative;}
 .itemLisit li p { line-height: 22px;}

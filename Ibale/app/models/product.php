@@ -506,9 +506,11 @@ class Product extends AppModel {
      * @param unknown_type $ret
      */
     function loadSearchProductCd(&$params = array(), $member_rank = CUSTOMER_RANK_NORMAL, &$ret) {
-        $this->__loadForProductCdSQL($params , $member_rank, $sql);
+        $this->__loadForProductCdSQL($params , $member_rank, $sql,$categoryIdsStr);
         $recs = $this->query($sql);
-
+		if(!empty($categoryIdsStr)){
+			 $ret['recommend_product']=$this->loadCommendProduct($categoryIdsStr);
+		}
         $ret['product_cd'] = array();
         $ret['category_id'] = array();
         $ret['brand_id'] = array();
@@ -528,12 +530,48 @@ class Product extends AppModel {
             }
         }
     }
+    /**
+     * @todo 查询该分类推荐产品
+     * */
+    function loadCommendProduct($cid = "") {
+    	$products = $this->find ( "all", array (
+    			"conditions" => array (
+    					'Product.delete_datetime IS NULL',
+    					'Product.pub_flg' => 1,
+    					"Product.recommended_rating >=" => 1,
+    					"product_cd in (select product_cd from {$this->tablePrefix}category_product_rel where category_id in({$cid}))"
+    			)
+    			,
+    			"limit" => "3",
+    			"order" => array (
+    					"Product.product_cd" => "DESC"
+    			),
+    			"fields" => array (
+    					"Product.product_cd",
+    					"Product.product_name",
+    					"Product.retail_price",
+    					"Product.price_for_normal",
+    					"Product.brand_id"
+    			)
+    	) );
+    	$out=array();
+    	if(!empty($products)){
+    		foreach($products as $k=>$v){
+    			$out[$k]=$v["Product"];
+    			if(!empty($v["ProductPhoto"])){
+    				$out[$k]["photo_url"]=$v["ProductPhoto"][0]["url"];
+    			}
+    		}
+    		unset($products);
+    	}
+    	return $out;
+    }
 
     /**
      * フロント側の商品番号を取得する用のSQLを作成
      * @return string
      */
-    function __loadForProductCdSQL(&$params = array(), $member_rank = CUSTOMER_RANK_NORMAL, &$sql) {
+    function __loadForProductCdSQL(&$params = array(), $member_rank = CUSTOMER_RANK_NORMAL, &$sql,&$categoryIdsStr) {
         //会員ランク
         $memberRank = strtolower(CUSTOMER_RANK_NORMAL);
 

@@ -456,7 +456,12 @@ ul li p.productName {
 }
 
 .txtList .txtTitle,.txtList2 .txtTitle {
-    height: 20px;
+    height: 20px;padding-top: 3px;
+}
+.txtList .txtList_all,.txtList2 .txtList_all {
+    background: #FF7900;
+color: white;
+padding: 0px 3px 2px 3px;
 }
 
 .product .brand .brandMain {
@@ -581,14 +586,47 @@ input[type=radio] {
 
 .modOrder p a {
     font-size: 12px;
-    padding-top: 3px;
+    padding-top: 6px;
     padding-bottom: 0px;
+    width: 70px;
+	height: 25px;display: block;
+float: left;text-align: right;
+padding-right: 6px;
+border-right: 1px solid #8FC9D2;color: #249EB3;
 }
-
+.modOrder p a.o_select{background: white;padding-left: 0;font-weight: bold;color: #137788;}
 .detail .picture .smallPic li {
     height: 75px;
     margin-left: 1px;
 }
+.ico_12{background: url("/image/front/zwicon_set.png") no-repeat -78px -125px;
+width: 12px;
+height: 12px;
+display: block;
+float: right;margin-top: 3px;
+margin-right: 8px;}
+.ico_13{background: url("/image/front/zwicon_set.png") no-repeat -78px -86px;width: 12px;
+width: 12px;
+height: 12px;
+display: block;
+float: right;margin-top: 3px;
+margin-right: 8px;}
+.ico_14{background: url("/image/front/zwicon_set.png") no-repeat -207px -117px;width: 12px;
+width: 12px;
+height: 12px;
+display: block;
+float: right;margin-top: 3px;
+margin-right: 8px;}
+.modOrder .modOrder_search_price{
+	margin-left: 20px;
+margin-top: 2px;display: block;
+float: left;
+}
+.tool_page{float: right;width: 100px;margin-top: 7px;line-height: 17px;}
+.tool_page a{color: #249EB3;}
+.tool_page span{float: left;margin-left: 10px;}
+.tool_page span .prev{float: left;display: block;width: 17px;height: 17px;background: url("/image/front/zwlist_category") no-repeat -4px -342px;}
+.tool_page span .next{float: left;display: block;width: 17px;height: 17px;background: url("/image/front/zwlist_category") no-repeat -36px -342px;}
 
 .more{
     float: right;
@@ -868,3 +906,14 @@ table tr td a.no-border img {
     padding-top: 30px;
     position: relative;
 }
+.m_l_20{margin-left: 20px;}
+#list_brand{overflow: hidden;}
+.showMoreBrandBtn{text-align: center;}
+.showMoreBrandBtn a.more{float:none;
+	background: url("/image/front/zwlist_category") no-repeat -13px -359px;
+height: 14px;
+display: block;
+margin: 10px 0px;
+margin-left: 490px;}
+.showMoreBrandBtn a.more_up{background-position: -13px -328px;}
+.crumbList .crumbList_all{background: url("/image/front/zwlist_category") no-repeat -78px -329px;padding-left: 20px;}

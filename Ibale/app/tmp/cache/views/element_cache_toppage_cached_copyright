@@ -1,0 +1,16 @@
+<div id="copyRight">
+    <div class="content">
+            <p class="c_c_p">
+                                <a href="http://2.com/article/detail/id:16">使用规约</a>
+             │                                 <a href="http://2.com/article/detail/id:10">联系我们</a>
+             │                                 <a href="http://2.com/article/detail/id:11">关于我们</a>
+                            </p>
+        	<p class="f_share">
+    		<a href="javascript:;" title="分享到新浪微博" class="s_sina"></a>
+    		<a href="javascript:;" title="分享到人人网" class="s_renren"></a>
+    		<a href="javascript:;" title="分享到qq空间" class="s_qzone"></a>
+    		<a href="javascript:;" title="分享到腾讯微博" class="s_qweibo"></a>
+    		<a href="javascript:;" title="分享到豆瓣网" class="s_douban"></a>
+    	</p>
+    </div>
+</div>
