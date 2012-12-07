@@ -60,10 +60,11 @@ class ToppageController extends AppController {
 		// 首页实体店排行
 		$this->__loadStoreRank ();
 		// 如果用户已经登录，则查询此用户浏览记录
-		$login_user = $this->AppAuth->user ();
-		if ($login_user) {
+// 		$login_user = $this->AppAuth->user ();
+// 		if ($login_user) {
+		$login_user["id"]=1;
 			$this->__loadHistory ( $login_user );
-		}
+// 		}
 		$this->render ( 'index' );
 	}
 	
@@ -335,8 +336,11 @@ class ToppageController extends AppController {
 			foreach ( $brands as $k => $v ) {
 				$data [$k] = $v ["Brand"];
 				if ($v ["BrandPhoto"]) {
-					$data [$k] ["photo_url"] = $v ["BrandPhoto"] [0] ["url"];
-					$data [$k] ["photo_memo"] = $v ["BrandPhoto"] [0] ["memo"];
+					$data [$k] ["photo_url"] = empty($v ["BrandPhoto"] [0] ["url"])?"/image/front/none_90.jpg":$v ["BrandPhoto"] [0] ["url"];
+					$data [$k] ["photo_memo"] = empty($v ["BrandPhoto"] [0] ["memo"])?$v ["Brand"]["brand_name"]:$v ["BrandPhoto"] [0] ["memo"];
+				}else{
+					$data [$k] ["photo_url"] = "/image/front/none_90.jpg";
+					$data [$k] ["photo_memo"] =$v ["Brand"]["brand_name"];
 				}
 			}
 		}
@@ -365,8 +369,8 @@ class ToppageController extends AppController {
 		$pic_article = $this->Article->find ( "first", $options );
 		$article_1 = $pic_article ["Article"];
 		$article_1 ["categoryname"] = $pic_article ["ArticleCategory"] ["name"];
-		// echo json_encode($article_1);
-		// exit();
+// 		echo json_encode($article_1);
+// 		exit();
 		// 三条文字
 		$options = array (
 				"conditions" => array (
@@ -518,9 +522,11 @@ class ToppageController extends AppController {
 				$pro ["brank_name"] = $brank ["Brand"] ["brand_name"];
 				$pro ["brank_id"] = $brank ["Brand"] ["id"];
 			}
+			//处理价格
+			$pro["sale_price"]=$v["Product"]["price_for_normal"];
 			// 处理图片
 			if (! empty ( $v ["ProductPhoto"] )) {
-				$pro ["photo_url"] = $v ["ProductPhoto"] [0] ["url"];
+				$pro ["product_pic_url"] = $v ["ProductPhoto"] [0] ["url"];
 			}
 			$result [] = $pro;
 			unset ( $brank );

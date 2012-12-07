@@ -258,8 +258,10 @@ $(function(){
         <?php //echo $this->element('product/cached_relation_product', array('cache' => array('key'=>$detail['Product']['product_cd'], 'time'=>STATIC_PAGE_CACHED_DURATION)));?>
         <br class="clear" />
         <?php $this->set('currentProductCd', $detail['Product']['product_cd']);?>
-        <?php echo $this->element('product/cached_browsered_product');//, array('cache' => array('key'=>$appSession->id(), 'time'=>'+1 hour')));?>
-    </div>
+</div>
+<div class="detail_history">
+	<?php echo $this->element('product/cached_browsered_product');//, array('cache' => array('key'=>$appSession->id(), 'time'=>'+1 hour')));?>
+</div>
 <script type="text/javascript">
 var pics  = [
 <?php if (!empty($detail['ProductPhoto'])):?>

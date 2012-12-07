@@ -99,9 +99,9 @@
 				<?php if(!empty($this->data['Toppage']["pic_article"])):?>
 				<span class="m_b_i_more"><a href="javascript:;" title="更多">&nbsp;</a></span>
 				<div class="img"><?php $picArticls=$this->data['Toppage']["pic_article"];?>
-					<a href="<?php echo HTTP_HOME_PAGE_URL;?>/article/detail/id:<?php echo $value['id'];?>"><img alt="<?php echo $picArticls["title"]?>" src="<?php echo $picArticls["pic_url"]?>"></a>
+					<a href="<?php echo HTTP_HOME_PAGE_URL;?>/article/detail/id:<?php echo $picArticls['id'];?>"><img alt="<?php echo $picArticls["title"]?>" src="<?php echo $picArticls["pic_url"]?>"></a>
 					<span class="m_b_i_p">&nbsp;</span>
-					<p><a href="<?php echo HTTP_HOME_PAGE_URL;?>/article/detail/id:<?php echo $value['id'];?>"><?php echo $picArticls["title"]?></a></p>
+					<p><a href="<?php echo HTTP_HOME_PAGE_URL;?>/article/detail/id:<?php echo $picArticls['id'];?>"><?php echo $picArticls["title"]?></a></p>
 				</div>
 				<?php endif;?>
 				<?php if(!empty($this->data['Toppage']["words_article"])):?>
@@ -130,83 +130,17 @@
 				<li id="txtblk01menu_t4"><a href="javascript:;">您可能会喜欢</a></li>
 			</ul>
 			<div class="txtblk01_con" id="txtblk01_c4">
-				<?php if(!empty($this->data['Toppage']["random_product"])):?>
-				<ol>
-				<?php foreach ($this->data['Toppage']["random_product"] as $k=>$v):?>
-					<li>
-						<a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<img width="155px" height="160px" src="<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
-						<p class="product_name"><a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<?php if(!empty($v["brank_name"])){echo '['.$v["brank_name"].']';}?><?php echo $v["product_name"]?>
-						</a></p>
-						<p>
-							<?php if (!empty($v['price_for_normal']) && !empty($v['retail_price']) && ($v['retail_price'] > $v['price_for_normal'])):?>
-						        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?></b> 
-						        <del>￥<?php echo $number->currency($v['retail_price'], '');?></del>
-						    <?php elseif(!empty($v['price_for_normal'])):?>
-						        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?> </b>
-						    <?php else:?>
-						        <b>&nbsp;</b>
-						    <?php endif;?>
-						</p>
-					</li>
-					<?php endforeach;?>
-				</ol>
-				<?php endif;?>
-				<div class="clear"></div>
+				<?php $this->set("product_tabs",$this->data['Toppage']['random_product']);?>
+				<?php echo $this->element('product/product_tab');?>
 			</div>
 			<div class="txtblk01_con" id="txtblk01_c3"></div>
 			<div class="txtblk01_con" id="txtblk01_c2">
-				<?php if(!empty($this->data['Toppage']["newest_product"])):?>
-				<ol>
-				<?php foreach ($this->data['Toppage']["newest_product"] as $k=>$v):?>
-					<li>
-						<a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<img width="155px" height="160px" src="<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
-						<p class="product_name"><a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<?php if(!empty($v["brank_name"])){echo '['.$v["brank_name"].']';}?><?php echo $v["product_name"]?>
-						</a></p>
-						<p>
-							<?php if (!empty($v['price_for_normal']) && !empty($v['retail_price']) && ($v['retail_price'] > $v['price_for_normal'])):?>
-						        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?></b> 
-						        <del>￥<?php echo $number->currency($v['retail_price'], '');?></del>
-						    <?php elseif(!empty($v['price_for_normal'])):?>
-						        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?> </b>
-						    <?php else:?>
-						        <b>&nbsp;</b>
-						    <?php endif;?>
-						</p>
-					</li>
-					<?php endforeach;?>
-				</ol>
-				<?php endif;?>
-				<div class="clear"></div>
+				<?php $this->set("product_tabs",$this->data['Toppage']['newest_product']);?>
+				<?php echo $this->element('product/product_tab');?>
 			</div>
 			<div class="txtblk01_con" id="txtblk01_c1">
-				<?php if(!empty($this->data['Toppage']["limit_buy_product"])):?>
-				<ol>
-				<?php foreach ($this->data['Toppage']["limit_buy_product"] as $k=>$v):?>
-					<li>
-						<a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<img width="155px" height="160px" src="<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
-						<p class="product_name"><a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<?php if(!empty($v["brank_name"])){echo '['.$v["brank_name"].']';}?><?php echo $v["product_name"]?>
-						</a></p>
-						<p>
-							<?php if (!empty($v['price_for_normal']) && !empty($v['retail_price']) && ($v['retail_price'] > $v['price_for_normal'])):?>
-						        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?></b> 
-						        <del>￥<?php echo $number->currency($v['retail_price'], '');?></del>
-						    <?php elseif(!empty($v['price_for_normal'])):?>
-						        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?> </b>
-						    <?php else:?>
-						        <b>&nbsp;</b>
-						    <?php endif;?>
-						</p>
-					</li>
-					<?php endforeach;?>
-				</ol>
-				<?php endif;?>
-				<div class="clear"></div>
+				<?php $this->set("product_tabs",$this->data['Toppage']['limit_buy_product']);?>
+				<?php echo $this->element('product/product_tab');?>
 			</div>
 		</div>
 	</div>
@@ -279,9 +213,11 @@
             	<p class="productName">
             		<a href="<?php echo $v["url"];?>"><?php echo $v["comment"];?></a>
 			    </p>
-			    <p>
-			    	<b>￥<?php echo $v["sale_price"];?> </b>
-			    </p>
+			    <?php if(!empty($v["sale_price"])):?>
+				    <p>
+				    	<b>￥<?php echo $v["sale_price"];?> </b>
+				    </p>
+			    <?php endif;?>
             </li>
             <?php endforeach;?>
     	</ul>
@@ -293,9 +229,6 @@
 
 <!-- 分类商品一 end -->
 <!-- 我的浏览记录 开始 -->
-<link type="text/css" rel="stylesheet" href="/css/front/elastislide.css" />
-<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="/js/jquery.elastislide.js"></script>
 <div class="mainCenter m_10">
 	<div class="w_980 floatL u_record">
 		<div class="titleBg">
@@ -314,35 +247,8 @@
 				<li class="lk_4"><a href="javascript:;" title="支付并完成购物"><span>支付并完成购物</span></a></li>
 			</ul>
 		</div>
-		<div class="u_goods floatL">
-			<div class="u_g_title"><span>我最近浏览的商品</span></div>
-			<div class="goods">
-				<div id="carousel" class="es-carousel-wrapper">
-			        <div class="es-carousel">
-			            <ul>
-			            	<?php if(!empty($this->data['Toppage']['userHistorys'])):?>
-			            	<?php foreach($this->data['Toppage']['userHistorys'] as $k => $v):?>
-				                <li>
-				                	<a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>"><img src="<?php echo $v["photo_url"];?>" alt="image01" /></a>
-				                	<p class="pname"><a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>"><?php echo $v["product_name"]?></a></p>
-				                	<p>
-								    	<?php if (!empty($v['price_for_normal']) && !empty($v['retail_price']) && ($v['retail_price'] > $v['price_for_normal'])):?>
-									        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?> </b>
-									        <del>￥<?php echo $number->currency($v['retail_price'], '');?></del>
-									    <?php elseif(!empty($v['sale_price'])):?>
-									        <b>￥<?php echo $number->currency($v['price_for_normal'], '');?> </b>
-									    <?php else:?>
-									        <b>&nbsp;</b>
-									    <?php endif;?>
-								    </p>
-				                </li>
-					        <?php endforeach;?>
-					        <?php endif;?>
-			            </ul>
-			        </div>
-			    </div>
-			</div>
-		</div>
+		<?php $this->set("recs",$this->data['Toppage']['userHistorys']);?>
+		<?php echo $this->element('product/cached_browsered_product');?>
 	</div>
 	<div class="floatL m_l_10 stdxs">
 		<div class="div_head_1"><span>实体店销售商品排行</span></div>
@@ -359,15 +265,6 @@
 	</div>
     <br class="clear" />
 </div>
-<script type="text/javascript">
-	$(document).ready(function(){
-			$('#carousel').elastislide({
-			    imageW 	: 110,
-			    margin	:22,
-			    minItems	: 5
-			});
-		});
-</script>
 <!-- 我的浏览记录 结束 -->
 
 

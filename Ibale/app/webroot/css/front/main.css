@@ -38,7 +38,8 @@
 #header .menu ul li a:link, #header .menu ul li a:visited { padding: 10px 20px; line-height: 40px; height: 40px;padding-bottom: 13px;}
 #header .menu ul li a:active, #header .menu ul li a:hover {color: #FEFEFE; padding: 13px 20px; background: url(/image/front/zwnav_hover.png) no-repeat;background-position: center bottom; text-decoration: none;}
 #header .menu .shopping_bag{background:url(/image/front/zwcommon.png) -730px -77px no-repeat;width: 77px;padding-left: 110px;float: left;margin-left: 15px;height: 40px;line-height: 40px;display: block; }
-#header .menu .shopping_bag a{color:#FEFEFE; }
+#header .menu .shopping_bag a{color:#B6E6F0; }
+#header .menu .shopping_bag a span#shoppingBagCountHeader{font-weight: bold; }
 #header .menu .headCurrent { padding: 10px 20px; background: url(/image/front/header_nav.png); line-height: 44px; height: 43px; text-decoration: none;}
 #header .keyword { height: 30px; background: #FAFBFD; border: 1px solid #D5ECF4; border-top: none;}
 #header .keyword ul li { float: left; margin: 0 0 0 15px; padding: 0 0 0 9px; line-height: 28px; color: #3E98CD; background: url(/image/front/list_image_blue.png) no-repeat scroll 0 13px; display: inline;}
@@ -264,11 +265,11 @@
 .mainCenter .u_record ul.u_links .lk_3{background-position: -630px -741px;}
 .mainCenter .u_record ul.u_links .lk_4{background-position: -627px -781px;}
 .mainCenter .u_record ul.u_links li a{display: block;width: 200px;height: 49px;}
-.mainCenter .u_goods{height: 200px;padding: 10px 15px;}
+.mainCenter .u_goods{height: 195px;padding: 10px 15px;width: 745px;}
 .mainCenter .u_goods .u_g_title{background: white url("/image/front/zwmain.png") no-repeat;width: 109px;height: 16px;background-position: -210px -553px;margin-left: 33px;margin-top: 0px;}
 .mainCenter .u_goods .u_g_title span{display: none;}
-.mainCenter .u_goods .goods{height: 188px;width: 745px;margin-top: 10px;}
-.mainCenter .u_goods .goods p.pname{margin: 5px 0px;}
+.mainCenter .u_goods .goods{height: 188px;margin-top: 10px;}
+.mainCenter .u_goods .goods p.pname{margin: 5px 0px;white-space: nowrap;overflow: hidden;}
 /*******实体店销售排行*********/
 .stdxs{margin-top: 16px;}
 .stdxs .div_body_1{height: 128px;}
@@ -458,7 +459,7 @@
 .itemLisit em { padding: 0 10px 0 0; color: #ff6533;}
 .itemLisit .sale { position: absolute; top: 12px; left: 0; width: 35px; height: 15px; background: url(/image/front/bg.png) -850px -57px no-repeat;}
 /* 商品详细内面 */
-.detail { padding: 20px 15px; width: 968px; background: #fff; border: 1px solid #D4E9F9;}
+.detail { padding: 20px 15px; width: 1168px; background: #fff; border: 1px solid #D4E9F9;}
 .detail .picture { float: left; padding: 0 10px 0 0; width: 460px;}
 .detail .picture .pic { float: left; width: 350px; text-align: center;}
 .detail .picture .smallPic { float: left; width: 75px;}
@@ -474,6 +475,8 @@
 .detail .property ul li span { display: inline-block; vertical-align:top;}
 .detail .property ul li em { padding: 0 0 0 25px; font-weight: bold; font-size: 14px; color: #FF6533;}
 .detail .property .aa { padding: 5px 0 0 0; width: 16px; height: 11px; background: url(/image/front/icon.gif) -120px -2px no-repeat;}
+.detail_history .u_goods{width:100%;}
+
 .buyInfo { padding: 15px 0 15px 30px; border-top: 2px solid #dbdddd; background: #f5f5f5; position: relative;}
 .buyInfo p { padding: 5px 0;}
 .buyInfo .btnBuy { width: 150px; height: 35px; background: url(/image/front/bg.png) 0 -364px no-repeat; margin: 0 10px 0 0;}
@@ -529,7 +532,7 @@
 #tab { margin: 15px 0 0 0;}
 #tab .tabTitle li:hover { background: #D0E8F7;}
 #tab .tabTitle li.selected { background: #D0E8F7;}
-#tab .tabContent { padding: 15px 30px; width: 940px; overflow:hidden; background: #fff;}
+#tab .tabContent { padding: 15px 30px; width: 1140px; overflow:hidden; background: #fff;}
 #tab .tabContent .bd { }
 #tab .tabContent div .txt { line-height: 22px; margin: 0 0 20px 0;}
 #tab .tabContent .none { display: none;}

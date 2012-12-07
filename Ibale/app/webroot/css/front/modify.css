@@ -377,7 +377,7 @@ ul li p.productName {
     float: left;
     height: 130px;
     padding: 5px 10px;
-    width: 178px;
+    width: 178px;text-align: center;
 }
 
 #footer .help dt {
@@ -400,7 +400,7 @@ ul li p.productName {
     margin: 0 0 8px;
     padding-left: 18px;
     vertical-align: middle;
-    width: 106px;
+    width: 160px;
     font-weight: 600;
 }
 

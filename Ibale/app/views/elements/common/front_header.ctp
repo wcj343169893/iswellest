@@ -120,7 +120,7 @@ _gaq.push(['_trackPageview']);
 			                </ul>
 		                </div>
 		                <div class="shopping_bag">
-		                	  <a href="<?php echo HTTPS_HOME_PAGE_URL;?>/shopping/bag">共<span id="shoppingBagCountHeader"><?php echo $this->requestAction('/shopping/get_shopping_product_count');?>件</font></a> 
+		                	  <a href="<?php echo HTTPS_HOME_PAGE_URL;?>/shopping/bag">共<span id="shoppingBagCountHeader"><?php echo $this->requestAction('/shopping/get_shopping_product_count');?></span> 件</a> 
 		                </div>
 		            </div>
 			</div>
