@@ -41,7 +41,7 @@
 	        </div>
 	      </div>
 	    </div>
-	       <?php endforeach;?>
+	    <?php endforeach;?>
 	  </div>
 	 </div>
 <!-- category end -->
@@ -135,7 +135,7 @@
 				<?php foreach ($this->data['Toppage']["random_product"] as $k=>$v):?>
 					<li>
 						<a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<img width="155px" height="160px" src="http://www.ibale.com<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
+						<img width="155px" height="160px" src="<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
 						<p class="product_name"><a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
 						<?php if(!empty($v["brank_name"])){echo '['.$v["brank_name"].']';}?><?php echo $v["product_name"]?>
 						</a></p>
@@ -162,7 +162,7 @@
 				<?php foreach ($this->data['Toppage']["newest_product"] as $k=>$v):?>
 					<li>
 						<a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<img width="155px" height="160px" src="http://www.ibale.com<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
+						<img width="155px" height="160px" src="<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
 						<p class="product_name"><a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
 						<?php if(!empty($v["brank_name"])){echo '['.$v["brank_name"].']';}?><?php echo $v["product_name"]?>
 						</a></p>
@@ -188,7 +188,7 @@
 				<?php foreach ($this->data['Toppage']["limit_buy_product"] as $k=>$v):?>
 					<li>
 						<a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
-						<img width="155px" height="160px" src="http://www.ibale.com<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
+						<img width="155px" height="160px" src="<?php echo $v["photo_url"]?>" alt="<?php echo $v["product_name"]?>"/></a>
 						<p class="product_name"><a title="<?php echo $v["product_name"]?>" href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $v['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>">
 						<?php if(!empty($v["brank_name"])){echo '['.$v["brank_name"].']';}?><?php echo $v["product_name"]?>
 						</a></p>

@@ -80,7 +80,6 @@ class AppController extends Controller {
 	 * @access public
 	 */
 	function referer($default = null, $local = false) {
-		echo microtime();
 		// 権限検証失敗の場合、エラー画面へ遷移
 		if ($this->hasAuthError) {
 			$this->CakeError ( 'error', array (

@@ -1,6 +1,6 @@
 <?php $picUrl = (!empty($productInfo['product_pic_url']))?OMS_API_PHOTO_ROOT_URL.$productInfo['product_pic_url']:'/image/front/none_90.jpg';?>
     <p class="imgCenter">
-        <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $productInfo['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>" title="<?php echo $productInfo['product_name'];?>"><img src="http://www.ibale.com<?php echo $picUrl;?>" width="110" height="110" /> </a>
+        <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $productInfo['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>" title="<?php echo $productInfo['product_name'];?>"><img src="<?php echo $picUrl;?>" width="110" height="110" /> </a>
     </p>
     <p class="productName">
         <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/detail/product_cd:<?php echo $productInfo['product_cd'];?><?php if (!empty($giftFlg)):?>/gift_flg:true<?php endif;?>" title="<?php echo $productInfo['product_name'];?>"><?php echo $productInfo['product_name'];?></a>
