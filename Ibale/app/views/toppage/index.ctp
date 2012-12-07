@@ -8,7 +8,7 @@
 	  <div class="content">
 	  <?php $indexK1 = 0;?>
 	   <?php foreach($categoryAllOptionList['level_1'] as $k1 => $v1):?>
-	    <div class="item c_ico_<?php echo $indexK1;?>">
+	    <div class="item c_ico_<?php echo $indexK1;?>" onmouseover="loadBrand('<?php echo $k1;?>','category_brand_ul_<?php echo $k1;?>')">
 	      <h2> <a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/category1_id:<?php echo $k1;?>"><?php echo $text->truncate($v1, 13, array('ending'=>'...'));?></a></h2>
 	      <div class="out">
 	        <div class="subcategory">
@@ -38,6 +38,12 @@
 	       	<div class="hotview">
 	          <h3>热门品牌</h3>
 	          <div>作者：口明明口<p><a href="<?php echo HTTP_HOME_PAGE_URL;?>/product/list/category1_id:<?php echo $k1;?>"><?php echo $text->truncate($v1, 13, array('ending'=>'...'));?></a></p>   </div>
+	          <div class="category_recommend_brands">
+	          		<p>爱芭乐推荐品牌</p>
+	          		<ul id="category_brand_ul_<?php echo $k1;?>">
+	          		</ul>
+	          </div>
+	          
 	        </div>
 	      </div>
 	    </div>

@@ -273,6 +273,15 @@ function addToBag(product_cd) {
             }
     );
 }
+//动态加载品牌
+function loadBrand(cid,elem){
+	$.getJSON("/product/getbrand?cid="+cid, function(data){
+		$("#"+elem).empty();
+		  $.each(data, function(i,item){
+			  $("#"+elem).append("<li title='"+item["brand_name"]+"'><a href='/product/list/brand_id:"+item["id"]+"'>"+item["brand_name"]+"</a></li>");
+		  });
+		});
+}
 function login(){
 	$('#login_window').dialog('open');
 	$("#login_window").find("#ajax_username").focus();

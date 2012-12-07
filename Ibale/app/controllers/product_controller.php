@@ -27,6 +27,7 @@ class ProductController extends AppController {
 				'ajax_get_info',
 				'cached_product',
 				'cached_product_comment',
+				'getbrand',
 				'cached_relation_product' 
 		);
 		parent::beforeFilter ();
@@ -475,6 +476,20 @@ class ProductController extends AppController {
 		$ret ['productPhotoList'] [$productCd] = ! empty ( $recs [$productCd] ) ? $recs [$productCd] : array ();
 		$ret ['productDescList'] = $this->ProductDesc->getList ( $productCd );
 		return $ret;
+	}
+	/**
+	 * 根据分类编号，查询品牌
+	 * */
+	function getbrand(){
+		$cid=intval(h($_REQUEST["cid"]));
+		if (empty($cid)) {
+			die();
+		}
+		$brands = $this->Brand->getListByCid($cid);
+		header('Content-type: text/json');
+		header('Content-type: application/json');
+		echo json_encode($brands);
+		exit();
 	}
 	
 	/**

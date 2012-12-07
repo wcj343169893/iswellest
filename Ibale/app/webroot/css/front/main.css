@@ -83,6 +83,11 @@
 #category .content .hover .out .hotview,#category .content .item:hover .out .hotview{float:right;padding: 20px; width: 160px; min-height:360px; _height:360px;}
 #category .content .hover .out .hotview h3,#category .content .item:hover .out .hotview h3 {color: #bf0000; font-weight:bold;height: 31px;line-height: 31px; margin:0;padding: 0;}
 #category .content .hover .out .hotview div a,#category .content .item:hover .out .hotview div a{color: #666666; display:block;margin-right: 10px; white-space:nowrap;}
+
+#category .out .category_recommend_brands{}
+#category .out .category_recommend_brands p{font-weight: bold;}
+#category .out .category_recommend_brands ul{}
+#category .out .category_recommend_brands ul li{width: 70px;float: left;white-space: nowrap;overflow: hidden;padding-left: 10px;}
 /*****************Tabs**********************/
 .c_tabs{width:984px;}
 .c_tabs ul li{height: 37px;}

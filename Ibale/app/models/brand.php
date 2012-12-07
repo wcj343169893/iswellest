@@ -17,7 +17,29 @@ class Brand extends AppModel {
                                             'conditions' => array('BrandPhoto.delete_datetime IS NULL'),
                         ),
     );
-
+    /**
+     * @todo 根据分类id，查询品牌
+     * @param cid 顶级分类编号
+     * @return array
+     * */
+	function getListByCid($cid){
+		$categoryIdsStr = "SELECT id FROM {$this->tablePrefix}category WHERE 1=1 AND parent_id IN (SELECT id FROM {$this->tablePrefix}category WHERE 1=1 AND parent_id={$cid}) UNION SELECT id FROM {$this->tablePrefix}category WHERE 1=1 AND parent_id={$cid} UNION SELECT {$cid} AS id ";
+		$categoryIdsStr="(select cpr.product_cd from {$this->tablePrefix}category_product_rel as cpr where cpr.category_id in({$categoryIdsStr}))";
+		
+		$sql="select brand.id,brand.brand_name,brand.brand_name_pinyin,brand.brand_description from {$this->tablePrefix}brand as brand 
+		left join {$this->tablePrefix}product as product on product.brand_id=brand.id";
+		$sql.=" where product.product_cd in({$categoryIdsStr})";
+		$sql.=" group by brand.id order by brand.id desc limit 18";
+		$brands = $this->query($sql);
+		$data=array();
+		if(!empty($brands)){
+			//处理结果集
+			foreach($brands as $k=>$v){
+				$data[$k]=$v[0];
+			}
+		}
+		return $data;
+	}
     /**
      * ブランド情報をOMSから取得
      */
