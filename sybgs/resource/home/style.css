@@ -1,0 +1,67 @@
+*	{margin:0;padding:0;word-break:break-all;word-wrap:break-word;}
+img	{border:0;}
+li	{list-style-type:none;}
+a	{text-decoration:none;color:#0066FF;outline:none;-webkit-transition: all 0.3s ease-out;}
+a:hover	{text-decoration:underline;color:#3380BB;}
+a::-moz-focus-inner {  border:none; }
+body{font-size:12px;font-family:Arial;background:#F1F1F1;}
+table {border-collapse:collapse;border-spacing:0;} 
+th,td {padding: 0; }
+button{line-height:24px;outline:none;}
+button::-moz-focus-inner {  border:none; }
+
+/* - ----- Page Style ----- - */
+.Header	{margin:10px 15px;border-bottom:5px solid #1E325C;padding-bottom:5px;}
+
+
+	.Left	{width:200px;float:left;margin-left:15px;}
+		.LeftBox	{width:200px;margin-bottom:15px;}
+
+			.LeftNav	{padding:10px;border-left:1px solid #DDD;border-right:1px solid #DDD;padding-top:8px;background:#FFF;}
+				.LeftNav li	{line-height:20px;margin-bottom:2px;padding-left:20px;}
+					.LeftNav li a	{padding:3px 5px;display:block;}
+				.LeftNavLiNow	{background:#0D2962 url(images/li.gif) no-repeat 5px 6px;}
+					.LeftNavLiNow a	{color:#FFF;font-weight:bold;text-decoration:none;}
+				.LeftNavLi	{border-bottom:1px solid #DDD;background:url(images/li.gif) no-repeat 5px 6px;}
+					.LeftNavLi a	{color:#333;}
+
+
+	.mainFrameBody	{margin:0px 15px;}
+		.Right	{background:#FFF;border-left:1px solid #DDD;border-right:1px solid #DDD;padding:10px;}
+
+			.ContentTitle	{padding:10px;background:#F1F1F1;}
+				.ContentTitle h1	{font-size:24px;color:#000;}
+			.ContentMain	{width:100%;overflow:hidden;}
+				.MainBox	{padding-left:10px;margin:20px 0px;margin-bottom:30px;}
+					.MainBox h2	{font-size:12px;height:20px;background:url(images/mian_title_line.png) no-repeat bottom left;color:#666;}
+					.MainBoxContent	{font-size:14px;color:#666;font-weight:bold;margin:10px 0px;}
+
+						.StatisticsTable	{margin-left:50px;font-size:12px;}
+							.StatisticsTable td,.StatisticsTable td	{height:40px;}
+							.StatisticsTable th	{text-align:right;}
+							.StatisticsTable td	{text-align:left;}
+							.StatisticsTable select	{padding:1px;}
+							.StatisticsTable button	{padding:2px 20px;}
+
+						.ComplexStatisticsTable	{font-size:12px;}
+							.ComplexStatisticsTable select	{width:100%;}
+							.ComplexStatisticsTable th,.ComplexStatisticsTable td	{padding-right:20px;}
+							.ComplexStatisticsTable th	{height:30px;padding-right:30px;font-size:14px;}
+							.ComplexStatisticsTable td	{padding-bottom:10px;}
+							.ComplexStatisticsTable button	{padding:2px 20px;}
+
+						.BasicInfoTable td,.BasicInfoTable th	{width:110px;height:30px;text-align:center}
+						.BasicInfoTable td	{border:1px solid #CCC;}
+						.BasicInfoTable th	{border:1px solid #999;}
+
+						.DetailInfoDiv	{border-top:1px dashed #999;padding-top:10px;margin-top:10px;width:750px;}
+							.DetailInfoTable	{width:700px;font-size:12px;}
+							.DetailInfoTable td,.DetailInfoTable th	{border:1px solid #CCC;height:30px;text-align:center}
+							.DetailInfoTable td	{font-weight:normal;}
+
+						.FlashDiv	{width:700px;height:450px;background:#F1F1F1;margin-bottom:10px;}
+
+				.Previous	{margin:20px;}
+
+			.Footer	{background:url(images/footer_line.png) no-repeat left top;padding:15px 0px;margin-left:20px;}
+				.Footer p	{color:#666;padding-left:5px;}

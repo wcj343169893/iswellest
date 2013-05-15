@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<base href="<?php echo base_url() ;?>"/>
+<title>教务处项目评分系统</title>
+<link href="resource/home/style2.css" rel="stylesheet" type="text/css">
+<link href="resource/home/box.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="resource/home/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resource/home/js/jwc.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ;?>resource/swfupload/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ;?>resource/swfupload/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ;?>resource/swfupload/swfobject.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ;?>resource/swfupload/jquery.uploadify.min.js"></script>
+<script type="text/javascript">
+$(function() {
+$('#file_upload').uploadify({
+  'uploader'    : '<?php echo base_url() ;?>resource/swfupload/uploadify.swf',
+  'script'      : '<?php echo base_url() ;?>resource/swfupload/upload.php',
+  'cancelImg'   : '<?php echo base_url() ;?>resource/swfupload/cancel.png',
+  'multi'       : true,
+  'onComplete'  : function(event, ID, fileObj, response, data) {
+				  //alert('文件 ' + fileObj.name + ' 已上传');
+				  var txtHtml = "<p class='para'>文件名:"+fileObj.name+"_文件大小:"+fileObj.size+"字节_上传速度:"+data.speed+"KB/s</p>";
+				  $("#resText").append(txtHtml); // 把返回的数据添加到页面
+				  var arr=response.split("|");
+				  document.getElementById('wid').value = arr[0];
+				  var src = arr[1];
+				  $("#files").html(src); // 把返回的数据添加到页面上
+				}
+				});
+});
+</script>
+</head>
+<body>
+<div class="so_main">
+  <?php 
+  $data = array('onSubmit' => 'return checkSubmit();');
+  echo form_open('home/modWorksSave',$data) ?>
+    <div class="page_tit"><?php echo $title;?></div>
+	<div class="form2">	
+      <dl class="lineD">
+        <dt>所属类别：</dt>
+        <dd>
+          <?php 
+		$caids=array('0'=>'==请选择==','1'=>'科类A','2'=>'科类B');
+		$ids = 'id=caid';
+		echo form_dropdown('caid',$caids,$caid,$ids) ?>
+          <p>该项目作品所属的分类</p>
+		</dd>
+      </dl>
+      <dl class="lineD">
+        <dt>作品名称：</dt>
+        <dd>
+          <input name="wname" id="wname" type="text" value="">
+          <p>项目作品名称</p>
+      </dd>
+      </dl>
+	  <dl class="lineD">
+        <dt>作者：</dt>
+        <dd>
+          <input name="wauthor" id="wauthor" type="text" value="">
+          <p>项目作品的作者姓名</p>
+      </dd>
+      </dl>
+	  <dl class="lineD">
+        <dt>上传文件：</dt>
+        <dd>
+			<div id="demo">
+			<input type="file" id="file_upload" name="file_upload" />
+			<br />
+			<a href="javascript:$('#file_upload').uploadifyUpload();">Upload</a>
+			<input name="artfile" type="hidden" value="" id="artfile"/>
+			</div>
+			<div  class='comment' id="resText">已上传：</div>
+			<div><p>上传作品文件.支持的格式有:***************</p></div>
+		  	<div><p id="files"></p></div>
+		</dd>
+      </dl>
+	  <dl class="lineD">
+        <dt>作品说明：</dt>
+        <dd>
+          <textarea id="wbz" name="wbz" style="width:400px;height:100px;"></textarea>
+		  <p>对该项目作品的描述说明</p>
+      </dd>
+      </dl>
+      <div class="page_btm">
+        <input name="wid" type="hidden" value="" id="wid"/>
+		<input id="zlsub" type="submit" class="btn_b" value="添加" />
+      </div>
+    </div>
+	<?php echo form_close() ?>
+</div>
+<script language=javascript>
+function checkSubmit(){
+	var caid = document.getElementById("caid").value;
+	if(caid == 0){
+		alert("请选择所属类别！");
+		document.getElementById("caid").focus();
+		return false;
+	}
+	var wname = document.getElementById("wname").value;
+	if(wname == ""){
+		alert("请输入作品名称！");
+		document.getElementById("wname").focus();
+		return false;
+	}
+	var wauthor = document.getElementById("wauthor").value;
+	if(wauthor == ""){
+		alert("请输入作者信息！");
+		document.getElementById("wauthor").focus();
+		return false;
+	}
+	var wid = document.getElementById("wid").value;
+	if(wid == ""){
+		alert("请上传作品！");
+		return false;
+	}
+	return true;
+}
+</script>
+</body>
+</html>

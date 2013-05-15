@@ -1,0 +1,346 @@
+/*
+Theme Name: Uploadify
+Theme URI: http://www.uploadify.com
+Description: A custom theme for Uploadify by RonnieSan of Reactive Apps.
+Version: 3
+Author: RonnieSan
+Author URI: http://www.ronniesan.com
+*/
+
+@import 'reset.css';
+@import 'plugins.css';
+
+body {
+	background: url('bkg-page.jpg') repeat-x;
+	font: 100% Arial, Helvetica, sans-serif;
+	margin-bottom: 50px;
+}
+#wrapper {
+	color: #505050;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0 auto;
+	width: 960px;
+}
+
+/* Header Styles */
+#header {
+	height: 55px;
+	margin: 5px 0 50px;
+}
+#logo {
+	float: left;
+}
+#navigation {
+	float: right;
+	margin: 13px 2px 0 0;
+}
+#navigation li {
+	float: left;
+}
+#navigation a {
+	background-position: bottom center;
+	display: block;
+	height: 30px;
+}
+.home #navigation #nav-home,
+.page-id-2 #navigation #nav-about,
+.page-id-9 #navigation #nav-download,
+.page-id-11 #navigation #nav-demos,
+.page-id-14 #navigation #nav-documentation,
+.page-id-16 #navigation #nav-faqs,
+.page-id-18 #navigation #nav-forums {
+	background-position: center center;
+}
+#navigation a:hover {
+	background-position: top center;
+}
+#nav-home {
+	background-image: url('nav-home.png');
+	width: 81px;
+}
+#nav-about {
+	background-image: url('nav-about.png');
+	width: 84px;
+}
+#nav-download {
+	background-image: url('nav-download.png');
+	width: 113px;
+}
+#nav-demos {
+	background-image: url('nav-demos.png');
+	width: 88px;
+}
+#nav-documentation {
+	background-image: url('nav-documentation.png');
+	width: 152px;
+}
+#nav-faqs {
+	background-image: url('nav-faqs.png');
+	width: 71px;
+}
+#nav-forums {
+	background-image: url('nav-forums.png');
+	width: 92px;
+}
+
+
+/* Typography Styles */
+h1 {
+	font-size: 32px;
+	font-style: italic;
+	font-weight: bold;
+}
+h2 {
+	font-size: 24px;
+	font-style: italic;
+	font-weight: bold;
+	margin-top: 30px;
+}
+strong {
+	color: #000000;
+	font-weight: bold;
+}
+.code {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 13px;
+}
+p {
+	margin-bottom: 1em;
+}
+
+/* Link Styles */
+a.small {
+	font-size: 10px;
+	text-transform: uppercase;
+}
+a {
+	color: #0072BC;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* Main Section Styles */
+#main {
+	clear: both;
+}
+#splash {
+	background: url('bkg-splash.png') no-repeat;
+	height: 380px;
+	margin: -30px 0 0;
+	position: relative;
+	width: 960px;
+}
+#splash #buttons {
+	left: 42px;
+	position: absolute;
+	top: 214px;
+}
+#left {
+	float: left;
+	padding: 0 30px 30px 0;
+	width: 620px;
+}
+.home #left {
+	padding-top: 30px;
+}
+
+/* List Styles */
+#left ul {
+	list-style: disc;
+	margin: 0 5px 1.5em 0.5em;
+	padding-left: 1.5em;
+}
+#left ul.checklist {
+	list-style: url('green-checkmark.png');
+	
+}
+#left li {
+	margin-bottom: 5px;
+}
+
+/* News Styles */
+#news h1 {
+	margin-bottom: 15px;
+}
+.news-item {
+	margin-bottom: 30px;
+}
+.news-item .date {
+	background: url('bkg-date.png') no-repeat;
+	color: #FFFFFF;
+	float: left;
+	font-weight: bold;
+	height: 46px;
+	line-height: 20px;
+	padding: 7px 0;
+	text-align: center;
+	text-shadow: 0 -1px 0 #001F35;
+	width: 60px;
+}
+.news-item .date .month {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.news-item .date .day {
+	font-size: 30px;
+}
+.news-item .story {
+	margin-left: 80px;
+}
+.news-item .story .title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+/* Documentation Styles */
+.code-item {
+	border-top: 1px solid #E2E2E2;
+	padding: 10px 0;
+}
+.code-item p {
+	margin-bottom: 3px;
+}
+.code-item .item-type {
+	float: right;
+	font-style: italic;
+}
+.code-item .item-title {
+	font-size: 16px;
+	font-weight: bold;
+}
+.code-item .excerpt {
+	width: 500px;
+}
+.code-details {
+	float: left;
+	width: 100px;
+}
+#details {
+	background-color: #D5D5D5;
+	margin-bottom: 20px;
+	padding: 10px 15px;
+}
+#details p {
+	margin: 5px 0;
+}
+#demo {
+	border: 1px solid #E2E2E2;
+	padding: 20px;
+}
+#controls {
+	margin: 10px 0 0;
+}
+
+/* Demo Page Styles */
+.demo {
+	border-top: 1px solid #E5E5E5;
+}
+.demo h2 {
+	margin-top: 20px;
+}
+
+/* FAQ Styles */
+.faq {
+	border-top: 1px solid #E2E2E2;
+	padding: 20px 0;
+}
+.faq .question {
+	font-weight: bold;
+}
+.more-link {
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+/* Downloads Styles */
+#downloads {
+	border: 1px solid #E2E2E2;
+	border-bottom: none;
+	width: 100%;
+}
+#downloads th {
+	background-color: #303030;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#downloads th,
+#downloads td {
+	border-bottom: 1px solid #E2E2E2;
+	padding: 10px 5px;
+	vertical-align: middle;
+}
+#downloads td {
+	background-color: #F5F5F5;
+}
+
+/* Sidebar Styles */
+#right,
+#sidebar {
+	background: url('bkg-right.png') top left no-repeat;
+	float: right;
+	padding: 0 0 30px 30px;
+	width: 280px;
+}
+.home #right {
+	padding-top: 30px;
+}
+#sidebar {
+	background: url('bkg-sidebar.png') top left no-repeat;
+}
+#download {
+	margin-bottom: 20px;
+}
+#bsap_1252132 {
+	background-color: #E2E2E2;
+	font-weight: bold;
+	height: 150px;
+	margin: 0 auto 20px;
+	text-align: center;
+	width: 250px;
+}
+#donate {
+	background: url('bkg-donate.png') no-repeat;
+	color: #CCCCCC;
+	height: 95px;
+	margin-bottom: 20px;
+	padding: 40px 15px 15px;
+	width: 250px;
+}
+#donate .button {
+	margin-top: -5px;
+	text-align: center;
+}
+#community ul {
+	margin-left: 1.5em;
+}
+#community li {
+	list-style: disc;
+}
+#ads {
+	margin: 0 auto;
+	width: 160px;
+}
+.like {
+	margin-bottom: 20px;
+}
+
+/* Footer Styles */
+#footer {
+	background: url('bkg-footer.png') top center no-repeat;
+	clear: both;
+	color: #808080;
+	font-size: 11px;
+	padding: 5px 10px;
+}
+#footer a {
+	color: #808080;
+}
+#footer a:hover {
+	color: #0072BC;
+}
+
+

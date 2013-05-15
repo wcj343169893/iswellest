@@ -1,0 +1,136 @@
+/*****************************************************************************
+scalable Inman Flash Replacement (sIFR) version 3.
+
+Copyright 2006 – 2008 Mark Wubben, <http://novemberborn.net/>
+
+Older versions:
+* IFR by Shaun Inman
+* sIFR 1.0 by Mike Davidson, Shaun Inman and Tomas Jogin
+* sIFR 2.0 by Mike Davidson, Shaun Inman, Tomas Jogin and Mark Wubben
+
+See also <http://novemberborn.net/sifr3> and <http://wiki.novemberborn.net/sifr3>.
+
+This software is licensed and provided under the CC-GNU LGPL.
+See <http://creativecommons.org/licenses/LGPL/2.1/>
+*****************************************************************************/
+
+@media screen {
+  .sIFR-flash {
+    visibility: visible !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sIFR-replaced, .sIFR-ignore {
+    visibility: visible !important;
+  }
+  
+  .sIFR-alternate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+  }
+  
+  .sIFR-replaced div.sIFR-fixfocus {
+    margin: 0pt; 
+    padding: 0pt; 
+    overflow: auto; 
+    letter-spacing: 0px; 
+    float: none;
+  }
+}
+
+@media print {
+  .sIFR-flash {
+    display    : none !important;
+    height     : 0;
+    width      : 0;
+    position   : absolute;
+    overflow   : hidden;
+  }
+  
+  .sIFR-alternate {
+    visibility : visible !important;
+    display    : block   !important;
+    position   : static  !important;
+    left       : auto    !important;
+    top        : auto    !important;
+    width      : auto    !important;
+    height     : auto    !important;
+  }
+}
+
+/*
+Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
+so they only apply if sIFR is active. Make sure to limit the CSS to the screen
+media type, in order not to have the printed text come out weird.
+*/
+@media screen {
+  /* Example:
+  .sIFR-active h1 {
+    font-family: Verdana;
+    visibility: hidden;
+  }
+  */
+}
+
+/*
+Uploadify v2.1.0
+Release Date: August 24, 2009
+
+Copyright (c) 2009 Ronnie Garcia, Travis Nickels
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+.uploadifyQueueItem {
+	font: 11px Verdana, Geneva, sans-serif;
+	border: 2px solid #E5E5E5;
+	background-color: #F5F5F5;
+	margin-top: 5px;
+	padding: 10px;
+	width: 350px;
+}
+.uploadifyError {
+	border: 2px solid #FBCBBC !important;
+	background-color: #FDE5DD !important;
+}
+.uploadifyQueueItem .cancel {
+	float: right;
+}
+.uploadifyQueue .completed {
+	background-color: #E5E5E5;
+}
+.uploadifyProgress {
+	background-color: #E5E5E5;
+	/* border-top: 1px solid #808080;
+	border-left: 1px solid #808080;
+	border-right: 1px solid #C5C5C5;
+	border-bottom: 1px solid #C5C5C5; */
+	margin-top: 10px;
+	width: 100%;
+}
+.uploadifyProgressBar {
+	background-color: #0099FF;
+	width: 1px;
+	height: 3px;
+}
