@@ -21,6 +21,8 @@ class Home extends CI_Controller {
 			$login ['qx1'] = $this->session->userdata ( 'qx1' );
 			$login ['qx2'] = $this->session->userdata ( 'qx2' );
 			$login ['role'] = $this->session->userdata ( 'role' );
+			$this->load->vars("uid",$this->uid);
+			$this->load->vars("user_name",$login ['name']);
 		}
 	}
 	
@@ -82,40 +84,19 @@ class Home extends CI_Controller {
 	}
 	function userslist() {
 		$this->isAdmin ();
-		$data ['title'] = '用户名单';
-		
+		$data ['title'] = '用户列表';
+		$data ['role'] = intval ( $this->uri->segment ( 3, 0 ) );
 		$table = 'users';
-		$query_all = $this->db->get ( $table );
-		$total = $query_all->num_rows ();
-		$data ['total'] = $query_all->num_rows ();
-		
-		$this->load->library ( 'pagination' );
-		$config ['base_url'] = site_url ( 'home/userslist' );
-		$config ['total_rows'] = $total;
-		$config ['per_page'] = '12';
-		$config ['uri_segment'] = 3;
-		$config ['first_link'] = '第一页';
-		$config ['prev_link'] = '上一页';
-		$config ['next_link'] = '下一页';
-		$config ['last_link'] = '最后一页';
-		$config ['cur_tag_open'] = '<span class="current">';
-		$config ['cur_tag_close'] = '</span>';
-		// $config['use_page_numbers']=true;
-		$this->pagination->initialize ( $config );
-		$data ['pagination'] = $this->pagination->create_links ();
-		
-		$end = $config ['per_page'];
-		$uri = intval ( $this->uri->segment ( 3, 0 ) );
-		$start = $config ['per_page'];
-		
 		$this->db->order_by ( "uid", "desc" );
-		$query = $this->db->get ( $table, $start, $uri );
+		$this->db->where ( 'role', $data ['role'] );
+		$query = $this->db->get ( $table);
 		$data ['users'] = $query->result ();
 		$this->db->close ();
 		$this->load->view ( 'home_users_list', $data );
 	}
 	function addUsers() {
 		$this->isAdmin ();
+		$data ['role'] = intval ( $this->uri->segment ( 3, 0 ) );
 		$data ['title'] = '添加用户信息';
 		$this->load->view ( 'home_users_add', $data );
 	}
@@ -132,6 +113,7 @@ class Home extends CI_Controller {
 		$data ['email'] = trim ( $this->input->post ( 'email' ) );
 		$data ['qx1'] = $this->input->post ( 'qx1' );
 		$data ['qx2'] = $this->input->post ( 'qx2' );
+		$data ['role'] = $this->input->post ( 'role' );
 		$query = $this->Home_model->addData ( $data, 'users' );
 		if ($query)
 			echo "<script language='javascript'>alert('添加成功!!');window.location.href='" . site_url ( 'home/userslist' ) . "';</script>";
@@ -143,11 +125,13 @@ class Home extends CI_Controller {
 		$uid = intval ( $this->uri->segment ( 3, 0 ) );
 		$data ['user'] = $this->Home_model->getDataOne ( 'users', 'uid', $uid );
 		$data ['title'] = '修改' . $data ['user']->name . '的资料';
+		$data ['role'] =$data ['user']->role;
 		$this->load->view ( 'home_users_mod', $data );
 	}
 	function modUsersSave() {
 		$this->isAdmin ();
 		$mtype = trim ( $this->input->post ( 'mtype' ) );
+		$role= $this->input->post ( 'role' );
 		if ($mtype) {
 			$data ['tel'] = trim ( $this->input->post ( 'tel' ) );
 			$data ['email'] = trim ( $this->input->post ( 'email' ) );
@@ -159,7 +143,7 @@ class Home extends CI_Controller {
 		$uid = trim ( $this->input->post ( 'uid' ) );
 		$query = $this->Home_model->setData ( $data, 'users', 'uid', $uid );
 		if ($query)
-			echo "<script language='javascript'>alert('修改成功!!');window.location.href='" . site_url ( 'home/userslist' ) . "';</script>";
+			echo "<script language='javascript'>alert('修改成功!!');window.location.href='" . site_url ( 'home/userslist/'.$role ) . "';</script>";
 		else
 			exit ( "<script>alert('修改失败,请核对信息后重新添加!!');window.history.go(-1)</script>" );
 	}

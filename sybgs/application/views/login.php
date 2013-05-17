@@ -1,51 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<base href="<?php echo base_url() ;?>"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>实验报告书提交网站</title>
-<link type="text/css" rel="stylesheet" href="resource/home/style.css" />
-<script type="text/javascript" src="resource/home/js/jquery-1.6.2.min.js"></script>
-<script type="text/javascript" src="resource/home/js/jwc.js"></script>
-<?php if($msg)echo $msg?>
-<style type="text/css">
-	.middle{
-		font-family:黑体;
-		font-weight:normal;
-		font-size:16px;
-		border-color:#E3E3E3;
-		border-width:1px;
-		border-style:solid;
-		margin:0 auto;
-		width:290px;
-		padding:40px;
-		background-color:#EBEBEB;
-	}
-	.heightMy{
-		margin-top:20px;
-	}
-	button{
-		border:none;
-	}
-	#submit{
-		font-family:黑体;
-		font-weight:normal;
-		font-size:16px;
-	}
-</style>
-</head>
-<body>
-<div class="Header">
-  <div> <img src="resource/home/images/top_logo.png" alt=""  title=""/> </div>
-</div>
-<center>
-  <div class="middle"> <?php echo form_open('login/checkUser') ?>
-    <div class="heightMy">用户名：<input type="text" name="name" id="name" value="" style="height:20px;width:180px;line-height:20px;color:#333;font-size: 16px;vertical-align:middle" /></div>
-    <div class="heightMy">密　码：<input type="password" name="paw" id="paw" value="" style="height:20px;width:180px;line-height:20px;color:#333;font-size: 16px;vertical-align:middle" /></div>
-    <div class="heightMy"></div>
-    <div class="heightMy"></div>
-    <div class="heightMy"><input type="submit" value="登录" name="submit" id="submit"></div>
-    <?php echo form_close() ?> </div>
-</center>
-</body>
-</html>
+<?php
+$no_visible_elements=true;
+include('home_header.php'); ?>
+
+			<div class="row-fluid">
+				<div class="span12 center login-header">
+					<h2>
+<!-- 					<img src="resource/home/images/top_logo.png" alt=""  title=""/> -->
+					</h2>
+				</div><!--/span-->
+			</div><!--/row-->
+			
+			<div class="row-fluid">
+				<div class="well span5 center login-box">
+					<?php if($msg){echo $msg;}else{?>
+					<div class="alert alert-info">
+						请输入用户名和密码
+					</div>
+					<?php }?>
+					<?php echo form_open('login/checkUser','class="form-horizontal" method="post"') ?>
+						<fieldset>
+							<div class="input-prepend" title="用户名" data-rel="tooltip">
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="name" id="name" type="text" value="admin" />
+							</div>
+							<div class="clearfix"></div>
+
+							<div class="input-prepend" title="密码" data-rel="tooltip">
+								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="paw" id="paw" type="password" value="admin" />
+							</div>
+							<div class="clearfix"></div>
+							<div class="input-prepend">
+							<label class="remember" for="remember"><input type="checkbox" id="remember" name="remember"/>记住密码</label>
+							</div>
+							<div class="clearfix"></div>
+
+							<p class="center span5">
+							<button type="submit" class="btn btn-primary">登录</button>
+							</p>
+						</fieldset>
+					<?php echo form_close() ?>
+				</div><!--/span-->
+			</div><!--/row-->
+<?php include('home_footer.php'); ?>
+

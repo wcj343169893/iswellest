@@ -45,7 +45,8 @@ class Login extends CI_Controller {
 	 			redirect('home');
 	 			
 	 		}else {
-	 			$data['msg'] = "<script>alert('用户名或密码错误!!请重试~!!');</script>";
+// 	 			$data['msg'] = "<script>alert('用户名或密码错误!!请重试~!!');</script>";
+				$this->showMessage("用户名或密码错误!!请重试~!!","error",false);
 	 			$this->load->view('login',$data);
 	 		}
  		}
