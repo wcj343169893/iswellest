@@ -263,6 +263,7 @@ function docReady(){
 	$('.datatable').dataTable({
 			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span12'i><'span12 center'p>>",
 			"sPaginationType": "bootstrap",
+			 "aaSorting": [[0, 'desc']],
 			"oLanguage": {
 				"sSearch":"搜索",
 				"sInfo": "总共_TOTAL_条, (_START_ 到  _END_)",
@@ -273,6 +274,36 @@ function docReady(){
 				}
 			},
 		} );
+	$('.datatable2').dataTable({
+		"sDom": "",
+		"sPaginationType": "bootstrap",
+		"aaSorting": [[0, 'desc']]
+	} );
+	var ajaxdatatable_url=$(".ajaxdatatable").data("url");
+	$('.ajaxdatatable_old').dataTable({
+		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span12'i><'span12 center'p>>",
+		"sPaginationType": "bootstrap",
+		"bProcessing": true,
+		"bServerSide": true,
+		"sAjaxSource": ajaxdatatable_url, 
+		"aoColumns": [
+		              { "mData": "wid" },
+		              { "mData": "wname" },
+		              { "mData": "wauthor" },
+		              { "mData": "wftype" },
+		              { "mData": "wbz" }
+		          ],
+		"oLanguage": {
+			"sSearch":"搜索",
+			"sInfo": "总共_TOTAL_条, (_START_ 到  _END_)",
+			"sLengthMenu": "_MENU_ 选择每页显示条数",
+			"oPaginate": {
+				"sPrevious": "上一页",
+				"sNext": "下一页",
+			}
+		},
+	} );
+	
 	$('.btn-close').click(function(e){
 		e.preventDefault();
 		$(this).parent().parent().parent().fadeOut();
