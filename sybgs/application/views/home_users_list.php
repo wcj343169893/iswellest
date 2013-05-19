@@ -17,8 +17,7 @@
 			</div>
 		</div>
 		<div class="box-content">
-  <div class="list">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-bordered bootstrap-datatable datatable dataTable">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-bordered bootstrap-datatable datatable">
      <thead>
 	      <tr>
 			<th class="line_l">ID</th>
@@ -43,14 +42,8 @@
 			<td> <?php echo $row->qx1 ? '有' : '无';?></td>
 	        <td><?php echo $row->qx2 ? '有' : '无';?></td><?php }?>
 	        <td>
-	        <a class="btn btn-info" href="<?php echo site_url('home/modUsers').'/'.$row->uid?>">
-				<i class="icon-edit icon-white"></i>  
-				编辑                                          
-			</a>
-			<a class="btn btn-danger" href="<?php echo site_url('home/delUsers').'/'.$row->uid?>" onclick="return confirm('删除后无法恢复,确定要删除吗?')">
-				<i class="icon-trash icon-white"></i> 
-				删除
-			</a>
+	        <a class="btn btn-info" href="<?php echo site_url('home/modUsers').'/'.$row->uid?>"><i class="icon-edit icon-white"></i>  编辑</a>
+			<a class="btn btn-danger" href="<?php echo site_url('home/delUsers').'/'.$row->uid?>" onclick="return confirm('删除后无法恢复,确定要删除吗?')"><i class="icon-trash icon-white"></i> 删除</a>
 	      </tr>
 		  <?php endforeach;?>
 		  <?php else:?>
@@ -65,7 +58,6 @@
 		  <?php endif;?>
 	  </tbody>
     </table>
-  </div>
 </div>
 <script>
 	function checkon(o){

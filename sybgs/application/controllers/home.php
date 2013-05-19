@@ -21,8 +21,9 @@ class Home extends CI_Controller {
 			$login ['qx1'] = $this->session->userdata ( 'qx1' );
 			$login ['qx2'] = $this->session->userdata ( 'qx2' );
 			$login ['role'] = $this->session->userdata ( 'role' );
-			$this->load->vars("uid",$this->uid);
-			$this->load->vars("user_name",$login ['name']);
+			$this->load->vars ( "uid", $this->uid );
+			$this->load->vars ( "role", $this->role );
+			$this->load->vars ( "user_name", $login ['name'] );
 		}
 	}
 	
@@ -89,7 +90,7 @@ class Home extends CI_Controller {
 		$table = 'users';
 		$this->db->order_by ( "uid", "desc" );
 		$this->db->where ( 'role', $data ['role'] );
-		$query = $this->db->get ( $table);
+		$query = $this->db->get ( $table );
 		$data ['users'] = $query->result ();
 		$this->db->close ();
 		$this->load->view ( 'home_users_list', $data );
@@ -125,13 +126,13 @@ class Home extends CI_Controller {
 		$uid = intval ( $this->uri->segment ( 3, 0 ) );
 		$data ['user'] = $this->Home_model->getDataOne ( 'users', 'uid', $uid );
 		$data ['title'] = '修改' . $data ['user']->name . '的资料';
-		$data ['role'] =$data ['user']->role;
+		$data ['role'] = $data ['user']->role;
 		$this->load->view ( 'home_users_mod', $data );
 	}
 	function modUsersSave() {
 		$this->isAdmin ();
 		$mtype = trim ( $this->input->post ( 'mtype' ) );
-		$role= $this->input->post ( 'role' );
+		$role = $this->input->post ( 'role' );
 		if ($mtype) {
 			$data ['tel'] = trim ( $this->input->post ( 'tel' ) );
 			$data ['email'] = trim ( $this->input->post ( 'email' ) );
@@ -143,7 +144,7 @@ class Home extends CI_Controller {
 		$uid = trim ( $this->input->post ( 'uid' ) );
 		$query = $this->Home_model->setData ( $data, 'users', 'uid', $uid );
 		if ($query)
-			echo "<script language='javascript'>alert('修改成功!!');window.location.href='" . site_url ( 'home/userslist/'.$role ) . "';</script>";
+			echo "<script language='javascript'>alert('修改成功!!');window.location.href='" . site_url ( 'home/userslist/' . $role ) . "';</script>";
 		else
 			exit ( "<script>alert('修改失败,请核对信息后重新添加!!');window.history.go(-1)</script>" );
 	}
@@ -187,6 +188,7 @@ class Home extends CI_Controller {
 		$config ['cur_tag_open'] = '<span class="current">';
 		$config ['cur_tag_close'] = '</span>';
 		// $config['use_page_numbers']=true;
+		$this->paginaConfig($config);
 		$this->pagination->initialize ( $config );
 		$data ['pagination'] = $this->pagination->create_links ();
 		
@@ -355,12 +357,27 @@ class Home extends CI_Controller {
 		$data ['wauthor'] = $this->input->post ( 'wauthor' );
 		$data ['wbz'] = $this->input->post ( 'wbz' );
 		$data ['uid'] = $this->uid;
-		$data ['wfile'] = trim ( $this->input->post ( 'wfile' ) );
+		$wfile= $this->input->post ( 'wfile' );
+		$data ['wfile'] ="";
+		if(!empty($wfile)){
+			$data ['wfile']=implode("||", $wfile);
+		}
 		$query = $this->Home_model->addData ( $data, 'works' );
 		if ($query)
 			echo "<script language='javascript'>alert('添加成功!!');window.location.href='" . site_url ( 'home/workslist' ) . '/' . $data ['caid'] . "';</script>";
 		else
 			exit ( "<script>alert('添加失败,请核对信息后重新添加!!');window.history.go(-1)</script>" );
+	}
+	function modWorks() {
+		//home_works_mod
+		$wid = intval ( $this->uri->segment ( 3, 0 ) );
+		$data ['works'] = $this->Home_model->getDataOne ( 'works', 'wid', $wid );
+		$data ['title'] = '修改' . $data ['works']->wname;
+		$data ['caid'] = $data['works']->caid;
+		if(!empty($data['works']->wfile)){
+			$data['wfiles'] = explode("||", $data['works']->wfile);
+		}
+		$this->load->view ( 'home_works_mod', $data );
 	}
 	function modWorksSave() {
 		// $this->isAdmin();
@@ -369,11 +386,36 @@ class Home extends CI_Controller {
 		$data ['wauthor'] = $this->input->post ( 'wauthor' );
 		$data ['wbz'] = $this->input->post ( 'wbz' );
 		$wid = trim ( $this->input->post ( 'wid' ) );
+		$wfile= $this->input->post ( 'wfile' );
+		$data ['wfile'] ="";
+		if(!empty($wfile)){
+			$data ['wfile']=implode("||", $wfile);
+		}
 		$query = $this->Home_model->setData ( $data, 'works', 'wid', $wid );
 		if ($query)
-			echo "<script language='javascript'>alert('添加成功!!');window.location.href='" . site_url ( 'home/workslist' ) . '/' . $data ['caid'] . "';</script>";
+			echo "<script language='javascript'>alert('修改成功!!');window.location.href='" . site_url ( 'home/workslist' ) . '/' . $data ['caid'] . "';</script>";
 		else
 			exit ( "<script>alert('添加失败,请核对信息后重新添加!!');window.history.go(-1)</script>" );
+	}
+	function ajaxworkslist() {
+		$iDisplayStart = intval ( $_REQUEST ["iDisplayStart"] ); // 开始位置
+		$iDisplayLength = intval ( $_REQUEST ["iDisplayLength"] ); // 长度
+		$table = 'works';
+		$query_all = $this->db->get ( $table );
+		$total = $query_all->num_rows ();
+		
+		$query = $this->db->get ( $table, $iDisplayLength, $iDisplayStart );
+		$result = $query->result ();
+		$data = array (
+				"sEcho" => intval ( $_GET ['sEcho'] ),
+				"iTotalRecords" => $total,
+				"iTotalDisplayRecords" => $total,
+				"aaData" => $result,
+				"sColumns" => "wid,wname,wauthor,wftype,wbz" 
+		);
+		header ( "Content-type:text/json" );
+		echo json_encode ( $data );
+		exit ();
 	}
 	function workslist() {
 		// $this->output->enable_profiler(TRUE);
@@ -394,7 +436,7 @@ class Home extends CI_Controller {
 		$this->load->library ( 'pagination' );
 		$config ['base_url'] = site_url ( 'home/workslist' ) . '/' . $data ['caid'];
 		$config ['total_rows'] = $total;
-		$config ['per_page'] = '12';
+		$config ['per_page'] = '10';
 		$config ['uri_segment'] = 4;
 		$config ['first_link'] = '第一页';
 		$config ['prev_link'] = '上一页';
@@ -402,6 +444,7 @@ class Home extends CI_Controller {
 		$config ['last_link'] = '最后一页';
 		$config ['cur_tag_open'] = '<span class="current">';
 		$config ['cur_tag_close'] = '</span>';
+		$this->paginaConfig($config);
 		// $config['use_page_numbers']=true;
 		$this->pagination->initialize ( $config );
 		$data ['pagination'] = $this->pagination->create_links ();
@@ -419,6 +462,29 @@ class Home extends CI_Controller {
 		$data ['works'] = $query->result ();
 		$this->db->close ();
 		$this->load->view ( 'home_works_list', $data );
+	}
+	/**
+	 * 构造datatable 样式的分页
+	 * */
+	function paginaConfig(&$config){
+		$config ['full_tag_open'] = "<ul>";
+		$config ['full_tag_close'] = "</ul>";
+		//<li class="active"><a href="#">1</a></li>
+		$config ['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config ['cur_tag_close'] = '</a></li>';
+		$config ['first_tag_open'] = 
+		$config ['last_tag_open'] = 
+		$config ['prev_tag_open'] = 
+		$config ['num_tag_open'] = 
+		$config ['next_tag_open'] = 
+		'<li>';
+		
+		$config ['first_tag_close'] = 
+		$config ['last_tag_close'] = 
+		$config ['prev_tag_close'] = 
+		$config ['num_tag_close'] = 
+		$config ['next_tag_close'] = 
+		'</li>';
 	}
 	function delWorks() {
 		// $this->isAdmin();

@@ -1,52 +1,60 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?php echo $title?></title>
-<base href="<?php echo base_url() ;?>"/>
-<link href="resource/home/style2.css" rel="stylesheet" type="text/css">
-<link href="resource/home/box.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="resource/home/js/jquery.js"></script>
-<script type="text/javascript" src="resource/home/js/common.js"></script>
-<script type="text/javascript" src="resource/home/js/box.js"></script>
-</head>
-<body>
-<div class="so_main">
-  <div class="page_tit"><?php echo $title?></div>
-  <div class="Toolbar_inbox">
-    <div class="page right">
-		共<?php echo $total;?>个实验报告书&nbsp;&nbsp;&nbsp;<?php echo $pagination;?>
-	</div>
-	<select name="caid" onchange="window.location.href='<?php echo site_url('home/workslist');?>/'+this.value">
-	<option value="1" <?php if($caid==1):?>selected="selected"<?php endif;?>>===科技理念类===</option>
-	<option value="2" <?php if($caid==2):?>selected="selected"<?php endif;?>>===科技实物类===</option>
-    </select>
-    <a href="<?php echo site_url('home/addWorks').'/'.$caid?>" class="btn_a"><span>添加实验报告书</span></a>
-  </div>
-  <div class="list">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+﻿<?php include('home_header.php'); ?>
+<div>
+	<ul class="breadcrumb">
+		<li>
+			<?php echo anchor('home','Home')?> <span class="divider">/</span>
+		</li>
+		<li><?php echo $title;?></li>
+	</ul>
+</div>
+<?php if($uid != 'admin'):?>
+<div class="Toolbar_inbox">
+    <a href="<?php echo site_url('home/addWorks').'/'.$caid?>" class="btn btn-small"><i class="icon-plus"></i> <span>添加实验报告书</span></a>
+</div>
+<?php endif;?>
+<div class="row-fluid sortable">		
+	<div class="box span12">
+		<div class="box-header well" data-original-title>
+			<h2><i class="icon-user"></i> <?php echo $title?></h2>
+			<div class="box-icon">
+				<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+			</div>
+		</div>
+		<div class="box-content">
+<div class="row-fluid sortable">
+  <div class="control-group">
+		<div class="controls">
+		  <select data-rel="chosen" name="caid" onchange="window.location.href='<?php echo site_url('home/workslist');?>/'+this.value">
+			<option value="1" <?php if($caid==1):?>selected="selected"<?php endif;?>>===科技理念类===</option>
+			<option value="2" <?php if($caid==2):?>selected="selected"<?php endif;?>>===科技实物类===</option>
+		  </select>
+		</div>
+	  </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-bordered bootstrap-datatable datatable2" data-url="<?php echo site_url('data/getTable')?>">
+      <thead>
       <tr>
-        <th style="width:30px;"> <input type="checkbox" id="checkbox_handle" onclick="checkAll(this)" value="0">
-          <label for="checkbox"></label>        </th>
-		<th class="line_l">ID</th>
+		<th class="line_l" alt="desc">ID</th>
         <th class="line_l">实验报告书名称</th>
         <th class="line_l">作者</th>
         <th class="line_l">所属类别</th>
 		<th class="line_l">备注说明</th>
         <th class="line_l">操作</th>
       </tr>
+      </thead>
+      <tbody>
       <?php if ($works):?>
 	  <?php foreach ($works as $row):?>
 	  <tr overstyle='on' id="user_<?php echo $row->wid?>">
-        <td><input type="checkbox" name="checkbox" id="checkbox2" value="<?php echo $row->wid?>"></td>
         <td><?php echo $row->wid?></td>
         <td><?php echo $row->wname?></td>
         <td> <?php echo $row->wauthor?> </td>
         <td> <?php echo $row->caid ? '科技理念类' : '科技实物类';?></td>
         <td><?php echo $row->wbz?></td>
         <td>
-		<a href="<?php echo site_url('home/delWorks').'/'.$caid.'/'.$row->wid?>" onclick="return confirm('删除后无法恢复,确定要删除吗?')">删除</a></td>
+        <?php if($row->uid==$uid){?>
+        <a class="btn btn-info" href="<?php echo site_url('home/modWorks').'/'.$row->wid?>"><i class="icon-edit icon-white"></i>  编辑</a>
+        <?php }?>
+        <a class="btn btn-danger" href="<?php echo site_url('home/delWorks').'/'.$caid.'/'.$row->wid?>" onclick="return confirm('删除后无法恢复,确定要删除吗?')"><i class="icon-trash icon-white"></i> 删除</a>
       </tr>
 	  <?php endforeach;?>
 	  <?php else:?>
@@ -59,32 +67,20 @@
         <td>&nbsp;</td>
       </tr>
 	  <?php endif;?>
+	  </tbody>
+	  <tfoot></tfoot>
     </table>
-  </div>
-  <div class="Toolbar_inbox">
-    <div class="page right">
-		共<?php echo $total;?>个实验报告书&nbsp;&nbsp;&nbsp;<?php echo $pagination;?>
-	</div>
-	<select name="caid" onchange="window.location.href='<?php echo site_url('home/workslist');?>/'+this.value">
-	<option value="1" <?php if($caid==1):?>selected="selected"<?php endif;?>>===科技理念类===</option>
-	<option value="2" <?php if($caid==2):?>selected="selected"<?php endif;?>>===科技实物类===</option>
-    </select>
-    <a href="<?php echo site_url('home/addWorks').'/'.$caid?>" class="btn_a"><span>添加实验报告书</span></a>
-  </div>
+    <div class="row-fluid">
+	  	<div class="span12"><div class="dataTables_info" id="DataTables_Table_0_info">总共<?php echo $total?>条</div></div>
+	  	<div class="span12 center">
+		  <div class="dataTables_paginate paging_bootstrap pagination">
+			<?php echo $pagination;?>
+		  </div>
+	    </div>
+  	</div>
 </div>
+</div></div></div>
 <script>
-	//鼠标移动表格效果
-	$(document).ready(function(){
-		$("tr[overstyle='on']").hover(
-		  function () {
-		    $(this).addClass("bg_hover");
-		  },
-		  function () {
-		    $(this).removeClass("bg_hover");
-		  }
-		);
-	});
-	
 	function checkon(o){
 		if( o.checked == true ){
 			$(o).parents('tr').addClass('bg_on') ;
@@ -103,5 +99,4 @@
 		}
 	}
 </script>
-</body>
-</html>
+<?php include('home_footer.php'); ?>

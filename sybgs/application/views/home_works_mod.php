@@ -9,7 +9,7 @@
 <div class="form-horizontal">
   <?php 
   $data = array('onSubmit' => 'return checkSubmit();');
-  echo form_open('home/addWorksSave',$data) ?>
+  echo form_open('home/modWorksSave',$data) ?>
   	<div class="control-group">
       	<label class="control-label" for="caid">所属类别：</label>
       	<div class="controls">
@@ -24,7 +24,7 @@
 	<div class="control-group">
       	<label class="control-label" for="wname">实验报告书名称：</label>
       	<div class="controls">
-          <input name="wname" class="input-xlarge focused" id="wname" type="text" value=""  autofocus="autofocus">
+          <input name="wname" class="input-xlarge focused" id="wname" type="text" value="<?php echo $works->wname ;?>"  autofocus="autofocus">
           <span class="help-inline">实验报告书名称</span>
         </div>
 	</div>
@@ -32,7 +32,7 @@
 	<div class="control-group">
       	<label class="control-label" for="wauthor">作者：</label>
       	<div class="controls">
-          <input name="wauthor" class="input-xlarge" id="name" type="text" value="">
+          <input name="wauthor" class="input-xlarge" id="name" type="text" value="<?php echo $works->wauthor ;?>">
           <span class="help-inline">实验报告书的作者姓名</span>
         </div>
 	</div>
@@ -46,17 +46,24 @@
 	<div class="control-group" style="display: none;" id="result_group">
 		<label class="control-label" for="file_upload">已上传：</label>
 		<div class="controls">
-          <div class='comment' id="resText"></div>
+          <div class='comment' id="resText">
+          		<?php if(!empty($wfiles)){?>
+          		<?php foreach($wfiles as $k=>$v){?>
+          		<p class='para'>文件名:<?php echo $v?> <a href='javascript:void(0);' class='delete_upload_file btn btn-info'>删除</a>
+          		<input name='wfile[]' type='hidden' value="<?php echo $v?>"/></p>
+          		<?php }}?>
+          </div>
         </div>
 	</div>
 	<div class="control-group">
       	<label class="control-label" for="wbz">实验报告书说明：</label>
       	<div class="controls">
-          <textarea id="wbz" class="input-xlarge" name="wbz" style="width:400px;height:100px;"></textarea>
+          <textarea id="wbz" class="input-xlarge" name="wbz" style="width:400px;height:100px;"><?php echo $works->wbz ;?></textarea>
           <span class="help-inline">对该实验报告书的描述说明</span>
         </div>
 	</div>
 	<div class="form-actions">
+		<input name="wid" value="<?php echo $works->wid;?>" type="hidden">
 		<button type="submit" class="btn btn-primary">确定</button>
   	</div>
 	<?php echo form_close() ?>

@@ -1,10 +1,11 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-//以下是首次运行需要修改的配置
+//
 
-$config['base_url'] = 'http://localhost/sybgs/';	//您的域名,例如 http://www.yangdali.com
+// $config['base_url'] = 'http://localhost/sybgs/';	//http://www.yangdali.com
+$config['base_url'] = 'http://1.com/';	//http://www.yangdali.com
 
-//以上是首次运行需要修改的配置
+//
 
 $config['index_page'] = 'index.php';
 $config['uri_protocol'] = 'AUTO';

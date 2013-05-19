@@ -17,7 +17,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
-
+	<!-- jQuery -->
+	<script src="theme/js/jquery-1.7.2.min.js"></script>
 	<!-- The styles -->
 	<link id="bs-css" href="theme/css/bootstrap-cerulean.css" rel="stylesheet">
 	<style type="text/css">
@@ -134,7 +135,7 @@
 						<?php endif;?>
 						
 						<?php if($uid != 'admin'){?>
-						<li class="nav-header hidden-tablet"><i class="icon-check"></i> 实验报告书评分</li>
+						<li class="nav-header hidden-tablet"><i class="icon-check"></i> 实验报告书</li>
 						<?php if($role){?>
 						<li><?php echo anchor('home/addWorks','<i class="icon-edit"></i><span class="hidden-tablet"> 添加实验报告书 </span>')?></li>
 						<li><?php echo anchor('home/workslist','<i class="icon-th-list"></i><span class="hidden-tablet"> 我的报告书列表 </span>')?></li>
@@ -149,7 +150,6 @@
 						
 						<?php if($uid == 'admin'):?>
 						<li class="nav-header hidden-tablet"><i class="icon-book"></i> 实验报告书管理</li>
-						<li><?php echo anchor('home/addWorks','<i class="icon-edit"></i><span class="hidden-tablet"> 添加实验报告书</span>')?></li>
 						<li><?php echo anchor('home/workslist','<i class="icon-th-list"></i><span class="hidden-tablet"> 实验报告书列表</span>')?></li>
 						<li class="nav-header hidden-tablet"><i class="icon-align-right"></i> 评分结果统计</li>
 						<li><?php echo anchor('home/scorelist','<i class="icon-hand-right"></i><span class="hidden-tablet"> 评分结果统计</span>')?></li>
