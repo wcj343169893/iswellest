@@ -6,13 +6,6 @@
 				</ul>
 			</div>
 			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well">
-						<h2><i class="icon-info-sign"></i> </h2>
-						<div class="box-icon">
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						</div>
-					</div>
 					<div class="box-content">
 						<table width="100%" border="0">
 							<tr>

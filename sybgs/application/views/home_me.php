@@ -10,7 +10,13 @@
   <?php 
   	if($uid != 0):
   	echo form_open('home/modme') ?>
-	<div class="form-horizontal">	
+	<div class="form-horizontal">
+	<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#tab_userinfo">基本信息</a></li>
+			<li><a href="#tab_password">密码</a></li>
+	</ul>
+	<div id="myTabContent" class="tab-content">
+	<div class="tab-pane active" id="tab_userinfo">
 		<div class="control-group">
 	      	<label class="control-label" for="email">用户名：</label>
 	      	<div class="controls">
@@ -34,12 +40,13 @@
 		 <div class="form-actions">
 			<button type="submit" class="btn btn-primary">确定</button>
 	  	</div>
-    </div>
 	<?php
 		echo form_close();
 		endif;
 	 ?>
 	 <div class="clearfix"></div>
+	 </div>
+	 <div class="tab-pane" id="tab_password">
 	<?php echo form_open('yd_home/admin_modsave') ?>
 	<div class="form-horizontal" style="border:none">
       <?php if($uid == 'admin'):?>
@@ -68,5 +75,7 @@
 	  </div>
     </div>
 	<?php echo form_close() ?>
+	</div>
+</div>
 		<div class="clearfix"></div>
 <?php include('home_footer.php'); ?>

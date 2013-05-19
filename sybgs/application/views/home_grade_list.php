@@ -21,7 +21,7 @@
 		</div>
 		<div class="box-content">
   <div class="row-fluid sortable">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-bordered bootstrap-datatable datatable2">
+    <table class="table table-striped table-bordered bootstrap-datatable">
     	<thead>
 	      <tr>
 			<th class="line_l">作品名称</th>
@@ -35,8 +35,8 @@
 			<th class="line_l">经济性</th>
 			<?php endif;?>
 			<th class="line_l" style="background:#CCCCCC; font-weight:bold">总分</th>
-			<th class="line_l">(是/否)及格</th>
-	        <th class="line_l" style="width:150px;">操作</th>
+			<th class="line_l">及格</th>
+	        <th class="line_l" style="width:200px;">操作</th>
 	      </tr>
       </thead>
       <tbody>
@@ -63,14 +63,14 @@
 		<?php endif;?>
         <td>
 		<?php if($score):?>
-		<a href="<?php echo site_url('home/modGrade').'/'.$score->sid?>">重新评分</a><span id="isallow_<?php echo $score->sid?>" style="padding-left:10px;">
+		<a href="<?php echo site_url('home/modGrade').'/'.$score->sid?>" class="btn btn-small btn-inverse">重新评分</a><span id="isallow_<?php echo $score->sid?>" style="padding-left:10px;">
 		<?php if($score->iswin):?>
-		<a href="javascript:void(0);" onClick="isWin(<?php echo $score->sid.','.$score->iswin?>)">撤消及格推荐</a>
+		<a href="javascript:void(0);" class="btn btn-small btn-warning" onClick="isWin(<?php echo $score->sid.','.$score->iswin?>)">撤消及格推荐</a>
 		<?php else:?>
-		<a href="javascript:void(0);" onClick="isWin(<?php echo $score->sid.','.$score->iswin?>)">推荐进入及格线</a>
+		<a href="javascript:void(0);" class="btn btn-small btn-primary" onClick="isWin(<?php echo $score->sid.','.$score->iswin?>)">推荐进入及格线</a>
 		<?php endif;?></span>
 		<?php else:?>
-		<a href="<?php echo site_url('home/addGrade').'/'.$row->wid?>">评分</a>
+		<a href="<?php echo site_url('home/addGrade').'/'.$row->wid?>" class="btn btn-small btn-info">评分</a>
 		<?php endif;?>
 		</td>
       </tr>
@@ -139,11 +139,11 @@ function isWin(sid,iswin) {
 			if(data == 'OK'){
 				if(iswin){
 					$("#iswin_"+sids).html('否');
-					var links = "<a href=\"javascript:void(0);\" onClick=\"isWin("+sids+",0)\">推荐进入及格线</a>";
+					var links = "<a href=\"javascript:void(0);\" class=\"btn btn-small btn-primary\" onClick=\"isWin("+sids+",0)\">推荐进入及格线</a>";
 					$("#isallow_"+sids).html(links);
 				}else{
 					$("#iswin_"+sids).html('<font color="red">是</font>');
-					var links = "<a href=\"javascript:void(0);\" onClick=\"isWin("+sids+",1)\">撤消及格线推荐</a>";
+					var links = "<a href=\"javascript:void(0);\" class=\"btn btn-small btn-warning\" onClick=\"isWin("+sids+",1)\">撤消及格线推荐</a>";
 					$("#isallow_"+sids).html(links);
 				}
 			}else{

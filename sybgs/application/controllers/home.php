@@ -224,7 +224,7 @@ class Home extends CI_Controller {
 		
 		$file_arr = explode ( "||", $data ['works']->wfile );
 		foreach ( $file_arr as $wfile ) {
-			$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
+			//$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
 		}
 		$this->load->view ( 'home_grade_add', $data );
 	}
@@ -318,7 +318,7 @@ class Home extends CI_Controller {
 		
 		$file_arr = explode ( "||", $data ['works']->wfile );
 		foreach ( $file_arr as $wfile ) {
-			$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
+			//$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
 		}
 		
 		$this->load->view ( 'home_grade_mod', $data );

@@ -30,7 +30,7 @@
 		  </select>
 		</div>
 	  </div>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-bordered bootstrap-datatable datatable2" data-url="<?php echo site_url('data/getTable')?>">
+    <table class="table table-striped table-bordered bootstrap-datatable datatable2" data-url="<?php echo site_url('data/getTable')?>">
       <thead>
       <tr>
 		<th class="line_l" alt="desc">ID</th>
