@@ -224,7 +224,7 @@ class Home extends CI_Controller {
 		
 		$file_arr = explode ( "||", $data ['works']->wfile );
 		foreach ( $file_arr as $wfile ) {
-			//$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
+			$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
 		}
 		$this->load->view ( 'home_grade_add', $data );
 	}
@@ -239,7 +239,6 @@ class Home extends CI_Controller {
 		$flash = array (
 				'swf',
 				'.swf',
-				'.swf' 
 		);
 		$media = array (
 				'.flv',
@@ -271,7 +270,8 @@ class Home extends CI_Controller {
 		} elseif (array_search ( $wftype, $RealPlayer )) {
 			return "<div><embed src='uploads/" . $wfile . "' type='video/x-ms-asf-plugin' width='850' height='550' autostart='true' loop='false' /></div><br />";
 		} else {
-			return "<div><img src='uploads/" . $wfile . "' style='max-width:850px;' /></div><br />";
+// 			return "<div><img src='uploads/" . $wfile . "' style='max-width:850px;' /></div><br />";
+			return "<div><a href='uploads/{$wfile}'>下载：".$wfile."</a></div>";
 		}
 	}
 	function addGradeSave() {
@@ -318,7 +318,7 @@ class Home extends CI_Controller {
 		
 		$file_arr = explode ( "||", $data ['works']->wfile );
 		foreach ( $file_arr as $wfile ) {
-			//$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
+			$data ['play'] .= $this->judgeFileType ( trim ( $wfile ) );
 		}
 		
 		$this->load->view ( 'home_grade_mod', $data );
@@ -526,6 +526,7 @@ class Home extends CI_Controller {
 		$config ['last_link'] = '最后一页';
 		$config ['cur_tag_open'] = '<span class="current">';
 		$config ['cur_tag_close'] = '</span>';
+		$this->paginaConfig($config);
 		// $config['use_page_numbers']=true;
 		$this->pagination->initialize ( $config );
 		$data ['pagination'] = $this->pagination->create_links ();
@@ -585,6 +586,7 @@ class Home extends CI_Controller {
 		$config ['last_link'] = '最后一页';
 		$config ['cur_tag_open'] = '<span class="current">';
 		$config ['cur_tag_close'] = '</span>';
+		$this->paginaConfig($config);
 		// $config['use_page_numbers']=true;
 		$this->pagination->initialize ( $config );
 		$data ['pagination'] = $this->pagination->create_links ();

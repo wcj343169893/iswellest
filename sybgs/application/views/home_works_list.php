@@ -1,4 +1,4 @@
-﻿<?php include('home_header.php'); ?>
+<?php include('home_header.php'); ?>
 <div>
 	<ul class="breadcrumb">
 		<li>
@@ -21,16 +21,15 @@
 			</div>
 		</div>
 		<div class="box-content">
-<div class="row-fluid sortable">
-  <div class="control-group">
-		<div class="controls">
-		  <select data-rel="chosen" name="caid" onchange="window.location.href='<?php echo site_url('home/workslist');?>/'+this.value">
-			<option value="1" <?php if($caid==1):?>selected="selected"<?php endif;?>>===科技理念类===</option>
-			<option value="2" <?php if($caid==2):?>selected="selected"<?php endif;?>>===科技实物类===</option>
-		  </select>
-		</div>
-	  </div>
-    <table class="table table-striped table-bordered bootstrap-datatable datatable2" data-url="<?php echo site_url('data/getTable')?>">
+	  		<div class="control-group">
+			<div class="controls">
+			  <select data-rel="chosen" name="caid" onchange="window.location.href='<?php echo site_url('home/workslist');?>/'+this.value">
+				<option value="1" <?php if($caid==1):?>selected="selected"<?php endif;?>>===科技理念类===</option>
+				<option value="2" <?php if($caid==2):?>selected="selected"<?php endif;?>>===科技实物类===</option>
+			  </select>
+			</div>
+		  </div>
+    <table class="table table-striped table-bordered bootstrap-datatable">
       <thead>
       <tr>
 		<th class="line_l" alt="desc">ID</th>
@@ -52,9 +51,9 @@
         <td><?php echo $row->wbz?></td>
         <td>
         <?php if($row->uid==$uid){?>
-        <a class="btn btn-info" href="<?php echo site_url('home/modWorks').'/'.$row->wid?>"><i class="icon-edit icon-white"></i>  编辑</a>
+        <a class="btn btn-info" href="<?php echo site_url('home/modWorks').'/'.$row->wid?>">编辑</a>
         <?php }?>
-        <a class="btn btn-danger" href="<?php echo site_url('home/delWorks').'/'.$caid.'/'.$row->wid?>" onclick="return confirm('删除后无法恢复,确定要删除吗?')"><i class="icon-trash icon-white"></i> 删除</a>
+        <a class="btn btn-danger" href="<?php echo site_url('home/delWorks').'/'.$caid.'/'.$row->wid?>" onclick="return confirm('删除后无法恢复,确定要删除吗?')">删除</a>
       </tr>
 	  <?php endforeach;?>
 	  <?php else:?>
@@ -79,24 +78,6 @@
 	    </div>
   	</div>
 </div>
-</div></div></div>
-<script>
-	function checkon(o){
-		if( o.checked == true ){
-			$(o).parents('tr').addClass('bg_on') ;
-		}else{
-			$(o).parents('tr').removeClass('bg_on') ;
-		}
-	}
-	
-	function checkAll(o){
-		if( o.checked == true ){
-			$('input[name="checkbox"]').attr('checked','true');
-			$('tr[overstyle="on"]').addClass("bg_on");
-		}else{
-			$('input[name="checkbox"]').removeAttr('checked');
-			$('tr[overstyle="on"]').removeClass("bg_on");
-		}
-	}
-</script>
+</div>
+</div>
 <?php include('home_footer.php'); ?>

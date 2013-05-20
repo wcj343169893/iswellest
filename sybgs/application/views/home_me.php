@@ -40,12 +40,12 @@
 		 <div class="form-actions">
 			<button type="submit" class="btn btn-primary">确定</button>
 	  	</div>
+	 <div class="clearfix"></div>
+	 </div>
 	<?php
 		echo form_close();
 		endif;
 	 ?>
-	 <div class="clearfix"></div>
-	 </div>
 	 <div class="tab-pane" id="tab_password">
 	<?php echo form_open('yd_home/admin_modsave') ?>
 	<div class="form-horizontal" style="border:none">

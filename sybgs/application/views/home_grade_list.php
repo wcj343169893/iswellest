@@ -1,4 +1,4 @@
-﻿<?php include('home_header.php'); ?>
+<?php include('home_header.php'); ?>
 <div>
 	<ul class="breadcrumb">
 		<li>
@@ -20,7 +20,6 @@
 			</div>
 		</div>
 		<div class="box-content">
-  <div class="row-fluid sortable">
     <table class="table table-striped table-bordered bootstrap-datatable">
     	<thead>
 	      <tr>
@@ -96,7 +95,6 @@
 	    </div>
   	</div>
   </div>
-</div>
 </div></div>
 <script>
 	//鼠标移动表格效果

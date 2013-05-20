@@ -1,22 +1,16 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<base href="<?php echo base_url() ;?>"/>
-<title>实验报告书提交网站</title>
-<link href="resource/home/style2.css" rel="stylesheet" type="text/css">
-<link href="resource/home/box.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="resource/home/js/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="resource/home/js/jwc.js"></script>
-<script type="text/javascript" src="resource/home/js/jquery.js"></script>
-<script type="text/javascript" src="resource/home/js/common.js"></script>
-<script type="text/javascript" src="resource/home/js/box.js"></script>
-</head>
-<body>
-<div class="so_main">
-    <div class="page_tit"><?php echo $title;?></div>
-	<div class="form2">	
+<?php include('home_header.php'); ?>
+<div>
+	<ul class="breadcrumb">
+		<li>
+			<?php echo anchor('home','Home')?> <span class="divider">/</span>
+		</li>
+		<li><?php echo $title;?></li>
+	</ul>
+</div>
+<div class="Toolbar_inbox">
+    <a href="<?php echo site_url('home/excel2').'/'.$wid?>" class="btn btn-small"><i class="icon-plus"></i> <span>导出Excel</span></a>
+</div>
+<div class="form-horizontal">
       <dl class="lineD">
         <dt>一、所属类别：</dt>
         <dd><?php if($works->caid == 1)echo '科技理念类';else echo '科技实物类';?></dd>
@@ -35,33 +29,38 @@
       </dl>
       <div class="page_btm">
       </div>
-    </div>
-  <div class="Toolbar_inbox">
-    <a href="<?php echo site_url('home/excel2').'/'.$wid?>" class="btn_a"><span>导出到Excel</span></a>
-  </div>
-  <div class="list">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <th style="width:30px;"><input type="checkbox" id="checkbox_handle" onclick="checkAll(this)" value="0">
-          <label for="checkbox"></label>        </th>
-		<th class="line_l">老师姓名</th>
-		<th class="line_l">科学性</th>
-        <th class="line_l">环保理念</th>
-        <th class="line_l">创新性</th>
-		<th class="line_l">可行性</th>
-		<?php if($works->caid == 1):?>
-		<th class="line_l">文字表述</th>
-		<?php else:?>
-		<th class="line_l">经济性</th>
-		<?php endif;?>
-		<th class="line_l" style="background:#CCCCCC; font-weight:bold">总分</th>
-		<th class="line_l">(是/否)及格</th>
-      </tr>
+</div>
+<div class="row-fluid sortable">		
+	<div class="box span12">
+		<div class="box-header well" data-original-title>
+			<h2><i class="icon-user"></i> <?php echo $title?></h2>
+			<div class="box-icon">
+				<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+			</div>
+		</div>
+		<div class="box-content">
+    	<table class="table table-striped table-bordered bootstrap-datatable">
+    	<thead>
+	      <tr>
+			<th class="line_l">老师姓名</th>
+			<th class="line_l">科学性</th>
+	        <th class="line_l">环保理念</th>
+	        <th class="line_l">创新性</th>
+			<th class="line_l">可行性</th>
+			<?php if($works->caid == 1):?>
+			<th class="line_l">文字表述</th>
+			<?php else:?>
+			<th class="line_l">经济性</th>
+			<?php endif;?>
+			<th class="line_l" style="background:#CCCCCC; font-weight:bold">总分</th>
+			<th class="line_l">(是/否)及格</th>
+	      </tr>
+	      </thead>
+	      <tbody>
 	  <?php 
 	  $i=0;$fs1=0;$fs2=0;$fs3=0;$fs4=0;$fs5=0;$fs6=0;$fs7=0;$iswin=0;$islose=0;
 	  foreach ($score as $row):?>
 	  <tr overstyle='on' id="user_<?php echo $row->sid?>">
-        <td><input type="checkbox" name="checkbox" id="checkbox2" value="<?php echo $row->sid?>"></td>
         <td><?php $user = $this->Home_model->getDataOne('users','uid',$row->uid);echo $user->name;?></td>
         <td><?php echo $row->score1?> </td>
         <td><?php echo $row->score2?></td>
@@ -83,54 +82,18 @@
 	  $i++;
 	  endforeach;?>
 	  <tr overstyle='on' id="user_0" style="color:#FF0000; font-weight:bold;">
-        <td colspan="2" align="center">平均得分:</td>
-        <td><?php echo $fs1/$i?> </td>
-        <td><?php echo $fs2/$i?></td>
-		<td><?php echo $fs3/$i?></td>
-		<td><?php echo $fs4/$i?></td>
-		<td><?php echo $fs5/$i?></td>
-		<td style="background:#EEEEEE"><?php echo $fs7/$i?></td>
+        <td align="center">平均得分:</td>
+        <td><?php echo sprintf("%.2f",$fs1/$i)?> </td>
+        <td><?php echo sprintf("%.2f",$fs2/$i)?></td>
+		<td><?php echo sprintf("%.2f",$fs3/$i)?></td>
+		<td><?php echo sprintf("%.2f",$fs4/$i)?></td>
+		<td><?php echo sprintf("%.2f",$fs5/$i)?></td>
+		<td style="background:#EEEEEE"><?php echo sprintf("%.2f",$fs7/$i)?></td>
 		<td><?php echo $iswin.'/'.$islose;?></td>
       </tr>
+      </tbody>
     </table>
   </div>
-  <div class="Toolbar_inbox">
-    <a href="<?php echo site_url('home/excel2').'/'.$wid?>" class="btn_a"><span>导出到Excel</span></a>
-  </div>
 </div>
-<script>
-	//鼠标移动表格效果
-	$(document).ready(function(){
-		$("tr[overstyle='on']").hover(
-		  function () {
-		    $(this).addClass("bg_hover");
-		  },
-		  function () {
-		    $(this).removeClass("bg_hover");
-		  }
-		);
-	});
-	
-	function checkon(o){
-		if( o.checked == true ){
-			$(o).parents('tr').addClass('bg_on') ;
-		}else{
-			$(o).parents('tr').removeClass('bg_on') ;
-		}
-	}
-	
-	function checkAll(o){
-		if( o.checked == true ){
-			$('input[name="checkbox"]').attr('checked','true');
-			$('tr[overstyle="on"]').addClass("bg_on");
-		}else{
-			$('input[name="checkbox"]').removeAttr('checked');
-			$('tr[overstyle="on"]').removeClass("bg_on");
-		}
-	}
-</script>
-<div style="text-align:center; color:#666666;font-size:12px; padding:50px 0 10px;">
-
 </div>
-</body>
-</html>
+<?php include('home_footer.php'); ?>

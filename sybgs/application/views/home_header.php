@@ -142,19 +142,20 @@
 						<?php }else{?>
 						<?php if($qx1){?>
 						<li><?php echo anchor('home/gradelist/1','<i class="icon-th-list"></i><span class="hidden-tablet"> 科技理念类 </span>')?></li>
+						<li><?php echo anchor('home/scoreofmine/1','<i class="icon-hand-right"></i><span class="hidden-tablet"> 科技理念类统计结果</span>')?></li>
 						<?php }?>
 						<?php if($qx2){?>
 						<li><?php echo anchor('home/gradelist/2','<i class="icon-th-list"></i><span class="hidden-tablet"> 科技实物类</span>')?></li>
+						<li><?php echo anchor('home/scoreofmine/2','<i class="icon-hand-right"></i><span class="hidden-tablet"> 科技实物类统计结果</span>')?></li>
 						<?php }}?>
 						<?php }?>
 						
 						<?php if($uid == 'admin'):?>
 						<li class="nav-header hidden-tablet"><i class="icon-book"></i> 实验报告书管理</li>
 						<li><?php echo anchor('home/workslist','<i class="icon-th-list"></i><span class="hidden-tablet"> 实验报告书列表</span>')?></li>
+						
 						<li class="nav-header hidden-tablet"><i class="icon-align-right"></i> 评分结果统计</li>
 						<li><?php echo anchor('home/scorelist','<i class="icon-hand-right"></i><span class="hidden-tablet"> 评分结果统计</span>')?></li>
-						<li><?php echo anchor('home/scoreofmine/1','<i class="icon-hand-right"></i><span class="hidden-tablet"> 科技理念类统计结果</span>')?></li>
-						<li><?php echo anchor('home/scoreofmine/2','<i class="icon-hand-right"></i><span class="hidden-tablet"> 科技实物类统计结果</span>')?></li>
 						
 						<li class="nav-header hidden-tablet"><i class="icon-cog"></i> 系统设置</li>
 						<li><?php echo anchor('home/cleanWorks','<i class="icon-chevron-right"></i><span class="hidden-tablet"> 清空所有实验报告书</span>')?></li>

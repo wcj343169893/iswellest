@@ -1,17 +1,13 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<base href="<?php echo base_url() ;?>"/>
-<title>实验报告书提交网站</title>
-<link href="resource/home/style2.css" rel="stylesheet" type="text/css">
-<link href="resource/home/box.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="resource/home/js/jquery-1.6.2.min.js"></script>
-</head>
-<body>
-<div class="so_main">
-    <div class="page_tit">清空实验报告书数据</div>
+<?php include('home_header.php'); ?>
+<div>
+	<ul class="breadcrumb">
+		<li>
+			<?php echo anchor('home','Home')?> <span class="divider">/</span>
+		</li>
+		<li>清空实验报告书数据</li>
+	</ul>
+</div>
+<div class="form-horizontal">
 	<div class="form2">	
       <dl class="lineD">
         <dt></dt>
@@ -22,7 +18,7 @@
       </dl>
       <div class="page_btm">
         <input id="works" type="hidden" name="works" value="works" />
-		<input id="zlsub" type="submit" class="btn_b" value="清空数据" onClick="cleanData()" />
+		<input id="zlsub" type="submit" class="btn btn-small btn-danger" value="清空数据" onClick="cleanData()" />
       </div>
     </div>
 </div>
@@ -40,5 +36,4 @@ function cleanData() {
 	});
 }
 </script>
-</body>
-</html>
+<?php include('home_footer.php'); ?>
