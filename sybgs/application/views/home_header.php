@@ -13,7 +13,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>实验报告书提交网站</title>
+	<title>实验报告书提交</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -67,10 +67,10 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="theme/img/logo20.png" /> <span>Charisma</span></a>
+				<a class="brand" href="index.php"> <img alt="Charisma Logo" src="theme/img/logo20.png" /> <span>北京林业大学实验报告书提交网站</span></a>
 				
 				<!-- theme selector starts -->
-				<div class="btn-group pull-right theme-container" >
+				<div class="btn-group pull-right theme-container" style="display: none">
 					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="icon-tint"></i><span class="hidden-phone"> Change Theme / Skin</span>
 						<span class="caret"></span>
@@ -103,7 +103,7 @@
 				</div>
 				<!-- user dropdown ends -->
 				
-				<div class="top-nav nav-collapse">
+				<div class="top-nav nav-collapse" style="display: none;">
 					<ul class="nav">
 						<li><a href="#">Visit Site</a></li>
 						<li>
@@ -164,7 +164,7 @@
 						
 						<li><?php echo anchor('home/logout','<i class="icon-lock"></i><span class="hidden-tablet"> 退出 </span>')?></li>
 					</ul>
-					<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax</label>
+					<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox" checked="checked"> Ajax</label>
 				</div><!--/.well -->
 			</div><!--/span-->
 			<!-- left menu ends -->

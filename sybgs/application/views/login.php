@@ -5,7 +5,7 @@ include('home_header.php'); ?>
 			<div class="row-fluid">
 				<div class="span12 center login-header">
 					<h2>
-<!-- 					<img src="resource/home/images/top_logo.png" alt=""  title=""/> -->
+					<img src="resource/home/images/top_logo.png" alt=""  title=""/>
 					</h2>
 				</div><!--/span-->
 			</div><!--/row-->

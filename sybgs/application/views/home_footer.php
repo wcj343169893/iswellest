@@ -22,8 +22,8 @@
 		</div>
 
 		<footer>
-			<p class="pull-left">&copy; <a href="http://usman.it" target="_blank">Muhammad Usman</a> <?php echo date('Y') ?></p>
-			<p class="pull-right">Powered by: <a href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+			<p class="pull-left">&copy; <a href="#" target="_blank">北京林业大学</a> <?php echo date('Y') ?></p>
+			<p class="pull-right">Powered by: <a href="#">马征</a></p>
 		</footer>
 		<?php } ?>
 
