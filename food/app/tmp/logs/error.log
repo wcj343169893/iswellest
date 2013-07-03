@@ -1,0 +1,143 @@
+2013-06-23 02:54:06 Error: [MissingActionException] Action ShopController::itemupdate.json() could not be found.
+Exception Attributes: array (
+  'controller' => 'ShopController',
+  'action' => 'itemupdate.json',
+)
+Request URL: /shop/itemupdate.json
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#2 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-06-23 03:23:24 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /shop/step1
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Network\CakeSocket.php(273): CakeSocket->connect()
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Http\HttpSocket.php(369): CakeSocket->write('POST /nvp HTTP/...')
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Http\HttpSocket.php(479): HttpSocket->request(Array)
+#3 F:\phpWorkSpace\cooking\food\app\Controller\Component\PaypalComponent.php(114): HttpSocket->post('https://api-3t....', 'METHOD=SetExpre...')
+#4 F:\phpWorkSpace\cooking\food\app\Controller\Component\PaypalComponent.php(66): PaypalComponent->hash_call('SetExpressCheck...', '&PAYMENTREQUEST...')
+#5 F:\phpWorkSpace\cooking\food\app\Controller\Component\PaypalComponent.php(49): PaypalComponent->CallShortcutExpressCheckout('15.30')
+#6 F:\phpWorkSpace\cooking\food\app\Controller\ShopController.php(120): PaypalComponent->step1('15.30')
+#7 [internal function]: ShopController->step1()
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-06-23 03:50:49 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'tax' doesn't have a default value
+Request URL: /shop/review
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('INSERT INTO `fo...', Array)
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(1008): DboSource->execute('INSERT INTO `fo...')
+#3 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(1736): DboSource->create(Object(Order), Array, Array)
+#4 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2239): Model->save(Array, Array)
+#5 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2046): Model->saveAssociated(Array, Array)
+#6 F:\phpWorkSpace\cooking\food\app\Controller\ShopController.php(181): Model->saveAll(Array, Array)
+#7 [internal function]: ShopController->review()
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-06-23 03:51:41 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'shipping' doesn't have a default value
+Request URL: /shop/review
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('INSERT INTO `fo...', Array)
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(1008): DboSource->execute('INSERT INTO `fo...')
+#3 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(1736): DboSource->create(Object(Order), Array, Array)
+#4 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2239): Model->save(Array, Array)
+#5 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2046): Model->saveAssociated(Array, Array)
+#6 F:\phpWorkSpace\cooking\food\app\Controller\ShopController.php(181): Model->saveAll(Array, Array)
+#7 [internal function]: ShopController->review()
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-06-23 03:53:14 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'ip_address' doesn't have a default value
+Request URL: /shop/review
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('INSERT INTO `fo...', Array)
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(1008): DboSource->execute('INSERT INTO `fo...')
+#3 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(1736): DboSource->create(Object(Order), Array, Array)
+#4 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2239): Model->save(Array, Array)
+#5 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2046): Model->saveAssociated(Array, Array)
+#6 F:\phpWorkSpace\cooking\food\app\Controller\ShopController.php(181): Model->saveAll(Array, Array)
+#7 [internal function]: ShopController->review()
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-06-23 03:54:18 Error: [MissingViewException] View file "F:\phpWorkSpace\cooking\food\app\View\Emails\text\order.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'F:\\phpWorkSpace\\cooking\\food\\app\\View\\Emails\\text\\order.ctp',
+)
+Request URL: /shop/review
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\View\View.php(468): View->_getViewFileName('order')
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Email\CakeEmail.php(1565): View->render('order', 'default')
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Email\CakeEmail.php(1432): CakeEmail->_renderTemplates('?')
+#3 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Email\CakeEmail.php(1064): CakeEmail->_render(Array)
+#4 F:\phpWorkSpace\cooking\food\app\Controller\ShopController.php(191): CakeEmail->send()
+#5 [internal function]: ShopController->review()
+#6 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#7 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#9 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-06-23 03:55:47 Error: [SocketException] Could not send email.
+Request URL: /shop/review
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Email\MailTransport.php(47): MailTransport->_mail('buyer_134983529...', 'Shop Order', 'Shop Order:????...', 'From: admin@adm...', NULL)
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Network\Email\CakeEmail.php(1066): MailTransport->send(Object(CakeEmail))
+#2 F:\phpWorkSpace\cooking\food\app\Controller\ShopController.php(191): CakeEmail->send()
+#3 [internal function]: ShopController->review()
+#4 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#5 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#6 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#7 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-06-23 04:06:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.id' in 'order clause'
+Request URL: /admin/orders
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Order`....', Array)
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(670): DboSource->execute('SELECT `Order`....', Array, Array)
+#3 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(1081): DboSource->fetchAll('SELECT `Order`....', false)
+#4 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2688): DboSource->read(Object(Order), Array)
+#5 F:\phpWorkSpace\cooking\food\app\Plugin\Admin\Controller\OrdersController.php(33): Model->find('all', Array)
+#6 [internal function]: OrdersController->index()
+#7 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(OrdersController), Object(CakeRequest), Object(CakeResponse))
+#10 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-06-23 06:21:33 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /images/small/salmon.jpg
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-03 13:07:36 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Order.id' in 'order clause'
+Request URL: /admin/products
+Stack Trace:
+#0 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Product...', Array)
+#2 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(670): DboSource->execute('SELECT `Product...', Array, Array)
+#3 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Datasource\DboSource.php(1081): DboSource->fetchAll('SELECT `Product...', false)
+#4 F:\phpWorkSpace\cooking\food\lib\Cake\Model\Model.php(2688): DboSource->read(Object(Product), Array)
+#5 F:\phpWorkSpace\cooking\food\app\Plugin\Admin\Controller\ProductsController.php(36): Model->find('all', Array)
+#6 [internal function]: ProductsController->index()
+#7 F:\phpWorkSpace\cooking\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#8 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#10 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
