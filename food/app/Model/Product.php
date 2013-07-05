@@ -20,15 +20,15 @@ class Product extends AppModel {
             'order' => ''
         )
     );
-    public $actsAs = array(
-        'Upload.Upload' => array(
-            'photo' => array(
-                'fields' => array(
-                    'dir' => 'photo_dir'
-                )
-            )
-        )
-    );
+//     public $actsAs = array(
+//         'Upload.Upload' => array(
+//             'photo' => array(
+//                 'fields' => array(
+//                     'dir' => 'photo_dir'
+//                 )
+//             )
+//         )
+//     );
 
     public $validate = array(
 		'name' => array(

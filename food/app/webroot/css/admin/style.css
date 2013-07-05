@@ -223,8 +223,9 @@ table{
 	width:98%;
 }
 td, th{
-	padding: 2px;
-} 
+	padding: 5px;
+}
+td.t_center{text-align: center;}
 thead{
 
 }

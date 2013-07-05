@@ -55,6 +55,20 @@ class ProductsController extends AdminAppController {
 		$this->edit ( $id );
 	}
 	/**
+	 * 删除产品，可以是多个，但是必须逗号隔开
+	 */
+	public function delete($id = "") {
+		if (is_numeric ( $id )) {
+			$this->Product->delete ( intval ( $id ) );
+		} else {
+			foreach ( explode ( ",", $id ) as $v ) {
+				$this->Product->delete ( intval ( $v ) );
+			}
+		}
+		$this->Session->setFlash ( __ ( 'Delete Product Success.' ) );
+		$this->redirect ( "/admin/products/" );
+	}
+	/**
 	 * 新增
 	 */
 	public function add() {
@@ -74,8 +88,8 @@ class ProductsController extends AdminAppController {
 			) );
 			if (! empty ( $data )) {
 				$this->initCategory ();
-				//处理图片地址
-				$product=$this->makeProductIcon($data,false);
+				// 处理图片地址
+				$product = $this->makeProductIcon ( $data, false );
 				$this->set ( "data", $product );
 			} else {
 				$this->redirect ( "/admin/products/add" );
