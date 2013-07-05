@@ -20,13 +20,13 @@
         <input name="active" type="radio" value="1" tabindex="4" checked/>Active
         <input name="active" type="radio" value="0" tabindex="4" />DisActive
         <br />
-        <label for="photo">photo : </label> 
-        <input name="photo" id="photo" type="hidden"  tabindex="5"/>
-        <img alt="" src="" id="icon_img" class="hidden" width="200px">
-        <div class="clear"></div>
-        <input id="icon_file" type="button" tabindex="5" value="Upload"/>
-        <div class="clear"></div>
-        <br />
+        <div class="photos">
+	        <input name="photo" id="photo" type="hidden"  tabindex="5"/>
+	        <img alt="" src="" id="icon_img" class="hidden" width="100px">
+	        <div class="clear"></div>
+	        <input id="icon_file" type="button" tabindex="5" value="Upload"/>
+	        <div class="clear"></div>
+        </div>
       </fieldset>
       <fieldset id="address">
         <legend>Introduction</legend>

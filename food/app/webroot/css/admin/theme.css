@@ -80,7 +80,6 @@ form#form input {
 }
 form#form textarea {
 	border:1px solid #e8e7e1;
-	background:#fff url(../../img/form_red.gif) repeat-x bottom left;
 }
 form#form option {
 	background:#FFF;

@@ -20,10 +20,9 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-App::uses('Controller', 'Controller');
-App::uses('Folder', 'Utility');
-App::uses('File', 'Utility');
-
+App::uses ( 'Controller', 'Controller' );
+App::uses ( 'Folder', 'Utility' );
+App::uses ( 'File', 'Utility' );
 
 /**
  * Application Controller
@@ -31,24 +30,56 @@ App::uses('File', 'Utility');
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package app.Controller
+ * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-    var $components = array('DebugKit.Toolbar','Session','RequestHandler','Cookie','Email','FileUtil',
-        'Auth'=>array(
-            'loginRedirect'=>array('controller'=>'pages','action'=>'index'),
-            'logoutRedirect'=>array('controller'=>'pages','action'=>'index'),
-            'authError'=>"You cant access that page",
-            'authorize'=>array('controller')
-        ));
-    public function isAuthorized($user){
-        return true;
-    }
-    public function beforeFilter(){
-        $this->Auth->allow('index','view','display');
-        $this->set('logged_in',$this->Auth->loggedIn());
-        $this->set('current_user',$this->Auth->user());
-    }
-
+	var $components = array (
+			'DebugKit.Toolbar',
+			'Session',
+			'RequestHandler',
+			'Cookie',
+			'Email',
+			'FileUtil',
+			'Auth' => array (
+					'loginRedirect' => array (
+							'controller' => 'pages',
+							'action' => 'index' 
+					),
+					'logoutRedirect' => array (
+							'controller' => 'pages',
+							'action' => 'index' 
+					),
+					'authError' => "You cant access that page",
+					'authorize' => array (
+							'controller' 
+					) 
+			) 
+	);
+	public function isAuthorized($user) {
+		return true;
+	}
+	public function beforeFilter() {
+		$this->Auth->allow ( 'index', 'view', 'display' );
+		$this->set ( 'logged_in', $this->Auth->loggedIn () );
+		$this->set ( 'current_user', $this->Auth->user () );
+	}
+	/**
+	 * 处理icon，同时转换数组
+	 */
+	public function makeProductIcon($data = array(), $isList = true) {
+		$output = array ();
+		if ($isList) {
+			foreach ( $data as $k => $v ) {
+				$v ["Product"] ["icon"] = "/images/small/" . $v ["Product"] ["photo"];
+				$v ["Product"] ["large"] = "/images/large/" . $v ["Product"] ["photo"];
+				$output [] = $v ["Product"];
+			}
+		} else {
+			$data ["Product"] ["icon"] = "/images/small/" . $data ["Product"] ["photo"];
+			$data ["Product"] ["large"] = "/images/large/" . $data ["Product"] ["photo"];
+			$output = $data ["Product"];
+		}
+		return $output;
+	}
 }

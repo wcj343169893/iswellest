@@ -19,15 +19,15 @@
         <br />
         <label for="active">Active : </label>
         <input name="active" type="radio" value="1" tabindex="4" <?php echo $data["active"]?"checked":"" ?>/>Active
-        <input name="active" type="radio" value="0" tabindex="4" <?php echo $data["active"]?"checked":"" ?>/>DisActive
+        <input name="active" type="radio" value="0" tabindex="4" <?php echo !$data["active"]?"checked":"" ?>/>DisActive
         <br />
-        <label for="photo">photo : </label> 
-        <input name="photo" id="photo" type="hidden"  tabindex="5" value="<?php echo $data["photo"]?>"/>
-        <img alt="" src="/<?php echo $data["photo"]?>" id="icon_img" class="<?php echo empty($data["photo"])?"hidden":""?>" width="200px">
-        <div class="clear"></div>
-        <input id="icon_file" type="button" tabindex="5" value="Upload"/>
-        <div class="clear"></div>
-        <br />
+        <div class="photos">
+	        <input name="photo" id="photo" type="hidden"  tabindex="5" value="<?php echo $data["photo"]?>"/>
+	        <img alt="" src="<?php echo $data["icon"]?>" id="icon_img" class="<?php echo empty($data["photo"])?"hidden":""?>" width="100px">
+	        <div class="clear"></div>
+	        <input id="icon_file" type="button" tabindex="5" value="Upload"/>
+	        <div class="clear"></div>
+        </div>
       </fieldset>
       <fieldset id="address">
         <legend>Other Information</legend>

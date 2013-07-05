@@ -74,7 +74,9 @@ class ProductsController extends AdminAppController {
 			) );
 			if (! empty ( $data )) {
 				$this->initCategory ();
-				$this->set ( "data", $data ["Product"] );
+				//处理图片地址
+				$product=$this->makeProductIcon($data,false);
+				$this->set ( "data", $product );
 			} else {
 				$this->redirect ( "/admin/products/add" );
 			}

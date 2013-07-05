@@ -139,12 +139,13 @@ class FileUtilComponent extends Component {
 	private function __beforeUpload() {
 		$times = time ();
 		list ( $floder1, $floder2 ) = explode ( "-", date ( "Ym-d", $times ) );
-		$this->uploadFloder = $this->uploadDir . DS . "original" . DS . $floder1 . DS . $floder2;
+		$fileFloder=DS . $floder1 . DS . $floder2;
+		$this->uploadFloder = $this->uploadDir . DS . "original" .$fileFloder;
 		$this->uploadFullFloder = WWW_ROOT . DS . $this->uploadFloder;
 		$this->fileName = $times . "_" . rand ( 1000, 9999 ) . "_" . rand ( 1000, 9999 ) . $this->ext;
-		$this->filePath = $this->uploadFloder . DS . $this->fileName;
-		$this->smallPath=$this->uploadDir . DS . "small" . DS . $floder1 . DS . $floder2;
-		$this->largePath=$this->uploadDir . DS . "large" . DS . $floder1 . DS . $floder2 ;
+		$this->filePath = $fileFloder . DS . $this->fileName;
+		$this->smallPath=$this->uploadDir . DS . "small" . $fileFloder;
+		$this->largePath=$this->uploadDir . DS . "large" . $fileFloder ;
 		$this->fileFullPath = $this->uploadFullFloder . DS . $this->fileName;
 	}
 	/**
