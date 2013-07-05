@@ -381,3 +381,5 @@ form#form #button1:hover, form#form #button2:hover {
 .itemdetail{position: relative;}
 .orderitems{position: absolute;background: #fff;display: none;left: 0;top: 0;z-index: 20;}
 .itemdetail:HOVER .orderitems{display: inline;}
+.clear{clear: both;}
+.hidden{display: none;}

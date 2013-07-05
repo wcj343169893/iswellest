@@ -10,10 +10,12 @@
     </title>
     <?php
     echo $this->Html->meta('icon');
-    echo $this->Html->css('admin/theme') ;
-    echo $this->Html->css('admin/style') ;
+    echo $this->Html->css('admin/theme');
+    echo $this->Html->css('admin/style');
+    echo $this->Html->css('uploadify');
     echo $this->Html->script('jquery-1.7.1.min');
     echo $this->Html->script('admin/common');
+    echo $this->Html->script('jquery.uploadify.min');
     echo $this->fetch('meta');
     echo $this->fetch('css');
     echo $this->fetch('script');

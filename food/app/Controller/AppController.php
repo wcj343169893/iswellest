@@ -35,7 +35,7 @@ App::uses('File', 'Utility');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-    var $components = array('DebugKit.Toolbar','Session','RequestHandler','Cookie','Email',
+    var $components = array('DebugKit.Toolbar','Session','RequestHandler','Cookie','Email','FileUtil',
         'Auth'=>array(
             'loginRedirect'=>array('controller'=>'pages','action'=>'index'),
             'logoutRedirect'=>array('controller'=>'pages','action'=>'index'),
