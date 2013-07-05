@@ -50,7 +50,7 @@ switch ($controller) {
 ?>
 <div id="container">
     	<div id="header">
-        	<h2>My eCommerce Admin area</h2>
+        	<h2>Blu Water</h2>
     <div id="topmenu">
             	<ul>
                 	<li<?php echo $select==1?" class='current'":"" ?>><a href="/admin">Dashboard</a></li>

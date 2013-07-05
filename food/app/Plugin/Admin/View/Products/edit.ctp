@@ -23,7 +23,7 @@
         <br />
         <label for="photo">photo : </label> 
         <input name="photo" id="photo" type="hidden"  tabindex="5" value="<?php echo $data["photo"]?>"/>
-        <img alt="" src="<?php echo $data["photo"]?>" id="icon_img" class="<?php echo empty($data["photo"])?"hidden":""?>" width="200px">
+        <img alt="" src="/<?php echo $data["photo"]?>" id="icon_img" class="<?php echo empty($data["photo"])?"hidden":""?>" width="200px">
         <div class="clear"></div>
         <input id="icon_file" type="button" tabindex="5" value="Upload"/>
         <div class="clear"></div>
