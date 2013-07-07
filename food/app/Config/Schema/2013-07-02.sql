@@ -217,7 +217,12 @@ CREATE TABLE `contacts` (
    `created` datetime default NULL,
    `modified` datetime default NULL,
    PRIMARY KEY  (`id`)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+alter table `food`.`orders` 
+   add column `user_id` int(11) DEFAULT '0' NULL COMMENT '用户编号' after `email`;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

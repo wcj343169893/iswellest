@@ -16,9 +16,9 @@ class AdminAppController extends AppController {
 			"orders" => array (),
 			"products" => array (
 					array (
-							"title" =>"Add Product",
+							"title" => "Add Product",
 							"className" => "",
-							"url" => "/admin/products/add"
+							"url" => "/admin/products/add" 
 					) 
 			),
 			"users" => array (
@@ -41,6 +41,12 @@ class AdminAppController extends AppController {
 			"manage" => array () 
 	);
 	public function beforeFilter() {
+		parent::beforeFilter();
+		$rusername = $this->Auth->user ( "username" );
+		if ($rusername != "admin") {
+			$this->redirect ( "/" );
+			return;
+		}
 		$this->set ( "subMenu", $this->subMenu );
 	}
 }
