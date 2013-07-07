@@ -1,24 +1,13 @@
-<div id="sidebar">
-    <div class="box_p">
-        <h2><?php echo __('Actions'); ?></h2>
-        <ul>
-            <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
-            <?php if($current_user['role'] == 'admin'): ?>
-            <li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-            <?php endif ?>
-        </ul>
-    </div>
-</div>
+<?php echo $this->element("user_menu")?>
 <div id="product-detail" class="box_p">
 <?php echo $this->Form->create('User'); ?>
-    <h2><legend><?php echo __('Edit User'); ?></legend></h2>
+    <h2><?php echo __('Edit User'); ?></h2>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
-		echo $this->Form->input('birth_date');
-		echo $this->Form->input('gender');
-		echo $this->Form->input('join_date');
+		 echo $this->Form->input('birth_date',array('label' => 'Birthday','dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') - 18,"class"=>"birthdays"));
+        echo $this->Form->input('gender',array("type"=>"radio","options"=>array("M"=>"male","F"=>"female"),"value"=>"M"));
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
 		echo $this->Form->input('username');

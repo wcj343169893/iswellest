@@ -53,7 +53,7 @@
     <div id="templatemo_content">
         <div class="login_d">
             <?php if ($logged_in):    ?>
-                <h6>Welcome  &nbsp <?php echo $this->Html->link(__($current_user['username']), array('controller'=>'users','action'=>'view',$current_user['id'])); ?> &nbsp <?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout')); ?></h6>
+                <h6>Welcome  &nbsp <?php echo $this->Html->link(__($current_user['username']), array('controller'=>'users','action'=>null)); ?> &nbsp <?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout')); ?></h6>
             <?php else:  ?>
                 <?php echo $this->Html->link('Login', array('controller'=>'users','action'=>'login')); ?>
                 <?php echo $this->html->link('Register', '/users/add')."<br>"; ?>

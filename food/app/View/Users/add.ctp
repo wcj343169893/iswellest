@@ -5,8 +5,8 @@
         <?php
         echo $this->Form->input('first_name');
         echo $this->Form->input('last_name');
-        echo $this->Form->input('birth_date');
-        echo $this->Form->input('gender');
+        echo $this->Form->input('birth_date',array('label' => 'Birthday','dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') - 18,"class"=>"birthdays"));
+        echo $this->Form->input('gender',array("type"=>"radio","options"=>array("M"=>"male","F"=>"female"),"value"=>"M"));
         echo $this->Form->input('address');
         echo $this->Form->input('phone');
         echo $this->Form->input('username');
@@ -15,5 +15,6 @@
         echo $this->Form->input('email');
         ?>
 
-        <p class="submit"><?php echo $this->Form->end(__('Submit')); ?></p></br></br>
+        <p class="submit"><?php echo $this->Form->end(__('Submit')); ?></p>
     </div>
+</section>
