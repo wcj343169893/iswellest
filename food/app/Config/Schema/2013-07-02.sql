@@ -209,6 +209,7 @@ insert  into `users`(`id`,`first_name`,`last_name`,`birth_date`,`gender`,`join_d
 CREATE TABLE `contacts` (
    `id` char(36) collate utf8_unicode_ci NOT NULL default '',
    `sessionid` varchar(255) collate utf8_unicode_ci default NULL,
+   `product_id` int(11) default '0' COMMENT '产品编号',
    `name` varchar(255) collate utf8_unicode_ci default NULL,
    `email` varchar(100) collate utf8_unicode_ci default NULL,
    `subject` varchar(200) collate utf8_unicode_ci default NULL,
