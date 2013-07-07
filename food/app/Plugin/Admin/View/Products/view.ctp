@@ -19,6 +19,10 @@
         <label for="active">Active : </label>
         <span><?php echo $data["active"]?"Active":"DisActive" ?></span>
        </div>
+        <div>
+        <label for="price">Slug : </label>
+        <span><?php echo $data["slug"]?></span>
+        </div>
          <div>
         <img alt="" src="<?php echo $data["icon"]?>" id="icon_img" class="view_icon_img <?php echo empty($data["photo"])?"hidden":""?>" width="200px">
         <div class="clear"></div>

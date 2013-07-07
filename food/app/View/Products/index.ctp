@@ -1,22 +1,26 @@
 <?php echo $this->Html->script(array('addtocart.js'), array('inline' => false)); ?>
-<div id="sidebar">
     <!-- Search -->
-    <div class="box search">
+    <div class="box search" style="display: none;">
         <h2>Search by</h2>
         <div class="box-content">
-            <?php  echo $this->Filter->filterForm('Keyword', array('class' => 'field'));?>
+            <div class="field">
+			<form action="/products/" id="KeywordFilter" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>						
+			<input type="hidden" name="data[Filter][filterFormId]" value="Keyword" id="FilterFilterFormId"/>
+			<div class="input text"><label for="ProductName||Description">Keyword</label><input name="data[Product][name || description]" type="text" id="ProductName||Description"/></div>
+			<div class="submit"><input  class="btn btn-primary" type="submit" value="Submit"/></div></form>
+			</div>
         </div>
     </div>
     <!-- End Search -->
-	<div class="clear"></div>
+<div id="sidebar">
     <!-- Categories -->
     <div class="box categories">
         <h2>Categories</h2>
         <div class="box-content">
-            <?php if($current_user['role'] == 'admin'): ?>
-            <?php echo $this->Html->link('View Categories', '/categories', array('class' => 'button', 'target' => '_blank'));?>
-            <?php endif; ?>
-
+			<ul><?php foreach ($categories as $k=>$v){?>
+				<li><a href="/products/?cid=<?php echo $k?>"><?php echo $v?></a></li>
+				<?php }?>
+			</ul>
         </div>
     </div>
     <!-- End Categories -->
@@ -35,7 +39,11 @@
     <?php foreach ($products as $product): ?>
     <tr>
     	<td>
+    	<?php if(empty($product['Product']['photo'])){?>
+    	<img src="/images/small/no-photo.jpg" width="130px" height="130px"/>
+    	<?php }else{?>
     		<?php echo $this->Html->image($product['Product']['photo'], array('alt' => $product['Product']['name'],'pathPrefix' => '/images/small/','height' => 130, 'width' => 130));?>
+    		<?php }?>
     	</td>
         <td>
           <div class="product_text">

@@ -20,6 +20,9 @@
         <input name="active" type="radio" value="1" tabindex="4" checked/>Active
         <input name="active" type="radio" value="0" tabindex="4" />DisActive
         <br />
+        <label for="slug">Slug : </label>
+        <input name="slug" id="slug" type="text"  tabindex="3"/>
+        <br />
         <div class="photos">
 	        <input name="photo" id="photo" type="hidden"  tabindex="5"/>
 	        <img alt="" src="" id="icon_img" class="hidden" width="100px">

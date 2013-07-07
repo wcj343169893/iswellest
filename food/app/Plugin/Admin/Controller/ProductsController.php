@@ -104,6 +104,11 @@ class ProductsController extends AdminAppController {
 	public function save() {
 		if ($this->request->is ( "post" )) {
 			$product = $this->request->data;
+			// 处理slug
+			if (empty ( $product ["slug"] )) {
+				$slug_t = strtolower ( $product ["name"] );
+				 $product ["slug"]=str_replace(" ", "_", $slug_t);
+			}
 			if ($this->Product->save ( $product )) {
 				$this->redirect ( "/admin/products/edit/" . $this->Product->id );
 				return;

@@ -28,11 +28,11 @@
             
             <h4> Contact Form</h4>
             
-          <form method="post" name="contact" action="#">
+          <form method="post" name="contact" action="/pages/contact">
                 
 					<div class="col_w300">
 					
-						<label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
+						<label for="author">Name:</label> <input type="text" id="author" name="name" class="required input_field" />
 						<div class="cleaner_h10"></div>
 								
 						<label for="email">Email:</label> <input type="text" id="email" name="email" class="validate-email required input_field" />
@@ -45,7 +45,7 @@
 					
 					<div class="col_w300 col_last">
 					
-						<label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
+						<label for="text">Message:</label> <textarea id="text" name="message" rows="0" cols="0" class="required"></textarea>
 						<div class="cleaner_h10"></div>
 								
 						<input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" />

@@ -139,14 +139,14 @@ class FileUtilComponent extends Component {
 	private function __beforeUpload() {
 		$times = time ();
 		list ( $floder1, $floder2 ) = explode ( "-", date ( "Ym-d", $times ) );
-		$fileFloder=DS . $floder1 . DS . $floder2;
-		$this->uploadFloder = $this->uploadDir . DS . "original" .$fileFloder;
-		$this->uploadFullFloder = WWW_ROOT . DS . $this->uploadFloder;
+		$fileFloder= $floder1 . "/" . $floder2;
+		$this->uploadFloder = $this->uploadDir . "/" . "original" ."/" .$fileFloder;
+		$this->uploadFullFloder = WWW_ROOT . "/" . $this->uploadFloder;
 		$this->fileName = $times . "_" . rand ( 1000, 9999 ) . "_" . rand ( 1000, 9999 ) . $this->ext;
-		$this->filePath = $fileFloder . DS . $this->fileName;
-		$this->smallPath=$this->uploadDir . DS . "small" . $fileFloder;
-		$this->largePath=$this->uploadDir . DS . "large" . $fileFloder ;
-		$this->fileFullPath = $this->uploadFullFloder . DS . $this->fileName;
+		$this->filePath = $fileFloder . "/" . $this->fileName;
+		$this->smallPath=$this->uploadDir . "/" . "small" ."/" . $fileFloder;
+		$this->largePath=$this->uploadDir . "/" . "large" . "/" .$fileFloder ;
+		$this->fileFullPath = $this->uploadFullFloder . "/" . $this->fileName;
 	}
 	/**
 	 * 上传处理
@@ -245,7 +245,7 @@ class FileUtilComponent extends Component {
 	 * my_image_resize ( "img.jpg", "02.jpg", 45, 45 );
 	 */
 	function image_resize($src_file, $new_file_path,$file_name, $new_width, $new_height) {
-		$dst_file=$new_file_path.DS.$file_name;
+		$dst_file=$new_file_path."/".$file_name;
 		if ($new_width < 1 || $new_height < 1) {
 			echo "params width or height error !";
 			exit ();
