@@ -22,15 +22,15 @@
 <div id="templatemo_wrapper">
     <div id="templatemo_header">
         <div id="site_title">
-            <h1><a href="home"><strong>Blu-Waters</strong><span>High Quality Seafood</span></a></h1>
+            <h1><a href="/"><strong>Blu-Waters</strong><span>High Quality Seafood</span></a></h1>
         </div> <!-- end of site_title -->
         <div id="templatemo_menu">
             <ul>
                 <?php
-                echo "<li class='important'>".$this->html->link('Home', '../pages/home')."</li>";
+                echo "<li class='important'>".$this->html->link('Home', '/')."</li>";
                 echo "<li>".$this->html->link('About Us', '../pages/about')."</li>";
                 echo "<li>".$this->html->link('Product', '../products/')."</li>";
-                echo "<li>".$this->html->link('Cooking Class', '../pages/cooking')."</li>";
+                echo "<li>".$this->html->link('Cooking Class', '/cooking')."</li>";
                 echo "<li>".$this->html->link('Contact Us', '../pages/contact')."</li>";
               /*  echo $form->create("Post",array('action' => 'search'));
                     echo $form->input("q", array('label' => 'Search for'));

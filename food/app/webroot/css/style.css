@@ -1207,3 +1207,5 @@ p.error em {
 }
 .birthdays{display: inline-block;width: auto;}
 .radio label {display: inline-block;float: left;margin-right: 10px;padding-left: 6px;}
+.cooking{list-style: none;}
+.cooking .cooking_i{list-style: none;float: left;width: 400px;min-height: 150px;text-align: center;}
