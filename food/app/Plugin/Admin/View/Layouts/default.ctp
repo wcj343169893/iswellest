@@ -43,6 +43,9 @@ switch ($controller) {
 	case "products":
 	$select=8;
 	break;
+	case "cookingclass":
+	$select=9;
+	break;
 	default:
 		$select=1;
 	break;
@@ -56,6 +59,7 @@ switch ($controller) {
                 	<li<?php echo $select==1?" class='current'":"" ?>><a href="/admin">Dashboard</a></li>
                     <li<?php echo $select==2?" class='current'":"" ?>><a href="/admin/orders">Orders</a></li>
                     <li<?php echo $select==8?" class='current'":"" ?>><a href="/admin/products">Products</a></li>
+                    <li<?php echo $select==9?" class='current'":"" ?>><a href="/admin/cookingclass">CookingClass</a></li>
                 	<li<?php echo $select==3?" class='current'":"" ?>><a href="/admin/users">Users</a></li>
                     <li<?php echo $select==4?" class='current'":"" ?>><a href="#">Manage</a></li>
                     <li<?php echo $select==5?" class='current'":"" ?>><a href="#">CMS</a></li>
