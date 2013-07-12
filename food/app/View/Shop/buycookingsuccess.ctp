@@ -1,0 +1,1 @@
+Successful purchase,<a href="/users/cookingclass">view details</a> 

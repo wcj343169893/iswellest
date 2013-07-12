@@ -9,11 +9,15 @@ class ShopController extends AppController {
 			'Paypal' 
 	);
 	
-	public $uses = 'Product';
+	public $uses = array (
+			'Product',
+			'Cooking',
+			'CookingOrder' 
+	);
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'itemupdate', "cart", "clear","address","update","step1" ,"step2","review","success");
+		$this->Auth->allow ( 'itemupdate', "cart", "clear", "address", "update", "step1", "step2", "review", "success" );
 		$this->disableCache ();
 		// $this->Security->validatePost = false;
 	}
@@ -37,14 +41,14 @@ class ShopController extends AppController {
 	}
 	
 	public function itemupdate() {
-		header('Content-type: application/json');
+		header ( 'Content-type: application/json' );
 		if ($this->request->is ( 'ajax' )) {
 			$this->Cart->add ( $this->request->data ['id'], $this->request->data ['quantity'] );
 		}
 		$cart = $this->Session->read ( 'Shop' );
 		echo json_encode ( $cart );
 		$this->autoRender = false;
-		exit();
+		exit ();
 	}
 	
 	public function update() {
@@ -94,13 +98,13 @@ class ShopController extends AppController {
 		
 		if ($this->request->is ( 'post' )) {
 			$this->loadModel ( 'Order' );
-			$orders= $this->request->data;
-			$orders ['Order'] ['billing_address'] = $orders["Order"] ['shipping_address'];
-			$orders ['Order'] ['billing_address2'] = $orders["Order"] ['shipping_address2'];
-			$orders ['Order'] ['billing_city'] = $orders["Order"] ['shipping_city'];
-			$orders ['Order'] ['billing_zip'] =$orders["Order"] ['shipping_zip'];
-			$orders ['Order'] ['billing_state'] = $orders["Order"] ['shipping_state'];
-			$orders ['Order'] ['billing_country'] = $orders["Order"] ['shipping_country'];
+			$orders = $this->request->data;
+			$orders ['Order'] ['billing_address'] = $orders ["Order"] ['shipping_address'];
+			$orders ['Order'] ['billing_address2'] = $orders ["Order"] ['shipping_address2'];
+			$orders ['Order'] ['billing_city'] = $orders ["Order"] ['shipping_city'];
+			$orders ['Order'] ['billing_zip'] = $orders ["Order"] ['shipping_zip'];
+			$orders ['Order'] ['billing_state'] = $orders ["Order"] ['shipping_state'];
+			$orders ['Order'] ['billing_country'] = $orders ["Order"] ['shipping_country'];
 			$this->Order->set ( $orders );
 			if ($this->Order->validates ()) {
 				$order = $orders ['Order'];
@@ -170,7 +174,7 @@ class ShopController extends AppController {
 			if ($this->Order->validates ()) {
 				$order = $shop;
 				$order ['Order'] ['status'] = 1;
-				$order ['Order'] ['ip_address'] =$this->request->clientIp(false);
+				$order ['Order'] ['ip_address'] = $this->request->clientIp ( false );
 				
 				if ($shop ['Order'] ['order_type'] == 'paypal') {
 					$paypal = $this->Paypal->ConfirmPayment ( $order ['Order'] ['total'] );
@@ -181,7 +185,7 @@ class ShopController extends AppController {
 					}
 					$order ['Order'] ['authorization'] = $paypal ['ACK'];
 					// $order['Order']['transaction'] =
-				// $paypal['PAYMENTINFO_0_TRANSACTIONID'];
+					// $paypal['PAYMENTINFO_0_TRANSACTIONID'];
 				}
 				
 				$save = $this->Order->saveAll ( $order, array (
@@ -191,11 +195,14 @@ class ShopController extends AppController {
 					
 					$this->set ( compact ( 'shop' ) );
 					
-					/* App::uses ( 'CakeEmail', 'Network/Email' );
-					$email = new CakeEmail ();
-					$email->from ( Configure::read ( 'ADMIN_EMAIL' ) )->cc ( Configure::read ( 'ADMIN_EMAIL' ) )->to ( $shop ['Order'] ['email'] )->subject ( 'Shop Order' )->template ( 'order' )->emailFormat ( 'text' )->viewVars ( array (
-							'shop' => $shop 
-					) )->send (); */
+					/*
+					 * App::uses ( 'CakeEmail', 'Network/Email' ); $email = new
+					 * CakeEmail (); $email->from ( Configure::read (
+					 * 'ADMIN_EMAIL' ) )->cc ( Configure::read ( 'ADMIN_EMAIL' )
+					 * )->to ( $shop ['Order'] ['email'] )->subject ( 'Shop
+					 * Order' )->template ( 'order' )->emailFormat ( 'text'
+					 * )->viewVars ( array ( 'shop' => $shop ) )->send ();
+					 */
 					$this->redirect ( array (
 							'action' => 'success' 
 					) );
@@ -242,5 +249,120 @@ class ShopController extends AppController {
 		}
 		$this->set ( compact ( 'shop' ) );
 	}
-
+	/**
+	 * 购买课程(需要用户登录)
+	 */
+	public function buyclass() {
+		$id = $this->request->data ["Cooking"] ["id"];
+		if (empty ( $id )) {
+			return;
+		}
+		$data = $this->Cooking->find ( "first", array (
+				"conditions" => array (
+						"Cooking.id" => $id 
+				) 
+		) );
+		if (empty ( $data )) {
+			return;
+		}
+		$class = $data ["Cooking"];
+		// 如果是改签课程，计算价格,如果相等或者大于，直接改签成功，否则补差价
+		if (! empty ( $this->request->data ["Cooking"] ["change"] )) {
+			// 查询以前的课程
+			$old_id = $this->Session->read ( "CookingClass.meal" );
+			$old_data = $this->Cooking->find ( "first", array (
+					"conditions" => array (
+							"Cooking.id" => $old_id 
+					) 
+			) );
+			if ($old_data ["Cooking"] ["price"] >= $data ["Cooking"] ["price"]) {
+				// 直接成功
+				$old_order_id = $this->Session->read ( "CookingClass.meal.oid" );
+				if ($this->saveCookingOrder ( $class ["id"], $old_order_id )) {
+					$this->Session->setFlash ( __ ( 'Meal Cooking Class Success' ) );
+					$this->redirect ( array (
+							'controller' => 'users',
+							'action' => 'cookingclass' 
+					) );
+					return;
+				}
+			} else {
+				// 修改价格
+				$class ["price"] = $data ["Cooking"] ["price"] - $old_data ["Cooking"] ["price"];
+			}
+		}
+		$this->Session->delete ( "CookingClass.meal" );
+		$this->Session->write ( 'Shop.CookingClass.Order', $class );
+		$this->Paypal->cstep1 ( $class );
+	}
+	/**
+	 * 购买课程，回调确认订单(直接确认)
+	 */
+	public function cstep2() {
+		$token = $this->request->query ['token'];
+		$paypal = $this->Paypal->GetShippingDetails ( $token );
+		
+		$ack = strtoupper ( $paypal ["ACK"] );
+		if ($ack == "SUCCESS" || $ack == "SUCESSWITHWARNING") {
+			$this->Session->write ( 'Shop.Paypal.Details', $paypal );
+			$this->redirect ( array (
+					'action' => 'commitCookingClass' 
+			) );
+		} else {
+			$ErrorCode = urldecode ( $paypal ["L_ERRORCODE0"] );
+			$ErrorShortMsg = urldecode ( $paypal ["L_SHORTMESSAGE0"] );
+			$ErrorLongMsg = urldecode ( $paypal ["L_LONGMESSAGE0"] );
+			$ErrorSeverityCode = urldecode ( $paypal ["L_SEVERITYCODE0"] );
+			echo "GetExpressCheckoutDetails API call failed. ";
+			echo "Detailed Error Message: " . $ErrorLongMsg;
+			echo "Short Error Message: " . $ErrorShortMsg;
+			echo "Error Code: " . $ErrorCode;
+			echo "Error Severity Code: " . $ErrorSeverityCode;
+			die ();
+		}
+	}
+	/**
+	 * 保存课程订单/更新订单
+	 */
+	private function saveCookingOrder($cookingId, $oldId = 0) {
+		$user_id = $this->Auth->user ( "id" );
+		$corder = array (
+				"cooking_id" => $cookingId,
+				"user_id" => $user_id 
+		);
+		$result = $this->CookingOrder->save ( $corder );
+		if (! empty ( $oldId )) {
+			// 删除旧订单，并删除session值
+			$this->CookingOrder->id = $oldId;
+			$this->CookingOrder->delete ( $oldId );
+			// $sql="UPDATA ".$this->CookingOrder->useTable." set delete=1 where
+			// cooking_id={$oldId} and user_id=".$user_id;
+			// $this->CookingOrder->query($sql);
+			$this->Session->delete ( "CookingClass.meal" );
+		}
+		return $result;
+	}
+	/**
+	 * 确认购买课程
+	 */
+	public function commitCookingClass() {
+		$class = $this->Session->read ( 'Shop.CookingClass.Order' );
+		$paypal = $this->Paypal->ConfirmPayment ( $class ['price'] );
+		$ack = strtoupper ( $paypal ['ACK'] );
+		if ($ack == 'SUCCESS' || $ack == 'SUCCESSWITHWARNING') {
+			// 保存课程订单
+			if ($this->saveCookingOrder ( $class ["id"] )) {
+				$this->redirect ( array (
+						'action' => 'buycookingsuccess' 
+				) );
+			}
+		}
+	}
+	/**
+	 * 购买课程成功
+	 */
+	public function buycookingsuccess() {
+		// 移除cookie里面的只值
+		$this->Session->delete ( 'Shop.CookingClass.Order' );
+	}
 }

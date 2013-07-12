@@ -31,6 +31,7 @@ h6 { font-size: 13px; margin: 0 0 5px 0; padding: 0; color: #07a3e2; }
 .cleaner_h50 { clear: both; width:100%; height: 50px; }
 .cleaner_h60 { clear: both; width:100%; height: 60px; }
 
+
 .float_l { float: left; }
 .float_r { float: right; }
 
@@ -1209,3 +1210,5 @@ p.error em {
 .radio label {display: inline-block;float: left;margin-right: 10px;padding-left: 6px;}
 .cooking{list-style: none;}
 .cooking .cooking_i{list-style: none;float: left;width: 400px;min-height: 150px;text-align: center;}
+
+.t_a_l{text-align: left;}

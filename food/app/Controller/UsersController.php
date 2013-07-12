@@ -6,6 +6,10 @@ App::uses ( 'AppController', 'Controller' );
  * @property User $User
  */
 class UsersController extends AppController {
+	var $uses = array (
+			"User",
+			"CookingOrder" 
+	);
 	var $uid;
 	/**
 	 * index method
@@ -13,10 +17,10 @@ class UsersController extends AppController {
 	 * @return void
 	 */
 	public function index() {
-// 		$this->User->recursive = 0;
-// 		$this->set ( 'users', $this->paginate () );
-		$this->view();
-		$this->view="view";
+		// $this->User->recursive = 0;
+		// $this->set ( 'users', $this->paginate () );
+		$this->view ();
+		$this->view = "view";
 	}
 	
 	public function beforeFilter() {
@@ -190,7 +194,32 @@ class UsersController extends AppController {
 		) );
 	
 	}
-	
+	/**
+	 * 我的课程
+	 */
+	public function cookingclass() {
+		$data = $this->CookingOrder->find ( "all", array (
+				"conditions" => array (
+						"CookingOrder.user_id" => $this->uid,
+				) 
+		) );
+		$this->set ( "data", $data );
+	}
+	/**
+	 * 更改课程
+	 * 
+	 * @param $id 订单号        	
+	 * @param $cid 课程编号       	
+	 */
+	public function meal($oid = 0,$cid=0) {
+		$this->Session->write ( "CookingClass.meal", $cid );
+		$this->Session->write ( "CookingClass.meal.oid", $oid );
+		// 跳转到未开始课程
+		$this->redirect ( array (
+				'controller' => "cooking",
+				'action' => 'trainning' 
+		) );
+	}
 	function forgetpwd() {
 		// $this->layout="signup";
 		$this->User->recursive = - 1;
