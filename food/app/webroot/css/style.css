@@ -1212,3 +1212,9 @@ p.error em {
 .cooking .cooking_i{list-style: none;float: left;width: 400px;min-height: 150px;text-align: center;}
 
 .t_a_l{text-align: left;}
+.forgetwpd label {
+display: inline-block;margin-right: 5px;
+}
+.forgetwpd input[type="text"]{
+width: 244px;
+}

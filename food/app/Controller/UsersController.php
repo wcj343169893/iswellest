@@ -25,7 +25,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'add', 'forgetpwd' );
+		$this->Auth->allow ( 'add', 'forgetpwd', 'reset' );
 		
 		// set cookie options
 		$this->Cookie->key = 'qSI232qs*&sXOw!adre@34SAv!@*(XSL#$%)asGb$@11~_+!@#HKis~#^';
@@ -200,18 +200,18 @@ class UsersController extends AppController {
 	public function cookingclass() {
 		$data = $this->CookingOrder->find ( "all", array (
 				"conditions" => array (
-						"CookingOrder.user_id" => $this->uid,
+						"CookingOrder.user_id" => $this->uid 
 				) 
 		) );
 		$this->set ( "data", $data );
 	}
 	/**
 	 * 更改课程
-	 * 
+	 *
 	 * @param $id 订单号        	
-	 * @param $cid 课程编号       	
+	 * @param $cid 课程编号        	
 	 */
-	public function meal($oid = 0,$cid=0) {
+	public function meal($oid = 0, $cid = 0) {
 		$this->Session->write ( "CookingClass.meal", $cid );
 		$this->Session->write ( "CookingClass.meal.oid", $oid );
 		// 跳转到未开始课程
@@ -251,21 +251,15 @@ class UsersController extends AppController {
 							
 							// ============Email================//
 							/* SMTP Options */
-							$this->Email->smtpOptions = array (
-									'port' => '25',
-									'timeout' => '30',
-									'host' => 'mail.example.com',
-									'username' => 'accounts+example.com',
-									'password' => 'your password' 
-							);
 							$this->Email->template = 'resetpw';
-							$this->Email->from = 'Your Email <accounts@example.com>';
-							$this->Email->to = $fu ['User'] ['name'] . '<' . $fu ['User'] ['email'] . '>';
-							$this->Email->subject = 'Reset Your Example.com Password';
+							$this->Email->from = 'yiersky<yiersky@yeah.net>';
+							$this->Email->to = $fu ['User'] ['email'];
+							$this->Email->subject = 'Reset Your Password';
 							$this->Email->sendAs = 'both';
 							
 							$this->Email->delivery = 'smtp';
 							$this->set ( 'ms', $ms );
+							$this->set ( 'user', $fu );
 							$this->Email->send ();
 							$this->set ( 'smtp_errors', $this->Email->smtpError );
 							$this->Session->setFlash ( __ ( 'Check Your Email To Reset your password', true ) );
@@ -293,17 +287,18 @@ class UsersController extends AppController {
 				if (! empty ( $this->data )) {
 					$this->User->data = $this->data;
 					$this->User->data ['User'] ['username'] = $u ['User'] ['username'];
-					$new_hash = sha1 ( $u ['User'] ['username'] . rand ( 0, 100 ) ); // created
+					$new_hash = sha1 ( $u ['User'] ['username'] . rand ( 100, 1000 ) ); // created
 					                                                                 // token
 					$this->User->data ['User'] ['tokenhash'] = $new_hash;
 					if ($this->User->validates ( array (
 							'fieldList' => array (
 									'password',
-									'password_confirm' 
+									'password_confirmation' 
 							) 
 					) )) {
 						if ($this->User->save ( $this->User->data )) {
 							$this->Session->setFlash ( 'Password Has been Updated' );
+							$this->Auth->redirect ( "/users" );
 							$this->redirect ( array (
 									'controller' => 'users',
 									'action' => 'login' 
@@ -311,12 +306,11 @@ class UsersController extends AppController {
 						}
 					
 					} else {
-						
 						$this->set ( 'errors', $this->User->invalidFields () );
 					}
 				}
 			} else {
-				$this->Session->setFlash ( 'Token Corrupted,,Please Retry.the reset link work only for once.' );
+				$this->Session->setFlash ( 'Token Corrupted,Please Retry.the reset link work only for once.' );
 			}
 		} 
 

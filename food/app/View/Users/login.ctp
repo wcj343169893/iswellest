@@ -1,4 +1,4 @@
-<section class="login_container">
+<div class="login_container">
         <div class="login">
             <h3><?php echo __('Welcome to Blu Waters'); ?></h3>
             <?php echo $this->Session->flash('auth'); ?>
@@ -16,6 +16,7 @@
         </div>
 
         <div class="login-help">
-            <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+            <p>Forgot your password? <a href="forgetpwd">Click here to reset it</a>.</p>
             <p>Don't have an account? <a href=add>Join us</a>.</p>
         </div>
+</div>

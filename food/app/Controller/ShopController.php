@@ -194,7 +194,19 @@ class ShopController extends AppController {
 				if ($save) {
 					
 					$this->set ( compact ( 'shop' ) );
-					
+					try {
+						$this->Email->template = 'order';
+						$this->Email->from = 'yiersky<yiersky@yeah.net>';
+						$this->Email->to = $shop ['Order'] ['email'];
+						$this->Email->subject = 'Shop Order';
+						$this->Email->sendAs = 'both';
+						
+						$this->Email->delivery = 'smtp';
+						$this->set ( 'shop', $shop );
+						$this->Email->send ();
+					} catch ( Exception $e ) {
+						$this->set ( 'smtp_errors', $this->Email->smtpError );
+					}
 					/*
 					 * App::uses ( 'CakeEmail', 'Network/Email' ); $email = new
 					 * CakeEmail (); $email->from ( Configure::read (
