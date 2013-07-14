@@ -39,27 +39,27 @@ class EmailConfig {
 
 	public $default = array(
 		'transport' => 'Mail',
-		'from' => 'you@localhost',
+		'from' => 'yiersky@yeah.net',
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
-
+	
 	public $smtp = array(
 		'transport' => 'Smtp',
-		'from' => array('site@localhost' => 'My Site'),
-		'host' => 'localhost',
+		'from' => array('yiersky@yeah.net' => 'Blu-Waters'),
+		'host' => 'smtp.yeah.net',
 		'port' => 25,
 		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
+		'username' => 'yiersky',
+		'password' => 'qingchun125',
 		'client' => null,
 		'log' => false,
-		//'charset' => 'utf-8',
-		//'headerCharset' => 'utf-8',
+		'charset' => 'utf-8',
+		'headerCharset' => 'utf-8',
 	);
 
 	public $fast = array(
-		'from' => 'you@localhost',
+		'from' => 'yiersky@yeah.net',
 		'sender' => null,
 		'to' => null,
 		'cc' => null,
@@ -78,11 +78,11 @@ class EmailConfig {
 		'attachments' => null,
 		'emailFormat' => null,
 		'transport' => 'Smtp',
-		'host' => 'localhost',
+		'host' => 'smtp.yeah.net',
 		'port' => 25,
 		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
+		'username' => 'yiersky',
+		'password' => 'qingchun125',
 		'client' => null,
 		'log' => true,
 		//'charset' => 'utf-8',
