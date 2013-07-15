@@ -248,21 +248,29 @@ class UsersController extends AppController {
 						$fu ['User'] ['tokenhash'] = $key;
 						$this->User->id = $fu ['User'] ['id'];
 						if ($this->User->saveField ( 'tokenhash', $fu ['User'] ['tokenhash'] )) {
-							
+							$emails = array (
+									"email" => $fu ['User'] ['email'], 
+									"subject" => 'Reset Your Password', 
+									"ms" => $ms, 
+									"user" => $fu, 
+							);
+							$this->sendEmailByTemplate ( $emails, "resetpw" );
 							// ============Email================//
 							/* SMTP Options */
-							$this->Email->template = 'resetpw';
-							$this->Email->from = 'yiersky<yiersky@yeah.net>';
-							$this->Email->to = $fu ['User'] ['email'];
-							$this->Email->subject = 'Reset Your Password';
-							$this->Email->sendAs = 'both';
+							// $this->Email->template = 'resetpw';
+							// $this->Email->from = 'yiersky<yiersky@yeah.net>';
+							// $this->Email->to = $fu ['User'] ['email'];
+							// $this->Email->subject = 'Reset Your Password';
+							// $this->Email->sendAs = 'both';
 							
-							$this->Email->delivery = 'smtp';
-							$this->set ( 'ms', $ms );
-							$this->set ( 'user', $fu );
-							$this->Email->send ();
-							$this->set ( 'smtp_errors', $this->Email->smtpError );
-							$this->Session->setFlash ( __ ( 'Check Your Email To Reset your password', true ) );
+							// $this->Email->delivery = 'smtp';
+							// $this->set ( 'ms', $ms );
+							// $this->set ( 'user', $fu );
+							// $this->Email->send ();
+							// $this->set ( 'smtp_errors',
+						// $this->Email->smtpError );
+							// $this->Session->setFlash ( __ ( 'Check Your Email
+						// To Reset your password', true ) );
 							
 							// ============EndEmail=============//
 						} else {
@@ -288,7 +296,7 @@ class UsersController extends AppController {
 					$this->User->data = $this->data;
 					$this->User->data ['User'] ['username'] = $u ['User'] ['username'];
 					$new_hash = sha1 ( $u ['User'] ['username'] . rand ( 100, 1000 ) ); // created
-					                                                                 // token
+					                                                                    // token
 					$this->User->data ['User'] ['tokenhash'] = $new_hash;
 					if ($this->User->validates ( array (
 							'fieldList' => array (
