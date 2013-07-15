@@ -249,10 +249,10 @@ class UsersController extends AppController {
 						$this->User->id = $fu ['User'] ['id'];
 						if ($this->User->saveField ( 'tokenhash', $fu ['User'] ['tokenhash'] )) {
 							$emails = array (
-									"email" => $fu ['User'] ['email'], 
-									"subject" => 'Reset Your Password', 
-									"ms" => $ms, 
-									"user" => $fu, 
+									"email" => $fu ['User'] ['email'],
+									"subject" => 'Reset Your Password',
+									"ms" => $ms,
+									"user" => $fu 
 							);
 							$this->sendEmailByTemplate ( $emails, "resetpw" );
 							// ============Email================//
@@ -268,9 +268,9 @@ class UsersController extends AppController {
 							// $this->set ( 'user', $fu );
 							// $this->Email->send ();
 							// $this->set ( 'smtp_errors',
-						// $this->Email->smtpError );
-							// $this->Session->setFlash ( __ ( 'Check Your Email
-						// To Reset your password', true ) );
+							// $this->Email->smtpError );
+							$this->Session->setFlash ( __ ( 'Check Your Email
+						To Reset your password', true ) );
 							
 							// ============EndEmail=============//
 						} else {
