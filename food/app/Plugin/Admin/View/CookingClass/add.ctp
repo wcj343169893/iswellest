@@ -1,6 +1,6 @@
 <div id="box">
 	<h3 id="adduser">Add Cooking Class</h3>
-    <form id="form" action="/admin/cookingclass/save" method="post">
+    <form id="form" action="<?php echo $webroot?>admin/cookingclass/save" method="post">
       <fieldset id="personal">
         <legend>BASE INFORMATION</legend>
         <label for="name">Name : </label> 

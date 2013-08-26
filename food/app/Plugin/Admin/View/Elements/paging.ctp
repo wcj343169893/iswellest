@@ -1,8 +1,8 @@
 <div id="pager" class="paging">
 Page 
-<a href="javascript:;" class="paging_prev"><img src="/img/icons/arrow_left.gif" width="16" height="16" /></a> 
+<a href="javascript:;" class="paging_prev"><img src="<?php echo $webroot?>img/icons/arrow_left.gif" width="16" height="16" /></a> 
 <input size="1" value="<?php echo $paging["page"]?>" readonly="readonly" type="text" name="page" id="page" /> 
-<a href="javascript:;" class="paging_next"><img src="/img/icons/arrow_right.gif" width="16" height="16" /></a>
+<a href="javascript:;" class="paging_next"><img src="<?php echo $webroot?>img/icons/arrow_right.gif" width="16" height="16" /></a>
 of <?php echo $paging["allPage"]?>
 pages | View 
 <select name="pageSize" id="paging_pageSize">

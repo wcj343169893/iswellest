@@ -43,7 +43,7 @@
     </div>
     <div id="templatemo_middle">
         <div id='search-box'>
-            <form action='/products' id='search-form' method='get' target='_top'>
+            <form action='<?php echo $webroot?>products' id='search-form' method='get' target='_top'>
                 <input id='search-text' name='q' placeholder='Key word' type='text' value="<?php echo !empty($key)?$key:""?>"/>
                 <button id='search-button' type='submit'><span>Search</span></button>
             </form>

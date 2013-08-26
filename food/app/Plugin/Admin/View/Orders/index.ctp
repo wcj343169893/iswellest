@@ -41,7 +41,7 @@
       <?php }}?>
 	</tbody>
 </table>
-<?php echo $this->element("paging",array("paging_url"=>"/admin/orders"),array('plugin'=>"admin"));?>
+<?php echo $this->element("paging",array("paging_url"=>$webroot."admin/orders"),array('plugin'=>"admin"));?>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){

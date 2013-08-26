@@ -1,6 +1,6 @@
 <div id="box">
 	<h3 id="adduser">Edit user</h3>
-    <form id="form" action="/admin/users/save/<?php echo $user["id"]?>" method="post">
+    <form id="form" action="<?php echo $webroot?>admin/users/save/<?php echo $user["id"]?>" method="post">
       <fieldset id="personal">
         <legend>PERSONAL INFORMATION</legend>
         <label for="lastname">Last name : </label> 

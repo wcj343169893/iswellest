@@ -63,22 +63,7 @@ class AppController extends Controller {
 		$this->Auth->allow ( 'index', 'view', 'display' );
 		$this->set ( 'logged_in', $this->Auth->loggedIn () );
 		$this->set ( 'current_user', $this->Auth->user () );
-	}
-	public function sendEmailByTemplate($data = array(), $template = "default") {
-		try {
-			$cakeEmail = new CakeEmail ( "smtp" );
-			$cakeEmail->template ( $template );
-			$cakeEmail->to ( $data ["email"] );
-			$cakeEmail->emailFormat ( "html" );
-			$cakeEmail->subject ( $data ["subject"] );
-			$cakeEmail->viewVars ( $data );
-			$result = $cakeEmail->send ();
-			// $this->log ( $template . ":" . $data
-		// ["email"].json_encode($result),LOG_ERR );
-		} catch ( Exception $e ) {
-			echo json_encode ( $e );
-			$this->log ( "Exception \n" . $e, LOG_ERR );
-		}
+		$this->set("webroot",$this->request->webroot);
 	}
 	/**
 	 * 处理icon，同时转换数组

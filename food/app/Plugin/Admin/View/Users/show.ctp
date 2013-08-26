@@ -1,6 +1,6 @@
 <div id="box">
 	<h3 id="adduser">View user</h3>
-    <form id="form" action="/admin/users" method="get">
+    <form id="form" action="<?php echo $webroot?>admin/users" method="get">
       <fieldset id="personal">
         <legend>PERSONAL INFORMATION</legend>
         <label for="lastname">Last name : </label> 
@@ -84,7 +84,7 @@
        	<label for="active_false" style="float: none;display: initial;">Inactive</label>
       </fieldset>
       <div align="center">
-      <input id="button1" type="button" onclick="to('/admin/users')" value="Back" /> 
+      <input id="button1" type="button" onclick="to('<?php echo $webroot?>admin/users')" value="Back" /> 
       </div>
     </form>
 </div>

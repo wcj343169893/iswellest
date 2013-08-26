@@ -23,11 +23,14 @@
     ?>
 <script>
    //var StyleFile = "theme" + document.cookie.charAt(6) + ".css";
-   //document.writeln('<link rel="stylesheet" type="text/css" href="/css/admin/' + StyleFile + '">');
+   //document.writeln('<link rel="stylesheet" type="text/css" href="<?php echo $webroot?>css/admin/' + StyleFile + '">');
 </script>
 <!--[if IE]>
-<link rel="stylesheet" type="text/css" href="/css/admin/ie-sucks.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $webroot?>css/admin/ie-sucks.css" />
 <![endif]-->
+<script type="text/javascript">
+	var webroot="<?php echo $webroot?>";
+</script>
 </head>
 <body><?php $controller=$this->request->params["controller"];$select=1;
 switch ($controller) {
@@ -56,15 +59,11 @@ switch ($controller) {
         	<h2>Blu Water</h2>
     <div id="topmenu">
             	<ul>
-                	<li<?php echo $select==1?" class='current'":"" ?>><a href="/admin">Dashboard</a></li>
-                    <li<?php echo $select==2?" class='current'":"" ?>><a href="/admin/orders">Orders</a></li>
-                    <li<?php echo $select==8?" class='current'":"" ?>><a href="/admin/products">Products</a></li>
-                    <li<?php echo $select==9?" class='current'":"" ?>><a href="/admin/cookingclass">CookingClass</a></li>
-                	<li<?php echo $select==3?" class='current'":"" ?>><a href="/admin/users">Users</a></li>
-                    <li<?php echo $select==4?" class='current'":"" ?>><a href="#">Manage</a></li>
-                    <li<?php echo $select==5?" class='current'":"" ?>><a href="#">CMS</a></li>
-                    <li<?php echo $select==6?" class='current'":"" ?>><a href="#">Statistics</a></li>
-                    <li<?php echo $select==7?" class='current'":"" ?>><a href="#">Settings</a></li>
+                	<li<?php echo $select==1?" class='current'":"" ?>><a href="<?php echo $webroot?>admin">Dashboard</a></li>
+                    <li<?php echo $select==2?" class='current'":"" ?>><a href="<?php echo $webroot?>admin/orders">Orders</a></li>
+                    <li<?php echo $select==8?" class='current'":"" ?>><a href="<?php echo $webroot?>admin/products">Products</a></li>
+                    <li<?php echo $select==9?" class='current'":"" ?>><a href="<?php echo $webroot?>admin/cookingclass">CookingClass</a></li>
+                	<li<?php echo $select==3?" class='current'":"" ?>><a href="<?php echo $webroot?>admin/users">Users</a></li>
               </ul>
           </div>
       </div>

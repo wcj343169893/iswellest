@@ -400,7 +400,7 @@ Cache::config ( '_cake_model_', array (
 Configure::write ( 'ADMIN_EMAIL', "admin@admin.com");
 Configure::write ( 'PAYPAL', array (
 		'TEST' => 1,
-		'WEBSITE' => "http://2.com/",
+		'WEBSITE' => "http://2.com/food/",
 		'API_USERNAME' => 'seller_1349835186_biz_api1.163.com',
 		'API_PASSWORD' => '1349835209',
 		'API_SIGNATURE' => 'AL7.xwS.pVeeYbtkkz5TCJurWIXSAq4VWgsw6zP.a11WBj5R2mLgf0ku' 

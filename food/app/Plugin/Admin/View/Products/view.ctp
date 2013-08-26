@@ -1,6 +1,6 @@
 <div id="box">
 	<h3 id="adduser">View Product</h3>
-      <form id="form" action="/admin/products/edit/<?php echo $data["id"]?>" method="get">
+      <form id="form" action="<?php echo $webroot?>admin/products/edit/<?php echo $data["id"]?>" method="get">
       <fieldset id="personal">
         <legend>Basic Information</legend>
         <div>
@@ -40,7 +40,7 @@
         </div>
       </fieldset>
 	  </form>
-      <form id="form" action="/admin/products/edit/<?php echo $data["id"]?>" method="get">
+      <form id="form" action="<?php echo $webroot?>admin/products/edit/<?php echo $data["id"]?>" method="get">
       <div align="center">
       <input id="button1" type="submit" value="Edit" /> 
       </div>

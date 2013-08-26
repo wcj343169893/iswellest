@@ -1,6 +1,6 @@
 <div id="box">
 	<h3 id="adduser">Edit Product</h3>
-    <form id="form" action="/admin/products/save" method="post">
+    <form id="form" action="<?php echo $webroot?>admin/products/save" method="post">
     <input type="hidden" name="id" value="<?php echo $data["id"]?>">
       <fieldset id="personal">
         <legend>Basic Information</legend>
@@ -58,8 +58,8 @@ $(function() {
 			'token'     : token
 		},
 		'fileSizeLimit' : '5000KB',
-		'swf'      : '/swf/uploadify.swf',
-		'uploader' : '/admin/products/uploadify?type=icon', 
+		'swf'      : <?php echo $webroot?>'swf/uploadify.swf',
+		'uploader' : <?php echo $webroot?>'admin/products/uploadify?type=icon', 
 		'fileTypeExts'  : '*.png;*.jpg;*.gif',
 		'onUploadSuccess' : function(file, data, response) {
 			data= jQuery.parseJSON(data);

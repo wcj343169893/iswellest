@@ -3,7 +3,7 @@
     <table width="100%">
 	<thead>
 		<tr>
-	        <th width="40px"><a href="#">ID<img src="/img/icons/arrow_down_mini.gif" width="16" height="16" align="absmiddle" /></a></th>
+	        <th width="40px"><a href="#">ID<img src="<?php echo $webroot?>img/icons/arrow_down_mini.gif" width="16" height="16" align="absmiddle" /></a></th>
 	        <th><a href="#">Full Name</a></th>
 	        <th><a href="#">Email</a></th>
 	        <th width="70px"><a href="#">Group</a></th>
@@ -22,13 +22,13 @@
            <td><?php echo $v["User"]["zip"]?></td>
            <td><?php echo $v["User"]["join_date"]?></td>
            <td>
-	           <a href="/admin/users/show/<?php echo $v["User"]["id"]?>"><img src="/img/icons/user.png" title="Show profile" width="16" height="16" /></a>
-	           <a href="/admin/users/edit/<?php echo $v["User"]["id"]?>"><img src="/img/icons/user_edit.png" title="Edit user" width="16" height="16" /></a>
-	           <a href="/admin/users/delete/<?php echo $v["User"]["id"]?>"><img src="/img/icons/user_delete.png" title="Delete user" width="16" height="16" /></a>
+	           <a href="<?php echo $webroot?>admin/users/show/<?php echo $v["User"]["id"]?>"><img src="<?php echo $webroot?>img/icons/user.png" title="Show profile" width="16" height="16" /></a>
+	           <a href="<?php echo $webroot?>admin/users/edit/<?php echo $v["User"]["id"]?>"><img src="<?php echo $webroot?>img/icons/user_edit.png" title="Edit user" width="16" height="16" /></a>
+	           <a href="<?php echo $webroot?>admin/users/delete/<?php echo $v["User"]["id"]?>"><img src="<?php echo $webroot?>img/icons/user_delete.png" title="Delete user" width="16" height="16" /></a>
            </td>
        </tr>
       <?php }}?>
 	</tbody>
 </table>
-<?php echo $this->element("paging",array("paging_url"=>"/admin/users"),array('plugin'=>"admin"));?>
+<?php echo $this->element("paging",array("paging_url"=> $webroot."admin/users"),array('plugin'=>"admin"));?>
 </div>
