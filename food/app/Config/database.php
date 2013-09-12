@@ -60,7 +60,7 @@ class DATABASE_CONFIG {
         'persistent' => false,
         'host' => 'localhost',
         'login' => 'root',
-        'password' => '123456',
+        'password' => '',
         'database' => 'food',
         'prefix' => '',
 		'encoding' => 'utf8',

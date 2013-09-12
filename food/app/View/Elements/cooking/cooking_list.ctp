@@ -4,9 +4,7 @@
 	<li class="cooking_i">
 		<h6 class="title">
 		<?php echo $this->Html->link($v["Cooking"]["name"], array('action' => 'view','controller'=>'cooking', $v["Cooking"]['id']),array("target"=>"_blank")); ?></h6>
-		<!-- 
 		<iframe width="420" height="360" src="<?php echo $v["Cooking"]["video_address"]?>" frameborder="0" allowfullscreen></iframe>
-		 -->
 	 	<?php if($order==2){?>
 		<p>Start Order:<?php echo $this->Time->format($v["Cooking"]["start_order"])?></p>
 	 	<?php }elseif ($order==3){?>

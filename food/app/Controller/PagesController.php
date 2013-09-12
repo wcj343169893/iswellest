@@ -47,6 +47,15 @@ class PagesController extends AppController {
 	public $uses = array (
 			"Contact" 
 	);
+	var $helpers = array (
+			'Cache',
+			'Html',
+			'Number',
+			'Time',
+			'Text',
+			'Form',
+			'Paginator'
+	);
 	
 	/**
 	 * Displays a view
@@ -90,4 +99,5 @@ class PagesController extends AppController {
 			$this->redirect("/pages/contact");
 		}
 	}
+
 }

@@ -37,56 +37,55 @@
  */
 class EmailConfig {
 
-	public $default = array(
-		'transport' => 'Mail',
-		'from' => 'yiersky@yeah.net',
-		//'charset' => 'utf-8',
-		//'headerCharset' => 'utf-8',
-	);
-	
-	public $smtp = array(
-		'transport' => 'Smtp',
-		'from' => array('yiersky@yeah.net' => 'Blu-Waters'),
-		'host' => 'smtp.yeah.net',
-		'port' => 25,
-		'timeout' => 30,
-		'username' => 'yiersky',
-		'password' => 'qingchun125',
-		'client' => null,
-		'log' => false,
-		'charset' => 'utf-8',
-		'headerCharset' => 'utf-8',
-	);
 
-	public $fast = array(
-		'from' => 'yiersky@yeah.net',
-		'sender' => null,
-		'to' => null,
-		'cc' => null,
-		'bcc' => null,
-		'replyTo' => null,
-		'readReceipt' => null,
-		'returnPath' => null,
-		'messageId' => true,
-		'subject' => null,
-		'message' => null,
-		'headers' => null,
-		'viewRender' => null,
-		'template' => false,
-		'layout' => false,
-		'viewVars' => null,
-		'attachments' => null,
-		'emailFormat' => null,
-		'transport' => 'Smtp',
-		'host' => 'smtp.yeah.net',
-		'port' => 25,
-		'timeout' => 30,
-		'username' => 'yiersky',
-		'password' => 'qingchun125',
-		'client' => null,
-		'log' => true,
-		//'charset' => 'utf-8',
-		//'headerCharset' => 'utf-8',
-	);
-
+    public $default = array(
+        'transport' => 'Mail',
+        'from' => 'lx12071987@hotmail.com',
+        //'charset' => 'utf-8',
+        //'headerCharset' => 'utf-8',
+    );
+    public $smtp = array(
+        'transport' => 'Smtp',
+        'from' => array('site@localhost' => 'My Site'),
+        'host' => '127.0.0.1',
+        'port' => 25,
+        'timeout' => 30,
+        'username' => 'user',
+        'password' => 'secret',
+        'client' => null,
+        'log' => true,
+        // 'charset' => 'utf-8',
+        // 'headerCharset' => 'utf-8',
+    );
+    public $fast = array(
+        'from' => 'lx12071987@hotmail.com',
+        'sender' => null,
+        'to' => null,
+        'cc' => null,
+        'bcc' => null,
+        'replyTo' => null,
+        'readReceipt' => null,
+        'returnPath' => null,
+        'messageId' => true,
+        'subject' => null,
+        'message' => null,
+        'headers' => null,
+        'viewRender' => null,
+        'template' => false,
+        'layout' => false,
+        'viewVars' => null,
+        'attachments' => null,
+        'emailFormat' => null,
+        'transport' => 'Smtp',
+        'host' => 'smtp.live.com',
+        'port' => 25,
+        'timeout' => 30,
+        'username' => 'lx12071987@hotmail.com',
+        'password' => 'L0RDj@ck!987',
+        'client' => null,
+        'log' => true,
+        //'charset' => 'utf-8',
+        //'headerCharset' => 'utf-8',
+    );
 }
+

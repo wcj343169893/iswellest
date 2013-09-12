@@ -1,1 +1,1 @@
-Successful purchase,<a href="/users/cookingclass">view details</a> 
+Successful purchase,<a href="<?php echo $webroot?>users/cookingclass">view details</a> 

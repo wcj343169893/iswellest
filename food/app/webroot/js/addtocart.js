@@ -10,6 +10,7 @@ $(document).ready(function(){
 			},
 			dataType: "json",
 			success: function(data) {
+				$("#shop_cart_count").html(data.Order.order_item_count);
 				$('#msg').html('<div class="alert alert-success" id="flash_msg">Product Added to Shopping Cart</div>');
 				$('#flash_msg').delay(2000).fadeOut('slow');
 			},
@@ -18,5 +19,11 @@ $(document).ready(function(){
 			}
 		});
 		return false;
+	});
+	//初始化查询购物车信息
+	$.get(Shop.basePath + "shop/carts", function(data){
+		if(data){
+			$("#shop_cart_count").html(data.Order.order_item_count);
+		}
 	});
 });

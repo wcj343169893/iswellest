@@ -25,7 +25,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'add', 'forgetpwd', 'reset' );
+		$this->Auth->allow ( 'add', 'forgetpwd', 'reset');
 		
 		// set cookie options
 		$this->Cookie->key = 'qSI232qs*&sXOw!adre@34SAv!@*(XSL#$%)asGb$@11~_+!@#HKis~#^';

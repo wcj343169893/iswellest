@@ -36,16 +36,18 @@
 		</div>
 	</div>
 	<!-- End Categories -->
-
 </div>
-
 <div id="product-detail" class="box_p">
 	<h2><?php echo __('Products'); ?></h2>
+	<?php echo $this->Html->link("Shop Cart",array("controller"=>"shop","action"=>"cart"),array("class"=>"shop_cart"))?>
+	<span id="shop_cart_count">0</span>
 	<div class="product_sort">
-    	<?php echo $this->Html->link("Shop Cart",array("controller"=>"shop","action"=>"cart"))?>
-        <?php echo $this->Paginator->sort('name','Name'); ?>
-        <?php echo $this->Paginator->sort('cateID','Category');?>
-        <?php echo $this->Paginator->sort('price','Price'); ?>
+		<div class="s_mod_order_tit">Order：</div>
+    	<div class="s_mod_order_term">
+        <?php echo $this->Paginator->sort('name','<b class="s_mod_order_arrow">&nbsp;</b>Name',array("class"=>"s_mod_order_cate","escape"=>false)); ?>
+        <?php echo $this->Paginator->sort('cateID','<b class="s_mod_order_arrow">&nbsp;</b>Category',array("class"=>"s_mod_order_cate","escape"=>false));?>
+        <?php echo $this->Paginator->sort('price','<b class="s_mod_order_arrow">&nbsp;</b>Price',array("class"=>"s_mod_order_cate","escape"=>false)); ?>
+        </div>
     </div>
 	<table class="product">
     <?php foreach ($products as $product): ?>

@@ -42,6 +42,8 @@ Shopping Cart is empty
 <hr>
 <div class="row">
 	<div class="span6 offset3 tr">
+		<?php echo $this->Html->link('<i class=".icon-step-backward icon"></i> Continue shopping', array('controller' => 'products', 'action' => 'index'), array('class' => 'btn', 'escape' => false)); ?>
+		&nbsp; &nbsp;
 		<?php echo $this->Html->link('<i class="icon-remove icon"></i> Clear Cart', array('controller' => 'shop', 'action' => 'clear'), array('class' => 'btn', 'escape' => false)); ?>
 		&nbsp; &nbsp;
 		<?php echo $this->Form->button('<i class="icon-refresh icon"></i> Recalculate', array('class' => 'btn', 'escape' => false));?>

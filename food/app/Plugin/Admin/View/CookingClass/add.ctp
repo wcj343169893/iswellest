@@ -39,3 +39,10 @@
       </div>
     </form>
 </div>
+<script>
+  $(function() {
+    	$( "#start_order" ).datepicker({"dateFormat":"yy-mm-dd"});
+    	$( "#start_learning" ).datepicker({"dateFormat":"yy-mm-dd"});
+    	$( "#end_learning" ).datepicker({"dateFormat":"yy-mm-dd"});
+  });
+</script>

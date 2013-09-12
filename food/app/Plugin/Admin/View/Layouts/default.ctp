@@ -13,7 +13,9 @@
     echo $this->Html->css('admin/theme');
     echo $this->Html->css('admin/style');
     echo $this->Html->css('uploadify');
+    echo $this->Html->css('smoothness/jquery-ui-1.9.2.custom.min');
     echo $this->Html->script('jquery-1.7.1.min');
+    echo $this->Html->script('jquery-ui-1.9.2.custom.min');
     echo $this->Html->script('admin/common');
     echo $this->Html->script('jquery.uploadify.min');
     echo $this->fetch('meta');

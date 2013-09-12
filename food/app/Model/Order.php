@@ -17,12 +17,12 @@ class Order extends AppModel {
 			),
 // 							'rule' => array('phone'),
 // 							'message' => 'Phone is invalid',
-			'phone' => array(
-					'notempty' => array(
-							'rule' => array('notempty'),
-							'message' => 'Phone is invalid',
-					),
-			),
+// 			'phone' => array(
+// 					'notempty' => array(
+// 							'rule' => array('notempty'),
+// 							'message' => 'Phone is invalid',
+// 					),
+// 			),
 			'shipping_address' => array(
 					'notempty' => array(
 							'rule' => array('notempty'),

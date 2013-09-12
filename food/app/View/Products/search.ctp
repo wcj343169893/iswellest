@@ -30,9 +30,9 @@
     <h2><?php echo __('Products'); ?></h2>
     <div class="product_sort">
         <?php echo $this->Paginator->sort('name','Name'); ?>
-        <?php echo $this->Paginator->sort('cateID','Category');?>
-        <?php echo $this->Paginator->sort('price','Price'); ?>
-    </div>
+    <?php echo $this->Paginator->sort('cateID','Category');?>
+    <?php echo $this->Paginator->sort('price','Price'); ?>
+</div>
     </br></br>
     <?php foreach ($products as $product): ?>
     <table>

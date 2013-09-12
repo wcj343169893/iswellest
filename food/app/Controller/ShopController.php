@@ -17,7 +17,7 @@ class ShopController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'itemupdate', "cart", "clear", "address", "update", "step1", "step2", "review", "success" );
+		$this->Auth->allow ( 'itemupdate', "cart", "clear", "address", "update", "step1", "step2", "review", "success","carts" );
 		$this->disableCache ();
 		// $this->Security->validatePost = false;
 	}
@@ -40,6 +40,13 @@ class ShopController extends AppController {
 		$this->redirect ( $this->referer () );
 	}
 	
+	public function carts() {
+		header ( 'Content-type: application/json' );
+		$cart = $this->Session->read ( 'Shop' );
+		echo json_encode ( $cart );
+		$this->autoRender = false;
+		exit ();
+	}
 	public function itemupdate() {
 		header ( 'Content-type: application/json' );
 		if ($this->request->is ( 'ajax' )) {
@@ -194,19 +201,19 @@ class ShopController extends AppController {
 				if ($save) {
 					
 					$this->set ( compact ( 'shop' ) );
-					try {
-						$this->Email->template = 'order';
-						$this->Email->from = 'yiersky<yiersky@yeah.net>';
-						$this->Email->to = $shop ['Order'] ['email'];
-						$this->Email->subject = 'Shop Order';
-						$this->Email->sendAs = 'both';
+// 					try {
+// 						$this->Email->template = 'order';
+// 						$this->Email->from = 'yiersky<yiersky@yeah.net>';
+// 						$this->Email->to = $shop ['Order'] ['email'];
+// 						$this->Email->subject = 'Shop Order';
+// 						$this->Email->sendAs = 'both';
 						
-						$this->Email->delivery = 'smtp';
-						$this->set ( 'shop', $shop );
-						$this->Email->send ();
-					} catch ( Exception $e ) {
-						$this->set ( 'smtp_errors', $this->Email->smtpError );
-					}
+// 						$this->Email->delivery = 'smtp';
+// 						$this->set ( 'shop', $shop );
+// 						$this->Email->send ();
+// 					} catch ( Exception $e ) {
+// 						$this->set ( 'smtp_errors', $this->Email->smtpError );
+// 					}
 					/*
 					 * App::uses ( 'CakeEmail', 'Network/Email' ); $email = new
 					 * CakeEmail (); $email->from ( Configure::read (

@@ -39,7 +39,8 @@
 	Router::connect('/sitemap.xml', array('controller' => 'products', 'action' => 'sitemap'));
 	
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-
+	Router::connect('/admin',array("plugin"=>"Admin","controller"=>"Dashboard","action"=>"display","admin"));
+	Router::connect('/admin/:controller/:action/*',array("plugin"=>"Admin"));
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

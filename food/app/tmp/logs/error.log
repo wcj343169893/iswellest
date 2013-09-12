@@ -141,3 +141,231 @@ Stack Trace:
 #9 F:\phpWorkSpace\cooking\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
 #10 F:\phpWorkSpace\cooking\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+2013-08-27 01:15:51 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /food/shop/buyclass
+Stack Trace:
+#0 E:\wwwroot\food\lib\Cake\Network\CakeSocket.php(273): CakeSocket->connect()
+#1 E:\wwwroot\food\lib\Cake\Network\Http\HttpSocket.php(369): CakeSocket->write('POST /nvp HTTP/...')
+#2 E:\wwwroot\food\lib\Cake\Network\Http\HttpSocket.php(479): HttpSocket->request(Array)
+#3 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(150): HttpSocket->post('https://api-3t....', 'METHOD=SetExpre...')
+#4 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(71): PaypalComponent->hash_call('SetExpressCheck...', '&RETURNURL=http...')
+#5 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(48): PaypalComponent->cookingClassExpressCheckout()
+#6 E:\wwwroot\food\app\Controller\ShopController.php(308): PaypalComponent->cstep1(Array)
+#7 [internal function]: ShopController->buyclass()
+#8 E:\wwwroot\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 E:\wwwroot\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 E:\wwwroot\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-27 01:43:35 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /food//shop/cstep2?token=EC-27M020342E4099058&PayerID=7FH3FKA6PDNAJ
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-27 01:43:54 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /food//shop/cstep2?token=EC-27M020342E4099058&PayerID=7FH3FKA6PDNAJ
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-27 01:44:03 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /food//shop/cstep2?token=EC-27M020342E4099058&PayerID=7FH3FKA6PDNAJ
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-27 09:01:42 Error: [SocketException] php_network_getaddresses: getaddrinfo failed: 这是在主机名解析时通常出现的暂时错误，它意味着本地服务器没有从权威服务器上收到响应。 
+Request URL: /food/shop/step1
+Stack Trace:
+#0 E:\wwwroot\food\lib\Cake\Network\CakeSocket.php(273): CakeSocket->connect()
+#1 E:\wwwroot\food\lib\Cake\Network\Http\HttpSocket.php(369): CakeSocket->write('POST /nvp HTTP/...')
+#2 E:\wwwroot\food\lib\Cake\Network\Http\HttpSocket.php(479): HttpSocket->request(Array)
+#3 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(150): HttpSocket->post('https://api-3t....', 'METHOD=SetExpre...')
+#4 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(108): PaypalComponent->hash_call('SetExpressCheck...', '&RETURNURL=http...')
+#5 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(81): PaypalComponent->CallShortcutExpressCheckout()
+#6 E:\wwwroot\food\app\Controller\ShopController.php(133): PaypalComponent->step1(Array)
+#7 [internal function]: ShopController->step1()
+#8 E:\wwwroot\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 E:\wwwroot\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 E:\wwwroot\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-27 09:02:27 Error: [SocketException] php_network_getaddresses: getaddrinfo failed: 这是在主机名解析时通常出现的暂时错误，它意味着本地服务器没有从权威服务器上收到响应。 
+Request URL: /food/shop/step1
+Stack Trace:
+#0 E:\wwwroot\food\lib\Cake\Network\CakeSocket.php(273): CakeSocket->connect()
+#1 E:\wwwroot\food\lib\Cake\Network\Http\HttpSocket.php(369): CakeSocket->write('POST /nvp HTTP/...')
+#2 E:\wwwroot\food\lib\Cake\Network\Http\HttpSocket.php(479): HttpSocket->request(Array)
+#3 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(150): HttpSocket->post('https://api-3t....', 'METHOD=SetExpre...')
+#4 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(108): PaypalComponent->hash_call('SetExpressCheck...', '&RETURNURL=http...')
+#5 E:\wwwroot\food\app\Controller\Component\PaypalComponent.php(81): PaypalComponent->CallShortcutExpressCheckout()
+#6 E:\wwwroot\food\app\Controller\ShopController.php(133): PaypalComponent->step1(Array)
+#7 [internal function]: ShopController->step1()
+#8 E:\wwwroot\food\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(ShopController), Array)
+#9 E:\wwwroot\food\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 E:\wwwroot\food\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(ShopController), Object(CakeRequest), Object(CakeResponse))
+#11 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-29 02:21:45 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:21:52 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:21:54 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:22:44 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:23:01 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:23:24 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:23:25 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:25 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/cookingclass
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:31 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/cookingclass
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:33 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/products
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:35 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/orders
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:36 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/products
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:38 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/cookingclass
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:49 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/cookingclass
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:52 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/orders
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:53 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/products
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 02:24:54 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => 'Admin',
+)
+Request URL: /food/admin/cookingclass
+Stack Trace:
+#0 E:\wwwroot\food\app\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

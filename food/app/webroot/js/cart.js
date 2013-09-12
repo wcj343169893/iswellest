@@ -46,7 +46,7 @@ $(document).ready(function(){
 			success: function(data) {
 				$.each(data.OrderItem, function(key, value) {
 					if($('#subtotal-' + key).html() != value.subtotal) {
-						$('#ProductQuantity-' + key).val(value.quantity);
+						$('#ProductQuantity-' + key).val(value.weight);
 						$('#subtotal-' + key).html(value.subtotal).animate({ backgroundColor: "#ff8" }, 100).animate({ backgroundColor: "#fff" }, 500);
 					}
 				});

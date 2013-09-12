@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Blu Water Seafood</title>
     <meta name="keywords" content="Blu Water, Seafood, Cooking Class" />
     <meta name="description" content="Blu Water, Seafood, Cooking Class" />
     <?php echo $this->Html->charset(); ?>
@@ -31,7 +30,7 @@
                 echo "<li>".$this->html->link('About Us', '../pages/about')."</li>";
                 echo "<li>".$this->html->link('Product', '../products/')."</li>";
                 echo "<li>".$this->html->link('Cooking Class', '/cooking')."</li>";
-                echo "<li>".$this->html->link('Contact Us', '../pages/contact')."</li>";
+                echo "<li>".$this->html->link('Contact Us', '../contacts')."</li>";
               /*  echo $form->create("Post",array('action' => 'search'));
                     echo $form->input("q", array('label' => 'Search for'));
                     echo $form->end("Search");
@@ -44,7 +43,7 @@
     <div id="templatemo_middle">
         <div id='search-box'>
             <form action='<?php echo $webroot?>products' id='search-form' method='get' target='_top'>
-                <input id='search-text' name='q' placeholder='Key word' type='text' value="<?php echo !empty($key)?$key:""?>"/>
+                <input id='search-text' name='q' placeholder='Search...' type='text' value="<?php echo !empty($key)?$key:""?>"/>
                 <button id='search-button' type='submit'><span>Search</span></button>
             </form>
         </div>
@@ -53,9 +52,9 @@
     <div id="templatemo_content">
         <div class="login_d">
             <?php if ($logged_in):    ?>
-                <h6>Welcome  &nbsp <?php echo $this->Html->link(__($current_user['username']), array('controller'=>'users','action'=>null)); ?> &nbsp <?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout')); ?></h6>
+                <h6>Welcome  &nbsp <?php echo $this->Html->link(__($current_user['username']), array('controller'=>'users','action'=>null)); ?> &nbsp&nbsp <?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout')); ?></h6>
             <?php else:  ?>
-                <?php echo $this->Html->link('Login', array('controller'=>'users','action'=>'login')); ?>
+                <?php echo $this->Html->link('Login', array('controller'=>'users','action'=>'login')); ?>&nbsp&nbsp
                 <?php echo $this->html->link('Register', '/users/add')."<br>"; ?>
             <?php endif;  ?>
         </div></br>
