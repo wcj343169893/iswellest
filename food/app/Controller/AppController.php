@@ -43,16 +43,16 @@ class AppController extends Controller {
 			'FileUtil',
 			'Auth' => array (
 					'loginRedirect' => array (
-							'Controller' => 'pages',
-							'action' => 'index' 
+							'controller' => 'pages',
+							'action' => 'index'
 					),
 					'logoutRedirect' => array (
-							'Controller' => 'pages',
-							'action' => 'index' 
+							'controller' => 'pages',
+							'action' => 'index'
 					),
 					'authError' => "You cant access that page",
 					'authorize' => array (
-							'Controller'
+							'controller'
 					) 
 			) 
 	);

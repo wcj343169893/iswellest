@@ -88,7 +88,7 @@ class UsersController extends AppController {
 	public function logout() {
 		// clear the cookie (if it exists) when logging out
 		$this->Cookie->delete ( 'remember_me_cookie' );
-		
+
 		return $this->redirect ( $this->Auth->logout () );
 	}
 	

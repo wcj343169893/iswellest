@@ -17,7 +17,7 @@ class ShopController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'itemupdate', "cart", "clear", "address", "update", "step1", "step2", "review", "success","carts" );
+		$this->Auth->allow ( 'itemupdate', "cart", "clear", "address", "update", "step1", "step2", "review", "success" );
 		$this->disableCache ();
 		// $this->Security->validatePost = false;
 	}

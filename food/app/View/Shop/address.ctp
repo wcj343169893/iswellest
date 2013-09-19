@@ -1,3 +1,7 @@
+<?php $this->Html->addCrumb('Product', '/Products/index');?>
+<?php $this->Html->addCrumb('Shopping cart', '/shop/cart');?>
+<?php $this->Html->addCrumb('Address', '/shop/address');?>
+
 <?php echo $this->set('title_for_layout', 'Address'); ?>
 <h1>Address</h1>
 <?php echo $this->Form->create('Order'); ?>

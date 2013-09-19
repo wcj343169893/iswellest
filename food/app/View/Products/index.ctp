@@ -1,29 +1,6 @@
+<?php $this->Html->addCrumb('Product', '/Products/index');?>
 <?php echo $this->Html->script(array('addtocart.js'), array('inline' => false)); ?>
-<!-- Search -->
-<div class="box search" style="display: none;">
-	<h2>Search by</h2>
-	<div class="box-content">
-		<div class="field">
-			<form action="/products/" id="KeywordFilter" method="post"
-				accept-charset="utf-8">
-				<div style="display: none;">
-					<input type="hidden" name="_method" value="POST" />
-				</div>
-				<input type="hidden" name="data[Filter][filterFormId]"
-					value="Keyword" id="FilterFilterFormId" />
-				<div class="input text">
-					<label for="ProductName||Description">Keyword</label><input
-						name="data[Product][name || description]" type="text"
-						id="ProductName||Description" />
-				</div>
-				<div class="submit">
-					<input class="btn btn-primary" type="submit" value="Submit" />
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- End Search -->
+
 <div id="sidebar">
 	<!-- Categories -->
 	<div class="box categories">
@@ -41,7 +18,8 @@
 	<h2><?php echo __('Products'); ?></h2>
 	<?php echo $this->Html->link("Shop Cart",array("controller"=>"shop","action"=>"cart"),array("class"=>"shop_cart"))?>
 	<span id="shop_cart_count">0</span>
-	<div class="product_sort">
+
+    <div class="product_sort">
 		<div class="s_mod_order_tit">Order：</div>
     	<div class="s_mod_order_term">
         <?php echo $this->Paginator->sort('name','<b class="s_mod_order_arrow">&nbsp;</b>Name',array("class"=>"s_mod_order_cate","escape"=>false)); ?>
@@ -49,6 +27,7 @@
         <?php echo $this->Paginator->sort('price','<b class="s_mod_order_arrow">&nbsp;</b>Price',array("class"=>"s_mod_order_cate","escape"=>false)); ?>
         </div>
     </div>
+
 	<table class="product">
     <?php foreach ($products as $product): ?>
     <tr>

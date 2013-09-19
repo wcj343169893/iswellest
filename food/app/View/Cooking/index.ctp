@@ -1,3 +1,4 @@
+<?php $this->Html->addCrumb('Cooking class', '/cooking');?>
 <div class="box_p">
 	<h2>Hot Admissions</h2>
 	<div class="product_sort">

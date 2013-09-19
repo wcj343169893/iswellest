@@ -34,10 +34,11 @@ body {
 }
 
 #flash_msg {
-position: fixed;
-top: 40%;
-right: 40%;
-z-index: 10000;
+	position: fixed;
+	top: 40%;
+	right: 40%;
+	z-index: 10000;
+    background-color:#f4f4f4 ;
 }
 
 .px60 {

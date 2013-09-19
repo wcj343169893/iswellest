@@ -1,3 +1,8 @@
+<?php $this->Html->addCrumb('Product', '/Products/index');?>
+<?php $this->Html->addCrumb('Shopping cart', '/shop/cart');?>
+<?php $this->Html->addCrumb('Address', '/shop/address');?>
+<?php $this->Html->addCrumb('Order review', '/shop/review');?>
+
 <?php echo $this->set('title_for_layout', 'Order Review'); ?>
 
 <?php echo $this->Html->script(array('shop_review.js'), array('inline' => false)); ?>

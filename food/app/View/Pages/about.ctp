@@ -1,4 +1,4 @@
-﻿
+﻿<?php $this->Html->addCrumb('About us', '/pages/about');?>
 <div class="col_w620_w2col">
          	<div class="col_w620_content">
 
