@@ -7,6 +7,7 @@
 				    <li><?php echo $this->Html->link(__('Edit infomation'), array('action' => 'edit')); ?></li>
 				    <li><?php echo $this->Html->link(__('MyOrder'), array('action' => 'order')); ?></li>
 				    <li><?php echo $this->Html->link(__('MyCookingClass'), array('action' => 'cookingclass')); ?></li>
+				    <li><?php echo $this->Html->link(__('Address'), array('action' => 'address')); ?></li>
 				</ul>
           </div>
         </div>

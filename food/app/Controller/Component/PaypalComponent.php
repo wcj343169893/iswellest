@@ -93,7 +93,7 @@ class PaypalComponent extends Component {
 		foreach ( $this->cart ["OrderItem"] as $k => $v ) {
 			$nvpstr .= "&L_PAYMENTREQUEST_0_NUMBER" . $sumCount . "=" . $v ["product_id"];
 			$nvpstr .= "&L_PAYMENTREQUEST_0_NAME" . $sumCount . "=" . strip_tags ( $v ["name"] );
-			$nvpstr .= "&L_PAYMENTREQUEST_0_DESC" . $sumCount . "=" . String::truncate ( strip_tags ( $v ["Product"] ["description"] ), 20 );
+			//$nvpstr .= "&L_PAYMENTREQUEST_0_DESC" . $sumCount . "=" . String::truncate ( strip_tags ( $v ["Product"] ["description"] ), 20 );
 			$nvpstr .= "&L_PAYMENTREQUEST_0_AMT" . $sumCount . "=" . $v ["price"];
 			$nvpstr .= "&L_PAYMENTREQUEST_0_QTY" . $sumCount . "=" . $v ["weight"];
 			$sumCount ++;

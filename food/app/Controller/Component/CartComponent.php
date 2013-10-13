@@ -54,7 +54,11 @@ class CartComponent extends Component {
 		if(empty($product)) {
 			return false;
 		}
-
+		//判断购物车中是否已经存在，如果存在，则只增加$quantity
+		$olddata = $this->Session->read("Shop.OrderItem.".$id);
+		if(!empty($olddata)){
+			$quantity=$quantity+$olddata["weight"];
+		}
 		$data['product_id'] = $product['Product']['id'];
 		$data['name'] = $product['Product']['name'];
 		$data['weight'] = $quantity;

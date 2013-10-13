@@ -8,6 +8,7 @@ App::uses ( 'AppController', 'Controller' );
 class UsersController extends AppController {
 	var $uses = array (
 			"User",
+			"UserAddress",
 			"CookingOrder" 
 	);
 	var $uid;
@@ -25,7 +26,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'add', 'forgetpwd', 'reset');
+		$this->Auth->allow ( 'add', 'forgetpwd', 'reset' );
 		
 		// set cookie options
 		$this->Cookie->key = 'qSI232qs*&sXOw!adre@34SAv!@*(XSL#$%)asGb$@11~_+!@#HKis~#^';
@@ -88,7 +89,7 @@ class UsersController extends AppController {
 	public function logout() {
 		// clear the cookie (if it exists) when logging out
 		$this->Cookie->delete ( 'remember_me_cookie' );
-
+		
 		return $this->redirect ( $this->Auth->logout () );
 	}
 	
@@ -288,7 +289,7 @@ class UsersController extends AppController {
 					$this->User->data = $this->data;
 					$this->User->data ['User'] ['username'] = $u ['User'] ['username'];
 					$new_hash = sha1 ( $u ['User'] ['username'] . rand ( 100, 1000 ) ); // created
-					                                                                 // token
+					                                                                    // token
 					$this->User->data ['User'] ['tokenhash'] = $new_hash;
 					if ($this->User->validates ( array (
 							'fieldList' => array (
@@ -318,5 +319,41 @@ class UsersController extends AppController {
 			$this->redirect ( '/' );
 		}
 	}
-
+	/**
+	 * 购物地址
+	 */
+	public function address() {
+		if ($this->request->is ( "ajax" )) {
+			$this->view = "editaddress";
+			// 保存地址
+			if ($this->request->is ( "post" )) {
+				$address = $this->request->data;
+				$address ["UserAddress"] ["user_id"] = $this->uid;
+				$address ["UserAddress"] ["ip_address"] = $this->request->clientIp ( true );
+				if ($this->UserAddress->save ( $address )) {
+					$this->Session->setFlash ( 'Save Address Success.' );
+				}
+			}
+		} else {
+			$address = $this->UserAddress->find ( "all", array (
+					"conditions" => array (
+							"UserAddress.user_id" => $this->uid 
+					) 
+			) );
+			$title_for_layout = "User Address";
+			$this->set ( compact ( "address", "title_for_layout" ) );
+		}
+	}
+	/**
+	 * 查询这个用户的收货地址
+	 */
+	public function uaddress() {
+		$address = $this->UserAddress->find ( "all", array (
+				"conditions" => array (
+						"UserAddress.user_id" => $this->uid
+				)
+		) );
+		$title_for_layout = "User Address";
+		$this->set ( compact ( "address", "title_for_layout" ) );
+	}
 }

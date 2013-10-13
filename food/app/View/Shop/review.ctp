@@ -34,7 +34,6 @@ Phone: <?php echo $shop['Order']['phone'];?><br />
 
 </div>
 <div class="span4">
-
 Shipping Address: <?php echo $shop['Order']['shipping_address'];?><br />
 Shipping Address 2: <?php echo $shop['Order']['shipping_address2'];?><br />
 Shipping City: <?php echo $shop['Order']['shipping_city'];?><br />
@@ -42,11 +41,10 @@ Shipping State: <?php echo $shop['Order']['shipping_state'];?><br />
 Shipping Zip: <?php echo $shop['Order']['shipping_zip'];?><br />
 Shipping Country: <?php echo $shop['Order']['shipping_country'];?><br />
 
-<br />
-
 </div>
+<a class="btn btn-info" href="javascript:void(0)" id="change_address_btn">Change Address</a>
 </div>
-
+<div id="other_address_part"></div>
 <hr>
 
 <div class="row">

@@ -12,12 +12,13 @@ class ShopController extends AppController {
 	public $uses = array (
 			'Product',
 			'Cooking',
+			'UserAddress',
 			'CookingOrder' 
 	);
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'itemupdate', "cart", "clear", "address", "update", "step1", "step2", "review", "success" );
+		$this->Auth->allow ( 'itemupdate','carts', "cart", "clear", "address", "update", "step1", "step2", "review", "success" );
 		$this->disableCache ();
 		// $this->Security->validatePost = false;
 	}
@@ -255,7 +256,33 @@ class ShopController extends AppController {
 			
 			$this->Session->write ( 'Shop.Order', $shop ['Order'] );
 		}
-		
+		//切换收货地址
+		if(!empty($_REQUEST["change_address"])){
+			$address = $this->UserAddress->find ( "first", array (
+					"conditions" => array (
+							"UserAddress.id" => h($_REQUEST["change_address"])
+					)
+			) );
+			if(!empty($address)){
+				$shop ['Order'] ['first_name'] = $address ['UserAddress'] ['first_name'];
+				$shop ['Order'] ['last_name'] = $address ['UserAddress']['last_name'];
+				$shop ['Order'] ['phone'] = $address ['UserAddress']['phone'];
+				$shop ['Order'] ['billing_address'] = $address ['UserAddress']['shipping_address'];
+				$shop ['Order'] ['billing_address2'] = $address ['UserAddress'] ['shipping_address2'];
+				$shop ['Order'] ['billing_city'] =$address ['UserAddress'] ['shipping_city'];
+				$shop ['Order'] ['billing_zip'] =$address ['UserAddress'] ['shipping_zip'];
+				$shop ['Order'] ['billing_state'] = $address ['UserAddress']['shipping_state'];
+				$shop ['Order'] ['billing_country'] = $address ['UserAddress']['shipping_country'];
+					
+				$shop ['Order'] ['shipping_address'] =$address ['UserAddress'] ['shipping_address'];
+				$shop ['Order'] ['shipping_address2'] = $address ['UserAddress'] ['shipping_address2'];
+				$shop ['Order'] ['shipping_city'] = $address ['UserAddress'] ['shipping_city'];
+				$shop ['Order'] ['shipping_zip'] = $address ['UserAddress'] ['shipping_zip'];
+				$shop ['Order'] ['shipping_state'] = $address ['UserAddress'] ['shipping_state'];
+				$shop ['Order'] ['shipping_country'] = $address ['UserAddress']['shipping_country'];
+				$this->Session->write ( 'Shop.Order', $shop ['Order'] );
+			}
+		}
 		$this->set ( compact ( 'shop' ) );
 	
 	}

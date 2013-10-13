@@ -1290,3 +1290,19 @@ width: 244px;
     margin-bottom: auto;
     width: 860px;
 }
+
+.user_address{}
+.user_address thead th{text-transform: capitalize;}
+.add_address_btn{float: right;}
+#add_address_content label{float: left;width: 120px;text-align: right;padding-right: 10px;text-transform: capitalize;}
+#address_add_submit{display: none;}
+#dialog{display: none;}
+#add_address_content form{margin: 10px 0 0;}
+#other_address_part table{width: 100%;}
+#other_address_part table thead th{background: #61C4E1;padding: 5px 2px;}
+#other_address_part table tbody tr{}
+
+
+input.product_quantitys{width: 40px;border-radius: 0px;text-align: center;border-right:0px;border-left:0px; }
+.p_q_minus{width: 16px;padding: 4px 1px;margin-bottom: 10px;border-radius: 5px 0px 0px 5px;}
+.p_q_add{width: 16px;padding: 4px 1px;margin-bottom: 10px;border-radius: 0px 5px 5px 0px;}
