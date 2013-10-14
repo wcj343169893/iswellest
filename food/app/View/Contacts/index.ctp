@@ -33,7 +33,9 @@
                 echo $this->Form->create('Contact');
                 echo $this->Form->input('name', array('label'=>"Name","required"));
                 echo $this->Form->input('email', array('label'=>"Email","type"=>"email","required"));
+                echo $this->Form->input('seccode', array('label'=>"Seccode","type"=>"text","required",'maxlength'=>4,'class'=>'contact_seccode',"after"=>'<img alt="" src="'.$webroot.'image/seccode" width="100px">'));
                 ?>
+                
             </div>
             <div class="col_w300 col_last">
                 <?php
