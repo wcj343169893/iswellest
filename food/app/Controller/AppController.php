@@ -56,6 +56,7 @@ class AppController extends Controller {
 					) 
 			) 
 	);
+	var $seccodeKey="session_seccode_key_2013";
 	public function isAuthorized($user) {
 		return true;
 	}
