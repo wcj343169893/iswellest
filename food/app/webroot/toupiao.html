@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>投票</title>
+<script type="text/javascript" src="http://market.mofing.com/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="http://market.mofing.com/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+ 	document.domain = 'qq.com';
+</script>
+</head>
+<body>
+<iframe src="http://hn.qq.com/zt2013/xnl/index.htm" id="qqiframe" width="100%" height="500px"></iframe>
+<a id="test" href="javascript:void(0)">Test</a>
+<script type="text/javascript">
+//记录请求了多少次
+var times=0;
+var times_cookie_name="times_cookie_name";
+$("#test").click(function(){
+	var xuanshou= $("#qqiframe").contents().find(".xuanshou");
+	$.each(xuanshou,function(i,n){
+		//定位到要点的位置
+		if($(n).find("#wzi_19").length>0){
+			$(n).find("button#19").click();
+			times++;
+			$.cookie(times_cookie_name, times);
+			setTimeout(refreshwindow,60000);
+		}
+	});
+	return false;
+});
+//刷新页面
+function refreshwindow(){
+	location.reload();
+}
+function clicks2(){
+	//屏蔽frame中的alert
+	var ifr_window=window.frames["qqiframe"];
+    ifr_window.window.alert=function(){
+          // alert("屏蔽成功");
+    };
+	$("#test").click();
+}
+//初始化方法
+$(document).ready(function(){
+	 times= $.cookie(times_cookie_name);
+    if(!times){
+    	times=1;
+    }
+	 $("#test").html("请求了"+times+"次");
+	setTimeout(clicks2,6000);
+});
+</script>
+</body>
+</html>

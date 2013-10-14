@@ -1306,3 +1306,5 @@ width: 244px;
 input.product_quantitys{width: 40px;border-radius: 0px;text-align: center;border-right:0px;border-left:0px; }
 .p_q_minus{width: 16px;padding: 4px 1px;margin-bottom: 10px;border-radius: 5px 0px 0px 5px;}
 .p_q_add{width: 16px;padding: 4px 1px;margin-bottom: 10px;border-radius: 0px 5px 5px 0px;}
+
+#ContactSeccode{width: 94px;margin-right: 10px;margin-bottom: 0px;}

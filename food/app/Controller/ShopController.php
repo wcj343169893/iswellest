@@ -12,13 +12,14 @@ class ShopController extends AppController {
 	public $uses = array (
 			'Product',
 			'Cooking',
+			'Order',
 			'UserAddress',
 			'CookingOrder' 
 	);
 	
 	public function beforeFilter() {
 		parent::beforeFilter ();
-		$this->Auth->allow ( 'itemupdate','carts', "cart", "clear", "address", "update", "step1", "step2", "review", "success" );
+		$this->Auth->allow ( 'itemupdate','carts', "cart", "clear", "address", "update",  "step2", "review", "success" );
 		$this->disableCache ();
 		// $this->Security->validatePost = false;
 	}
@@ -176,7 +177,7 @@ class ShopController extends AppController {
 		
 		if ($this->request->is ( 'post' )) {
 			
-			$this->loadModel ( 'Order' );
+			//$this->loadModel ( 'Order' );
 			
 			$this->Order->set ( $this->request->data );
 			if ($this->Order->validates ()) {
