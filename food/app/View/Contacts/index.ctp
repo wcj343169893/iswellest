@@ -33,7 +33,7 @@
                 echo $this->Form->create('Contact');
                 echo $this->Form->input('name', array('label'=>"Name","required"));
                 echo $this->Form->input('email', array('label'=>"Email","type"=>"email","required"));
-                echo $this->Form->input('seccode', array('label'=>"Seccode","type"=>"text","required",'maxlength'=>4,'class'=>'contact_seccode',"after"=>'<img alt="" src="'.$webroot.'image/seccode" width="100px">'));
+                echo $this->Form->input('seccode', array('label'=>"Seccode","type"=>"text","required",'maxlength'=>4,'class'=>'contact_seccode',"after"=>'<img alt="" src="'.$webroot.'image/seccode" id="contact_seccode_img" width="100px" title="See clearly? Click to refresh.">'));
                 ?>
                 
             </div>
@@ -44,6 +44,14 @@
                 echo $this->Form->end();?>
                 <div class="cleaner_h10"></div>
             </div>
+            <script type="text/javascript">
+				$(document).ready(function(){
+					$("#contact_seccode_img").css("cursor","pointer").click(function(){
+						var random = Math.random() + " ";
+						$(this).attr("src","<?php echo $webroot?>image/seccode?r="+ random.substring(2, 10));
+					});
+				});
+            </script>
     </div>
 </div>
 
